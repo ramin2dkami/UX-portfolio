@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>pulse — Ramin Partovi</title>
+<meta name="description" content="Case study: cutting appointment no-shows by redesigning a single reminder at pulse.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<link rel="stylesheet" href="../css/case-study.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-pill">
+    <a href="../index.html" class="logo active">Ramin Partovi</a>
+    <span class="divider" aria-hidden="true"></span>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#resume">Resume</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+    <a href="../index.html#work">Work</a>
+    <a href="../index.html#resume">Resume</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+  <section>
+    <a href="../index.html#work" class="cs-back">
+      <img src="../assets/icons/arrow-dark.svg" alt="" class="icon">
+      Back to work
+    </a>
+
+    <div class="cs-hero">
+      <span class="cs-label" style="color:#ffd166">pulse</span>
+      <h1>Cutting no-shows by rewriting one reminder</h1>
+      <p class="cs-hero-sub">Eleven percent of appointments went unfilled. The fix wasn't a louder notification — it was understanding why patients were saying yes to a reminder and still not showing up.</p>
+
+      <div class="cs-meta">
+        <div class="cs-meta-item">
+          <span>Role</span>
+          <span>Product Designer</span>
+        </div>
+        <div class="cs-meta-item">
+          <span>Timeline</span>
+          <span>5 weeks</span>
+        </div>
+        <div class="cs-meta-item">
+          <span>Team</span>
+          <span>1 designer, 2 engineers, 1 PM</span>
+        </div>
+        <div class="cs-meta-item">
+          <span>Tools</span>
+          <span>Figma, Maze, Amplitude</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <span class="cs-section-label">Overview</span>
+      <div class="cs-section-body">
+        <h2>A metric everyone tracked and no one owned</h2>
+        <p>No-show rate showed up in every leadership deck, but it belonged to no single team — scheduling blamed reminders, reminders blamed patients, and the product itself hadn't changed the appointment reminder flow in over two years. I was asked to take a fresh look at a feature that seemed too simple to be the problem.</p>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <span class="cs-section-label">The problem</span>
+      <div class="cs-section-body">
+        <h2>Confirmation wasn't the same as commitment</h2>
+        <p>The existing reminder asked patients to confirm their appointment, and most did — confirmation rates were above 90%. But confirming a text message and actually restructuring your afternoon around a doctor's visit turned out to be two very different acts of commitment, and the product treated them as the same signal.</p>
+        <ul>
+          <li><strong>The reminder arrived too early to matter.</strong> A single message 48 hours out gave patients no reason to act on it in the moment.</li>
+          <li><strong>Confirming felt costless.</strong> Tapping "yes" took less effort than actually canceling, so patients defaulted to confirming even when unsure.</li>
+          <li><strong>Rescheduling was buried.</strong> The path to changing an appointment was harder to find than the path to silently not showing up.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <span class="cs-section-label">Research &amp; discovery</span>
+      <div class="cs-section-body">
+        <h2>Talking to the patients who confirmed and still didn't come</h2>
+        <ul>
+          <li>Pulled six months of no-show data and cross-referenced it against confirmation timestamps to find the pattern: most no-shows had confirmed, most had confirmed early.</li>
+          <li>Recruited and interviewed 22 patients who'd no-showed in the past quarter, focused on what changed between confirming and the appointment day.</li>
+          <li>Ran a lightweight diary study with 10 patients across a full reminder-to-appointment cycle to capture real-time friction, not recalled friction.</li>
+          <li>Mapped the emotional register of each touchpoint — where the flow felt transactional versus where it felt like it was actually about their health.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <span class="cs-section-label">Approach</span>
+      <div class="cs-section-body">
+        <h2>Make the reminder do less confirming, more deciding</h2>
+        <ul>
+          <li><strong>Moved from one reminder to a short sequence</strong> — an early heads-up, a day-of nudge, and a two-hour window check-in, each asking a different question instead of repeating the same one.</li>
+          <li><strong>Replaced the binary confirm with a real choice</strong>: keep it, move it, or cancel it — surfaced with equal visual weight so rescheduling wasn't the hidden option.</li>
+          <li><strong>Tested copy tone directly against no-show rate</strong>, not just click-through, since the two didn't move together in early experiments.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <span class="cs-section-label">The solution</span>
+      <div class="cs-section-body">
+        <h2>What shipped</h2>
+        <p>A three-message reminder sequence with a one-tap reschedule path built into every message, rolled out gradually across clinics with an A/B test held against the original single-reminder flow to isolate the actual effect of the redesign from seasonal variation.</p>
+      </div>
+    </div>
+
+    <div class="cs-metrics-section">
+      <div class="cs-metrics-head">
+        <span class="cs-section-label">Impact</span>
+        <h2>What changed after launch</h2>
+      </div>
+      <div class="cs-metrics-grid">
+        <div class="cs-metric">
+          <span class="cs-metric-value">11% → 6.2%</span>
+          <span class="cs-metric-label">no-show rate across test clinics</span>
+        </div>
+        <div class="cs-metric">
+          <span class="cs-metric-value">3.1×</span>
+          <span class="cs-metric-label">increase in self-service reschedules vs. cancellations</span>
+        </div>
+        <div class="cs-metric">
+          <span class="cs-metric-value">22</span>
+          <span class="cs-metric-label">patient interviews behind the redesign</span>
+        </div>
+        <div class="cs-metric">
+          <span class="cs-metric-value">5 wks</span>
+          <span class="cs-metric-label">from research kickoff to A/B test launch</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <span class="cs-section-label">Reflection</span>
+      <div class="cs-section-body">
+        <div class="cs-reflection">
+          <p>The three-message sequence worked, but I'd want more data on whether the third message (the two-hour check-in) was pulling its weight versus just adding noise — the A/B test wasn't structured to isolate individual messages within the sequence, only the sequence as a whole against the original.</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="cs-footer-nav">
+    <span class="eyebrow">Next up</span>
+    <div class="cs-footer-nav-links">
+      <a href="itracefresh.html" class="btn btn-dark">
+        Read: The workflow standing between iTracefresh and its price tag
+        <img src="../assets/icons/arrow-dark-2.svg" alt="" class="icon">
+      </a>
+      <a href="../index.html#contact" class="link-arrow">
+        Get in touch
+        <img src="../assets/icons/arrow-dark.svg" alt="" class="icon">
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>© 2026 Ramin Partovi. Designed and built in San Francisco.</p>
+    <nav aria-label="Footer">
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#resume">Resume</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+/* ---------- Case study page ---------- */
+
+.cs-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-grey-45);
+  padding-top: 120px;
+}
+.cs-back:hover { color: var(--color-black); }
+.cs-back .icon { transform: rotate(180deg); transition: transform 0.2s ease; }
+.cs-back:hover .icon { transform: rotate(180deg) translateX(3px); }
+
+.cs-hero {
+  padding-top: 24px;
+  padding-bottom: 64px;
+  border-bottom: 1px solid var(--color-grey-88);
+}
+.cs-label {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: block;
+}
+.cs-hero h1 {
+  font-weight: 700;
+  font-size: clamp(2rem, 2.4vw + 1.2rem, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--color-black);
+  padding-top: 16px;
+  max-width: 780px;
+}
+.cs-hero-sub {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--color-grey-45);
+  max-width: 620px;
+  padding-top: 20px;
+}
+
+.cs-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding-top: 40px;
+}
+.cs-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.cs-meta-item span:first-child {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-grey-45);
+}
+.cs-meta-item span:last-child {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-black);
+}
+
+.cs-section {
+  padding: 64px 0;
+  border-bottom: 1px solid var(--color-grey-88);
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: 64px;
+}
+.cs-section:last-of-type { border-bottom: none; }
+.cs-section-label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-grey-45);
+}
+.cs-section-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.cs-section-body h2 {
+  font-weight: 700;
+  font-size: 1.625rem;
+  letter-spacing: -0.02em;
+  color: var(--color-black);
+}
+.cs-section-body p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-grey-45);
+  max-width: 640px;
+}
+.cs-section-body ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 640px;
+}
+.cs-section-body li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--color-grey-45);
+}
+.cs-section-body li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 6px;
+  height: 1px;
+  background: var(--color-grey-45);
+}
+.cs-section-body li strong { color: var(--color-black); font-weight: 600; }
+
+.cs-image {
+  width: 100%;
+  display: block;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-grey-88);
+  box-shadow: 0 20px 40px -24px rgba(0, 0, 0, 0.25);
+}
+.cs-image-caption {
+  display: block;
+  margin-top: -8px;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--color-grey-45);
+  max-width: 640px;
+}
+
+/* Metrics — the recruiter-facing highlight */
+.cs-metrics-section {
+  background: var(--color-black);
+  border-radius: var(--radius-lg);
+  padding: 56px;
+  margin: 64px 0;
+}
+.cs-metrics-head {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 40px;
+  max-width: 560px;
+}
+.cs-metrics-head .cs-section-label { color: var(--color-grey-62); }
+.cs-metrics-head h2 {
+  font-weight: 700;
+  font-size: 1.75rem;
+  letter-spacing: -0.02em;
+  color: var(--color-grey-96);
+}
+.cs-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 32px;
+}
+.cs-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 20px;
+  border-top: 1px solid var(--white-13);
+}
+.cs-metric-value {
+  font-weight: 700;
+  font-size: clamp(1.75rem, 1.6vw + 1.2rem, 2.5rem);
+  letter-spacing: -0.03em;
+  color: var(--color-white);
+}
+.cs-metric-label {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--color-grey-62);
+}
+
+.cs-reflection {
+  background: var(--color-grey-95);
+  border-radius: var(--radius-md);
+  padding: 40px;
+}
+
+.cs-footer-nav {
+  padding: 64px 0 96px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.cs-footer-nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+@media (max-width: 860px) {
+  .cs-section { grid-template-columns: 1fr; gap: 16px; }
+  .cs-metrics-section { padding: 40px 28px; border-radius: 24px; }
+}
+
+@media (max-width: 640px) {
+  .cs-back { padding-top: 88px; }
+  .cs-hero { padding-bottom: 40px; }
+  .cs-meta { gap: 24px; }
+  .cs-section { padding: 48px 0; }
+  .cs-metrics-section { margin: 48px 0; padding: 32px 20px; }
+  .cs-metrics-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+}

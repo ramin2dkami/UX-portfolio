@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iTracefresh — Ramin Partovi</title>
+<meta name="description" content="Case study: redesigning iTracefresh's label creation workflow, raising task success from 78% to 92%.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<link rel="stylesheet" href="../css/case-study.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-pill">
+    <a href="../index.html" class="logo active">Ramin Partovi</a>
+    <span class="divider" aria-hidden="true"></span>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#resume">Resume</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+    <a href="../index.html#work">Work</a>
+    <a href="../index.html#resume">Resume</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+  <section>
+    <a href="../index.html#work" class="cs-back">
+      <img src="../assets/icons/arrow-dark.svg" alt="" class="icon">
+      Back to work
+    </a>
+
+    <div class="cs-hero">
+      <span class="cs-label" style="color:#1b998b">iTracefresh</span>
+      <h1>The workflow standing between iTracefresh and its price tag</h1>
+      <p class="cs-hero-sub">Growers were comparing iTracefresh to cheaper competitors and buying the cheaper one — not because of what the software did, but because of what it felt like to use, starting with the workflow every packing crew touched every shift: creating a compliance label.</p>
+
+      <div class="cs-meta">
+        <div class="cs-meta-item">
+          <span>Role</span>
+          <span>Lead Designer</span>
+        </div>
+        <div class="cs-meta-item">
+          <span>Tools</span>
+          <span>Figma, UserZoom</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <span class="cs-section-label">Overview</span>
+      <div class="cs-section-body">
+        <h2>Farm-to-fork compliance, one label at a time</h2>
+        <p>iTracefresh is iTradeNetwork's produce-traceability platform — it gives growers and packers the PTI-compliant labeling and tracking that buyers and regulators require, from harvest to retail shelf. This project rebuilt the single workflow every packing crew relies on multiple times a shift: creating and printing a compliance label.</p>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <span class="cs-section-label">The problem</span>
+      <div class="cs-section-body">
+        <h2>Outdated UX was a pricing problem, not just a design one</h2>
+        <p>iTracefresh was losing deals on price alone, even against alternatives it outmatched on features. Sales couldn't point to the product experience to justify the premium, because the experience was working against them.</p>
+        <ul>
+          <li><strong>Losing customers based purely on cost</strong>, including to lower-cost competitors offering less capability.</li>
+          <li><strong>An interface that hadn't kept pace</strong>, with a learning curve steep enough that new users struggled to complete basic tasks.</li>
+          <li><strong>No way to justify the higher price tag</strong> — the UI undercut the pitch instead of supporting it.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <span class="cs-section-label">Research &amp; discovery</span>
+      <div class="cs-section-body">
+        <h2>Following the label from field to pallet</h2>
+        <p>With limited direct access to product SMEs, I built a persona from past interviews, PM documentation, and targeted SME conversations, then mapped a harvest crew's full shift to see where labeling actually sat in their day.</p>
+        <ul>
+          <li>Interviewed the team's SME to close gaps in produce-compliance domain knowledge.</li>
+          <li>Mapped a harvest crew member's journey end to end, timing every step from harvesting through packing and labeling.</li>
+          <li>Found that labeling — about 1.5 hours of a roughly 6.5-hour shift — was a self-contained slice of the workflow, and the one most exposed to error and rework.</li>
+        </ul>
+        <img class="cs-image" src="assets/itracefresh/itracefresh-persona.jpg" alt="Persona card for Jimmy Sanchez, a Production Operations Manager, showing his pain points, goals, and system requirements.">
+        <span class="cs-image-caption">The persona built around the primary user of the label creation flow: a Production Operations Manager balancing compliance, labor, and throughput.</span>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <span class="cs-section-label">Goals &amp; constraints</span>
+      <div class="cs-section-body">
+        <h2>Redesign it without breaking what already worked</h2>
+        <ul>
+          <li><strong>Raise success, don't just polish it.</strong> Improve task success rate, cut errors, and reduce the time and clicks it takes to print a label.</li>
+          <li><strong>Keep the workflow intact.</strong> This was a live, regulated production tool — changes had to fit how crews already worked, not ask them to relearn it.</li>
+          <li><strong>Stay inside PTI requirements.</strong> Every layout and language change still had to satisfy the traceability standards set by government agencies and buyers.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <span class="cs-section-label">The solution</span>
+      <div class="cs-section-body">
+        <h2>A guided, five-step label wizard</h2>
+        <p>The dense, single-page label form became a guided flow — Pack Date, Product Info, Tracking Info, Printing Options, Finalize Print — with fields gated in order and the flow auto-advancing once each step's required fields were filled.</p>
+        <img class="cs-image" src="assets/itracefresh/itracefresh-wizard.jpg" alt="The redesigned Create PTI Label flow showing a five-step progress tracker above a Pack Date and Product Info form.">
+        <span class="cs-image-caption">The redesigned Create PTI Label flow — a five-step wizard with a persistent, clickable progress tracker.</span>
+        <ul>
+          <li><strong>Consolidated the navigation.</strong> iTracefresh's modules now live inside iTradeNetwork's shared OMS Enterprise sidebar, instead of a separate, harder-to-find app.</li>
+          <li><strong>Rebuilt on a new design system.</strong> Every input, button, and status toast now comes from a shared component library used across iTradeNetwork's other applications.</li>
+          <li><strong>Tightened the language.</strong> CTAs and field labels moved to industry-standard terms, and type-ahead search now surfaces recent products and lots instead of a blank field.</li>
+        </ul>
+        <img class="cs-image" src="assets/itracefresh/itracefresh-ia.jpg" alt="iTracefresh's Label module shown nested inside iTradeNetwork's unified OMS Enterprise sidebar navigation.">
+        <span class="cs-image-caption">iTracefresh's modules consolidated into iTradeNetwork's unified sidebar navigation, improving findability.</span>
+        <img class="cs-image" src="assets/itracefresh/itracefresh-design-system.jpg" alt="A grid of design system components including buttons, form inputs, toast notifications, tabs, and status badges.">
+        <span class="cs-image-caption">A subset of the new shared design system — inputs, toasts, tabs, and status badges used throughout the redesign.</span>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <span class="cs-section-label">Validation</span>
+      <div class="cs-section-body">
+        <h2>Testing the new flow against the one it replaced</h2>
+        <p>I ran a comparative usability study in UserZoom, putting the legacy label creation flow head-to-head against the new prototype. Each study was fielded to 40 participants.</p>
+      </div>
+    </div>
+
+    <div class="cs-metrics-section">
+      <div class="cs-metrics-head">
+        <span class="cs-section-label">Impact</span>
+        <h2>What changed in testing</h2>
+      </div>
+      <div class="cs-metrics-grid">
+        <div class="cs-metric">
+          <span class="cs-metric-value">92%</span>
+          <span class="cs-metric-label">task success rate creating a label — up from 78% in the legacy flow (+14 pts)</span>
+        </div>
+        <div class="cs-metric">
+          <span class="cs-metric-value">58%</span>
+          <span class="cs-metric-label">fewer clicks required to print a label</span>
+        </div>
+        <div class="cs-metric">
+          <span class="cs-metric-value">+8%</span>
+          <span class="cs-metric-label">increase in self-reported user satisfaction</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <span class="cs-section-label">Reflection</span>
+      <div class="cs-section-body">
+        <div class="cs-reflection">
+          <p>Relying on a single SME for domain knowledge slowed early discovery more than I expected — spreading that understanding across the team, and getting in front of customers on-site sooner, would have surfaced real workflow constraints earlier. The new flow also wasn't free: guiding users through five steps instead of one page increased time-on-task by 11% and page views by 52%. That's a tradeoff I'd make again — a little more time in exchange for 14 more points of task success — but it's one worth stating plainly rather than only reporting the wins.</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="cs-footer-nav">
+    <span class="eyebrow">Next up</span>
+    <div class="cs-footer-nav-links">
+      <a href="vantage-workflow.html" class="btn btn-dark">
+        Read: High Performance, Intelligent Media Processing
+        <img src="../assets/icons/arrow-dark-2.svg" alt="" class="icon">
+      </a>
+      <a href="../index.html#contact" class="link-arrow">
+        Get in touch
+        <img src="../assets/icons/arrow-dark.svg" alt="" class="icon">
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>© 2026 Ramin Partovi. Designed and built in San Francisco.</p>
+    <nav aria-label="Footer">
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#resume">Resume</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

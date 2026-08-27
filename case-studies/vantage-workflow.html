@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vantage Workflow — Ramin Partovi</title>
+<meta name="description" content="Case study: redesigning Vantage Workflow's media processing and workflow automation platform.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<link rel="stylesheet" href="../css/case-study.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-pill">
+    <a href="../index.html" class="logo active">Ramin Partovi</a>
+    <span class="divider" aria-hidden="true"></span>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#resume">Resume</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+    <a href="../index.html#work">Work</a>
+    <a href="../index.html#resume">Resume</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+  <section>
+    <a href="../index.html#work" class="cs-back">
+      <img src="../assets/icons/arrow-dark.svg" alt="" class="icon">
+      Back to work
+    </a>
+
+    <div class="cs-hero">
+      <span class="cs-label" style="color:#2e90fa">Vantage Workflow</span>
+      <h1>High Performance, Intelligent Media Processing and Workflow Automation</h1>
+      <p class="cs-hero-sub">A legacy broadcast-monitoring application redesigned around how operators actually work — turning a tool nobody trusted into the system three product teams now build on.</p>
+
+      <div class="cs-meta">
+        <div class="cs-meta-item">
+          <span>Role</span>
+          <span>Senior Product Designer</span>
+        </div>
+        <div class="cs-meta-item">
+          <span>Timeline</span>
+          <span>7 months</span>
+        </div>
+        <div class="cs-meta-item">
+          <span>Team</span>
+          <span>2 designers, 6 engineers, 1 PM</span>
+        </div>
+        <div class="cs-meta-item">
+          <span>Tools</span>
+          <span>Figma, Storybook, Amplitude</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <span class="cs-section-label">Overview</span>
+      <div class="cs-section-body">
+        <h2>A design function of one, inheriting a decade of workarounds</h2>
+        <p>Vantage Workflow's media processing suite had grown one feature request at a time for over a decade, with no dedicated design function until this project. Operators monitoring live broadcast feeds had adapted around the software rather than the other way around — sticky notes on monitors, shared spreadsheets tracking what the tool couldn't, and a informal onboarding process that took new hires months to complete.</p>
+        <p>I joined as the company's first product designer and was asked to lead the redesign of its flagship monitoring application — the tool most central to daily operations and most resistant to change.</p>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <span class="cs-section-label">The problem</span>
+      <div class="cs-section-body">
+        <h2>The software worked. Trusting it didn't.</h2>
+        <p>The application technically did what it was built to do, but operators had stopped relying on it for anything time-sensitive. Alerts were frequent enough to be ignored. Critical status changes were buried in the same dense table as routine ones. When something actually went wrong, operators found out from a phone call, not the monitoring tool meant to catch it first.</p>
+        <ul>
+          <li><strong>Alert fatigue was the root cause, not a symptom.</strong> Roughly 80% of daily alerts required no action, which trained operators to triage by instinct instead of by system.</li>
+          <li><strong>Institutional knowledge lived in people, not the product.</strong> Every senior operator had a different mental model for "what actually matters," passed down informally.</li>
+          <li><strong>The tool had no opinion.</strong> It surfaced data; it never helped anyone decide what to do with it.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <span class="cs-section-label">Research &amp; discovery</span>
+      <div class="cs-section-body">
+        <h2>Sitting in the control room before touching Figma</h2>
+        <p>Because there was no existing research practice, the first month was spent building one from scratch alongside the redesign itself.</p>
+        <ul>
+          <li>Shadowed overnight and weekend shifts, when staffing was thinnest and the tool's gaps were most visible.</li>
+          <li>Ran contextual interviews with 14 operators across three shift rotations to map how alerts were actually triaged versus how the system assumed they'd be triaged.</li>
+          <li>Built an affinity map of every informal workaround in active use — the spreadsheets, sticky notes, and Slack channels the tool had been quietly replaced by.</li>
+          <li>Defined a severity model with engineering leads that didn't exist before: what actually warranted interrupting a human.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <span class="cs-section-label">Approach</span>
+      <div class="cs-section-body">
+        <h2>Design the triage, not just the interface</h2>
+        <p>The redesign centered on one decision: the system should have an opinion about what mattered, instead of presenting everything with equal visual weight and letting operators sort it out.</p>
+        <ul>
+          <li><strong>Severity-first layout</strong> replaced the flat alert table, surfacing what needed a human and demoting what didn't.</li>
+          <li><strong>Progressive disclosure</strong> kept the dense operational data available but out of the way until an operator asked for it.</li>
+          <li><strong>A shared component library</strong> was built alongside the redesign so the next three product teams wouldn't start from zero.</li>
+          <li>Every major layout went through structured usability testing with working operators before being built, not after.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <span class="cs-section-label">The solution</span>
+      <div class="cs-section-body">
+        <h2>What shipped</h2>
+        <p>A redesigned monitoring dashboard organized around severity rather than chronology, a notification model that could be tuned per-role instead of broadcasting everything to everyone, and a design system that became the foundation for Telestream's first shared component library — since reused across 9 applications in the broader product suite.</p>
+      </div>
+    </div>
+
+    <div class="cs-metrics-section">
+      <div class="cs-metrics-head">
+        <span class="cs-section-label">Impact</span>
+        <h2>What changed after launch</h2>
+      </div>
+      <div class="cs-metrics-grid">
+        <div class="cs-metric">
+          <span class="cs-metric-value">62%</span>
+          <span class="cs-metric-label">reduction in low-priority alerts reaching operators</span>
+        </div>
+        <div class="cs-metric">
+          <span class="cs-metric-value">3.4×</span>
+          <span class="cs-metric-label">faster time-to-acknowledge for critical incidents</span>
+        </div>
+        <div class="cs-metric">
+          <span class="cs-metric-value">9</span>
+          <span class="cs-metric-label">applications redesigned on the resulting design system</span>
+        </div>
+        <div class="cs-metric">
+          <span class="cs-metric-value">94</span>
+          <span class="cs-metric-label">SUS score post-launch, up from an unmeasured baseline</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <span class="cs-section-label">Reflection</span>
+      <div class="cs-section-body">
+        <div class="cs-reflection">
+          <p>The severity model was the right call, but I underestimated how long it would take operators to trust a system that had burned them before. If I did this again, I'd ship the quieter notification behavior weeks before the visual redesign, so trust wasn't being rebuilt and relearned at the same time.</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="cs-footer-nav">
+    <span class="eyebrow">Next up</span>
+    <div class="cs-footer-nav-links">
+      <a href="pulse.html" class="btn btn-dark">
+        Read: Cutting no-shows by rewriting one reminder
+        <img src="../assets/icons/arrow-dark-2.svg" alt="" class="icon">
+      </a>
+      <a href="../index.html#contact" class="link-arrow">
+        Get in touch
+        <img src="../assets/icons/arrow-dark.svg" alt="" class="icon">
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>© 2026 Ramin Partovi. Designed and built in San Francisco.</p>
+    <nav aria-label="Footer">
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#resume">Resume</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
