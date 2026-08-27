@@ -340,12 +340,12 @@ main > section {
   opacity: 0;
   pointer-events: none;
 }
-.bird-1 { top: 16%; animation: fly-across-pair 30s linear 1.8s infinite; }
-.bird-2 { top: 22%; width: 16px; height: 8px; animation: fly-across-pair 30s linear 2.5s infinite; }
-.bird-3 { top: 28%; animation: fly-across-pair 30s linear 11.8s infinite; }
-.bird-4 { top: 34%; width: 16px; height: 8px; animation: fly-across-pair 30s linear 12.5s infinite; }
-.bird-5 { top: 8%; animation: fly-across-pair 30s linear 21.8s infinite; }
-.bird-6 { top: 14%; width: 16px; height: 8px; animation: fly-across-pair 30s linear 22.5s infinite; }
+.bird-1 { top: 16%; animation: fly-across-pair 30s linear -1.8s infinite; }
+.bird-2 { top: 22%; width: 16px; height: 8px; animation: fly-across-pair 30s linear -2.5s infinite; }
+.bird-3 { top: 28%; animation: fly-across-pair 30s linear -11.8s infinite; }
+.bird-4 { top: 34%; width: 16px; height: 8px; animation: fly-across-pair 30s linear -12.5s infinite; }
+.bird-5 { top: 8%; animation: fly-across-pair 30s linear -21.8s infinite; }
+.bird-6 { top: 14%; width: 16px; height: 8px; animation: fly-across-pair 30s linear -22.5s infinite; }
 
 @keyframes fly-across-pair {
   0% { left: -8%; transform: translateY(6px); opacity: 0; }
