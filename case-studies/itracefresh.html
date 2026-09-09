@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>iTracefresh — Ramin Partovi</title>
+<title>iTracefresh - Ramin Partovi</title>
 <meta name="description" content="Case study: redesigning iTracefresh's label creation workflow, raising task success from 78% to 92%.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,133 +33,828 @@
   </nav>
 </header>
 
-<main>
+<main style="--cs-accent:#1b998b">
 
   <section>
-    <a href="../index.html#work" class="cs-back">
-      <img src="../assets/icons/arrow-dark.svg" alt="" class="icon">
-      Back to work
-    </a>
+    <div class="cs-hero" style="padding-top:140px">
+      <div class="cs-hero-row">
+        <div class="cs-hero-text">
+          <span class="cs-label" style="color:#1b998b">iTracefresh</span>
+          <h1 class="cs-hero-title-fit">All In One Traceability Solution</h1>
+          <p class="cs-hero-sub">A fragmented, dated labeling experience was costing growers time and giving the business no real edge over cheaper, less capable competitors. Here's how a full UX overhaul turned it into a reason to stay.</p>
 
-    <div class="cs-hero">
-      <span class="cs-label" style="color:#1b998b">iTracefresh</span>
-      <h1>The workflow standing between iTracefresh and its price tag</h1>
-      <p class="cs-hero-sub">Growers were comparing iTracefresh to cheaper competitors and buying the cheaper one — not because of what the software did, but because of what it felt like to use, starting with the workflow every packing crew touched every shift: creating a compliance label.</p>
-
-      <div class="cs-meta">
-        <div class="cs-meta-item">
-          <span>Role</span>
-          <span>Lead Designer</span>
+          <div class="cs-meta">
+            <div class="cs-meta-item">
+              <span>Role</span>
+              <span>Lead Designer</span>
+            </div>
+          </div>
         </div>
-        <div class="cs-meta-item">
-          <span>Tools</span>
-          <span>Figma, UserZoom</span>
+        <img class="cs-hero-phones" src="assets/itracefresh/hero-phones.png" alt="Two phone mockups of the iTracefresh mobile app: an Add a Buyer form and the multi-step Create Item Label printing flow.">
+      </div>
+
+      <div class="cs-hero-badge-row">
+        <span class="cs-hero-badge">Product Impact</span>
+      </div>
+      <div class="cs-hero-stats">
+        <div class="cs-hero-stat">
+          <span class="cs-hero-stat-value">92%</span>
+          <span class="cs-hero-stat-label">task success rate creating a label, up from 78% in the legacy flow.</span>
         </div>
-      </div>
-    </div>
-
-    <div class="cs-section">
-      <span class="cs-section-label">Overview</span>
-      <div class="cs-section-body">
-        <h2>Farm-to-fork compliance, one label at a time</h2>
-        <p>iTracefresh is iTradeNetwork's produce-traceability platform — it gives growers and packers the PTI-compliant labeling and tracking that buyers and regulators require, from harvest to retail shelf. This project rebuilt the single workflow every packing crew relies on multiple times a shift: creating and printing a compliance label.</p>
-      </div>
-    </div>
-
-    <div class="cs-section">
-      <span class="cs-section-label">The problem</span>
-      <div class="cs-section-body">
-        <h2>Outdated UX was a pricing problem, not just a design one</h2>
-        <p>iTracefresh was losing deals on price alone, even against alternatives it outmatched on features. Sales couldn't point to the product experience to justify the premium, because the experience was working against them.</p>
-        <ul>
-          <li><strong>Losing customers based purely on cost</strong>, including to lower-cost competitors offering less capability.</li>
-          <li><strong>An interface that hadn't kept pace</strong>, with a learning curve steep enough that new users struggled to complete basic tasks.</li>
-          <li><strong>No way to justify the higher price tag</strong> — the UI undercut the pitch instead of supporting it.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="cs-section">
-      <span class="cs-section-label">Research &amp; discovery</span>
-      <div class="cs-section-body">
-        <h2>Following the label from field to pallet</h2>
-        <p>With limited direct access to product SMEs, I built a persona from past interviews, PM documentation, and targeted SME conversations, then mapped a harvest crew's full shift to see where labeling actually sat in their day.</p>
-        <ul>
-          <li>Interviewed the team's SME to close gaps in produce-compliance domain knowledge.</li>
-          <li>Mapped a harvest crew member's journey end to end, timing every step from harvesting through packing and labeling.</li>
-          <li>Found that labeling — about 1.5 hours of a roughly 6.5-hour shift — was a self-contained slice of the workflow, and the one most exposed to error and rework.</li>
-        </ul>
-        <img class="cs-image" src="assets/itracefresh/itracefresh-persona.jpg" alt="Persona card for Jimmy Sanchez, a Production Operations Manager, showing his pain points, goals, and system requirements.">
-        <span class="cs-image-caption">The persona built around the primary user of the label creation flow: a Production Operations Manager balancing compliance, labor, and throughput.</span>
-      </div>
-    </div>
-
-    <div class="cs-section">
-      <span class="cs-section-label">Goals &amp; constraints</span>
-      <div class="cs-section-body">
-        <h2>Redesign it without breaking what already worked</h2>
-        <ul>
-          <li><strong>Raise success, don't just polish it.</strong> Improve task success rate, cut errors, and reduce the time and clicks it takes to print a label.</li>
-          <li><strong>Keep the workflow intact.</strong> This was a live, regulated production tool — changes had to fit how crews already worked, not ask them to relearn it.</li>
-          <li><strong>Stay inside PTI requirements.</strong> Every layout and language change still had to satisfy the traceability standards set by government agencies and buyers.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="cs-section">
-      <span class="cs-section-label">The solution</span>
-      <div class="cs-section-body">
-        <h2>A guided, five-step label wizard</h2>
-        <p>The dense, single-page label form became a guided flow — Pack Date, Product Info, Tracking Info, Printing Options, Finalize Print — with fields gated in order and the flow auto-advancing once each step's required fields were filled.</p>
-        <img class="cs-image" src="assets/itracefresh/itracefresh-wizard.jpg" alt="The redesigned Create PTI Label flow showing a five-step progress tracker above a Pack Date and Product Info form.">
-        <span class="cs-image-caption">The redesigned Create PTI Label flow — a five-step wizard with a persistent, clickable progress tracker.</span>
-        <ul>
-          <li><strong>Consolidated the navigation.</strong> iTracefresh's modules now live inside iTradeNetwork's shared OMS Enterprise sidebar, instead of a separate, harder-to-find app.</li>
-          <li><strong>Rebuilt on a new design system.</strong> Every input, button, and status toast now comes from a shared component library used across iTradeNetwork's other applications.</li>
-          <li><strong>Tightened the language.</strong> CTAs and field labels moved to industry-standard terms, and type-ahead search now surfaces recent products and lots instead of a blank field.</li>
-        </ul>
-        <img class="cs-image" src="assets/itracefresh/itracefresh-ia.jpg" alt="iTracefresh's Label module shown nested inside iTradeNetwork's unified OMS Enterprise sidebar navigation.">
-        <span class="cs-image-caption">iTracefresh's modules consolidated into iTradeNetwork's unified sidebar navigation, improving findability.</span>
-        <img class="cs-image" src="assets/itracefresh/itracefresh-design-system.jpg" alt="A grid of design system components including buttons, form inputs, toast notifications, tabs, and status badges.">
-        <span class="cs-image-caption">A subset of the new shared design system — inputs, toasts, tabs, and status badges used throughout the redesign.</span>
-      </div>
-    </div>
-
-    <div class="cs-section">
-      <span class="cs-section-label">Validation</span>
-      <div class="cs-section-body">
-        <h2>Testing the new flow against the one it replaced</h2>
-        <p>I ran a comparative usability study in UserZoom, putting the legacy label creation flow head-to-head against the new prototype. Each study was fielded to 40 participants.</p>
-      </div>
-    </div>
-
-    <div class="cs-metrics-section">
-      <div class="cs-metrics-head">
-        <span class="cs-section-label">Impact</span>
-        <h2>What changed in testing</h2>
-      </div>
-      <div class="cs-metrics-grid">
-        <div class="cs-metric">
-          <span class="cs-metric-value">92%</span>
-          <span class="cs-metric-label">task success rate creating a label — up from 78% in the legacy flow (+14 pts)</span>
+        <div class="cs-hero-stat">
+          <span class="cs-hero-stat-value">58%</span>
+          <span class="cs-hero-stat-label">fewer clicks required to print a label</span>
         </div>
-        <div class="cs-metric">
-          <span class="cs-metric-value">58%</span>
-          <span class="cs-metric-label">fewer clicks required to print a label</span>
-        </div>
-        <div class="cs-metric">
-          <span class="cs-metric-value">+8%</span>
-          <span class="cs-metric-label">increase in self-reported user satisfaction</span>
+        <div class="cs-hero-stat">
+          <span class="cs-hero-stat-value">8%</span>
+          <span class="cs-hero-stat-label">increase in self-reported user satisfaction</span>
         </div>
       </div>
     </div>
 
-    <div class="cs-section">
-      <span class="cs-section-label">Reflection</span>
+    <div class="cs-section-v2">
+      <div class="cs-section-header">
+        <span class="cs-section-number">01</span>
+        <h2>Understanding The Landscape Of The Situation</h2>
+      </div>
       <div class="cs-section-body">
-        <div class="cs-reflection">
-          <p>Relying on a single SME for domain knowledge slowed early discovery more than I expected — spreading that understanding across the team, and getting in front of customers on-site sooner, would have surfaced real workflow constraints earlier. The new flow also wasn't free: guiding users through five steps instead of one page increased time-on-task by 11% and page views by 52%. That's a tradeoff I'd make again — a little more time in exchange for 14 more points of task success — but it's one worth stating plainly rather than only reporting the wins.</p>
+        <div class="cs-illustration-grid">
+          <div class="cs-illustration-card">
+            <span class="cs-illustration-title">A churn problem became a redesign opportunity</span>
+            <div class="cs-illustration-stage">
+              <span class="cs-illustration-figure">
+                <img src="assets/itracefresh/illustration-redesign-feedback.svg" alt="" aria-hidden="true">
+              </span>
+            </div>
+            <button type="button" class="cs-illustration-toggle" aria-expanded="false">Read more</button>
+            <p class="cs-illustration-detail">Labeling was our most-used feature—and our biggest driver of churn. Customers weren't leaving solely because of price; competitors were offering complementary products that made their end-to-end traceability solutions more compelling.</p>
+          </div>
+
+          <div class="cs-illustration-card">
+            <span class="cs-illustration-title">Leading the redesign</span>
+            <div class="cs-illustration-stage">
+              <span class="cs-illustration-figure">
+                <img src="assets/itracefresh/illustration-design-sprint.svg" alt="" aria-hidden="true">
+              </span>
+            </div>
+            <button type="button" class="cs-illustration-toggle" aria-expanded="false">Read more</button>
+            <p class="cs-illustration-detail">From research and information architecture to wireframes, usability testing, UI, and design system, I rebuilt the experience around a single, simplified label-creation flow.</p>
+          </div>
+
+          <div class="cs-illustration-card">
+            <span class="cs-illustration-title">Give customers<br>a reason to stay</span>
+            <div class="cs-illustration-stage">
+              <span class="cs-illustration-figure">
+                <img src="assets/itracefresh/illustration-happy-news.svg" alt="" aria-hidden="true">
+              </span>
+            </div>
+            <button type="button" class="cs-illustration-toggle" aria-expanded="false">Read more</button>
+            <p class="cs-illustration-detail">I carried the work from strategy through launch, creating a more cohesive traceability experience and delivering measurable impact across the business.</p>
+          </div>
+
+          <div class="cs-illustration-card">
+            <span class="cs-illustration-title">How I made an impact</span>
+            <div class="cs-illustration-stage">
+              <span class="cs-illustration-figure">
+                <img src="assets/itracefresh/illustration-impact.svg" alt="" aria-hidden="true">
+              </span>
+            </div>
+            <button type="button" class="cs-illustration-toggle" aria-expanded="false">Read more</button>
+            <p class="cs-illustration-detail">I led the project from strategy to launch, creating a more cohesive traceability experience and delivering a favorable outcome across both customer experience and business metrics.</p>
+          </div>
         </div>
+      </div>
+    </div>
+
+    <div class="cs-section-v2">
+      <div class="cs-section-header">
+        <span class="cs-section-number">02</span>
+        <h2>Addressing The Core Problems</h2>
+      </div>
+      <div class="cs-section-body">
+        <div class="cs-card-grid">
+          <div class="cs-card">
+            <span class="cs-card-icon" aria-hidden="true">
+              <img src="assets/itracefresh/icons/icon-tag.svg" alt="">
+            </span>
+            <span class="cs-card-title">Losing customers on cost alone</span>
+            <p class="cs-card-detail">Buyers were comparing iTracefresh to cheaper alternatives and finding no reason to pay more.</p>
+            <button type="button" class="cs-card-toggle" aria-expanded="false">Read more</button>
+          </div>
+          <div class="cs-card">
+            <span class="cs-card-icon" aria-hidden="true">
+              <img src="assets/itracefresh/icons/icon-cursor.svg" alt="">
+            </span>
+            <span class="cs-card-title">Poor UI/UX for new users</span>
+            <p class="cs-card-detail">The labeling flow wasn't intuitive, which slowed onboarding and created friction from day one.</p>
+            <button type="button" class="cs-card-toggle" aria-expanded="false">Read more</button>
+          </div>
+          <div class="cs-card">
+            <span class="cs-card-icon" aria-hidden="true">
+              <img src="assets/itracefresh/icons/icon-laptop.svg" alt="">
+            </span>
+            <span class="cs-card-title">Gaps in our solutions</span>
+            <p class="cs-card-detail">Feature gaps meant customers had to patch together workarounds instead of getting a complete solution from us.</p>
+            <button type="button" class="cs-card-toggle" aria-expanded="false">Read more</button>
+          </div>
+          <div class="cs-card">
+            <span class="cs-card-icon" aria-hidden="true">
+              <img src="assets/itracefresh/icons/icon-dataflow.svg" alt="">
+            </span>
+            <span class="cs-card-title">No end-to-end traceability</span>
+            <p class="cs-card-detail">There was no all-in-one solution: the apps growers needed were disjointed and disconnected from each other, forcing users to jump between separate tools just to manage one workflow.</p>
+            <button type="button" class="cs-card-toggle" aria-expanded="false">Read more</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section-v2">
+      <div class="cs-section-header">
+        <span class="cs-section-number">03</span>
+        <h2>My Path For Success</h2>
+      </div>
+      <div class="cs-section-body">
+        <p><strong style="color:var(--cs-accent)">Improved UX/UI</strong> = additional value and opportunity to retain or attract new customers.</p>
+        <img class="cs-image cs-image-plain cs-image-70" src="assets/itracefresh/itracefresh-design-goals-v2.png" alt="Design goals diagram: improve success rate for completing tasks, increase user satisfaction rating, decrease customer support tickets, decrease the time it takes to print labels, and reduce the number of errors, all in service of improved UX/UI justifying a higher price tag.">
+      </div>
+    </div>
+
+    <div class="cs-section-v2">
+      <div class="cs-section-header">
+        <span class="cs-section-number">04</span>
+        <h2>What I Was Up Against</h2>
+      </div>
+      <div class="cs-section-body">
+        <div class="cs-against-grid">
+          <div class="cs-against-card">
+            <div class="cs-against-top">
+              <span class="cs-against-number">01</span>
+              <img class="cs-against-icon" src="assets/itracefresh/icons/icon-user.svg" alt="">
+            </div>
+            <div class="cs-against-body">
+              <span class="cs-against-title">Limited access to domain experts</span>
+              <span class="cs-against-readmore">Read more</span>
+              <div class="cs-against-detail-wrap">
+                <div class="cs-against-detail-inner">
+                  <p class="cs-against-detail">SME time was scarce, so research had to be efficient and every session had to count.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cs-against-card">
+            <div class="cs-against-top">
+              <span class="cs-against-number">02</span>
+              <img class="cs-against-icon" src="assets/itracefresh/icons/icon-activity.svg" alt="">
+            </div>
+            <div class="cs-against-body">
+              <span class="cs-against-title">Zero tolerance for workflow disruption</span>
+              <span class="cs-against-readmore">Read more</span>
+              <div class="cs-against-detail-wrap">
+                <div class="cs-against-detail-inner">
+                  <p class="cs-against-detail">Growers and packing crews already had muscle memory for the existing flow: any redesign had to improve the process without forcing them to relearn it.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cs-against-card">
+            <div class="cs-against-top">
+              <span class="cs-against-number">03</span>
+              <img class="cs-against-icon" src="assets/itracefresh/icons/icon-shield.svg" alt="">
+            </div>
+            <div class="cs-against-body">
+              <span class="cs-against-title">Regulatory non-negotiables</span>
+              <span class="cs-against-readmore">Read more</span>
+              <div class="cs-against-detail-wrap">
+                <div class="cs-against-detail-inner">
+                  <p class="cs-against-detail">Every change still had to satisfy PTI requirements set by government agencies and buyers, as well as the FDA's incoming FSMA 204 traceability recordkeeping rule; compliance wasn't optional, no matter how much friction it added.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section-v2">
+      <div class="cs-section-header">
+        <span class="cs-section-number">05</span>
+        <h2>Getting To Know Our Users And Competitors</h2>
+      </div>
+      <div class="cs-section-body cs-section-body--wide-gap">
+
+        <div class="cs-subsection">
+          <h3>In The Field With Harvest Crews</h3>
+          <p>Spent a day on-site at a California Giant Berry Farm observing and interviewing harvest and operations teams to understand the real-world workflow.</p>
+          <div class="cs-image-quad">
+            <img src="assets/itracefresh/itracefresh-field-research-2.jpg" alt="Ramin observing a harvest crew and operations team in a strawberry field during contextual inquiry.">
+            <img src="assets/itracefresh/itracefresh-field-packing-line.jpg" alt="Packing line workers boxing strawberries in a packing facility.">
+            <img src="assets/itracefresh/itracefresh-field-rows.jpg" alt="Harvest crew picking strawberries across long rows in the field.">
+            <img src="assets/itracefresh/itracefresh-field-wide.jpg" alt="Wide view of the strawberry field where the contextual inquiry took place.">
+          </div>
+        </div>
+
+        <div class="cs-subsection">
+          <h3>Who We Were Designing For</h3>
+          <p>Our customers' pain points were our opportunities. Our interviews helped us uncover the path to our goals.</p>
+          <div class="cs-image-row cs-persona-row">
+            <figure class="cs-image-reveal cs-image-reveal-lg">
+              <button class="cs-image-reveal-trigger" type="button" aria-label="Expand image: Jimmy's persona">
+                <img class="cs-image-small" src="assets/itracefresh/itracefresh-persona.jpg" alt="Persona card for Jimmy Sanchez, a Production Operations Manager, showing his pain points, goals, and system requirements.">
+                <span class="cs-image-reveal-overlay">
+                  <svg class="cs-image-reveal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M9 3H3v6"></path>
+                    <path d="M15 3h6v6"></path>
+                    <path d="M3 15v6h6"></path>
+                    <path d="M21 15v6h-6"></path>
+                  </svg>
+                </span>
+              </button>
+            </figure>
+            <figure class="cs-image-reveal cs-image-reveal-lg">
+              <button class="cs-image-reveal-trigger" type="button" aria-label="Expand image: Jeffery's persona">
+                <img class="cs-image-small" src="assets/itracefresh/itracefresh-persona-2.jpg" alt="Persona card for Jeffery Valleys, a Food Safety &amp; Compliance Manager, showing his pain points, goals, and system requirements.">
+                <span class="cs-image-reveal-overlay">
+                  <svg class="cs-image-reveal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M9 3H3v6"></path>
+                    <path d="M15 3h6v6"></path>
+                    <path d="M3 15v6h6"></path>
+                    <path d="M21 15v6h-6"></path>
+                  </svg>
+                </span>
+              </button>
+            </figure>
+          </div>
+        </div>
+
+        <div class="cs-subsection">
+          <h3>What The Journey Mapping Revealed</h3>
+          <p>Workflow mapping revealed two major time sinks:</p>
+          <ul>
+            <li><strong>5 hrs</strong> — Packing &amp; prepping product</li>
+            <li><strong>1.5 hrs</strong> — Palletizing &amp; labeling</li>
+          </ul>
+          <p>These tasks consumed 6.5 hours of the shift, exposing significant workflow friction. A lack of real-time visibility left crews guessing about supplies, progress, and quotas—while operations teams lacked timely insight into production and quality issues.</p>
+          <figure class="cs-image-reveal cs-image-reveal-lg">
+            <button class="cs-image-reveal-trigger" type="button" aria-label="Expand image: the harvest crew journey map">
+              <img class="cs-image-small" src="assets/itracefresh/itracefresh-journey-map.jpg" alt="Customer journey map for a Harvest Crew Member, showing six steps with rows for Action, Thinking, Feeling, time duration per task, and Opportunities.">
+              <span class="cs-image-reveal-overlay">
+                <svg class="cs-image-reveal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M9 3H3v6"></path>
+                  <path d="M15 3h6v6"></path>
+                  <path d="M3 15v6h6"></path>
+                  <path d="M21 15v6h-6"></path>
+                </svg>
+              </span>
+            </button>
+          </figure>
+        </div>
+
+        <div class="cs-subsection">
+          <h3>What The Competitive Landscape Confirmed</h3>
+          <p><strong style="color:var(--cs-accent)">iTracefresh wasn't behind on capability.</strong> It held features most competitors didn't but those solutions were scattered across separate, disconnected modules, while competitors like Procurant and Famous ERP won on being one unified system.</p>
+          <div class="cs-table-wrap">
+            <table class="cs-table">
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th class="cs-table-col-highlight">iTracefresh</th>
+                  <th>iFoodDS / HarvestMark</th>
+                  <th>Famous Software</th>
+                  <th>FoodLogiQ</th>
+                  <th>Procurant</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>PTI printing</td>
+                  <td class="yes cs-table-col-highlight">✓</td>
+                  <td class="yes">✓</td>
+                  <td class="yes">✓</td>
+                  <td class="yes">✓</td>
+                  <td class="yes">✓</td>
+                </tr>
+                <tr>
+                  <td>Item-level trace</td>
+                  <td class="yes cs-table-col-highlight">✓</td>
+                  <td class="yes">✓</td>
+                  <td class="no">—</td>
+                  <td class="no">—</td>
+                  <td class="no">—</td>
+                </tr>
+                <tr>
+                  <td>Palletized ASN</td>
+                  <td class="yes cs-table-col-highlight">✓</td>
+                  <td class="no">—</td>
+                  <td class="yes">✓</td>
+                  <td class="yes">✓</td>
+                  <td class="no">—</td>
+                </tr>
+                <tr>
+                  <td>Mobile printing (Android)</td>
+                  <td class="yes cs-table-col-highlight">✓</td>
+                  <td class="no">—</td>
+                  <td class="yes">✓</td>
+                  <td class="no">—</td>
+                  <td class="yes">✓</td>
+                </tr>
+                <tr>
+                  <td>Offline mobile printing</td>
+                  <td class="yes cs-table-col-highlight">✓</td>
+                  <td class="no">—</td>
+                  <td class="no">—</td>
+                  <td class="no">—</td>
+                  <td class="no">—</td>
+                </tr>
+                <tr>
+                  <td>HPL printing</td>
+                  <td class="yes cs-table-col-highlight">✓</td>
+                  <td class="no">—</td>
+                  <td class="yes">✓</td>
+                  <td class="no">—</td>
+                  <td class="no">—</td>
+                </tr>
+                <tr>
+                  <td>Item lookup tool</td>
+                  <td class="yes cs-table-col-highlight">✓</td>
+                  <td class="no">—</td>
+                  <td class="no">—</td>
+                  <td class="no">—</td>
+                  <td class="no">—</td>
+                </tr>
+                <tr>
+                  <td>Lot aggregator (coming soon)</td>
+                  <td class="yes cs-table-col-highlight">✓</td>
+                  <td class="no">—</td>
+                  <td class="yes">✓</td>
+                  <td class="yes">✓</td>
+                  <td class="no">—</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="cs-section-v2">
+      <div class="cs-section-header">
+        <span class="cs-section-number">06</span>
+        <h2>Translating data &amp; research into a end to end solution</h2>
+      </div>
+      <div class="cs-section-body cs-section-body--wide-gap">
+
+        <div class="cs-subsection">
+          <h3><span style="color:var(--cs-accent)">Improved</span> Information Architecture</h3>
+          <div class="cs-ia-layout">
+            <div class="cs-ia-cards">
+              <div class="cs-ia-card">
+                <span class="cs-ia-tag"></span>
+                <p>iTracefresh modules are now all accessible within the side navigation.</p>
+              </div>
+              <div class="cs-ia-card">
+                <span class="cs-ia-tag"></span>
+                <p>Improved findability <strong style="color:var(--cs-accent)">for creating labels by 37%.</strong></p>
+              </div>
+            </div>
+            <img class="cs-image-small" src="assets/itracefresh/itracefresh-ia.jpg" alt="iTracefresh's Label module shown nested inside iTradeNetwork's unified OMS Enterprise sidebar navigation.">
+          </div>
+        </div>
+
+        <div class="cs-subsection">
+          <h3><span style="color:var(--cs-accent)">Streamlining The Label Creation</span> In One Flow</h3>
+          <div class="cs-ia-layout">
+            <div class="cs-ia-cards">
+              <div class="cs-ia-card">
+                <span class="cs-ia-tag"></span>
+                <p>Designed a guided wizard to help users quickly progress through the setup.</p>
+              </div>
+              <div class="cs-ia-card">
+                <span class="cs-ia-tag"></span>
+                <p>Step progress bar will be anchored to each step to show progression.</p>
+              </div>
+              <div class="cs-ia-card">
+                <span class="cs-ia-tag"></span>
+                <p>User will automatically progress to next step after filling out required fields in each step. <strong style="color:var(--cs-accent)">Reducing clicks by 58%.</strong></p>
+              </div>
+            </div>
+            <img class="cs-image-small" src="assets/itracefresh/itracefresh-auto-progress.jpg" alt="Annotated wizard screen showing the step progress bar advancing automatically and a scroll indicator for revisiting previous steps.">
+          </div>
+        </div>
+
+        <div class="cs-subsection">
+          <h3><span style="color:var(--cs-accent)">Personalizing The Scan Experience</span> For Every Brand</h3>
+          <div class="cs-ia-layout">
+            <div class="cs-ia-cards">
+              <div class="cs-ia-card">
+                <span class="cs-ia-tag"></span>
+                <p>Growers wanted their own branding to carry through past the warehouse, all the way to the moment a customer engages with the product.</p>
+              </div>
+              <div class="cs-ia-card">
+                <span class="cs-ia-tag"></span>
+                <p>Growers can personalize their own branded marketing pages to help customers connect with the brand.</p>
+              </div>
+              <div class="cs-ia-card">
+                <span class="cs-ia-tag"></span>
+                <p>Self-service template configuration for both web and mobile experiences.</p>
+              </div>
+            </div>
+            <img class="cs-image-small" src="assets/itracefresh/itracefresh-brand-template-default.jpg" alt="Brand Template Creation configuration screen in its default state, before a brand is selected, with an empty live preview.">
+          </div>
+        </div>
+
+        <div class="cs-subsection">
+          <h3><span style="color:var(--cs-accent)">Preventing Disasters</span> With A Recall Management Event</h3>
+          <div class="cs-ia-layout">
+            <div class="cs-ia-cards">
+              <div class="cs-ia-card">
+                <span class="cs-ia-tag"></span>
+                <p>Growers wanted a solution where they can quickly respond to food-borne illnesses or contaminations by creating a recall event.</p>
+              </div>
+              <div class="cs-ia-card">
+                <span class="cs-ia-tag"></span>
+                <p>Based on feedback, stores and customers will now be notified when growers initiate a recall event.</p>
+              </div>
+              <div class="cs-ia-card">
+                <span class="cs-ia-tag"></span>
+                <p>Growers can manage all recall events in one centralized platform.</p>
+              </div>
+            </div>
+            <img class="cs-image-small" src="assets/itracefresh/itracefresh-recall-management-event.jpg" alt="Create Recall Event flow for managing a food safety recall from a centralized platform.">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="cs-section-v2">
+      <div class="cs-section-header">
+        <span class="cs-section-number">08</span>
+        <h2>Comparing Legacy with New Solution</h2>
+      </div>
+      <div class="cs-section-body">
+        <div class="cs-obj-list">
+          <div class="cs-obj-item">
+            <span class="cs-obj-label">Objective</span>
+            <p class="cs-obj-detail">Test legacy iTracefresh application against the new designed solution for creating labels.</p>
+          </div>
+          <div class="cs-obj-item">
+            <span class="cs-obj-label">Methodology</span>
+            <p class="cs-obj-detail">Conducted unmoderated usability testing through a 3rd party application on UserZoom.</p>
+          </div>
+          <div class="cs-obj-item">
+            <span class="cs-obj-label">Participation</span>
+            <p class="cs-obj-detail">40 participants were invited to take the usability test.</p>
+          </div>
+        </div>
+
+        <div class="cs-benchmark-strip">
+          <img class="cs-benchmark-shot cs-benchmark-shot--card" src="assets/itracefresh/itracefresh-benchmark-test-web.jpg" alt="UserZoom test session card for the legacy (Web App) iTracefresh Test: 18 of 40 completes.">
+          <img class="cs-benchmark-shot cs-benchmark-shot--card" src="assets/itracefresh/itracefresh-benchmark-test-prototype.jpg" alt="UserZoom test session card for the new (Prototype 1 - Wizard) iTracefresh Test: 12 of 40 completes.">
+
+          <button type="button" class="cs-benchmark-pile cs-image-reveal-trigger" aria-haspopup="dialog" aria-label="Expand to view all 6 usability test result charts">
+            <span class="cs-benchmark-pile-images">
+              <img class="cs-benchmark-shot cs-image-small" src="assets/itracefresh/itracefresh-benchmark-eff-legacy.jpg" alt="Legacy effectiveness for Task 2, Create a PTI Label: 78% success (14), 22% non success (4).">
+            </span>
+            <span class="cs-image-reveal-overlay">
+              <svg class="cs-image-reveal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M9 3H3v6"></path>
+                <path d="M15 3h6v6"></path>
+                <path d="M3 15v6h6"></path>
+                <path d="M21 15v6h-6"></path>
+              </svg>
+              <span class="cs-image-reveal-text">See more</span>
+            </span>
+            <span class="cs-benchmark-pile-badge">+6</span>
+          </button>
+        </div>
+
+        <div class="cs-benchmark-section">
+          <div class="cs-benchmark-head">
+            <span class="cs-obj-label">Benchmark Results</span>
+          </div>
+          <div class="cs-benchmark-card">
+            <div class="cs-benchmark-item">
+              <span class="cs-benchmark-value"><svg class="cs-benchmark-trend cs-benchmark-trend--up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.48" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"></path><path d="M6 11l6-6 6 6"></path></svg>11%</span>
+              <span class="cs-benchmark-label">increase in the time it takes to print labels</span>
+            </div>
+            <div class="cs-benchmark-item">
+              <span class="cs-benchmark-value"><svg class="cs-benchmark-trend cs-benchmark-trend--up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.48" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"></path><path d="M6 11l6-6 6 6"></path></svg>14%</span>
+              <span class="cs-benchmark-label">increase in success rate for printing labels</span>
+            </div>
+            <div class="cs-benchmark-item">
+              <span class="cs-benchmark-value"><svg class="cs-benchmark-trend cs-benchmark-trend--up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.48" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"></path><path d="M6 11l6-6 6 6"></path></svg>52%</span>
+              <span class="cs-benchmark-label">increase in page views to print a label</span>
+            </div>
+            <div class="cs-benchmark-item">
+              <span class="cs-benchmark-value"><svg class="cs-benchmark-trend cs-benchmark-trend--down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.48" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"></path><path d="M6 11l6-6 6 6"></path></svg>58%</span>
+              <span class="cs-benchmark-label">decrease in clicks to print a label</span>
+            </div>
+            <div class="cs-benchmark-item">
+              <span class="cs-benchmark-value"><svg class="cs-benchmark-trend cs-benchmark-trend--up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.48" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"></path><path d="M6 11l6-6 6 6"></path></svg>8%</span>
+              <span class="cs-benchmark-label">increase in user satisfaction</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section-v2">
+      <div class="cs-section-header cs-section-header--wide-gap">
+        <span class="cs-section-number">07</span>
+        <h2>Final Design &amp; Featured System Capabilities</h2>
+      </div>
+      <div class="cs-section-body">
+
+        <div class="cs-subsection">
+          <div class="cs-feature-panel-header">
+            <h3>Label Management</h3>
+          </div>
+          <div class="cs-feature-grid">
+            <div class="cs-feature-card">
+              <div class="cs-feature-card-top">
+                <span class="cs-feature-icon"><img src="assets/itracefresh/icons/icon-tag.svg" alt=""></span>
+                <span class="cs-feature-number">01</span>
+              </div>
+              <h4 class="cs-feature-title">Unified Label List</h4>
+              <button type="button" class="cs-feature-toggle" aria-expanded="false">Read more</button>
+              <p class="cs-feature-detail">A fast, searchable view of every PTI, hybrid pallet, and SSCC label a grower has created.</p>
+            </div>
+            <div class="cs-feature-card">
+              <div class="cs-feature-card-top">
+                <span class="cs-feature-icon"><img src="assets/itracefresh/icons/icon-cursor.svg" alt=""></span>
+                <span class="cs-feature-number">02</span>
+              </div>
+              <h4 class="cs-feature-title">Guided PTI Label Creation</h4>
+              <button type="button" class="cs-feature-toggle" aria-expanded="false">Read more</button>
+              <p class="cs-feature-detail">A guided wizard setup walks users from pack date through product info, tracking info, printing options, and finalize print.</p>
+            </div>
+            <div class="cs-feature-card">
+              <div class="cs-feature-card-top">
+                <span class="cs-feature-icon"><img src="assets/itracefresh/icons/icon-sliders.svg" alt=""></span>
+                <span class="cs-feature-number">03</span>
+              </div>
+              <h4 class="cs-feature-title">Hybrid Pallet Labeling</h4>
+              <button type="button" class="cs-feature-toggle" aria-expanded="false">Read more</button>
+              <p class="cs-feature-detail">Add multiple products to a single pallet label, each with its own GTIN, lot, and product details.</p>
+            </div>
+            <div class="cs-feature-card">
+              <div class="cs-feature-card-top">
+                <span class="cs-feature-icon"><img src="assets/itracefresh/icons/icon-activity.svg" alt=""></span>
+                <span class="cs-feature-number">04</span>
+              </div>
+              <h4 class="cs-feature-title">Label Scanning and Activation</h4>
+              <button type="button" class="cs-feature-toggle" aria-expanded="false">Read more</button>
+              <p class="cs-feature-detail">Scan or manually enter item codes to activate labels and track total scans and unique products.</p>
+            </div>
+            <div class="cs-feature-card">
+              <div class="cs-feature-card-top">
+                <span class="cs-feature-icon"><img src="assets/itracefresh/icons/icon-dataflow.svg" alt=""></span>
+                <span class="cs-feature-number">05</span>
+              </div>
+              <h4 class="cs-feature-title">Trace Summary Reporting</h4>
+              <button type="button" class="cs-feature-toggle" aria-expanded="false">Read more</button>
+              <p class="cs-feature-detail">Visualize ship-from and ship-to locations on a map, with totals for products, sales, cases, and customers.</p>
+            </div>
+          </div>
+
+          <div class="cs-mockup-showcase">
+            <span class="cs-brand-blob cs-brand-blob-1" aria-hidden="true"></span>
+            <span class="cs-brand-blob cs-brand-blob-2" aria-hidden="true"></span>
+            <span class="cs-brand-blob cs-brand-blob-3" aria-hidden="true"></span>
+
+            <div class="cs-browser-mockup">
+              <div class="cs-browser-chrome">
+                <span class="cs-browser-dot" aria-hidden="true"></span>
+                <span class="cs-browser-dot" aria-hidden="true"></span>
+                <span class="cs-browser-dot" aria-hidden="true"></span>
+                <span class="cs-browser-url">app.itracefresh.com</span>
+              </div>
+              <div class="cs-browser-screen">
+                <img class="cs-browser-slide is-active" src="assets/itracefresh/itracefresh-label-list.jpg" alt="Label list view showing PTI, hybrid pallet, and SSCC labels with their product description, lot number, and date created.">
+                <img class="cs-browser-slide" src="assets/itracefresh/itracefresh-label-create-pti.jpg" alt="Create PTI Label wizard showing the pack date, product info, tracking info, printing options, and finalize print steps.">
+                <img class="cs-browser-slide" src="assets/itracefresh/itracefresh-label-hybrid-pallet.jpg" alt="Create Hybrid Pallet Label flow with the Add Product panel for entering product, lot, and pallet details.">
+                <img class="cs-browser-slide" src="assets/itracefresh/itracefresh-label-scan-activate.jpg" alt="Activate Item Labels step showing scanned item codes, total scans, and total unique products.">
+                <img class="cs-browser-slide" src="assets/itracefresh/itracefresh-label-trace-summary.jpg" alt="Trace Summary Report showing ship-from and ship-to locations on a map alongside totals for products, sales, and customers.">
+              </div>
+            </div>
+
+            <div class="cs-brand-controls">
+              <button class="cs-brand-arrow cs-brand-arrow-prev" type="button" aria-label="Previous screen">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+              </button>
+              <div class="cs-brand-dots" role="tablist" aria-label="Label Management screens">
+                <button class="cs-brand-dot is-active" type="button" role="tab" aria-selected="true" aria-label="Show label list screen"></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show create PTI label screen"></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show create hybrid pallet label screen"></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show scan and activate screen"></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show trace summary report screen"></button>
+              </div>
+              <button class="cs-brand-arrow cs-brand-arrow-next" type="button" aria-label="Next screen">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-subsection">
+          <div class="cs-feature-panel-header">
+            <h3>Brand Management</h3>
+          </div>
+          <div class="cs-feature-grid">
+            <div class="cs-feature-card">
+              <div class="cs-feature-card-top">
+                <span class="cs-feature-icon"><img src="assets/itracefresh/icons/icon-layout.svg" alt=""></span>
+                <span class="cs-feature-number">01</span>
+              </div>
+              <h4 class="cs-feature-title">Centralized Marketing Hub</h4>
+              <button type="button" class="cs-feature-toggle" aria-expanded="false">Read more</button>
+              <p class="cs-feature-detail">A landing page that gives users a single place to view and manage marketing pages across all products.</p>
+            </div>
+            <div class="cs-feature-card">
+              <div class="cs-feature-card-top">
+                <span class="cs-feature-icon"><img src="assets/itracefresh/icons/icon-bar-chart.svg" alt=""></span>
+                <span class="cs-feature-number">02</span>
+              </div>
+              <h4 class="cs-feature-title">Marketing Analytics</h4>
+              <button type="button" class="cs-feature-toggle" aria-expanded="false">Read more</button>
+              <p class="cs-feature-detail">Track activated labels, total scans, and scan rates to understand the impact of marketing efforts.</p>
+            </div>
+            <div class="cs-feature-card">
+              <div class="cs-feature-card-top">
+                <span class="cs-feature-icon"><img src="assets/itracefresh/icons/icon-trending-up.svg" alt=""></span>
+                <span class="cs-feature-number">03</span>
+              </div>
+              <h4 class="cs-feature-title">Dashboard &amp; Trend Insights</h4>
+              <button type="button" class="cs-feature-toggle" aria-expanded="false">Read more</button>
+              <p class="cs-feature-detail">Visualize key metrics and performance trends through an at-a-glance analytics dashboard.</p>
+            </div>
+            <div class="cs-feature-card">
+              <div class="cs-feature-card-top">
+                <span class="cs-feature-icon"><img src="assets/itracefresh/icons/icon-users.svg" alt=""></span>
+                <span class="cs-feature-number">04</span>
+              </div>
+              <h4 class="cs-feature-title">Customer Insights</h4>
+              <button type="button" class="cs-feature-toggle" aria-expanded="false">Read more</button>
+              <p class="cs-feature-detail">Access customer engagement data and sentiment to better understand how users interact with products.</p>
+            </div>
+            <div class="cs-feature-card">
+              <div class="cs-feature-card-top">
+                <span class="cs-feature-icon"><img src="assets/itracefresh/icons/icon-sliders.svg" alt=""></span>
+                <span class="cs-feature-number">05</span>
+              </div>
+              <h4 class="cs-feature-title">Self-Service Configuration</h4>
+              <button type="button" class="cs-feature-toggle" aria-expanded="false">Read more</button>
+              <p class="cs-feature-detail">Configure and manage web and mobile experiences without requiring technical support.</p>
+            </div>
+          </div>
+          <div class="cs-brand-showcase">
+            <span class="cs-brand-blob cs-brand-blob-1" aria-hidden="true"></span>
+            <span class="cs-brand-blob cs-brand-blob-2" aria-hidden="true"></span>
+            <span class="cs-brand-blob cs-brand-blob-3" aria-hidden="true"></span>
+
+            <div class="cs-brand-stage-frame">
+              <div class="cs-brand-stage cs-browser-mockup is-active">
+                <div class="cs-browser-chrome">
+                  <span class="cs-browser-dot" aria-hidden="true"></span>
+                  <span class="cs-browser-dot" aria-hidden="true"></span>
+                  <span class="cs-browser-dot" aria-hidden="true"></span>
+                  <span class="cs-browser-url">app.itracefresh.com</span>
+                </div>
+                <div class="cs-browser-screen">
+                  <img class="cs-browser-slide is-active" src="assets/itracefresh/itracefresh-brand-template-configured.jpg" alt="Brand Template Creation configuration screen with a brand, product, and ranch selected, showing the live preview populated with real content.">
+                  <img class="cs-browser-slide" src="assets/itracefresh/itracefresh-brand-overview.jpg" alt="Brand Overview page showing scan trends, feedback breakdown, and most common review phrases for a single brand.">
+                  <img class="cs-browser-slide" src="assets/itracefresh/itracefresh-brand-dashboard.jpg" alt="Brand Dashboard showing most-scanned locations, overall scan trend across all brands, and a table comparing activated labels, scans, and scan rate per brand.">
+                </div>
+              </div>
+
+              <div class="cs-brand-stage cs-scroll-phone">
+                <div class="cs-scroll-phone-screen">
+                  <img class="cs-scroll-phone-content" src="assets/itracefresh/itracefresh-consumer-scan-scroll.png" alt="Consumer-facing mobile page shown after scanning a PTI label: product info, pack date, lot code, grower and region, an interactive farm map, grower story, and a review form.">
+                  <img class="cs-scroll-phone-statusbar" src="assets/itracefresh/itracefresh-consumer-scan-statusbar.png" alt="" aria-hidden="true">
+                </div>
+              </div>
+            </div>
+
+            <div class="cs-brand-controls">
+              <button class="cs-brand-arrow cs-brand-arrow-prev" type="button" aria-label="Previous screen">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+              </button>
+              <div class="cs-brand-dots" role="tablist" aria-label="Brand Management screens">
+                <button class="cs-brand-dot is-active" type="button" role="tab" aria-selected="true" aria-label="Show brand template configuration screen"></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show brand overview screen"></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show brand dashboard screen"></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show mobile consumer scan screen"></button>
+              </div>
+              <button class="cs-brand-arrow cs-brand-arrow-next" type="button" aria-label="Next screen">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-subsection">
+          <div class="cs-feature-panel-header">
+            <h3>Recall Management</h3>
+          </div>
+          <div class="cs-feature-grid">
+            <div class="cs-feature-card">
+              <div class="cs-feature-card-top">
+                <span class="cs-feature-icon"><img src="assets/itracefresh/icons/icon-layout.svg" alt=""></span>
+                <span class="cs-feature-number">01</span>
+              </div>
+              <h4 class="cs-feature-title">Centralized Recall Dashboard</h4>
+              <button type="button" class="cs-feature-toggle" aria-expanded="false">Read more</button>
+              <p class="cs-feature-detail">A single view of every active and completed recall, showing status, event type, and percent completed at a glance.</p>
+            </div>
+            <div class="cs-feature-card">
+              <div class="cs-feature-card-top">
+                <span class="cs-feature-icon"><img src="assets/itracefresh/icons/icon-cursor.svg" alt=""></span>
+                <span class="cs-feature-number">02</span>
+              </div>
+              <h4 class="cs-feature-title">Guided Recall Creation</h4>
+              <button type="button" class="cs-feature-toggle" aria-expanded="false">Read more</button>
+              <p class="cs-feature-detail">A step-by-step wizard walks growers through event details, product details, purchase orders, and an impact summary.</p>
+            </div>
+            <div class="cs-feature-card">
+              <div class="cs-feature-card-top">
+                <span class="cs-feature-icon"><img src="assets/itracefresh/icons/icon-activity.svg" alt=""></span>
+                <span class="cs-feature-number">03</span>
+              </div>
+              <h4 class="cs-feature-title">Automated Notifications</h4>
+              <button type="button" class="cs-feature-toggle" aria-expanded="false">Read more</button>
+              <p class="cs-feature-detail">Pre-built recall warning templates are scheduled and sent to every affected customer contact automatically.</p>
+            </div>
+            <div class="cs-feature-card">
+              <div class="cs-feature-card-top">
+                <span class="cs-feature-icon"><img src="assets/itracefresh/icons/icon-bar-chart.svg" alt=""></span>
+                <span class="cs-feature-number">04</span>
+              </div>
+              <h4 class="cs-feature-title">Real-Time Impact Tracking</h4>
+              <button type="button" class="cs-feature-toggle" aria-expanded="false">Read more</button>
+              <p class="cs-feature-detail">Monitor location progress and time elapsed, and see estimated product cost and loss as the response unfolds.</p>
+            </div>
+            <div class="cs-feature-card">
+              <div class="cs-feature-card-top">
+                <span class="cs-feature-icon"><img src="assets/itracefresh/icons/icon-shield.svg" alt=""></span>
+                <span class="cs-feature-number">05</span>
+              </div>
+              <h4 class="cs-feature-title">Attachments &amp; Audit Trail</h4>
+              <button type="button" class="cs-feature-toggle" aria-expanded="false">Read more</button>
+              <p class="cs-feature-detail">Collect DC and store attachments per customer and maintain a full audit trail for every recall event.</p>
+            </div>
+          </div>
+
+          <div class="cs-mockup-showcase">
+            <span class="cs-brand-blob cs-brand-blob-1" aria-hidden="true"></span>
+            <span class="cs-brand-blob cs-brand-blob-2" aria-hidden="true"></span>
+            <span class="cs-brand-blob cs-brand-blob-3" aria-hidden="true"></span>
+
+            <div class="cs-browser-mockup">
+              <div class="cs-browser-chrome">
+                <span class="cs-browser-dot" aria-hidden="true"></span>
+                <span class="cs-browser-dot" aria-hidden="true"></span>
+                <span class="cs-browser-dot" aria-hidden="true"></span>
+                <span class="cs-browser-url">app.itracefresh.com</span>
+              </div>
+              <div class="cs-browser-screen">
+                <img class="cs-browser-slide is-active" src="assets/itracefresh/itracefresh-recall-dashboard.jpg" alt="Recall Management list view showing active recalls with their status, event type, and percent completed.">
+                <img class="cs-browser-slide" src="assets/itracefresh/itracefresh-recall-create-event.jpg" alt="Create Recall Event wizard, Step 1: entering the event name, recall type, and summary.">
+                <img class="cs-browser-slide" src="assets/itracefresh/itracefresh-recall-notification.jpg" alt="Start Recall Event notification step showing the scheduled recall warning message template.">
+                <img class="cs-browser-slide" src="assets/itracefresh/itracefresh-recall-status.jpg" alt="Recall status dashboard showing 100% completed location progress, time elapsed, and a product loss summary.">
+                <img class="cs-browser-slide" src="assets/itracefresh/itracefresh-recall-attachments.jpg" alt="Recall attachments tab showing DC and store attachments collected per customer.">
+              </div>
+            </div>
+
+            <div class="cs-brand-controls">
+              <button class="cs-brand-arrow cs-brand-arrow-prev" type="button" aria-label="Previous screen">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+              </button>
+              <div class="cs-brand-dots" role="tablist" aria-label="Recall Management screens">
+                <button class="cs-brand-dot is-active" type="button" role="tab" aria-selected="true" aria-label="Show recall dashboard screen"></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show create recall event screen"></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show notification screen"></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show recall status screen"></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show attachments screen"></button>
+              </div>
+              <button class="cs-brand-arrow cs-brand-arrow-next" type="button" aria-label="Next screen">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="cs-section-v2">
+      <div class="cs-section-header">
+        <span class="cs-section-number">09</span>
+        <h2>My Biggest Takeaways</h2>
+      </div>
+      <div class="cs-section-body">
+        <img class="cs-image cs-image-plain" src="assets/itracefresh/itracefresh-lessons-v2.png" alt="Lessons learned diagram with six callouts: shared understanding, reduce bottlenecks, on-site visits, foster relationships, customer feedback, and promoting usability testing.">
       </div>
     </div>
 
@@ -179,18 +874,24 @@
     </div>
   </section>
 
-</main>
 
-<footer class="site-footer">
-  <div class="footer-inner">
-    <p>© 2026 Ramin Partovi. Designed and built in San Francisco.</p>
-    <nav aria-label="Footer">
-      <a href="../index.html#work">Work</a>
-      <a href="../index.html#resume">Resume</a>
-      <a href="../index.html#contact">Contact</a>
-    </nav>
+  <div class="cs-lightbox" role="dialog" aria-modal="true" aria-label="Expanded image">
+    <button class="cs-lightbox-close" type="button" aria-label="Close expanded image">&times;</button>
+    <div class="cs-lightbox-content">
+      <img src="" alt="">
+      <p class="cs-lightbox-caption"></p>
+    </div>
+    <div class="cs-lightbox-gallery">
+      <img src="assets/itracefresh/itracefresh-benchmark-eff-legacy.jpg" alt="Legacy effectiveness for Task 2, Create a PTI Label: 78% success (14), 22% non success (4).">
+      <img src="assets/itracefresh/itracefresh-benchmark-eff-new.jpg" alt="New prototype effectiveness for Task 2, Create a PTI Label: 92% success (11), 8% non success (1).">
+      <img src="assets/itracefresh/itracefresh-benchmark-time-legacy.jpg" alt="Legacy time on task: mean 2m 45s / median 2m 32s for success, mean 3m 21s / median 2m 44s for non success.">
+      <img src="assets/itracefresh/itracefresh-benchmark-time-new.jpg" alt="New prototype time on task: mean 2m 28s / median 2m 46s for success, mean 2m 27s / median 2m 27s for non success.">
+      <img src="assets/itracefresh/itracefresh-benchmark-q1-legacy.jpg" alt="Legacy task difficulty rating: 11% very difficult, 22% difficult, 11% neutral, 44% easy, 11% very easy.">
+      <img src="assets/itracefresh/itracefresh-benchmark-q1-new.jpg" alt="New prototype task difficulty rating: 8% very difficult, 0% difficult, 50% neutral, 17% easy, 25% very easy.">
+    </div>
   </div>
-</footer>
+
+</main>
 
 <script src="../js/main.js"></script>
 </body>

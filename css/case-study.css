@@ -18,6 +18,24 @@
   padding-bottom: 64px;
   border-bottom: 1px solid var(--color-grey-88);
 }
+.cs-hero-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+.cs-hero-text { flex: 1 1 480px; min-width: 0; }
+.cs-hero-phones {
+  flex: 1 1 440px;
+  max-width: 480px;
+  width: 100%;
+  display: block;
+}
+@media (max-width: 900px) {
+  .cs-hero-row { flex-direction: column-reverse; }
+  .cs-hero-phones { max-width: 340px; }
+}
+
 .cs-label {
   font-family: var(--font-mono);
   font-size: 0.875rem;
@@ -35,12 +53,67 @@
   padding-top: 16px;
   max-width: 780px;
 }
+/* iTracefresh hero title: sized to stay on one line within the hero's
+   text column (other case study headlines are intentionally longer and wrap). */
+.cs-hero h1.cs-hero-title-fit {
+  font-size: clamp(1.6rem, 1.7vw + 0.85rem, 2.3rem);
+}
 .cs-hero-sub {
   font-size: 1.125rem;
   line-height: 1.6;
   color: var(--color-grey-45);
   max-width: 620px;
   padding-top: 20px;
+}
+
+.cs-hero-badge-row {
+  display: flex;
+  padding: 10px 0;
+  margin-top: 24px;
+}
+.cs-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 16px;
+  border-radius: 100px;
+  background: var(--color-white);
+  box-shadow: 0 1px 2px rgba(12, 12, 13, 0.1), 0 1px 2px rgba(12, 12, 13, 0.05);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--color-black);
+}
+.cs-hero-stats {
+  display: flex;
+  gap: 24px;
+}
+.cs-hero-stat {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 32px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 1px 4px rgba(12, 12, 13, 0.1), 0 1px 4px rgba(12, 12, 13, 0.05);
+}
+.cs-hero-stat-value {
+  font-weight: 800;
+  font-size: 3rem;
+  letter-spacing: -0.02em;
+  color: var(--cs-accent, var(--color-black));
+}
+.cs-hero-stat-label {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--color-grey-45);
+}
+@media (max-width: 640px) {
+  .cs-hero-stats { flex-direction: column; }
+  .cs-hero-stat { padding: 24px; }
 }
 
 .cs-meta {
@@ -99,6 +172,13 @@
   color: var(--color-grey-45);
   max-width: 640px;
 }
+.cs-section-body p.cs-lead {
+  font-size: 1.1875rem;
+  line-height: 1.6;
+  font-weight: 500;
+  color: var(--color-black);
+  max-width: 680px;
+}
 .cs-section-body ul {
   display: flex;
   flex-direction: column;
@@ -130,6 +210,14 @@
   border: 1px solid var(--color-grey-88);
   box-shadow: 0 20px 40px -24px rgba(0, 0, 0, 0.25);
 }
+.cs-image-plain {
+  border: none;
+  box-shadow: none;
+}
+.cs-image-70 {
+  width: 70%;
+  margin: 0 auto;
+}
 .cs-image-caption {
   display: block;
   margin-top: -8px;
@@ -137,6 +225,1178 @@
   line-height: 1.5;
   color: var(--color-grey-45);
   max-width: 640px;
+}
+
+.cs-hero-image {
+  width: 100%;
+  display: block;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-grey-88);
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.3);
+  margin-top: 48px;
+}
+
+.cs-image-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.cs-image-row > div {
+  flex: 1 1 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.cs-image-row .cs-image { margin: 0; }
+
+/* Brand Management: "Highlighted Features" — a badge + heading over a row
+   of numbered feature cards, per the Figma design. No panel wrapper: badge,
+   heading and cards sit directly on the page background. The cards use the
+   same hover-to-reveal "Read more" mechanic as the section 01 illustration
+   cards — fixed card height, icon/title/toggle cross-fade out while the
+   detail copy fades in over the same box, so hovering never changes the
+   card's (or its row-mates') height. */
+.cs-feature-panel-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  /* .cs-subsection already puts a 16px flex gap after this element, so
+     this margin only needs to cover the remaining 8px to total 24px. */
+  margin-bottom: 8px;
+}
+.cs-feature-badge {
+  flex-shrink: 0;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--cs-accent, var(--color-black)) 12%, white);
+  color: var(--cs-accent, var(--color-black));
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.cs-feature-panel-header h3 {
+  font-weight: 800;
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+  color: var(--color-black);
+}
+.cs-feature-grid {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+}
+.cs-feature-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1 1 0;
+  min-width: 200px;
+  height: 220px;
+  padding: 24px;
+  background: var(--color-white);
+  border: 1px solid var(--color-grey-88);
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -2px rgba(0, 37, 165, 0.02);
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.cs-feature-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+.cs-feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--cs-accent, var(--color-black)) 12%, white);
+}
+.cs-feature-icon img { width: 18px; height: 18px; }
+.cs-feature-number {
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.01em;
+  color: var(--cs-accent, var(--color-black));
+}
+.cs-feature-title {
+  flex-shrink: 0;
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: var(--color-black);
+}
+.cs-feature-card-top,
+.cs-feature-title,
+.cs-feature-toggle {
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+.cs-feature-toggle {
+  align-self: flex-start;
+  flex-shrink: 0;
+  margin-top: -8px;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  color: var(--color-grey-45);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.cs-feature-toggle:hover,
+.cs-feature-toggle:focus-visible {
+  color: var(--cs-accent, var(--color-black));
+}
+.cs-feature-detail {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  overflow-y: auto;
+  margin: 0;
+  padding: 24px;
+  background: var(--color-white);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--color-grey-45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.cs-feature-card:hover,
+.cs-feature-card:focus-within,
+.cs-feature-card.is-expanded {
+  border-color: var(--cs-accent, var(--color-black));
+  box-shadow: 0 12px 28px -16px rgba(10, 10, 12, 0.2);
+}
+.cs-feature-card:hover .cs-feature-card-top,
+.cs-feature-card:focus-within .cs-feature-card-top,
+.cs-feature-card.is-expanded .cs-feature-card-top,
+.cs-feature-card:hover .cs-feature-title,
+.cs-feature-card:focus-within .cs-feature-title,
+.cs-feature-card.is-expanded .cs-feature-title,
+.cs-feature-card:hover .cs-feature-toggle,
+.cs-feature-card:focus-within .cs-feature-toggle,
+.cs-feature-card.is-expanded .cs-feature-toggle {
+  opacity: 0;
+  visibility: hidden;
+}
+.cs-feature-card:hover .cs-feature-detail,
+.cs-feature-card:focus-within .cs-feature-detail,
+.cs-feature-card.is-expanded .cs-feature-detail {
+  opacity: 1;
+  pointer-events: auto;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cs-feature-card-top,
+  .cs-feature-title,
+  .cs-feature-toggle,
+  .cs-feature-detail,
+  .cs-feature-card { transition: none; }
+}
+
+/* Brand Management: a blurred color-blob backdrop (matching the Final
+   Design hero art) behind two mockups that cross-fade into each other —
+   first the web UI in a browser window, then the mobile UI in a phone
+   frame with its scroll animation. The phone stays in normal document flow
+   (defining the showcase's height); the browser mockup is absolutely
+   centered on top of it. Deliberately NOT using CSS Grid's "stack via
+   grid-area" trick here — it's had cross-browser auto-sizing quirks with
+   this particular mix of aspect-ratio boxes and absolutely-positioned
+   children, and plain absolute positioning is far more universally
+   reliable for this exact "two things centered in the same spot" case. */
+.cs-brand-showcase {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-white);
+  padding: 56px 24px;
+}
+.cs-brand-blob {
+  position: absolute;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  filter: blur(40px);
+}
+.cs-brand-blob-1 { width: 60%; left: -15%; top: -20%; background: #26a69a; }
+.cs-brand-blob-2 { width: 55%; right: -15%; top: -15%; background: #80cbc4; }
+.cs-brand-blob-3 { width: 50%; left: 20%; bottom: -25%; background: #b2dfdb; }
+
+/* Padding-less positioning context for the two stages, so the browser
+   mockup's absolute percentage width resolves against the same box the
+   (normal-flow) phone's percentage width does. Without this wrapper the
+   browser mockup's % was measured against the showcase's padding box while
+   the phone's % was measured against its content box — two different
+   reference widths — which is what caused the mismatched/gappy layout. */
+.cs-brand-stage-frame {
+  position: relative;
+}
+
+.cs-brand-stage {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+.cs-brand-stage.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.cs-brand-stage.cs-browser-mockup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Carousel controls: arrows + dot navigation, overlaid on the showcase
+   itself (bottom-center) so it reads as part of the image, not a separate
+   element below it. Lets the user jump straight to any of the three desktop
+   screens or the mobile screen instead of waiting for the auto-advance. */
+.cs-brand-controls {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 8px 20px -8px rgba(0, 0, 0, 0.3);
+}
+.cs-brand-dots {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.cs-brand-dot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border-radius: 50%;
+  border: 2px solid var(--cs-accent, var(--color-black));
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+.cs-brand-dot:hover { transform: scale(1.2); }
+.cs-brand-dot:focus-visible { outline: 2px solid var(--cs-accent, var(--color-black)); outline-offset: 3px; }
+.cs-brand-dot.is-active { background: var(--cs-accent, var(--color-black)); }
+.cs-brand-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: none;
+  color: var(--cs-accent, var(--color-black));
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.cs-brand-arrow:hover { background: rgba(0, 0, 0, 0.06); }
+.cs-brand-arrow:focus-visible { outline: 2px solid var(--cs-accent, var(--color-black)); outline-offset: 2px; }
+.cs-brand-arrow svg { width: 16px; height: 16px; }
+
+/* Browser-window mockup: the two desktop app screens cross-fade inside one
+   frame, showing "the larger web UI" before the showcase hands off to the
+   phone stage above. */
+.cs-browser-mockup {
+  width: min(640px, 100%);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--color-white);
+  border: 1px solid var(--color-grey-88);
+  box-shadow: 0 40px 70px -30px rgba(0, 0, 0, 0.4);
+}
+.cs-browser-chrome {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background: var(--color-grey-95);
+  border-bottom: 1px solid var(--color-grey-88);
+}
+.cs-browser-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--color-grey-88);
+  flex-shrink: 0;
+}
+.cs-browser-dot:nth-child(1) { background: #ff5f57; }
+.cs-browser-dot:nth-child(2) { background: #febc2e; }
+.cs-browser-dot:nth-child(3) { background: #28c840; }
+.cs-browser-url {
+  margin-left: 10px;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.6875rem;
+  color: var(--color-grey-45);
+  background: var(--color-white);
+  border: 1px solid var(--color-grey-88);
+  border-radius: 999px;
+  padding: 3px 12px;
+}
+.cs-browser-screen {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 75%; /* 4:3, via padding instead of aspect-ratio so the
+    absolutely-positioned slides below always get a definite pixel height to
+    resolve height:100% against, regardless of browser aspect-ratio support. */
+  background: var(--color-white);
+}
+.cs-browser-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.cs-browser-slide.is-active { opacity: 1; }
+@media (max-width: 640px) {
+  .cs-brand-showcase { padding: 40px 16px; }
+}
+
+/* Shared desktop-mockup showcase: reuses the Brand Management blob backdrop,
+   browser-chrome mockup, and dot/arrow controls so any subsection's screens
+   (Recall Management, Label Management, ...) read as the same "web mockup"
+   style as the Brand Management showcase above. */
+.cs-mockup-showcase {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-white);
+  padding: 56px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* Without an explicit position, this static box would paint *underneath*
+   the absolutely-positioned blur blobs (positioned elements always paint
+   above static ones, regardless of source order), which is what made the
+   mockup look washed out/translucent. Promoting it to its own stacking
+   context above the blobs fixes that. */
+.cs-mockup-showcase .cs-browser-mockup {
+  position: relative;
+  z-index: 1;
+}
+/* These slides are 1800x1280 screenshots (aspect ratio 71.1%), not the 75%
+   (4:3) the shared .cs-browser-screen assumes for Brand Management's own
+   screens. Matching the ratio exactly makes the image fill the frame
+   edge-to-edge with no letterboxing gap in either direction. */
+.cs-mockup-showcase .cs-browser-screen {
+  padding-bottom: 71.1%;
+}
+/* Faster cross-fade between slides than the Brand Management showcase. */
+.cs-mockup-showcase .cs-browser-slide {
+  transition: opacity 0.3s ease;
+}
+@media (max-width: 640px) {
+  .cs-mockup-showcase { padding: 40px 16px; }
+}
+
+.cs-image-quad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.cs-image-quad img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  display: block;
+  border: 1px solid var(--color-grey-88);
+  box-shadow: 0 20px 40px -24px rgba(0, 0, 0, 0.25);
+}
+@media (max-width: 640px) {
+  .cs-image-quad { grid-template-columns: repeat(2, 1fr); }
+}
+
+.cs-media-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+}
+.cs-media-row p { flex: 1 1 420px; min-width: 0; margin: 0; }
+.cs-media-row-image {
+  flex: 0 0 340px;
+  max-width: 340px;
+  margin: 0;
+}
+@media (max-width: 860px) {
+  .cs-media-row { flex-direction: column; }
+  .cs-media-row-image { flex: 0 0 auto; max-width: 340px; }
+}
+
+.cs-image-small {
+  width: 100%;
+  max-width: 280px;
+  display: block;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-grey-88);
+  box-shadow: 0 20px 40px -24px rgba(0, 0, 0, 0.25);
+}
+
+/* Auto-scrolling phone mockup: a tall screen capture pans behind a pinned
+   status bar, down and back up on a loop. The -77.1% keyframe is the scroll
+   distance for THIS asset (638x6036) inside a 9/19.5 phone viewport —
+   expressed as a % of the image's own height so it holds at any container
+   width; recompute it if either the image or the phone aspect ratio changes. */
+.cs-scroll-phone {
+  /* Solved so this always matches .cs-browser-mockup's height exactly, at
+     any container width, not just at the 640px desktop breakpoint:
+     browserHeight = min(640px, 100%) * 0.75 + 43 (chrome bar)
+     phoneWidth * (19.5/9) = browserHeight  =>  phoneWidth = browserHeight * 9/19.5 */
+  width: min(calc(34.615% + 19.85px), 241.39px);
+  aspect-ratio: 9 / 19.5;
+  margin: 0 auto;
+  padding: 12px;
+  background: var(--color-black);
+  border-radius: 40px;
+  box-shadow: 0 30px 60px -25px rgba(0, 0, 0, 0.35);
+}
+.cs-scroll-phone-screen {
+  width: 100%;
+  height: 100%;
+  border-radius: 28px;
+  overflow: hidden;
+  position: relative;
+  background: var(--color-white);
+}
+.cs-scroll-phone-content,
+.cs-scroll-phone-statusbar {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+.cs-scroll-phone-content {
+  z-index: 1;
+  animation: cs-scroll-phone-pan 16s ease-in-out infinite;
+  animation-play-state: paused;
+}
+.cs-scroll-phone.is-active .cs-scroll-phone-screen.is-visible .cs-scroll-phone-content {
+  animation-play-state: running;
+}
+.cs-scroll-phone-statusbar {
+  z-index: 2;
+}
+@keyframes cs-scroll-phone-pan {
+  0%, 6% { transform: translateY(0); }
+  47%, 53% { transform: translateY(-77.1%); }
+  94%, 100% { transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cs-scroll-phone-content {
+    animation: none;
+  }
+}
+
+/* Reveal-on-hover thumbnail: small image by default, caption text appears
+   on hover/focus, click opens the full-size version in a lightbox. */
+.cs-image-reveal {
+  margin: 0;
+  max-width: 280px;
+}
+.cs-image-reveal-lg {
+  max-width: 549px;
+}
+.cs-persona-row {
+  align-items: flex-start;
+}
+.cs-persona-row .cs-image-reveal-lg {
+  flex: 1 1 320px;
+}
+.cs-image-reveal-lg .cs-image-small {
+  max-width: 549px;
+  border-radius: 0;
+}
+.cs-image-reveal-lg .cs-image-reveal-trigger {
+  border-radius: 0;
+}
+.cs-image-reveal-trigger {
+  position: relative;
+  display: block;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: zoom-in;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.cs-image-reveal-trigger .cs-image-small {
+  margin: 0;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.cs-image-reveal-trigger:hover .cs-image-small,
+.cs-image-reveal-trigger:focus-visible .cs-image-small {
+  transform: scale(1.04);
+  filter: brightness(0.7);
+}
+.cs-image-reveal-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+.cs-image-reveal-trigger:hover .cs-image-reveal-overlay,
+.cs-image-reveal-trigger:focus-visible .cs-image-reveal-overlay {
+  opacity: 1;
+}
+.cs-image-reveal-icon {
+  width: 22px;
+  height: 22px;
+  color: var(--color-white);
+  flex-shrink: 0;
+}
+.cs-image-reveal-text {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--color-white);
+}
+
+.cs-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: rgba(10, 10, 12, 0.85);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease;
+}
+.cs-lightbox.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+.cs-lightbox-content {
+  max-width: min(880px, 100%);
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.cs-lightbox-content img {
+  max-width: 100%;
+  max-height: 76vh;
+  display: block;
+  border-radius: var(--radius-md);
+  box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.5);
+}
+.cs-lightbox-lg .cs-lightbox-content {
+  max-width: min(1280px, 100%);
+}
+.cs-lightbox-lg .cs-lightbox-content img {
+  max-height: 90vh;
+  border-radius: 0;
+}
+.cs-lightbox-caption {
+  color: var(--color-white);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  text-align: center;
+  max-width: 620px;
+}
+
+/* Gallery mode: the chart pile opens the same lightbox chrome (backdrop,
+   close button) but shows all 6 charts in a grid instead of one image. */
+.cs-lightbox-gallery {
+  display: none;
+  max-width: min(1440px, 100%);
+  max-height: 100%;
+  overflow-y: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  gap: 20px;
+  padding: 4px;
+}
+.cs-lightbox-gallery img {
+  width: 420px;
+  flex-shrink: 0;
+  display: block;
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
+}
+.cs-lightbox.cs-lightbox--gallery .cs-lightbox-content {
+  display: none;
+}
+.cs-lightbox.cs-lightbox--gallery .cs-lightbox-gallery {
+  display: flex;
+}
+.cs-lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--color-white);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+.cs-lightbox-close:hover { background: rgba(255, 255, 255, 0.24); }
+
+@media (prefers-reduced-motion: reduce) {
+  .cs-image-reveal-trigger .cs-image-small { transition: none; }
+  .cs-image-reveal-overlay { transition: none; }
+  .cs-lightbox { transition: none; }
+}
+
+.cs-table-wrap {
+  overflow-x: auto;
+  margin-top: 4px;
+}
+.cs-table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 640px;
+  font-size: 0.875rem;
+}
+.cs-table th,
+.cs-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--color-grey-88);
+  text-align: left;
+}
+.cs-table th {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-grey-45);
+  font-weight: 500;
+}
+.cs-table td { color: var(--color-grey-45); }
+.cs-table td:first-child { color: var(--color-black); font-weight: 500; }
+.cs-table td.yes { color: #1b998b; font-weight: 700; text-align: center; }
+.cs-table td.no { color: var(--color-grey-88); text-align: center; }
+.cs-table tr.cs-table-highlight td:first-child { color: #1b998b; }
+.cs-table th.cs-table-col-highlight,
+.cs-table td.cs-table-col-highlight {
+  background: color-mix(in srgb, var(--cs-accent, #1b998b) 12%, white);
+}
+
+@media (max-width: 640px) {
+  .cs-hero-image { margin-top: 32px; }
+}
+
+/* ---------- Numbered section header (stacked layout variant) ---------- */
+.cs-section-v2 {
+  padding: 64px 0;
+  border-bottom: 1px solid var(--color-grey-88);
+  display: flex;
+  flex-direction: column;
+}
+.cs-section-v2:last-of-type { border-bottom: none; }
+
+.cs-section-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+.cs-section-header.cs-section-header--wide-gap { margin-bottom: 32px; }
+.cs-section-number {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: var(--cs-accent, var(--color-black));
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cs-section-header h2 {
+  font-weight: 700;
+  font-size: clamp(1.5rem, 1.4vw + 1.1rem, 2rem);
+  letter-spacing: -0.02em;
+  color: var(--color-black);
+}
+
+.cs-section-v2 > .cs-section-label {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.cs-section-v2 .cs-section-body {
+  gap: 24px;
+}
+.cs-section-v2 .cs-section-body p,
+.cs-section-v2 .cs-section-body ul,
+.cs-section-v2 .cs-section-body li {
+  max-width: none;
+}
+.cs-section-v2 .cs-section-body h3 {
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: -0.01em;
+  color: var(--color-black);
+}
+.cs-section-v2 .cs-section-body > .cs-subsection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 8px;
+}
+.cs-section-v2 .cs-section-body > .cs-subsection:first-child { padding-top: 0; }
+
+/* This section's subsections need a wider 48px gap than the default pattern. */
+.cs-section-v2 .cs-section-body.cs-section-body--wide-gap { gap: 48px; }
+.cs-section-v2 .cs-section-body.cs-section-body--wide-gap > .cs-subsection { padding-top: 0; }
+
+@media (max-width: 640px) {
+  .cs-section-v2 { padding: 48px 0; }
+  .cs-section-header { gap: 14px; margin-bottom: 20px; }
+  .cs-section-number { width: 36px; height: 36px; font-size: 0.8125rem; }
+}
+
+/* Hover-to-reveal problem/insight cards */
+.cs-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: start;
+  gap: 16px;
+}
+.cs-card {
+  position: relative;
+  background: var(--color-grey-96);
+  border: 1px solid var(--color-grey-88);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.cs-card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in srgb, var(--cs-accent, var(--color-black)) 12%, white);
+  color: var(--cs-accent, var(--color-black));
+}
+.cs-card-icon svg,
+.cs-card-icon img { width: 24px; height: 24px; }
+
+.cs-card-title {
+  display: block;
+  font-weight: 700;
+  font-size: 1.0625rem;
+  letter-spacing: -0.01em;
+  color: var(--color-black);
+}
+.cs-card-detail {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--color-grey-45);
+  transition: max-height 0.35s ease, opacity 0.25s ease 0.05s, margin-top 0.35s ease;
+}
+.cs-card-toggle {
+  display: block;
+  max-height: 20px;
+  margin-top: 10px;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  color: var(--color-grey-45);
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: color 0.2s ease, opacity 0.2s ease, max-height 0.2s ease, margin-top 0.2s ease;
+}
+.cs-card-toggle:hover,
+.cs-card-toggle:focus-visible {
+  color: var(--cs-accent, var(--color-black));
+}
+.cs-card:hover,
+.cs-card:focus-within,
+.cs-card.is-expanded {
+  background: var(--color-white);
+  border-color: var(--cs-accent, var(--color-black));
+}
+.cs-card:hover .cs-card-detail,
+.cs-card:focus-within .cs-card-detail,
+.cs-card.is-expanded .cs-card-detail {
+  max-height: 200px;
+  opacity: 1;
+  margin-top: 10px;
+}
+/* Hovering already reveals the detail text, so the toggle is redundant —
+   hide it while purely hovered. Leave it visible on keyboard focus and on
+   a click-pinned (.is-expanded) card once the pointer moves away, since
+   that's the only way to collapse it back down again. */
+.cs-card:hover .cs-card-toggle {
+  opacity: 0;
+  max-height: 0;
+  margin-top: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  .cs-card-grid { grid-template-columns: 1fr; }
+}
+
+/* Static annotation cards — a colored tag, a callout line, and a step number.
+   Laid out as in the Figma source: a stacked column of cards beside the
+   screenshot, not a row. */
+.cs-ia-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 260px) 1fr;
+  align-items: flex-start;
+  gap: 32px;
+}
+.cs-ia-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  min-width: 0;
+}
+.cs-ia-layout .cs-image-small {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  border-radius: 0;
+}
+@media (max-width: 900px) {
+  .cs-ia-layout { grid-template-columns: 1fr; }
+  .cs-ia-cards { width: 100%; }
+  .cs-ia-layout .cs-image-small { max-width: 280px; }
+}
+.cs-ia-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: var(--color-white);
+  border: 1px solid var(--color-grey-88);
+  border-radius: var(--radius-md);
+  padding: 18px;
+  box-shadow: 0 20px 40px -28px rgba(0, 0, 0, 0.18);
+}
+.cs-ia-tag {
+  display: block;
+  width: 40px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--cs-accent, var(--color-black));
+}
+.cs-ia-card p {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--color-grey-45);
+  max-width: none;
+}
+
+/* Hover-to-reveal illustration cards — same reveal pattern as .cs-card,
+   built around a full illustration instead of a small icon. */
+.cs-illustration-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.cs-illustration-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: var(--color-white);
+  border: 2px solid var(--color-grey-88);
+  border-radius: 24px;
+  padding: 20px 20px 24px;
+  height: 320px;
+  overflow: hidden;
+  color: var(--cs-accent, var(--color-black));
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.cs-illustration-toggle {
+  flex-shrink: 0;
+  margin-top: 6px;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  color: var(--color-grey-45);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.cs-illustration-toggle:hover,
+.cs-illustration-toggle:focus-visible {
+  color: var(--cs-accent, var(--color-black));
+}
+/* Fixed-size stage: the illustration and the revealed body copy occupy the
+   same box and cross-fade, so hovering one card never changes its height
+   (or, via grid row stretch, any other card's). */
+.cs-illustration-stage {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+}
+.cs-illustration-figure {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease;
+}
+.cs-illustration-figure img,
+.cs-illustration-figure svg {
+  max-width: 100%;
+  max-height: 100%;
+}
+.cs-illustration-title {
+  flex-shrink: 0;
+  margin-bottom: 16px;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.35;
+  color: var(--cs-accent, var(--color-black));
+}
+.cs-illustration-detail {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  overflow-y: auto;
+  padding: 20px 20px 24px;
+  background: var(--color-white);
+  text-align: left;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--color-grey-45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.cs-illustration-card:hover,
+.cs-illustration-card:focus-within,
+.cs-illustration-card.is-expanded {
+  border-color: var(--cs-accent, var(--color-black));
+  box-shadow: 0 12px 28px -16px rgba(10, 10, 12, 0.2);
+}
+.cs-illustration-card:hover .cs-illustration-figure,
+.cs-illustration-card:focus-within .cs-illustration-figure,
+.cs-illustration-card.is-expanded .cs-illustration-figure,
+.cs-illustration-card:hover .cs-illustration-title,
+.cs-illustration-card:focus-within .cs-illustration-title,
+.cs-illustration-card.is-expanded .cs-illustration-title,
+.cs-illustration-card:hover .cs-illustration-toggle,
+.cs-illustration-card:focus-within .cs-illustration-toggle,
+.cs-illustration-card.is-expanded .cs-illustration-toggle {
+  opacity: 0;
+  visibility: hidden;
+}
+.cs-illustration-card:hover .cs-illustration-detail,
+.cs-illustration-card:focus-within .cs-illustration-detail,
+.cs-illustration-card.is-expanded .cs-illustration-detail {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (max-width: 900px) {
+  .cs-illustration-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .cs-illustration-grid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cs-illustration-toggle { transition: none; }
+  .cs-illustration-figure,
+  .cs-illustration-detail { transition: none; }
+}
+
+/* "What I was up against" — three bordered cards, each fading up into place
+   in sequence as the section scrolls into view (same reveal timing as the
+   card grid it replaced). */
+.cs-against-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: start;
+  gap: 24px;
+}
+.cs-against-card {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 32px;
+  border-radius: 24px;
+  background: #eaf4f2;
+  border: 1px solid var(--cs-accent, var(--color-black));
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.cs-against-grid.is-visible .cs-against-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+.cs-against-grid.is-visible .cs-against-card:nth-child(2) { transition-delay: 0.15s; }
+.cs-against-grid.is-visible .cs-against-card:nth-child(3) { transition-delay: 0.3s; }
+
+.cs-against-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cs-against-number {
+  font-weight: 700;
+  font-size: 1.75rem;
+  letter-spacing: -0.02em;
+  color: var(--cs-accent, var(--color-black));
+}
+.cs-against-icon { width: 24px; height: 24px; }
+.cs-against-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.cs-against-title {
+  display: block;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+  color: var(--color-black);
+}
+.cs-against-readmore {
+  display: none;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--cs-accent, var(--color-black));
+}
+.cs-against-detail-wrap { display: grid; }
+.cs-against-detail-inner { overflow: hidden; }
+.cs-against-detail {
+  margin: 0;
+  padding-top: 8px;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--color-grey-45);
+}
+
+/* Collapse-on-hover only for pointer devices that actually support hover;
+   touch devices keep the detail text always visible since there's no
+   hover state to reveal it with. */
+@media (hover: hover) and (pointer: fine) {
+  .cs-against-readmore {
+    display: block;
+    max-height: 20px;
+    opacity: 1;
+    overflow: hidden;
+    transition: opacity 0.2s ease, max-height 0.2s ease;
+  }
+  .cs-against-card:hover .cs-against-readmore {
+    opacity: 0;
+    max-height: 0;
+  }
+  .cs-against-detail-wrap {
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.35s ease;
+  }
+  .cs-against-card:hover .cs-against-detail-wrap { grid-template-rows: 1fr; }
+  .cs-against-detail {
+    opacity: 0;
+    transition: opacity 0.25s ease 0.05s;
+  }
+  .cs-against-card:hover .cs-against-detail { opacity: 1; }
+}
+
+@media (max-width: 700px) {
+  .cs-against-grid { grid-template-columns: 1fr; gap: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cs-against-card { opacity: 1; transform: none; transition: none; }
+}
+
+/* Objective / Methodology / Participation callouts */
+.cs-obj-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.cs-obj-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #009688;
+}
+.cs-obj-label::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #009688;
+  flex-shrink: 0;
+}
+.cs-obj-detail {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.47;
+  color: var(--color-grey-45);
+  max-width: none;
 }
 
 /* Metrics — the recruiter-facing highlight */
@@ -162,7 +1422,7 @@
 }
 .cs-metrics-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 32px;
 }
 .cs-metric {
@@ -170,18 +1430,137 @@
   flex-direction: column;
   gap: 8px;
   padding-top: 20px;
-  border-top: 1px solid var(--white-13);
 }
 .cs-metric-value {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-weight: 700;
   font-size: clamp(1.75rem, 1.6vw + 1.2rem, 2.5rem);
   letter-spacing: -0.03em;
   color: var(--color-white);
 }
+.cs-metric-trend {
+  width: 0.62em;
+  height: 0.62em;
+  flex-shrink: 0;
+  color: var(--color-grey-62);
+}
+.cs-metric-trend--down { transform: rotate(180deg); }
 .cs-metric-label {
   font-size: 0.875rem;
   line-height: 1.5;
   color: var(--color-grey-62);
+}
+
+/* Benchmark results — UserZoom screenshot strip + stat card (itracefresh) */
+.cs-benchmark-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 8px 0 32px;
+}
+.cs-benchmark-shot {
+  flex-shrink: 0;
+  width: 312px;
+  height: 212px;
+  object-fit: cover;
+  border-radius: 0;
+  box-shadow: 0 8px 10px rgba(0, 37, 165, 0.06), 0 3px 14px rgba(0, 37, 165, 0.04), 0 5px 5px rgba(0, 37, 165, 0.1);
+}
+.cs-benchmark-shot--card {
+  width: 173px;
+  height: 187px;
+  border-radius: 10px;
+  box-shadow: 0 16px 24px rgba(0, 37, 165, 0.06), 0 6px 30px rgba(0, 37, 165, 0.04), 0 8px 10px rgba(0, 37, 165, 0.1);
+}
+
+/* Chart preview: shows just the first result-chart screenshot behind the
+   site's standard image-reveal hover (darken + expand icon + "See more"),
+   same as the persona images. Clicking opens the shared lightbox in gallery
+   mode (all 6 charts) instead of the single-image view. */
+.cs-benchmark-pile {
+  position: relative;
+  width: 312px;
+  height: 212px;
+  margin: 0;
+}
+.cs-benchmark-pile-images {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.cs-benchmark-pile-images .cs-image-small {
+  max-width: none;
+}
+.cs-benchmark-pile-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  min-width: 56px;
+  height: 56px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: rgba(10, 10, 12, 0.72);
+  color: var(--color-white);
+  font-size: 1.25rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.cs-benchmark-head { padding-bottom: 16px; }
+.cs-benchmark-card {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: start;
+  background: var(--color-white);
+  border: 1px solid var(--cs-accent, var(--color-black));
+  border-radius: 34px;
+  padding: 24px 56px 24px 24px;
+}
+.cs-benchmark-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.cs-benchmark-value {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 2.5rem;
+  letter-spacing: -0.03em;
+  color: var(--cs-accent, var(--color-black));
+}
+.cs-benchmark-trend {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  color: var(--color-grey-62);
+}
+.cs-benchmark-trend--down { transform: rotate(180deg); }
+.cs-benchmark-label {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--color-grey-62);
+  text-align: center;
+}
+@media (max-width: 860px) {
+  .cs-benchmark-card { padding: 24px; }
+}
+@media (max-width: 700px) {
+  .cs-benchmark-card { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .cs-benchmark-shot { width: 260px; height: 177px; }
+}
+@media (max-width: 480px) {
+  .cs-benchmark-card { grid-template-columns: 1fr; }
 }
 
 .cs-reflection {

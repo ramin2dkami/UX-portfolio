@@ -117,6 +117,10 @@ main > section {
   display: flex;
   justify-content: center;
   padding: 0 16px;
+  transition: transform 0.25s ease;
+}
+.site-header.is-hidden {
+  transform: translateY(calc(-100% - 16px));
 }
 .nav-pill {
   display: flex;
