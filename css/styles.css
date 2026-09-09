@@ -685,6 +685,12 @@ main > section {
   padding-top: 4px;
   max-width: 526px;
 }
+.case-study-lg h3 {
+  max-width: none;
+}
+@media (min-width: 861px) {
+  .case-study-lg h3 { white-space: nowrap; }
+}
 .case-study p {
   font-size: 0.9375rem;
   line-height: 1.6;
