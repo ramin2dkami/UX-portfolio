@@ -139,6 +139,23 @@
   font-weight: 500;
   color: var(--color-black);
 }
+/* A green accent bar anchored to this specific item (rather than a
+   standalone divider between items) so it still reads as "separating this
+   item out" even when flex-wrap stacks it onto its own line below Role. */
+.cs-meta-item--accent {
+  position: relative;
+  padding-left: 16px;
+}
+.cs-meta-item--accent::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 0;
+  bottom: 2px;
+  width: 3px;
+  border-radius: 999px;
+  background: var(--cs-accent, var(--color-grey-88));
+}
 
 .cs-section {
   padding: 64px 0;
@@ -354,17 +371,17 @@
 .cs-feature-toggle:focus-visible {
   color: var(--cs-accent, var(--color-black));
 }
-.cs-feature-detail {
+.cs-feature-card .cs-feature-detail {
   position: absolute;
   inset: 0;
   display: flex;
   align-items: center;
-  overflow-y: auto;
+  overflow: hidden;
   margin: 0;
   padding: 24px;
   background: var(--color-white);
-  font-size: 0.875rem;
-  line-height: 1.6;
+  font-size: 0.8125rem;
+  line-height: 1.45;
   color: var(--color-grey-45);
   opacity: 0;
   pointer-events: none;
@@ -846,12 +863,28 @@
   gap: 20px;
   padding: 4px;
 }
-.cs-lightbox-gallery img {
-  width: 420px;
+.cs-benchmark-figure {
+  position: relative;
+  margin: 0;
   flex-shrink: 0;
+}
+.cs-benchmark-figure img {
+  width: 420px;
   display: block;
   box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
 }
+.cs-benchmark-figure-tag {
+  position: absolute;
+  top: 15px;
+  right: 14px;
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.cs-benchmark-figure-tag--legacy { color: var(--color-grey-45); }
+.cs-benchmark-figure-tag--new { color: var(--cs-accent, var(--color-black)); }
 .cs-lightbox.cs-lightbox--gallery .cs-lightbox-content {
   display: none;
 }
