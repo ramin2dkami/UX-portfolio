@@ -407,7 +407,7 @@ main > section {
   flex-direction: column;
   gap: 12px;
   max-width: 512px;
-  margin-bottom: 48px;
+  margin-bottom: 32px;
 }
 .section-head p {
   font-size: 1.0625rem;
@@ -712,13 +712,6 @@ main > section {
   flex-direction: column;
   gap: 16px;
 }
-.resume-heading-row {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  text-align: center;
-}
 .resume-photo {
   width: 240px;
   height: 240px;
@@ -726,8 +719,8 @@ main > section {
   object-fit: cover;
   border: 3px solid var(--color-orange);
   flex-shrink: 0;
+  align-self: center;
 }
-.resume-intro h2 { padding-top: 4px; }
 .resume-intro > p {
   font-size: 1.0625rem;
   line-height: 1.6;
