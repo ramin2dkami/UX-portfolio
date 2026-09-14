@@ -825,8 +825,7 @@
   color: var(--color-white);
 }
 
-/* Clickable source-file card: represents a downloadable/original document
-   (e.g. the raw .xlsx behind an analysis) that opens in the doc lightbox. */
+/* Clickable research-artifact card that opens the full evaluation. */
 .cs-doc-card {
   display: flex;
   align-items: center;
@@ -864,6 +863,15 @@
   font-weight: 700;
   font-size: 0.6875rem;
   letter-spacing: 0.02em;
+}
+.cs-doc-card-icon--audit {
+  border: 1px solid color-mix(in srgb, var(--cs-accent, var(--color-black)) 22%, white);
+  background: color-mix(in srgb, var(--cs-accent, var(--color-black)) 10%, white);
+  color: var(--cs-accent, var(--color-black));
+}
+.cs-doc-card-icon--audit svg {
+  width: 32px;
+  height: 32px;
 }
 .cs-doc-card-body {
   flex: 1 1 auto;
@@ -1221,6 +1229,19 @@
   color: var(--color-grey-45);
   font-weight: 500;
 }
+.cs-table th.cs-table-company {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: center;
+}
+.cs-company-logo {
+  display: block;
+  width: 86px;
+  height: 30px;
+  margin: 0 auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
 .cs-table td { color: var(--color-grey-45); }
 .cs-table td:first-child { color: var(--color-black); font-weight: 500; }
 .cs-table td.yes { color: #1b998b; font-weight: 700; text-align: center; }
@@ -1242,8 +1263,6 @@
   display: flex;
   flex-direction: column;
 }
-.cs-section-v2:last-of-type { border-bottom: none; }
-
 .cs-section-header {
   display: flex;
   align-items: center;
@@ -1304,15 +1323,14 @@
 
 /* Heuristic audit summary: a compact view of the severity distribution and
    the scope of the redesign. */
-.cs-section-v2--audit { border-bottom: none; }
 .cs-section-v2--audit .cs-section-header {
   margin-bottom: 14px;
 }
 .cs-audit-lead {
   max-width: none;
   margin: 0 0 28px;
-  font-size: clamp(1rem, 1.1vw + 0.75rem, 1.25rem);
-  line-height: 1.55;
+  font-size: 1rem;
+  line-height: 1.7;
   color: var(--color-grey-45);
 }
 .cs-section-v2--audit .cs-doc-card {
@@ -2377,21 +2395,45 @@
   font-size: clamp(1.25rem, 2.2vw, 1.5rem);
   margin: 0 0 12px;
 }
+.cs-interview-takeaway p + p { margin-top: 14px; }
 .cs-interviews p { margin: 0; }
 .cs-interview-method {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 32px;
   padding: 12px 0;
 }
-.cs-interview-method > div { flex: 1; }
+.cs-interview-method > div { width: 100%; }
+.cs-interview-emphasis { color: var(--cs-accent); }
 .cs-interview-board {
-  flex: 0 1 44%;
+  flex: none;
+  width: 100%;
   min-width: 0;
 }
 .cs-interview-board .cs-image-reveal-trigger { width: 100%; border-radius: 14px; }
 .cs-interview-board .cs-image-small { width: 100%; height: auto; max-height: 360px; object-fit: contain; background: #f4f4f4; }
 .cs-interview-board figcaption { margin-top: 12px; font-size: .8125rem; line-height: 1.6; color: var(--color-grey-45); }
+.cs-interview-snapshots { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.cs-interview-snapshots .cs-interview-board { max-width: none; }
+.cs-interview-image-label {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 1;
+  padding: 8px 14px;
+  border: 1px solid #cce3ff;
+  border-radius: 10px;
+  background: #fff;
+  color: #236dbd;
+  font-size: .9375rem;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .06);
+  pointer-events: none;
+}
+.cs-interview-snapshots .cs-image-small { max-width: none; height: 340px; object-fit: cover; object-position: top; }
+.cs-interview-snapshots figcaption strong { font-size: 1rem; color: var(--color-black); }
+@media (max-width: 700px) { .cs-interview-snapshots { grid-template-columns: 1fr; } }
 .cs-interviews .cs-interview-method h3 { margin: 0 0 10px; }
 .cs-interview-source {
   flex: 0 0 auto;

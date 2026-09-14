@@ -450,6 +450,8 @@ if (lightbox) {
   const openLightbox = (trigger) => {
     if (trigger.dataset.boardSrc && boardImg) {
       lastFocused = trigger;
+      lightbox.querySelector('.cs-board-toolbar strong').textContent = 'Interview synthesis · ' + (trigger.dataset.boardTitle || 'Complete FigJam board');
+      boardImg.alt = 'All ' + (trigger.dataset.boardTitle || 'interview synthesis') + ' sticky notes from the FigJam board.';
       lightbox.classList.add('cs-lightbox--board', 'is-open');
       boardImg.src = trigger.dataset.boardSrc;
       document.body.style.overflow = 'hidden';
