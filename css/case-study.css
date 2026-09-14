@@ -455,7 +455,7 @@
   position: relative;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  background: var(--color-white);
+  background: color-mix(in srgb, var(--cs-accent, var(--color-black)) 8%, white);
   padding: 56px 24px;
 }
 .cs-brand-blob {
@@ -464,9 +464,9 @@
   border-radius: 50%;
   filter: blur(40px);
 }
-.cs-brand-blob-1 { width: 60%; left: -15%; top: -20%; background: #26a69a; }
-.cs-brand-blob-2 { width: 55%; right: -15%; top: -15%; background: #80cbc4; }
-.cs-brand-blob-3 { width: 50%; left: 20%; bottom: -25%; background: #b2dfdb; }
+.cs-brand-blob-1 { width: 60%; left: -15%; top: -20%; background: color-mix(in srgb, var(--cs-accent, var(--color-black)) 88%, #0759ad); }
+.cs-brand-blob-2 { width: 55%; right: -15%; top: -15%; background: color-mix(in srgb, var(--cs-accent, var(--color-black)) 58%, white); }
+.cs-brand-blob-3 { width: 50%; left: 20%; bottom: -25%; background: color-mix(in srgb, var(--cs-accent, var(--color-black)) 26%, white); }
 
 /* Padding-less positioning context for the two stages, so the browser
    mockup's absolute percentage width resolves against the same box the
@@ -624,7 +624,7 @@
   position: relative;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  background: var(--color-white);
+  background: color-mix(in srgb, var(--cs-accent, var(--color-black)) 8%, white);
   padding: 56px 24px;
   display: flex;
   flex-direction: column;
@@ -2435,6 +2435,12 @@
 .cs-interview-snapshots figcaption strong { font-size: 1rem; color: var(--color-black); }
 @media (max-width: 700px) { .cs-interview-snapshots { grid-template-columns: 1fr; } }
 .cs-interviews .cs-interview-method h3 { margin: 0 0 10px; }
+.cs-interview-subheading {
+  margin: 28px 0 20px;
+  font-size: clamp(1.15rem, 1.8vw, 1.35rem);
+  line-height: 1.25;
+  color: var(--color-black);
+}
 .cs-interview-source {
   flex: 0 0 auto;
   padding: 14px 18px;
@@ -2515,6 +2521,160 @@
   .cs-interview-grid { grid-template-columns: 1fr; }
   .cs-interview-method { flex-direction: column; align-items: flex-start; gap: 20px; }
   .cs-interview-card, .cs-interview-takeaway, .cs-interview-direction { padding: 24px; }
+}
+
+/* Research-backed opportunity themes at the close of the case study. */
+.cs-roadmap-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+}
+.cs-roadmap-step {
+  position: relative;
+  min-width: 0;
+}
+.cs-roadmap-step--first {
+  --roadmap-accent: #2e90fa;
+  --roadmap-bg: linear-gradient(135deg, #edf7ff 0%, #dcecff 100%);
+}
+.cs-roadmap-step:nth-child(2) {
+  --roadmap-accent: #0ca5a5;
+  --roadmap-bg: linear-gradient(135deg, #eefbfa 0%, #dff5f3 100%);
+}
+.cs-roadmap-step--last {
+  --roadmap-accent: #6757f5;
+  --roadmap-bg: linear-gradient(135deg, #f3f1ff 0%, #e8e4ff 100%);
+}
+.cs-roadmap-card {
+  height: 100%;
+  min-width: 0;
+  min-height: 280px;
+  padding: 34px 58px 34px 30px;
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr);
+  align-items: start;
+  gap: 24px;
+  border-radius: 18px;
+  background: var(--roadmap-bg);
+  clip-path: polygon(0 0, calc(100% - 48px) 0, 100% 50%, calc(100% - 48px) 100%, 0 100%);
+}
+.cs-roadmap-step:not(.cs-roadmap-step--first) .cs-roadmap-card {
+  padding-left: 72px;
+  clip-path: polygon(0 0, calc(100% - 48px) 0, 100% 50%, calc(100% - 48px) 100%, 0 100%, 48px 50%);
+}
+.cs-roadmap-step--last .cs-roadmap-card {
+  padding-right: 30px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 48px 50%);
+}
+.cs-roadmap-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 76px;
+  height: 76px;
+  margin-top: 8px;
+  border: 4px solid rgba(255, 255, 255, .85);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--roadmap-accent, var(--cs-accent)) 12%, white);
+  box-shadow: 0 8px 22px rgba(35, 109, 189, .12);
+}
+.cs-roadmap-icon img {
+  width: 32px;
+  height: 32px;
+}
+.cs-roadmap-step:nth-child(2) .cs-roadmap-icon img { filter: hue-rotate(325deg) saturate(.9); }
+.cs-roadmap-step--last .cs-roadmap-icon img { filter: hue-rotate(42deg) saturate(1.08); }
+.cs-roadmap-content { min-width: 0; }
+.cs-roadmap-index {
+  display: block;
+  margin-bottom: 14px;
+  color: var(--roadmap-accent, var(--cs-accent));
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -.03em;
+  line-height: 1;
+}
+.cs-roadmap-theme {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--roadmap-accent, var(--cs-accent));
+  font-family: var(--font-mono);
+  font-size: .6875rem;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+.cs-roadmap-section .cs-roadmap-card h3 {
+  margin: 0 0 16px;
+  font-size: 1.125rem;
+  line-height: 1.3;
+}
+.cs-section-body .cs-roadmap-list {
+  gap: 9px;
+  margin: 0;
+  max-width: none;
+}
+.cs-section-body .cs-roadmap-list li {
+  padding: 0 0 0 18px;
+  color: var(--color-grey-45);
+  font-size: .9375rem;
+  line-height: 1.45;
+}
+.cs-section-body .cs-roadmap-list li::before {
+  top: .62em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--roadmap-accent, var(--cs-accent));
+}
+@media (max-width: 1050px) {
+  .cs-roadmap-card,
+  .cs-roadmap-step:not(.cs-roadmap-step--first) .cs-roadmap-card {
+    padding-left: 56px;
+    grid-template-columns: 60px minmax(0, 1fr);
+    gap: 18px;
+  }
+  .cs-roadmap-step--first .cs-roadmap-card { padding-left: 24px; }
+  .cs-roadmap-step--last .cs-roadmap-card { padding-right: 24px; }
+  .cs-roadmap-icon { width: 60px; height: 60px; }
+  .cs-roadmap-icon img { width: 26px; height: 26px; }
+}
+@media (max-width: 820px) {
+  .cs-roadmap-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .cs-roadmap-step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    bottom: -12px;
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid var(--roadmap-accent, var(--cs-accent));
+    border-bottom: 2px solid var(--roadmap-accent, var(--cs-accent));
+    transform: rotate(45deg);
+  }
+  .cs-roadmap-card,
+  .cs-roadmap-step:not(.cs-roadmap-step--first) .cs-roadmap-card,
+  .cs-roadmap-step--last .cs-roadmap-card {
+    min-height: 0;
+    padding: 28px;
+    border-radius: 18px;
+    clip-path: none;
+  }
+}
+@media (max-width: 520px) {
+  .cs-roadmap-card,
+  .cs-roadmap-step:not(.cs-roadmap-step--first) .cs-roadmap-card,
+  .cs-roadmap-step--last .cs-roadmap-card {
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 16px;
+    padding: 22px;
+  }
+  .cs-roadmap-icon { width: 48px; height: 48px; margin-top: 4px; border-width: 3px; }
+  .cs-roadmap-icon img { width: 22px; height: 22px; }
 }
 
 .cs-footer-nav {
