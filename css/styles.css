@@ -712,12 +712,21 @@ main > section {
 .resume-grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
+  grid-template-areas: "timeline intro" "timeline tags";
   gap: 72px;
 }
+.timeline-card { grid-area: timeline; }
+.resume-intro { grid-area: intro; }
+.resume-tags { grid-area: tags; }
 .resume-intro {
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+.resume-tags {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 .resume-photo {
   width: 240px;
@@ -818,7 +827,7 @@ main > section {
 .contact-inner {
   background: var(--color-grey-95);
   border-radius: var(--radius-lg);
-  padding: 76px 76px 92px;
+  padding: 40px;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -832,8 +841,8 @@ main > section {
   z-index: 2;
 }
 .contact-sub {
-  font-size: 1.375rem;
-  line-height: 1.5;
+  font-size: 1.0625rem;
+  line-height: 1.6;
   color: var(--color-grey-45);
   letter-spacing: -0.018em;
   padding-top: 4px;
@@ -898,21 +907,26 @@ main > section {
 
 /* ---------- Responsive ---------- */
 @media (max-width: 980px) {
-  .resume-grid { grid-template-columns: 1fr; gap: 48px; }
-  .contact-inner { padding: 56px 40px 64px; }
+  .resume-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas: "intro" "timeline" "tags";
+    gap: 48px;
+  }
   .contact-decor { display: none; }
 }
 
 @media (max-width: 860px) {
-  .hero-inner { padding: 40px 28px; flex-direction: column; align-items: flex-start; }
-  .hero-visual { max-width: 100%; margin-top: 32px; }
+  .hero-inner { padding: 40px 28px; flex-direction: column; align-items: flex-start; justify-content: flex-start; }
+  .hero-visual { max-width: 100%; margin-top: 0; order: -1; flex: none; width: 100%; }
+  .hero-copy { margin-top: 32px; }
   .card-stat { right: 0; }
   .work-grid { grid-template-columns: 1fr; }
   .case-study-lg { grid-column: auto; display: flex; flex-direction: column; gap: 12px; }
-  .workflow-diagram { display: none; }
   .case-study-diagram { display: flex; flex-direction: column; gap: 12px; }
-  .plant-diagram { display: none; }
-  .pulse-bars { display: none; }
+  .case-study-content { display: contents; }
+  .link-arrow { order: 1; align-self: flex-start; }
+  .case-label-row { flex-direction: column; align-items: flex-start; gap: 8px; align-self: flex-start; }
+  .case-label { align-self: flex-start; }
 }
 
 @media (max-width: 640px) {
@@ -924,7 +938,7 @@ main > section {
   .hero-sub { max-width: 100%; }
   .work, .resume, .contact { padding-left: 16px; padding-right: 16px; }
   .case-study, .timeline-card { padding: 28px; }
-  .contact-inner { padding: 40px 24px 48px; border-radius: 24px; }
+  .contact-inner { padding: 28px; border-radius: 24px; }
   .contact-email { font-size: 1.75rem; }
   .footer-inner { padding: 0; flex-direction: column; align-items: flex-start; }
 }
