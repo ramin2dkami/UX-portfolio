@@ -428,8 +428,35 @@ if (lightbox) {
   const lightboxCaption = lightbox.querySelector('.cs-lightbox-caption');
   const closeBtn = lightbox.querySelector('.cs-lightbox-close');
   let lastFocused = null;
+  const boardViewport = lightbox.querySelector('.cs-board-viewport');
+  const boardImg = boardViewport?.querySelector('img');
+  let boardWidth = 0;
+  const fitBoard = () => {
+    if (!boardImg?.naturalWidth) return;
+    boardWidth = Math.min(boardViewport.clientWidth - 24, (boardViewport.clientHeight - 24) * boardImg.naturalWidth / boardImg.naturalHeight);
+    boardImg.style.width = boardWidth + 'px';
+    boardViewport.scrollTo(0, 0);
+  };
+  if (boardImg) boardImg.addEventListener('load', fitBoard);
+  lightbox.querySelectorAll('[data-board-zoom]').forEach(button => {
+    button.addEventListener('click', () => {
+      if (!boardImg?.naturalWidth) return;
+      if (button.dataset.boardZoom === 'fit') return fitBoard();
+      boardWidth = Math.max(120, Math.min(boardImg.naturalWidth, boardWidth * (button.dataset.boardZoom === 'in' ? 2 : .5)));
+      boardImg.style.width = boardWidth + 'px';
+    });
+  });
 
   const openLightbox = (trigger) => {
+    if (trigger.dataset.boardSrc && boardImg) {
+      lastFocused = trigger;
+      lightbox.classList.add('cs-lightbox--board', 'is-open');
+      boardImg.src = trigger.dataset.boardSrc;
+      document.body.style.overflow = 'hidden';
+      fitBoard();
+      closeBtn.focus();
+      return;
+    }
     const img = trigger.querySelector('img');
     const caption = trigger.querySelector('.cs-image-reveal-text');
     const isLarge = !!trigger.closest('.cs-image-reveal-lg');
@@ -452,9 +479,23 @@ if (lightbox) {
     closeBtn.focus();
   };
 
+  // Doc mode: opens a tall, independently-scrollable rendering of a source
+  // document (e.g. the raw spreadsheet behind an analysis) instead of an
+  // image fit to the viewport.
+  const openDoc = (trigger) => {
+    lastFocused = trigger;
+    lightbox.classList.remove('cs-lightbox-lg');
+    lightbox.classList.add('cs-lightbox--doc');
+    lightbox.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  };
+
   const closeLightbox = () => {
+    lightbox.classList.remove('cs-lightbox--board');
     lightbox.classList.remove('is-open');
     lightbox.classList.remove('cs-lightbox--gallery');
+    lightbox.classList.remove('cs-lightbox--doc');
     document.body.style.overflow = '';
     if (lastFocused) lastFocused.focus();
   };
@@ -465,6 +506,10 @@ if (lightbox) {
 
   document.querySelectorAll('.cs-benchmark-pile').forEach((pile) => {
     pile.addEventListener('click', () => openGallery(pile));
+  });
+
+  document.querySelectorAll('.cs-doc-trigger').forEach((trigger) => {
+    trigger.addEventListener('click', () => openDoc(trigger));
   });
 
   closeBtn.addEventListener('click', closeLightbox);
@@ -524,4 +569,3 @@ document.querySelectorAll('.cs-feature-toggle').forEach((toggle) => {
     toggle.textContent = expanded ? 'Show less' : 'Read more';
   });
 });
-

@@ -15,7 +15,7 @@
 
 <header class="site-header">
   <div class="nav-pill">
-    <a href="../index.html" class="logo active">Ramin Partovi</a>
+    <a href="../index.html" class="logo active"><img src="../assets/icons/logo-mark.png" alt="Ramin Partovi" class="logo-mark"></a>
     <span class="divider" aria-hidden="true"></span>
     <nav class="nav-links" aria-label="Primary">
       <a href="../index.html#work">Work</a>
@@ -77,60 +77,278 @@
     <div class="cs-section-v2">
       <div class="cs-section-header">
         <span class="cs-section-number">01</span>
-        <h2>Understanding The Landscape Of The Situation</h2>
+        <h2>The Executive Ask</h2>
       </div>
-      <div class="cs-section-body">
-        <div class="cs-illustration-grid">
-          <div class="cs-illustration-card">
-            <span class="cs-illustration-title">A mature product with no design function</span>
-            <div class="cs-illustration-stage">
-              <span class="cs-illustration-figure">
-                <img src="assets/vantage/illustration-redesign-feedback.svg" alt="" aria-hidden="true">
-              </span>
+      <div class="cs-section-body cs-section-body--wide-gap">
+        <p>Leadership brought me in to fix two problems at once: what was broken inside the product, and what was breaking for the business at scale. Neither could wait for the other, so both framed the brief from day one.</p>
+        <div class="cs-subsection">
+          <div class="cs-business-problem" aria-label="Four product constraints in the Vantage experience">
+            <div class="cs-business-problem-content">
+              <h3>The Product Problem</h3>
+              <p>Inside the product, the gap was structural: nobody owned the user experience, and nothing closed the loop with the people using it.</p>
+              <div class="cs-business-problem-list">
+                <details class="cs-business-problem-item">
+                  <summary>
+                    <span class="cs-business-problem-icon"><img src="assets/vantage/section-1-illustrations/design-function.png" alt=""></span>
+                    <span class="cs-business-problem-copy"><strong>No Design Function Existed</strong></span>
+                    <span class="cs-business-problem-chevron" aria-hidden="true"></span>
+                  </summary>
+                  <p>There was no dedicated design function anywhere in the company. Every interface decision had been made by engineers building toward a spec, not by anyone responsible for how the product actually felt to use.</p>
+                </details>
+                <details class="cs-business-problem-item">
+                  <summary>
+                    <span class="cs-business-problem-icon"><img src="assets/vantage/section-1-illustrations/customer-feedback-loop.png" alt=""></span>
+                    <span class="cs-business-problem-copy"><strong>No Customer Feedback Loop</strong></span>
+                    <span class="cs-business-problem-chevron" aria-hidden="true"></span>
+                  </summary>
+                  <p>Customer feedback had nowhere structured to go. Complaints and feature requests reached support or sales informally, but nothing fed that signal back into design or product decisions.</p>
+                </details>
+                <details class="cs-business-problem-item">
+                  <summary>
+                    <span class="cs-business-problem-icon"><img src="assets/vantage/section-1-illustrations/legacy-interface.png" alt=""></span>
+                    <span class="cs-business-problem-copy"><strong>Legacy, Engineer-Built Interfaces</strong></span>
+                    <span class="cs-business-problem-chevron" aria-hidden="true"></span>
+                  </summary>
+                  <p>The applications were old legacy products, built by engineers with no UX or UI discipline behind them &mdash; functional, but never designed.</p>
+                </details>
+                <details class="cs-business-problem-item">
+                  <summary>
+                    <span class="cs-business-problem-icon"><img src="assets/vantage/section-1-illustrations/ai-specific-features.png" alt=""></span>
+                    <span class="cs-business-problem-copy"><strong>No AI-Specific Features</strong></span>
+                    <span class="cs-business-problem-chevron" aria-hidden="true"></span>
+                  </summary>
+                  <p>Vantage had no AI-assisted features to help teams create workflows, understand complex configurations, or reduce the specialist knowledge required to get started.</p>
+                </details>
+              </div>
             </div>
-            <button type="button" class="cs-illustration-toggle" aria-expanded="false">Read more</button>
-            <p class="cs-illustration-detail">Vantage's workflow designer had grown one feature request at a time. Core functions sat behind right-clicks and stacked modals that only long-tenured users knew how to reach, and nobody had ever audited the experience.</p>
           </div>
-
-          <div class="cs-illustration-card">
-            <span class="cs-illustration-title">Leading the redesign</span>
-            <div class="cs-illustration-stage">
-              <span class="cs-illustration-figure">
-                <img src="assets/vantage/illustration-design-sprint.svg" alt="" aria-hidden="true">
-              </span>
+        </div>
+        <div class="cs-subsection">
+          <div class="cs-business-problem" aria-label="Five business constraints of the on-premise Vantage model">
+            <div class="cs-business-problem-content">
+              <h3>The Business Problem</h3>
+              <p>Vantage relied on on-premise servers. As media teams grew and work became more distributed, that model made the product harder to scale, update, and use together.</p>
+              <div class="cs-business-problem-list">
+                <details class="cs-business-problem-item">
+                  <summary>
+                    <span class="cs-business-problem-icon"><img src="assets/vantage/section-1-illustrations/burst-workloads.png" alt=""></span>
+                    <span class="cs-business-problem-copy"><strong>Couldn’t Keep Up With Busy Periods</strong></span>
+                    <span class="cs-business-problem-chevron" aria-hidden="true"></span>
+                  </summary>
+                  <p>When demand spiked, a fixed number of servers created a queue. Teams had to wait for files to be processed.</p>
+                </details>
+                <details class="cs-business-problem-item">
+                  <summary>
+                    <span class="cs-business-problem-icon"><img src="assets/vantage/section-1-illustrations/infrastructure-costs.png" alt=""></span>
+                    <span class="cs-business-problem-copy"><strong>Expensive To Grow</strong></span>
+                    <span class="cs-business-problem-chevron" aria-hidden="true"></span>
+                  </summary>
+                  <p>Adding capacity meant buying costly hardware, even when it would sit unused between busy periods.</p>
+                </details>
+                <details class="cs-business-problem-item">
+                  <summary>
+                    <span class="cs-business-problem-icon"><img src="assets/vantage/section-1-illustrations/rigid-workflows.png" alt=""></span>
+                    <span class="cs-business-problem-copy"><strong>Slow To Update</strong></span>
+                    <span class="cs-business-problem-chevron" aria-hidden="true"></span>
+                  </summary>
+                  <p>Even a small workflow change could require engineering work and a full rebuild instead of a quick edit.</p>
+                </details>
+                <details class="cs-business-problem-item">
+                  <summary>
+                    <span class="cs-business-problem-icon"><img src="assets/vantage/section-1-illustrations/remote-collaboration.png" alt=""></span>
+                    <span class="cs-business-problem-copy"><strong>Harder For Remote Teams To Work Together</strong></span>
+                    <span class="cs-business-problem-chevron" aria-hidden="true"></span>
+                  </summary>
+                  <p>Media lived in a physical facility, making it harder for distributed teams to get the files they needed.</p>
+                </details>
+                <details class="cs-business-problem-item">
+                  <summary>
+                    <span class="cs-business-problem-icon"><img src="assets/vantage/section-1-illustrations/storage-restrictions.png" alt=""></span>
+                    <span class="cs-business-problem-copy"><strong>Limited Storage Options</strong></span>
+                    <span class="cs-business-problem-chevron" aria-hidden="true"></span>
+                  </summary>
+                  <p>Vantage was tied to local storage, making it harder for teams to use the cloud tools they increasingly relied on.</p>
+                </details>
+              </div>
             </div>
-            <button type="button" class="cs-illustration-toggle" aria-expanded="false">Read more</button>
-            <p class="cs-illustration-detail">I ran a heuristic evaluation of the shipping product, interviewed customers, built the primary persona and journey map, benchmarked five competitors, then carried the work from information architecture through high-fidelity UI.</p>
-          </div>
-
-          <div class="cs-illustration-card">
-            <span class="cs-illustration-title">Make the power<br>already there findable</span>
-            <div class="cs-illustration-stage">
-              <span class="cs-illustration-figure">
-                <img src="assets/vantage/illustration-happy-news.svg" alt="" aria-hidden="true">
-              </span>
-            </div>
-            <button type="button" class="cs-illustration-toggle" aria-expanded="false">Read more</button>
-            <p class="cs-illustration-detail">The goal was never to change what Vantage could do. It was to make capability that already existed discoverable by someone opening the designer for the first time, without slowing down the people who had used it for years.</p>
-          </div>
-
-          <div class="cs-illustration-card">
-            <span class="cs-illustration-title">How I made an impact</span>
-            <div class="cs-illustration-stage">
-              <span class="cs-illustration-figure">
-                <img src="assets/vantage/illustration-impact.svg" alt="" aria-hidden="true">
-              </span>
-            </div>
-            <button type="button" class="cs-illustration-toggle" aria-expanded="false">Read more</button>
-            <p class="cs-illustration-detail">Six feature areas rebuilt on a modern design system, plus an AI-assisted workflow generation concept that opened a new direction for the product roadmap.</p>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="cs-section-v2">
+    <div class="cs-section-v2 cs-section-v2--audit">
       <div class="cs-section-header">
         <span class="cs-section-number">02</span>
+        <h2>What I Was Getting Myself Into</h2>
+      </div>
+      <p class="cs-audit-lead">When I joined, there was no design function and no usability research to inherit. Before touching Figma, I evaluated the shipping product myself against Jakob Nielsen's ten usability heuristics, rating every violation I found on the same 0&ndash;4 severity scale used across the industry &mdash; so the scope of the problem was measured, not guessed at.</p>
+      <button type="button" class="cs-doc-card cs-doc-trigger" aria-haspopup="dialog" aria-label="Open the full Vantage Heuristic Analysis spreadsheet">
+        <span class="cs-doc-card-icon" aria-hidden="true">XLS</span>
+        <span class="cs-doc-card-body">
+          <span class="cs-doc-card-name">Vantage Heuristic Analysis.xlsx</span>
+          <span class="cs-doc-card-hint">Click to open the full evaluation</span>
+        </span>
+        <svg class="cs-doc-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg>
+      </button>
+      <div class="cs-audit-results">
+        <div class="cs-audit-severity">
+          <h3>Violations by Severity</h3>
+          <div class="cs-audit-donut-layout">
+            <div class="cs-audit-donut" role="img" aria-label="12 total violations: 2 cosmetic, 5 minor, and 5 major. No violations were rated may not be an issue or catastrophic.">
+              <span aria-hidden="true"><strong>12</strong><small>Total<br>Violations</small></span>
+            </div>
+            <ul class="cs-audit-pie-legend">
+              <li><span class="cs-audit-pie-dot cs-audit-pie-dot--review"></span><span>May not be an issue</span><b>0</b><em>0%</em></li>
+              <li><span class="cs-audit-pie-dot cs-audit-pie-dot--cosmetic"></span><span>Cosmetic only</span><b>2</b><em>17%</em></li>
+              <li><span class="cs-audit-pie-dot cs-audit-pie-dot--minor"></span><span>Minor problem</span><b>5</b><em>42%</em></li>
+              <li><span class="cs-audit-pie-dot cs-audit-pie-dot--major"></span><span>Major problem</span><b>5</b><em>42%</em></li>
+              <li><span class="cs-audit-pie-dot cs-audit-pie-dot--catastrophic"></span><span>Catastrophic &mdash; fix before release</span><b>0</b><em>0%</em></li>
+            </ul>
+          </div>
+        </div>
+        <div class="cs-audit-summary cs-audit-summary--top-issue" aria-label="Heuristic audit summary">
+          <div class="cs-audit-summary-item cs-audit-summary-item--topic">
+              <span class="cs-audit-summary-icon" aria-hidden="true"><img src="assets/vantage/icons/target-04.svg" alt=""></span>
+              <div>
+                <strong>Top issues</strong>
+                <ul class="cs-audit-top-issue-list">
+                  <li>Recognition rather than recall</li>
+                  <li>Consistency and standards</li>
+                </ul>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="cs-section-v2 cs-interviews" id="interview-findings" aria-labelledby="interview-heading">
+      <div class="cs-section-header">
+        <span class="cs-section-number">03</span>
+        <h2 id="interview-heading">What We Learned From Our Users</h2>
+      </div>
+      <div class="cs-section-body">
+        <div class="cs-interview-method">
+          <div>
+            <h3>From interviews to design opportunities</h3>
+            <p><strong>We interviewed 10 people</strong> who build and manage workflows in legacy Vantage to understand what made creating, updating, and troubleshooting them difficult. We grouped their pain points and feature requests into themes to identify user needs and guide the redesign.</p>
+          </div>
+          <figure class="cs-image-reveal cs-image-reveal-lg cs-interview-board">
+            <button class="cs-image-reveal-trigger" type="button" aria-label="Expand the complete FigJam interview board" data-board-src="assets/vantage/interview-synthesis-full.png">
+              <img class="cs-image-small" src="assets/vantage/interview-synthesis-workflow.png" width="1789" height="1800" loading="lazy" alt="Actual FigJam notes grouped under Workflow Complexity and Management, covering complex workflows, lost settings, workflow copying, and media tracking.">
+              <span class="cs-image-reveal-overlay">
+                <span class="cs-image-reveal-text">Explore the complete board</span>
+              </span>
+            </button>
+            <figcaption>From our FigJam synthesis: the Workflow Complexity and Management cluster. Select the snapshot to explore the complete board.</figcaption>
+          </figure>
+        </div>
+        <div class="cs-interview-grid">
+          <article class="cs-interview-card">
+            <span class="cs-interview-index" aria-hidden="true">01</span>
+            <h3>Understand the whole workflow</h3>
+            <p>Large, branching workflows made it hard to see what was happening and where to make a change.</p>
+            <details>
+              <summary>Evidence &amp; design opportunity<span aria-hidden="true"></span></summary>
+              <div class="cs-interview-evidence">
+                <h4>What we heard</h4>
+                <p>The notes describe complex ingest workflows, unpredictable navigation in workflow groups, and a need to follow a media file across multiple workflows.</p>
+                <h4>Design opportunity</h4>
+                <p>Make the workflow structure easier to scan, organize, and navigate. Keep the connection between a file, its job, and its workflow visible.</p>
+              </div>
+            </details>
+          </article>
+          <article class="cs-interview-card">
+            <span class="cs-interview-index" aria-hidden="true">02</span>
+            <h3>Reuse work that already works</h3>
+            <p>Teams wanted to adapt proven building blocks instead of rebuilding or copying complex workflows.</p>
+            <details>
+              <summary>Evidence &amp; design opportunity<span aria-hidden="true"></span></summary>
+              <div class="cs-interview-evidence">
+                <h4>What we heard</h4>
+                <p>Participants asked for reusable groups of actions, templates with adjustable settings, and easier ways to move workflows between test and production environments.</p>
+                <h4>Design opportunity</h4>
+                <p>Support reusable action groups and templates, with clear settings that users can review before applying them.</p>
+              </div>
+            </details>
+          </article>
+          <article class="cs-interview-card">
+            <span class="cs-interview-index" aria-hidden="true">03</span>
+            <h3>Explain failures in context</h3>
+            <p>An error message was often the start of an investigation, rather than a useful explanation.</p>
+            <details>
+              <summary>Evidence &amp; design opportunity<span aria-hidden="true"></span></summary>
+              <div class="cs-interview-evidence">
+                <h4>What we heard</h4>
+                <p>The notes describe vague messages, noisy logs, and difficulty matching an error to the right job or workflow. One request was to troubleshoot a single phase without rerunning everything.</p>
+                <h4>Design opportunity</h4>
+                <p>Show what failed, where it failed, and what to check next, close to the affected action.</p>
+              </div>
+            </details>
+          </article>
+          <article class="cs-interview-card">
+            <span class="cs-interview-index" aria-hidden="true">04</span>
+            <h3>Make progress easier to trust</h3>
+            <p>Slow responses and unclear status made it harder to tell whether work was progressing or stuck.</p>
+            <details>
+              <summary>Evidence &amp; design opportunity<span aria-hidden="true"></span></summary>
+              <div class="cs-interview-evidence">
+                <h4>What we heard</h4>
+                <p>Participants reported slow opening, saving, and validation, along with timeouts and unreliable wait-time metrics. One account described validation taking 15–20 seconds.</p>
+                <h4>Design opportunity</h4>
+                <p>Make processing and save states explicit. Pair clearer feedback with engineering work on responsiveness and reliable monitoring.</p>
+              </div>
+            </details>
+          </article>
+          <article class="cs-interview-card">
+            <span class="cs-interview-index" aria-hidden="true">05</span>
+            <h3>Make everyday changes safer</h3>
+            <p>A small edit could interrupt work, while recovery and access controls were limited.</p>
+            <details>
+              <summary>Evidence &amp; design opportunity<span aria-hidden="true"></span></summary>
+              <div class="cs-interview-evidence">
+                <h4>What we heard</h4>
+                <p>The board records workflow locking during minor edits, requests for undo and version history, and different needs for people building workflows versus monitoring jobs.</p>
+                <h4>Design opportunity</h4>
+                <p>Separate editing from monitoring and explore safer changes through appropriate permissions, version history, and recovery controls.</p>
+              </div>
+            </details>
+          </article>
+          <article class="cs-interview-card">
+            <span class="cs-interview-index" aria-hidden="true">06</span>
+            <h3>Reduce manual setup with assistance</h3>
+            <p>Participants saw an opportunity to describe a goal and get help configuring the steps.</p>
+            <details>
+              <summary>Evidence &amp; design opportunity<span aria-hidden="true"></span></summary>
+              <div class="cs-interview-evidence">
+                <h4>What we heard</h4>
+                <p>Ideas included generating settings from sample media and creating a workflow from a plain-language description. AI and machine learning were discussed as possible approaches.</p>
+                <h4>Design opportunity</h4>
+                <p>Explore AI-assisted setup as a concept to validate. Keep generated steps and settings reviewable before users run them.</p>
+              </div>
+            </details>
+          </article>
+        </div>
+        <div class="cs-interview-direction">
+          <h3>What this meant for the redesign</h3>
+          <p>These findings support a clearer workflow overview, reusable templates, and errors that explain what needs attention. They also give AI exploration a specific purpose: reducing the effort of configuration while keeping users in control.</p>
+          <details>
+            <summary>What needed work beyond the interface</summary>
+            <p>The board also surfaced capacity planning, licensing, security, documentation, integrations, and specialized media-processing needs. Those require product and engineering work alongside design. Capacity pressure varied by environment; one account explicitly said resources were not a daily concern.</p>
+          </details>
+        </div>
+        <p class="cs-interview-note">Based on summarized interview notes, not verbatim transcripts. These are qualitative findings and design opportunities, not measured improvements or a ranking by participant frequency.</p>
+        <div class="cs-interview-takeaway">
+          <span class="cs-interview-eyebrow">The central takeaway</span>
+          <h3>Help teams manage complexity with confidence.</h3>
+          <p>The interviews showed how much effort went into understanding existing workflows, repeating setup, and tracing failures. The design opportunity was to make that work easier to follow, reuse, and recover.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <div class="cs-section-v2">
+      <div class="cs-section-header">
+        <span class="cs-section-number">04</span>
         <h2>Addressing The Core Problems</h2>
       </div>
       <div class="cs-section-body">
@@ -173,7 +391,7 @@
 
     <div class="cs-section-v2">
       <div class="cs-section-header">
-        <span class="cs-section-number">03</span>
+        <span class="cs-section-number">05</span>
         <h2>What I Was Up Against</h2>
       </div>
       <div class="cs-section-body">
@@ -229,7 +447,7 @@
 
     <div class="cs-section-v2">
       <div class="cs-section-header">
-        <span class="cs-section-number">04</span>
+        <span class="cs-section-number">06</span>
         <h2>Getting To Know Our Users And Competitors</h2>
       </div>
       <div class="cs-section-body cs-section-body--wide-gap">
@@ -499,7 +717,7 @@
 
     <div class="cs-section-v2">
       <div class="cs-section-header">
-        <span class="cs-section-number">05</span>
+        <span class="cs-section-number">07</span>
         <h2>Translating Research Into A Redesigned Workflow Designer</h2>
       </div>
       <div class="cs-section-body cs-section-body--wide-gap">
@@ -593,7 +811,7 @@
 
     <div class="cs-section-v2">
       <div class="cs-section-header cs-section-header--wide-gap">
-        <span class="cs-section-number">06</span>
+        <span class="cs-section-number">08</span>
         <h2>Final Design &amp; Featured System Capabilities</h2>
       </div>
       <div class="cs-section-body">
@@ -1003,7 +1221,7 @@
 
     <div class="cs-section-v2">
       <div class="cs-section-header">
-        <span class="cs-section-number">07</span>
+        <span class="cs-section-number">09</span>
         <h2>Where The Product Goes Next</h2>
       </div>
       <div class="cs-section-body">
@@ -1021,7 +1239,7 @@
 
     <div class="cs-section-v2">
       <div class="cs-section-header">
-        <span class="cs-section-number">08</span>
+        <span class="cs-section-number">10</span>
         <h2>My Biggest Takeaways</h2>
       </div>
       <div class="cs-section-body">
@@ -1084,7 +1302,265 @@
       <img src="" alt="">
       <p class="cs-lightbox-caption"></p>
     </div>
+    <div class="cs-board-viewer">
+      <div class="cs-board-toolbar">
+        <strong>Interview synthesis · Complete FigJam board</strong>
+        <div><button type="button" data-board-zoom="out" aria-label="Zoom out">−</button>
+        <button type="button" data-board-zoom="in" aria-label="Zoom in">+</button>
+        <button type="button" data-board-zoom="fit">Fit board</button></div>
+        <span>Zoom in, then scroll to explore the notes.</span>
+      </div>
+      <div class="cs-board-viewport" tabindex="0" role="region" aria-label="Scrollable interview synthesis board">
+        <img alt="Complete FigJam interview synthesis board, including all pain points, feature requests, and grouped sticky notes.">
+      </div>
+    </div>
     <div class="cs-lightbox-gallery"></div>
+    <div class="cs-lightbox-doc" role="document" aria-label="Vantage Heuristic Analysis spreadsheet">
+      <div class="cs-doc-sheet">
+        <div class="cs-doc-sheet-head">
+          <span class="cs-doc-sheet-title">Heuristic Evaluation of Vantage</span>
+          <div class="cs-doc-sheet-meta">
+            <div class="cs-doc-sheet-meta-item"><span>Evaluator</span><span>Ramin Partovi</span></div>
+            <div class="cs-doc-sheet-meta-item"><span>Evaluation date</span><span>October 10, 2022</span></div>
+            <div class="cs-doc-sheet-meta-item"><span>Device / browser / OS</span><span>MacBook Pro / Chrome / macOS Monterey</span></div>
+          </div>
+        </div>
+        <span class="cs-doc-legend-label">Severity Rating Legend</span>
+        <div class="cs-doc-legend-grid">
+          <div class="cs-doc-legend-item" style="background:#D9EAD3; --cs-doc-legend-text:color-mix(in srgb, #D9EAD3 30%, black)">
+            <span class="cs-doc-legend-value">0</span>
+            <span class="cs-doc-legend-name">May not be an issue</span>
+          </div>
+          <div class="cs-doc-legend-item" style="background:#CFE2F3; --cs-doc-legend-text:color-mix(in srgb, #CFE2F3 30%, black)">
+            <span class="cs-doc-legend-value">1</span>
+            <span class="cs-doc-legend-name">Cosmetic only</span>
+          </div>
+          <div class="cs-doc-legend-item" style="background:#FFF2CC; --cs-doc-legend-text:color-mix(in srgb, #FFF2CC 30%, black)">
+            <span class="cs-doc-legend-value">2</span>
+            <span class="cs-doc-legend-name">Minor problem</span>
+          </div>
+          <div class="cs-doc-legend-item" style="background:#F9CB9C; --cs-doc-legend-text:color-mix(in srgb, #F9CB9C 30%, black)">
+            <span class="cs-doc-legend-value">3</span>
+            <span class="cs-doc-legend-name">Major problem</span>
+          </div>
+          <div class="cs-doc-legend-item" style="background:#EA9999; --cs-doc-legend-text:color-mix(in srgb, #EA9999 30%, black)">
+            <span class="cs-doc-legend-value">4</span>
+            <span class="cs-doc-legend-name">Catastrophic — fix before release</span>
+          </div>
+        </div>
+        <div class="cs-doc-heuristic">
+          <h4 class="cs-doc-heuristic-title">1. Visibility of system status</h4>
+          <p class="cs-doc-heuristic-desc">Always keep users informed about what is going on, through appropriate feedback within a reasonable amount of time.</p>
+          <div class="cs-doc-row">
+            <div>
+              <span class="cs-doc-row-label">Violation</span>
+              <p class="cs-doc-row-text">For nodes that have configurations with multiple steps, we don't show the user how many steps they need to go through.</p>
+            </div>
+            <div>
+              <span class="cs-doc-row-label">Recommendation</span>
+              <p class="cs-doc-row-text">Introduce some kind of indicator or progress stepper that shows how far along the user is in configuring their nodes, and how many more steps remain.</p>
+            </div>
+            <span class="cs-doc-severity" style="--cs-severity-bg:#F9CB9C; --cs-severity-text:color-mix(in srgb, #F9CB9C 30%, black)" aria-label="Severity 3">3</span>
+            <div class="cs-doc-row-images">
+              <img src="assets/vantage/heuristic/vantage-heuristic-01-progress-indicator.jpg" alt="Watch action's Find File and Start Job configuration dialog, shown with no step indicator for its multi-step setup.">
+            </div>
+          </div>
+          <div class="cs-doc-row">
+            <div>
+              <span class="cs-doc-row-label">Violation</span>
+              <p class="cs-doc-row-text">When a workflow is processing a file, the status colors are confusing: blue communicates the job is complete, and green communicates it's still in progress — the reverse of what users expect.</p>
+            </div>
+            <div>
+              <span class="cs-doc-row-label">Recommendation</span>
+              <p class="cs-doc-row-text">Reassign the colors so they match convention: green communicates completed or done, and blue communicates in progress.</p>
+            </div>
+            <span class="cs-doc-severity" style="--cs-severity-bg:#CFE2F3; --cs-severity-text:color-mix(in srgb, #CFE2F3 30%, black)" aria-label="Severity 1">1</span>
+            <div class="cs-doc-row-images">
+              <img src="assets/vantage/heuristic/vantage-heuristic-02-status-colors.jpg" alt="Workflow status colors shown side by side, illustrating the confusing blue-for-complete, green-for-in-progress convention.">
+            </div>
+          </div>
+          <div class="cs-doc-row">
+            <div>
+              <span class="cs-doc-row-label">Violation</span>
+              <p class="cs-doc-row-text">Nodes still lack information about what configurations were made. This requires the user to drill into each node to understand its configuration.</p>
+            </div>
+            <div>
+              <span class="cs-doc-row-label">Recommendation</span>
+              <p class="cs-doc-row-text">Give users a way to review a node's selected configuration without drilling into it — for example, a hover or click affordance that surfaces a quick summary.</p>
+            </div>
+            <span class="cs-doc-severity" style="--cs-severity-bg:#FFF2CC; --cs-severity-text:color-mix(in srgb, #FFF2CC 30%, black)" aria-label="Severity 2">2</span>
+            <div class="cs-doc-row-images">
+              <img src="assets/vantage/heuristic/vantage-heuristic-03-hidden-config-info.jpg" alt="The Analyze action's configuration dialog, showing Color Data settings with no summary visible from outside the node.">
+            </div>
+          </div>
+        </div>
+        <div class="cs-doc-heuristic">
+          <h4 class="cs-doc-heuristic-title">2. Match between system and real world</h4>
+          <p class="cs-doc-heuristic-desc">Use words, phrases, and concepts familiar to the user, rather than internal jargon, and follow real-world conventions that present information in a natural and logical order.</p>
+          <div class="cs-doc-row">
+            <div>
+              <span class="cs-doc-row-label">Violation</span>
+              <p class="cs-doc-row-text">When creating variables in Decision nodes, there's no clear call to action showing the user where to click to add a new variable — just an icon that's hard to decipher. Primary CTAs shouldn't be hidden behind indistinguishable icons.</p>
+            </div>
+            <div>
+              <span class="cs-doc-row-label">Recommendation</span>
+              <p class="cs-doc-row-text">Use a highlighted CTA for primary actions so it's obvious to new users where to click. Hiding a primary action behind an icon isn't best practice.</p>
+            </div>
+            <span class="cs-doc-severity" style="--cs-severity-bg:#FFF2CC; --cs-severity-text:color-mix(in srgb, #FFF2CC 30%, black)" aria-label="Severity 2">2</span>
+            <div class="cs-doc-row-images">
+              <img src="assets/vantage/heuristic/vantage-heuristic-04-decision-cta.jpg" alt="A Decision node's configuration panel with the add-variable control shown only as a small, unlabeled icon.">
+            </div>
+          </div>
+        </div>
+        <div class="cs-doc-heuristic">
+          <h4 class="cs-doc-heuristic-title">3. User control and freedom</h4>
+          <p class="cs-doc-heuristic-desc">Users often perform actions by mistake. They need a clearly marked “emergency exit” to leave the unwanted action without having to go through an extended process.</p>
+          <div class="cs-doc-row">
+            <div>
+              <span class="cs-doc-row-label">Violation</span>
+              <p class="cs-doc-row-text">When deleting a configuration within a node (for example, the Analyze node), the user gets no final warning before the change is deleted — even though it can affect the whole design workflow.</p>
+            </div>
+            <div>
+              <span class="cs-doc-row-label">Recommendation</span>
+              <p class="cs-doc-row-text">For destructive actions like deleting, show a confirmation warning before committing. An undo affordance would also let users recover from a mistaken delete.</p>
+            </div>
+            <span class="cs-doc-severity" style="--cs-severity-bg:#F9CB9C; --cs-severity-text:color-mix(in srgb, #F9CB9C 30%, black)" aria-label="Severity 3">3</span>
+            <div class="cs-doc-row-images">
+              <img src="assets/vantage/heuristic/vantage-heuristic-05-delete-warning.jpg" alt="The Analyze action's Color Data configuration selected for deletion, with no confirmation step shown before removal.">
+            </div>
+          </div>
+        </div>
+        <div class="cs-doc-heuristic">
+          <h4 class="cs-doc-heuristic-title">4. Consistency and standards</h4>
+          <p class="cs-doc-heuristic-desc">Maintain internal and external consistency (i.e., words, situations, and actions mean the same thing within the system, and are also consistent when compared with other similar systems).</p>
+          <div class="cs-doc-row">
+            <div>
+              <span class="cs-doc-row-label">Violation</span>
+              <p class="cs-doc-row-text">The “Domain Monitor Status” tab gives a global view of all workflow activity in Vantage, but it sits next to the “Job Status” tab, which only shows activity for the current workflow — confusing the two tabs' hierarchy and placement.</p>
+            </div>
+            <div>
+              <span class="cs-doc-row-label">Recommendation</span>
+              <p class="cs-doc-row-text">Isolate “Domain Monitor Status” so it sits above all individual workflows in the hierarchy, matching how other applications separate global activity from single-job status.</p>
+            </div>
+            <span class="cs-doc-severity" style="--cs-severity-bg:#FFF2CC; --cs-severity-text:color-mix(in srgb, #FFF2CC 30%, black)" aria-label="Severity 2">2</span>
+            <div class="cs-doc-row-images">
+              <img src="assets/vantage/heuristic/vantage-heuristic-06-domain-monitor-tab.jpg" alt="The Domain Monitor Status and Job Status tabs shown adjacent to each other with no visual distinction in hierarchy.">
+            </div>
+          </div>
+          <div class="cs-doc-row">
+            <div>
+              <span class="cs-doc-row-label">Violation</span>
+              <p class="cs-doc-row-text">When reviewing a configuration in read-only mode, every control still shows the same affordances as an editable one, so users think they can change the options — there's no distinct read-only view.</p>
+            </div>
+            <div>
+              <span class="cs-doc-row-label">Recommendation</span>
+              <p class="cs-doc-row-text">Build a dedicated read-only state for every configuration view, and avoid opening it over the modal where the original action was taking place.</p>
+            </div>
+            <span class="cs-doc-severity" style="--cs-severity-bg:#F9CB9C; --cs-severity-text:color-mix(in srgb, #F9CB9C 30%, black)" aria-label="Severity 3">3</span>
+            <div class="cs-doc-row-images">
+              <img src="assets/vantage/heuristic/vantage-heuristic-07-readonly-affordances.jpg" alt="A configuration dialog opened in read-only mode, but still showing editable-looking dropdowns and toggles.">
+            </div>
+          </div>
+        </div>
+        <div class="cs-doc-heuristic">
+          <h4 class="cs-doc-heuristic-title">5. Error prevention</h4>
+          <p class="cs-doc-heuristic-desc">Good error messages are important, but the best designs carefully prevent problems from occurring in the first place. Either eliminate error-prone conditions, or check for them and present users with a confirmation option before they commit to the action.</p>
+          <div class="cs-doc-row">
+            <div>
+              <span class="cs-doc-row-label">Violation</span>
+              <p class="cs-doc-row-text">The system does show a persistent-looking error message when an incorrect selection is made, but it disappears after a moment and the value quietly reverts to a default — easy for a user to miss entirely.</p>
+            </div>
+            <div>
+              <span class="cs-doc-row-label">Recommendation</span>
+              <p class="cs-doc-row-text">Keep the error state visible until the user actually resolves it with a correct value, instead of silently reverting and letting them move on unaware.</p>
+            </div>
+            <span class="cs-doc-severity" style="--cs-severity-bg:#F9CB9C; --cs-severity-text:color-mix(in srgb, #F9CB9C 30%, black)" aria-label="Severity 3">3</span>
+            <div class="cs-doc-row-images">
+              <img src="assets/vantage/heuristic/vantage-heuristic-08-error-disappears.jpg" alt="A configuration field showing a brief error state before its value silently reset to a default.">
+            </div>
+          </div>
+        </div>
+        <div class="cs-doc-heuristic">
+          <h4 class="cs-doc-heuristic-title">6. Recognition rather than recall</h4>
+          <p class="cs-doc-heuristic-desc">Information required to use the design should be visible or easily retrievable when needed (users should not have to remember information from one part of the interface to another).</p>
+          <div class="cs-doc-row">
+            <div>
+              <span class="cs-doc-row-label">Violation</span>
+              <p class="cs-doc-row-text">So many core functions of each node in Vantage are hidden behind a right-click. That isn't always intuitive for new users trying to find a specific action.</p>
+            </div>
+            <div>
+              <span class="cs-doc-row-label">Recommendation</span>
+              <p class="cs-doc-row-text">Surface the actions available for each node directly, so users can scan what's possible instead of remembering what's buried behind a right-click. Visible actions also signal what's clickable in the first place.</p>
+            </div>
+            <span class="cs-doc-severity" style="--cs-severity-bg:#FFF2CC; --cs-severity-text:color-mix(in srgb, #FFF2CC 30%, black)" aria-label="Severity 2">2</span>
+            <div class="cs-doc-row-images">
+              <img src="assets/vantage/heuristic/vantage-heuristic-09-hidden-right-click-actions-1.jpg" alt="The Watch action's configuration dialog, none of its available actions surfaced anywhere in the visible UI.">
+              <img src="assets/vantage/heuristic/vantage-heuristic-09-hidden-right-click-actions-2.jpg" alt="The same Watch node's full action list, only reachable by right-clicking it.">
+            </div>
+          </div>
+          <div class="cs-doc-row">
+            <div>
+              <span class="cs-doc-row-label">Violation</span>
+              <p class="cs-doc-row-text">Too many modals open one over another when configuring a single node. Users can lose track of which node they're actually working on and get pulled away from their original task.</p>
+            </div>
+            <div>
+              <span class="cs-doc-row-label">Recommendation</span>
+              <p class="cs-doc-row-text">Show a node's configuration without burying it under multiple stacked modals — for example, a slide-out panel beside the highlighted node, so it stays clear which one is being edited.</p>
+            </div>
+            <span class="cs-doc-severity" style="--cs-severity-bg:#FFF2CC; --cs-severity-text:color-mix(in srgb, #FFF2CC 30%, black)" aria-label="Severity 2">2</span>
+            <div class="cs-doc-row-images">
+              <img src="assets/vantage/heuristic/vantage-heuristic-10-stacked-modals.jpg" alt="Several configuration modals open on top of one another while editing a single workflow node.">
+            </div>
+          </div>
+        </div>
+        <div class="cs-doc-heuristic">
+          <h4 class="cs-doc-heuristic-title">7. Flexibility and efficiency of use</h4>
+          <p class="cs-doc-heuristic-desc">Shortcuts — hidden from novice users — may speed up the interaction for the expert user such that the design can cater to both inexperienced and experienced users. Allow users to tailor frequent actions.</p>
+          <div class="cs-doc-row">
+            <div>
+              <span class="cs-doc-row-label">Violation</span>
+              <p class="cs-doc-row-text">There's no pinch-to-zoom on the workspace canvas. Users have to use the zoom toggle in the corner instead — a missed opportunity to match a behavior already familiar from other applications.</p>
+            </div>
+            <div>
+              <span class="cs-doc-row-label">Recommendation</span>
+              <p class="cs-doc-row-text">Look to applications like Figma or Illustrator for the canvas mouse behaviors users already expect on a blank-canvas type of tool.</p>
+            </div>
+            <span class="cs-doc-severity" style="--cs-severity-bg:#CFE2F3; --cs-severity-text:color-mix(in srgb, #CFE2F3 30%, black)" aria-label="Severity 1">1</span>
+            <div class="cs-doc-row-images">
+              <img src="assets/vantage/heuristic/vantage-heuristic-11-no-pinch-zoom.jpg" alt="A branching workflow on the design canvas, with only a percentage toggle in the corner for zooming in or out.">
+            </div>
+          </div>
+        </div>
+        <div class="cs-doc-heuristic">
+          <h4 class="cs-doc-heuristic-title">8. Aesthetic and minimalist design</h4>
+          <p class="cs-doc-heuristic-desc">Keep the content and visual design of the UI focused on the essentials. Use progressive disclosure to de-emphasize irrelevant or rarely used elements until they are needed.</p>
+          <p class="cs-doc-heuristic-clean">No violations logged against this heuristic.</p>
+        </div>
+        <div class="cs-doc-heuristic">
+          <h4 class="cs-doc-heuristic-title">9. Help users recognize, diagnose, and recover from errors</h4>
+          <p class="cs-doc-heuristic-desc">Error messages should be expressed in plain language (no error codes), precisely indicate the problem, and constructively suggest a solution.</p>
+          <div class="cs-doc-row">
+            <div>
+              <span class="cs-doc-row-label">Violation</span>
+              <p class="cs-doc-row-text">When an active workflow's job fails, the user gets a generic failure message with no information on how to diagnose or resolve it. They then have to re-enter edit mode, find the node highlighted red, and review every configuration to find the cause — a slow, tedious process.</p>
+            </div>
+            <div>
+              <span class="cs-doc-row-label">Recommendation</span>
+              <p class="cs-doc-row-text">Surface the specific cause of the failure instead of a generic message, and let users fix the error on the same screen rather than re-tracing the whole workflow to find it.</p>
+            </div>
+            <span class="cs-doc-severity" style="--cs-severity-bg:#F9CB9C; --cs-severity-text:color-mix(in srgb, #F9CB9C 30%, black)" aria-label="Severity 3">3</span>
+            <div class="cs-doc-row-images">
+              <img src="assets/vantage/heuristic/vantage-heuristic-12-generic-failure-message.jpg" alt="A generic job-failed message with no detail on which configuration caused the failure.">
+            </div>
+          </div>
+        </div>
+        <div class="cs-doc-heuristic">
+          <h4 class="cs-doc-heuristic-title">10. Help and documentation</h4>
+          <p class="cs-doc-heuristic-desc">It's best if the system doesn't need any additional explanation. However, it may be necessary to provide documentation to help users understand how to complete their tasks.</p>
+          <p class="cs-doc-heuristic-clean">No violations logged against this heuristic.</p>
+        </div>
+      </div>
+    </div>
   </div>
 
 </main>
