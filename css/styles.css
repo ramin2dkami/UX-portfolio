@@ -129,20 +129,25 @@ main > section {
   background: var(--color-white);
   border: 1px solid var(--white-13);
   border-radius: var(--radius-pill);
-  padding: 4px 4px 4px 16px;
+  padding: 4px 4px 4px 12px;
   box-shadow: 0 10px 17px rgba(0, 0, 0, 0.14);
 }
 .logo {
+  display: flex;
+  align-items: center;
   font-weight: 600;
   font-size: 0.8125rem;
   letter-spacing: -0.01em;
   color: var(--color-grey-62);
   white-space: nowrap;
-  transition: color 0.15s;
+  transition: opacity 0.15s;
 }
-.logo:hover { color: var(--color-black); }
-.logo.active,
-.logo.active:hover { color: var(--color-blue); }
+.logo:hover { opacity: 0.8; }
+.logo-mark {
+  display: block;
+  width: 52px;
+  height: 52px;
+}
 .divider {
   width: 1px;
   height: 15px;
