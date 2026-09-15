@@ -420,6 +420,41 @@ document.querySelectorAll('.cs-mockup-showcase').forEach((showcase) => {
   }
 });
 
+// Horizontal-scroll affordance: prev/next arrow buttons overlaid on a
+// horizontally-scrolling row (feature-card grids, comparison tables). Both
+// arrows stay in the same state as each other — shown together whenever the
+// row actually scrolls, hidden together when it doesn't — rather than each
+// one toggling on its own as you near either edge.
+document.querySelectorAll('.cs-hscroll').forEach((wrap) => {
+  const track = wrap.querySelector('.cs-feature-grid, .cs-table-wrap');
+  const prevBtn = wrap.querySelector('.cs-hscroll-arrow-prev');
+  const nextBtn = wrap.querySelector('.cs-hscroll-arrow-next');
+  if (!track || !prevBtn || !nextBtn) return;
+
+  function update() {
+    const scrollable = track.scrollWidth > track.clientWidth + 1;
+    prevBtn.hidden = !scrollable;
+    nextBtn.hidden = !scrollable;
+  }
+
+  prevBtn.addEventListener('click', () => {
+    track.scrollBy({ left: -track.clientWidth * 0.8, behavior: 'smooth' });
+  });
+  nextBtn.addEventListener('click', () => {
+    track.scrollBy({ left: track.clientWidth * 0.8, behavior: 'smooth' });
+  });
+
+  // Layout-driven width changes (web fonts swapping in, images finishing
+  // load) don't fire a 'resize' event, so watch the track itself too —
+  // otherwise the arrows can get stuck hidden from a stale early measurement.
+  if ('ResizeObserver' in window) {
+    new ResizeObserver(update).observe(track);
+  } else {
+    window.addEventListener('resize', update);
+  }
+  update();
+});
+
 // Image reveal thumbnails: click opens the full-size image in a lightbox.
 const lightbox = document.querySelector('.cs-lightbox');
 

@@ -257,6 +257,9 @@
   width: 70%;
   margin: 0 auto;
 }
+@media (max-width: 640px) {
+  .cs-image-70 { width: 100%; }
+}
 .cs-image-caption {
   display: block;
   margin-top: -8px;
@@ -1209,6 +1212,42 @@
   overflow-x: auto;
   margin-top: 4px;
 }
+
+/* Horizontal-scroll affordance: a prev/next arrow-button pair overlaid on
+   the vertical center of a horizontally-scrolling row (feature-card grids,
+   comparison tables), sitting half in the page gutter and half over the
+   row's edge — the same pattern as a typical card-carousel "scroll" button.
+   Inset far enough that it lands on the card's own padding, not its text.
+   JS shows/hides each arrow based on actual scroll position, so they only
+   appear where there's somewhere to scroll to. */
+.cs-hscroll {
+  position: relative;
+}
+.cs-hscroll-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid var(--color-grey-88);
+  border-radius: 50%;
+  background: var(--color-white);
+  color: var(--cs-accent, var(--color-black));
+  box-shadow: 0 8px 20px -8px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+}
+.cs-hscroll-arrow:hover { background: rgba(0, 0, 0, 0.06); }
+.cs-hscroll-arrow:focus-visible { outline: 2px solid var(--cs-accent, var(--color-black)); outline-offset: 2px; }
+.cs-hscroll-arrow svg { width: 18px; height: 18px; }
+.cs-hscroll-arrow-prev { left: -18px; }
+.cs-hscroll-arrow-next { right: -18px; }
+.cs-hscroll-arrow[hidden] { display: none; }
 .cs-table {
   border-collapse: collapse;
   width: 100%;
