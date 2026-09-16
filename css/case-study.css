@@ -1372,12 +1372,141 @@
   line-height: 1.7;
   color: var(--color-grey-45);
 }
+.cs-audit-emphasis { color: var(--cs-accent, #2e90fa); }
+.cs-audit-findings {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.cs-audit-finding {
+  position: relative;
+  display: flex;
+  gap: 14px;
+  height: 190px;
+  padding: 22px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--cs-accent, #2e90fa) 22%, white);
+  border-radius: 16px;
+  background: white;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.cs-audit-finding:hover,
+.cs-audit-finding:focus-within,
+.cs-audit-finding.is-expanded {
+  border-color: color-mix(in srgb, var(--cs-accent, #2e90fa) 48%, white);
+  box-shadow: 0 14px 28px -26px color-mix(in srgb, var(--cs-accent, #2e90fa) 70%, transparent);
+}
+.cs-audit-finding > div {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  flex-direction: column;
+}
+.cs-audit-finding-index {
+  display: grid;
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--cs-accent, #2e90fa) 9%, white);
+  color: var(--cs-accent, #2e90fa);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.cs-audit-finding h3 {
+  position: absolute;
+  top: 50%;
+  right: 22px;
+  left: 70px;
+  margin: 0;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  line-height: 1.25;
+}
+.cs-audit-finding-index,
+.cs-audit-finding h3,
+.cs-audit-finding-toggle {
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+.cs-audit-finding p {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 22px;
+  overflow: hidden;
+  background: white;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  color: var(--color-grey-45);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+.cs-audit-finding:hover .cs-audit-finding-index,
+.cs-audit-finding:focus-within .cs-audit-finding-index,
+.cs-audit-finding.is-expanded .cs-audit-finding-index,
+.cs-audit-finding:hover h3,
+.cs-audit-finding:focus-within h3,
+.cs-audit-finding.is-expanded h3,
+.cs-audit-finding:hover .cs-audit-finding-toggle,
+.cs-audit-finding.is-expanded .cs-audit-finding-toggle {
+  visibility: hidden;
+  opacity: 0;
+}
+.cs-audit-finding:hover p,
+.cs-audit-finding:focus-within p,
+.cs-audit-finding.is-expanded p {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+.cs-audit-finding-toggle {
+  position: absolute;
+  bottom: 22px;
+  left: 70px;
+  display: inline-flex;
+  align-self: flex-start;
+  margin-top: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--cs-accent, #2e90fa);
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.cs-audit-finding.is-expanded p { padding-bottom: 56px; }
+.cs-audit-finding.is-expanded .cs-audit-finding-toggle {
+  position: absolute;
+  z-index: 3;
+  bottom: 22px;
+  left: 22px;
+  visibility: visible;
+  opacity: 1;
+}
+.cs-audit-finding-toggle:focus-visible {
+  outline: 2px solid var(--cs-accent, #2e90fa);
+  outline-offset: 4px;
+  border-radius: 3px;
+}
 .cs-section-v2--audit .cs-doc-card {
   max-width: none;
   margin: 0 0 32px;
   padding: 18px;
   border-color: color-mix(in srgb, var(--cs-accent, var(--color-black)) 18%, white);
   box-shadow: none;
+}
+.cs-audit-results + .cs-doc-card {
+  margin-top: 32px;
+  margin-bottom: 0;
 }
 .cs-section-v2--audit .cs-doc-card-icon {
   width: 68px;
@@ -1591,8 +1720,10 @@
 .cs-audit-pie-dot--catastrophic { background: #ea9999; }
 @media (max-width: 900px) {
   .cs-audit-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cs-audit-findings { grid-template-columns: 1fr; }
 }
 @media (max-width: 600px) {
+  .cs-audit-finding { height: 190px; }
   .cs-section-v2--audit .cs-doc-card { padding: 14px; }
   .cs-section-v2--audit .cs-doc-card-icon {
     width: 52px;
@@ -1614,6 +1745,168 @@
 @media (max-width: 440px) {
   .cs-audit-summary { grid-template-columns: 1fr; }
   .cs-audit-pie-legend li { grid-template-columns: 14px minmax(0, 1fr) 22px 34px; gap: 8px; }
+}
+
+/* Compact mandate and constraints layout used by Vantage Section 1. */
+.cs-section-intro {
+  max-width: 920px;
+  margin: -4px 0 30px;
+  color: var(--color-grey-45);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+.cs-context-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 20px;
+}
+.cs-context-card {
+  --context-accent: var(--cs-accent, #2e90fa);
+  display: flex;
+  flex-direction: column;
+  min-height: 500px;
+  padding: clamp(32px, 4vw, 48px);
+  border: 1px solid color-mix(in srgb, var(--cs-accent, #2e90fa) 24%, white);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.84);
+}
+.cs-context-card--business { --context-accent: #087f83; }
+.cs-context-card h3 {
+  max-width: 500px;
+  margin: 18px 0 24px;
+  font-size: clamp(1.25rem, 1.25vw + 0.75rem, 1.6rem);
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+.cs-context-eyebrow {
+  display: block;
+  margin-top: 28px;
+  color: var(--context-accent);
+  font-family: var(--font-mono);
+  font-size: clamp(0.875rem, 0.55vw + 0.7rem, 1.125rem);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.cs-context-icon {
+  display: grid;
+  width: 112px;
+  height: 112px;
+  place-items: center;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--context-accent) 12%, white);
+}
+.cs-context-illustration {
+  width: 86px;
+  height: 86px;
+  object-fit: contain;
+}
+.cs-context-card--business .cs-context-illustration {
+  filter: hue-rotate(-34deg) saturate(0.88);
+}
+.cs-section-body .cs-context-keypoints {
+  display: grid;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: #43506a;
+  font-size: 1rem;
+  line-height: 1.45;
+}
+.cs-section-body .cs-context-keypoints li {
+  display: grid;
+  grid-template-columns: 10px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  position: static;
+  padding-left: 0;
+  color: #43506a;
+  line-height: 1.45;
+}
+.cs-section-body .cs-context-keypoints li::before {
+  content: "";
+  display: block;
+  position: static;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--context-accent);
+}
+.cs-context-expand {
+  margin-top: auto;
+  padding-top: 32px;
+}
+.cs-context-expand > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  list-style: none;
+  color: var(--context-accent);
+  font-size: 1.0625rem;
+  font-weight: 700;
+}
+.cs-context-expand > summary::-webkit-details-marker { display: none; }
+.cs-context-expand > summary::marker { content: ""; }
+.cs-context-expand > summary::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border: solid currentColor;
+  border-width: 0 2px 2px 0;
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform 0.2s ease;
+}
+.cs-context-expand[open] > summary::after {
+  transform: translateY(2px) rotate(225deg);
+}
+.cs-context-expand > summary:focus-visible {
+  outline: 2px solid var(--context-accent);
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+.cs-context-show-less { display: none; }
+.cs-context-expand[open] .cs-context-read-more { display: none; }
+.cs-context-expand[open] .cs-context-show-less { display: inline; }
+.cs-context-list {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--color-grey-45);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+.cs-section-body .cs-context-list li {
+  display: grid;
+  grid-template-columns: 10px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  position: static;
+  padding-left: 0;
+  line-height: 1.55;
+}
+.cs-section-body .cs-context-list li::before {
+  content: "";
+  display: block;
+  position: static;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--context-accent);
+}
+@media (max-width: 700px) {
+  .cs-context-grid { grid-template-columns: 1fr; }
+  .cs-context-card {
+    min-height: 0;
+    padding: 30px 24px;
+  }
+  .cs-context-icon { width: 88px; height: 88px; }
+  .cs-context-illustration { width: 68px; height: 68px; }
+  .cs-context-eyebrow { margin-top: 22px; }
 }
 
 /* Product and business constraints use matching card-style accordions. */

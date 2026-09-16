@@ -1,3 +1,8 @@
+// Place the interview findings directly after the heuristic audit on the Vantage page.
+const vantageInterviews = document.querySelector('.cs-interviews');
+const vantageAudit = document.querySelector('.cs-section-v2--audit');
+if (vantageInterviews && vantageAudit) vantageAudit.after(vantageInterviews);
+
 // Mobile nav toggle
 const navToggle = document.getElementById('navToggle');
 const mobileNav = document.getElementById('mobileNav');
@@ -604,5 +609,16 @@ document.querySelectorAll('.cs-feature-toggle').forEach((toggle) => {
     const expanded = card.classList.toggle('is-expanded');
     toggle.setAttribute('aria-expanded', String(expanded));
     toggle.textContent = expanded ? 'Show less' : 'Read more';
+  });
+});
+
+// Audit finding cards: hover/focus reveals the detail; click pins it open.
+document.querySelectorAll('.cs-audit-finding-toggle').forEach((toggle) => {
+  const card = toggle.closest('.cs-audit-finding');
+  toggle.addEventListener('click', () => {
+    const expanded = card.classList.toggle('is-expanded');
+    toggle.setAttribute('aria-expanded', String(expanded));
+    toggle.textContent = expanded ? 'Show less' : 'Read more';
+    if (!expanded) toggle.blur();
   });
 });

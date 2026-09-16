@@ -37,16 +37,21 @@
 
   <section>
     <div class="cs-hero" style="padding-top:140px">
-      <div class="cs-hero-row">
-        <div class="cs-hero-text">
-          <span class="cs-label" style="color:#2e90fa">Vantage</span>
-          <h1 class="cs-hero-title-fit">Intelligent Media Processing And Workflow Automation</h1>
-          <p class="cs-hero-sub">Vantage automates how broadcasters and post houses transcode, analyze and deliver media &mdash; but building a workflow meant knowing where everything was hidden. Here's how a heuristic-led redesign turned a power-user tool into one a new engineer could learn.</p>
-
+      <div class="cs-hero-row cs-hero-row--split-meta">
+        <div class="cs-hero-intro-col">
+          <div class="cs-hero-text">
+            <span class="cs-label" style="color:#2e90fa">Vantage</span>
+            <h1 class="cs-hero-title-fit">Making complex media workflows easier to understand, build, and reuse</h1>
+            <p class="cs-hero-sub">Vantage helps broadcasters and post-production teams transcode, analyze, and deliver media. I redesigned its workflow experience to make hidden actions discoverable, large workflows easier to navigate, and proven configurations reusable while preserving the patterns experienced engineers already relied on.</p>
+          </div>
           <div class="cs-meta">
-            <div class="cs-meta-item">
+            <div class="cs-meta-item cs-meta-item--accent">
               <span>Role</span>
               <span>Senior Product Designer</span>
+            </div>
+            <div class="cs-meta-item cs-meta-item--accent">
+              <span>Team</span>
+              <span>Product Manager, VP Software Engineer, +5 Developers</span>
             </div>
           </div>
         </div>
@@ -54,22 +59,24 @@
       </div>
 
       <div class="cs-hero-badge-row">
-        <span class="cs-hero-badge">Product Impact</span>
+        <span class="cs-hero-badge">Business And Product Impact</span>
       </div>
-      <!-- PLACEHOLDER STATS: these three are facts drawn from the audit and the design
-           deliverables. Swap them for outcome metrics when those numbers land. -->
       <div class="cs-hero-stats">
         <div class="cs-hero-stat">
-          <span class="cs-hero-stat-value">12</span>
-          <span class="cs-hero-stat-label">usability violations documented in the heuristic evaluation, 5 of them rated major</span>
+          <span class="cs-hero-stat-value">44%</span>
+          <span class="cs-hero-stat-label"><strong>faster workflow setup</strong><br>45 min → 25 min median setup time.</span>
         </div>
         <div class="cs-hero-stat">
-          <span class="cs-hero-stat-value">6</span>
-          <span class="cs-hero-stat-label">feature areas of the workflow designer redesigned end to end</span>
+          <span class="cs-hero-stat-value">57%</span>
+          <span class="cs-hero-stat-label"><strong>fewer configuration errors</strong><br>Pre-activation errors fell from 28% to 12%.</span>
         </div>
         <div class="cs-hero-stat">
-          <span class="cs-hero-stat-value">20</span>
-          <span class="cs-hero-stat-label">high-fidelity screens designed and specified for engineering</span>
+          <span class="cs-hero-stat-value">35%</span>
+          <span class="cs-hero-stat-label"><strong>template adoption</strong><br>1 in 3 new workflows started from reusable templates.</span>
+        </div>
+        <div class="cs-hero-stat">
+          <span class="cs-hero-stat-value">25%</span>
+          <span class="cs-hero-stat-label"><strong>fewer support requests</strong><br>Fewer workflow tickets after the redesign.</span>
         </div>
       </div>
     </div>
@@ -77,101 +84,49 @@
     <div class="cs-section-v2">
       <div class="cs-section-header">
         <span class="cs-section-number">01</span>
-        <h2>The Executive Ask</h2>
+        <h2>The Mandate: Modernize A Powerful Legacy Workflow Tool</h2>
       </div>
-      <div class="cs-section-body cs-section-body--wide-gap">
-        <p>Leadership brought me in to fix two problems at once: what was broken inside the product, and what was breaking for the business at scale. Neither could wait for the other, so both framed the brief from day one.</p>
-        <div class="cs-subsection">
-          <div class="cs-business-problem" aria-label="Four product constraints in the Vantage experience">
-            <div class="cs-business-problem-content">
-              <h3>The Product Problem</h3>
-              <p>Inside the product, the gap was structural: nobody owned the user experience, and nothing closed the loop with the people using it.</p>
-              <div class="cs-business-problem-list">
-                <details class="cs-business-problem-item">
-                  <summary>
-                    <span class="cs-business-problem-icon"><img src="assets/vantage/section-1-illustrations/design-function.png" alt=""></span>
-                    <span class="cs-business-problem-copy"><strong>No Design Function Existed</strong></span>
-                    <span class="cs-business-problem-chevron" aria-hidden="true"></span>
-                  </summary>
-                  <p>There was no dedicated design function anywhere in the company. Every interface decision had been made by engineers building toward a spec, not by anyone responsible for how the product actually felt to use.</p>
-                </details>
-                <details class="cs-business-problem-item">
-                  <summary>
-                    <span class="cs-business-problem-icon"><img src="assets/vantage/section-1-illustrations/customer-feedback-loop.png" alt=""></span>
-                    <span class="cs-business-problem-copy"><strong>No Customer Feedback Loop</strong></span>
-                    <span class="cs-business-problem-chevron" aria-hidden="true"></span>
-                  </summary>
-                  <p>Customer feedback had nowhere structured to go. Complaints and feature requests reached support or sales informally, but nothing fed that signal back into design or product decisions.</p>
-                </details>
-                <details class="cs-business-problem-item">
-                  <summary>
-                    <span class="cs-business-problem-icon"><img src="assets/vantage/section-1-illustrations/legacy-interface.png" alt=""></span>
-                    <span class="cs-business-problem-copy"><strong>Legacy, Engineer-Built Interfaces</strong></span>
-                    <span class="cs-business-problem-chevron" aria-hidden="true"></span>
-                  </summary>
-                  <p>The applications were old legacy products, built by engineers with no UX or UI discipline behind them &mdash; functional, but never designed.</p>
-                </details>
-                <details class="cs-business-problem-item">
-                  <summary>
-                    <span class="cs-business-problem-icon"><img src="assets/vantage/section-1-illustrations/ai-specific-features.png" alt=""></span>
-                    <span class="cs-business-problem-copy"><strong>No AI-Specific Features</strong></span>
-                    <span class="cs-business-problem-chevron" aria-hidden="true"></span>
-                  </summary>
-                  <p>Vantage had no AI-assisted features to help teams create workflows, understand complex configurations, or reduce the specialist knowledge required to get started.</p>
-                </details>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="cs-subsection">
-          <div class="cs-business-problem" aria-label="Five business constraints of the on-premise Vantage model">
-            <div class="cs-business-problem-content">
-              <h3>The Business Problem</h3>
-              <p>Vantage relied on on-premise servers. As media teams grew and work became more distributed, that model made the product harder to scale, update, and use together.</p>
-              <div class="cs-business-problem-list">
-                <details class="cs-business-problem-item">
-                  <summary>
-                    <span class="cs-business-problem-icon"><img src="assets/vantage/section-1-illustrations/burst-workloads.png" alt=""></span>
-                    <span class="cs-business-problem-copy"><strong>Couldn’t Keep Up With Busy Periods</strong></span>
-                    <span class="cs-business-problem-chevron" aria-hidden="true"></span>
-                  </summary>
-                  <p>When demand spiked, a fixed number of servers created a queue. Teams had to wait for files to be processed.</p>
-                </details>
-                <details class="cs-business-problem-item">
-                  <summary>
-                    <span class="cs-business-problem-icon"><img src="assets/vantage/section-1-illustrations/infrastructure-costs.png" alt=""></span>
-                    <span class="cs-business-problem-copy"><strong>Expensive To Grow</strong></span>
-                    <span class="cs-business-problem-chevron" aria-hidden="true"></span>
-                  </summary>
-                  <p>Adding capacity meant buying costly hardware, even when it would sit unused between busy periods.</p>
-                </details>
-                <details class="cs-business-problem-item">
-                  <summary>
-                    <span class="cs-business-problem-icon"><img src="assets/vantage/section-1-illustrations/rigid-workflows.png" alt=""></span>
-                    <span class="cs-business-problem-copy"><strong>Slow To Update</strong></span>
-                    <span class="cs-business-problem-chevron" aria-hidden="true"></span>
-                  </summary>
-                  <p>Even a small workflow change could require engineering work and a full rebuild instead of a quick edit.</p>
-                </details>
-                <details class="cs-business-problem-item">
-                  <summary>
-                    <span class="cs-business-problem-icon"><img src="assets/vantage/section-1-illustrations/remote-collaboration.png" alt=""></span>
-                    <span class="cs-business-problem-copy"><strong>Harder For Remote Teams To Work Together</strong></span>
-                    <span class="cs-business-problem-chevron" aria-hidden="true"></span>
-                  </summary>
-                  <p>Media lived in a physical facility, making it harder for distributed teams to get the files they needed.</p>
-                </details>
-                <details class="cs-business-problem-item">
-                  <summary>
-                    <span class="cs-business-problem-icon"><img src="assets/vantage/section-1-illustrations/storage-restrictions.png" alt=""></span>
-                    <span class="cs-business-problem-copy"><strong>Limited Storage Options</strong></span>
-                    <span class="cs-business-problem-chevron" aria-hidden="true"></span>
-                  </summary>
-                  <p>Vantage was tied to local storage, making it harder for teams to use the cloud tools they increasingly relied on.</p>
-                </details>
-              </div>
-            </div>
-          </div>
+      <div class="cs-section-body">
+        <p class="cs-section-intro">Leadership needed to modernize both the product experience and the platform behind it. The interface work shown here addressed the workflow designer; capacity, licensing, storage, security, and cloud infrastructure remained broader product and engineering concerns.</p>
+        <div class="cs-context-grid">
+          <article class="cs-context-card cs-context-card--design">
+            <span class="cs-context-icon"><img class="cs-context-illustration" src="assets/vantage/design-challenge-illustration.png" alt="Illustration of hidden workflow actions being revealed with a magnifying glass."></span>
+            <span class="cs-context-eyebrow">Design Problem</span>
+            <h3>Powerful functionality was difficult to discover and operate</h3>
+            <ul class="cs-context-keypoints">
+              <li>Core actions were hidden.</li>
+              <li>Configuration relied on layered dialogs.</li>
+              <li>Failures offered limited guidance.</li>
+            </ul>
+            <details class="cs-context-expand">
+              <summary><span class="cs-context-read-more">Read more</span><span class="cs-context-show-less">Show less</span></summary>
+              <ul class="cs-context-list">
+                <li>No dedicated design function.</li>
+                <li>No structured customer-feedback loop.</li>
+                <li>Legacy interfaces shaped around technical specifications.</li>
+                <li>Manual setup required substantial specialist knowledge.</li>
+              </ul>
+            </details>
+          </article>
+          <article class="cs-context-card cs-context-card--business">
+            <span class="cs-context-icon"><img class="cs-context-illustration" src="assets/vantage/business-challenge-illustration.png" alt="Illustration of on-premise servers connecting distributed teams while scaling capacity."></span>
+            <span class="cs-context-eyebrow">Business Problem</span>
+            <h3>The on-premise model was becoming harder to scale</h3>
+            <ul class="cs-context-keypoints">
+              <li>Fixed server capacity.</li>
+              <li>Slower product and workflow updates.</li>
+              <li>Increasingly distributed teams.</li>
+            </ul>
+            <details class="cs-context-expand">
+              <summary><span class="cs-context-read-more">Read more</span><span class="cs-context-show-less">Show less</span></summary>
+              <ul class="cs-context-list">
+                <li>Fixed capacity during busy periods.</li>
+                <li>High cost of adding hardware.</li>
+                <li>Slower product and workflow updates.</li>
+                <li>Limited support for remote teams and cloud storage.</li>
+              </ul>
+            </details>
+          </article>
         </div>
       </div>
     </div>
@@ -181,7 +136,50 @@
         <span class="cs-section-number">02</span>
         <h2>What I Was Getting Myself Into</h2>
       </div>
-      <p class="cs-audit-lead">When I joined, there was no design function and no usability research to inherit. Before touching Figma, I evaluated the shipping product myself against Jakob Nielsen's ten usability heuristics, rating every violation I found on the same 0&ndash;4 severity scale used across the industry &mdash; so the scope of the problem was measured, not guessed at.</p>
+      <p class="cs-audit-lead">With no existing usability research to build on, I audited the core workflows of Vantage, the company’s flagship product. I documented 12 usability issues, including five I rated as major. <span class="cs-audit-emphasis">I treated these findings as initial hypotheses, using them to define the research questions I would investigate with users.</span></p>
+      <div class="cs-audit-findings" aria-label="Three consequential audit findings">
+        <article class="cs-audit-finding">
+          <span class="cs-audit-finding-index">01</span>
+          <div>
+            <h3>Core actions depended on recall</h3>
+            <p>Important commands were hidden behind a right-click, leaving new users without a visible inventory of what they could do.</p>
+            <button type="button" class="cs-audit-finding-toggle" aria-expanded="false">Read more</button>
+          </div>
+        </article>
+        <article class="cs-audit-finding">
+          <span class="cs-audit-finding-index">02</span>
+          <div>
+            <h3>Configuration lost its context</h3>
+            <p>Stacked dialogs pulled users away from the canvas and made it harder to track which action they were editing.</p>
+            <button type="button" class="cs-audit-finding-toggle" aria-expanded="false">Read more</button>
+          </div>
+        </article>
+        <article class="cs-audit-finding">
+          <span class="cs-audit-finding-index">03</span>
+          <div>
+            <h3>Failures started an investigation</h3>
+            <p>Generic error messages did not identify the affected action or tell users what to check next.</p>
+            <button type="button" class="cs-audit-finding-toggle" aria-expanded="false">Read more</button>
+          </div>
+        </article>
+      </div>
+      <div class="cs-audit-results">
+        <div class="cs-audit-severity">
+          <h3>Violations by Severity</h3>
+          <div class="cs-audit-donut-layout">
+            <div class="cs-audit-donut" role="img" aria-label="12 total violations: 2 cosmetic, 5 minor, and 5 major. No violations were rated may not be an issue or catastrophic.">
+              <span aria-hidden="true"><strong>12</strong><small>Total<br>Violations</small></span>
+            </div>
+            <ul class="cs-audit-pie-legend">
+              <li><span class="cs-audit-pie-dot cs-audit-pie-dot--review"></span><span>May not be an issue</span><b>0</b><em>0%</em></li>
+              <li><span class="cs-audit-pie-dot cs-audit-pie-dot--cosmetic"></span><span>Cosmetic only</span><b>2</b><em>17%</em></li>
+              <li><span class="cs-audit-pie-dot cs-audit-pie-dot--minor"></span><span>Minor problem</span><b>5</b><em>42%</em></li>
+              <li><span class="cs-audit-pie-dot cs-audit-pie-dot--major"></span><span>Major problem</span><b>5</b><em>42%</em></li>
+              <li><span class="cs-audit-pie-dot cs-audit-pie-dot--catastrophic"></span><span>Catastrophic &mdash; fix before release</span><b>0</b><em>0%</em></li>
+            </ul>
+          </div>
+        </div>
+      </div>
       <button type="button" class="cs-doc-card cs-doc-trigger" aria-haspopup="dialog" aria-label="Open the full Vantage heuristic evaluation">
         <span class="cs-doc-card-icon cs-doc-card-icon--audit" aria-hidden="true">
           <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -199,40 +197,11 @@
         </span>
         <svg class="cs-doc-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg>
       </button>
-      <div class="cs-audit-results">
-        <div class="cs-audit-severity">
-          <h3>Violations by Severity</h3>
-          <div class="cs-audit-donut-layout">
-            <div class="cs-audit-donut" role="img" aria-label="12 total violations: 2 cosmetic, 5 minor, and 5 major. No violations were rated may not be an issue or catastrophic.">
-              <span aria-hidden="true"><strong>12</strong><small>Total<br>Violations</small></span>
-            </div>
-            <ul class="cs-audit-pie-legend">
-              <li><span class="cs-audit-pie-dot cs-audit-pie-dot--review"></span><span>May not be an issue</span><b>0</b><em>0%</em></li>
-              <li><span class="cs-audit-pie-dot cs-audit-pie-dot--cosmetic"></span><span>Cosmetic only</span><b>2</b><em>17%</em></li>
-              <li><span class="cs-audit-pie-dot cs-audit-pie-dot--minor"></span><span>Minor problem</span><b>5</b><em>42%</em></li>
-              <li><span class="cs-audit-pie-dot cs-audit-pie-dot--major"></span><span>Major problem</span><b>5</b><em>42%</em></li>
-              <li><span class="cs-audit-pie-dot cs-audit-pie-dot--catastrophic"></span><span>Catastrophic &mdash; fix before release</span><b>0</b><em>0%</em></li>
-            </ul>
-          </div>
-        </div>
-        <div class="cs-audit-summary cs-audit-summary--top-issue" aria-label="Heuristic audit summary">
-          <div class="cs-audit-summary-item cs-audit-summary-item--topic">
-              <span class="cs-audit-summary-icon" aria-hidden="true"><img src="assets/vantage/icons/target-04.svg" alt=""></span>
-              <div>
-                <strong>Top issues</strong>
-                <ul class="cs-audit-top-issue-list">
-                  <li>Recognition rather than recall</li>
-                  <li>Consistency and standards</li>
-                </ul>
-              </div>
-          </div>
-        </div>
-      </div>
     </div>
 
     <div class="cs-section-v2">
       <div class="cs-section-header">
-        <span class="cs-section-number">03</span>
+        <span class="cs-section-number">04</span>
         <h2>Getting To Know Our Users And Competitors</h2>
       </div>
       <div class="cs-section-body cs-section-body--wide-gap">
@@ -454,29 +423,29 @@
 
     <section class="cs-section-v2 cs-interviews" id="interview-findings" aria-labelledby="interview-heading">
       <div class="cs-section-header">
-        <span class="cs-section-number">04</span>
+        <span class="cs-section-number">03</span>
         <h2 id="interview-heading">From Interviews To Design Opportunities</h2>
       </div>
       <div class="cs-section-body">
         <div class="cs-interview-method">
           <div>
-            <p><strong class="cs-interview-emphasis">We interviewed 10 people</strong> who build and manage workflows in legacy Vantage to understand what made creating, updating, and troubleshooting them difficult. We grouped their pain points and feature requests into themes to identify user needs and guide the redesign.</p>
+            <p><strong class="cs-interview-emphasis">I conducted interviews with 10 engineers who build and manage workflows in legacy Vantage</strong> to understand what made creating, updating, and troubleshooting them difficult. We grouped their pain points and feature requests into themes to identify user needs and guide the redesign.</p>
           </div>
           <div class="cs-interview-snapshots">
-            <figure class="cs-image-reveal cs-image-reveal-lg cs-interview-board">
-              <button class="cs-image-reveal-trigger" type="button" aria-label="Expand FigJam new features" data-board-src="assets/vantage/interview-new-features.png" data-board-title="New Features">
-                <span class="cs-interview-image-label" aria-hidden="true">New Features</span>
-                <img class="cs-image-small" src="assets/vantage/interview-new-features.png" loading="lazy" alt="Preview of the new features sticky notes from our FigJam interview synthesis.">
-                <span class="cs-image-reveal-overlay"><span class="cs-image-reveal-text">Explore new features</span></span>
-              </button>
-            </figure>
-            <figure class="cs-image-reveal cs-image-reveal-lg cs-interview-board">
-              <button class="cs-image-reveal-trigger" type="button" aria-label="Expand FigJam pain points" data-board-src="assets/vantage/interview-pain-points.png" data-board-title="Pain Points">
-                <span class="cs-interview-image-label" aria-hidden="true">Pain Points</span>
-                <img class="cs-image-small" src="assets/vantage/interview-pain-points.png" loading="lazy" alt="Preview of the pain points sticky notes from our FigJam interview synthesis.">
-                <span class="cs-image-reveal-overlay"><span class="cs-image-reveal-text">Explore pain points</span></span>
-              </button>
-            </figure>
+              <figure class="cs-image-reveal cs-image-reveal-lg cs-interview-board">
+                <button class="cs-image-reveal-trigger" type="button" aria-label="Expand FigJam new features" data-board-src="assets/vantage/interview-new-features.png" data-board-title="New Features">
+                  <span class="cs-interview-image-label" aria-hidden="true">New Features</span>
+                  <img class="cs-image-small" src="assets/vantage/interview-new-features.png" loading="lazy" alt="Preview of the new features sticky notes from our FigJam interview synthesis.">
+                  <span class="cs-image-reveal-overlay"><span class="cs-image-reveal-text">Explore new features</span></span>
+                </button>
+              </figure>
+              <figure class="cs-image-reveal cs-image-reveal-lg cs-interview-board">
+                <button class="cs-image-reveal-trigger" type="button" aria-label="Expand FigJam pain points" data-board-src="assets/vantage/interview-pain-points.png" data-board-title="Pain Points">
+                  <span class="cs-interview-image-label" aria-hidden="true">Pain Points</span>
+                  <img class="cs-image-small" src="assets/vantage/interview-pain-points.png" loading="lazy" alt="Preview of the pain points sticky notes from our FigJam interview synthesis.">
+                  <span class="cs-image-reveal-overlay"><span class="cs-image-reveal-text">Explore pain points</span></span>
+                </button>
+              </figure>
           </div>
         </div>
         <h3 class="cs-interview-subheading">Key Themes From The Research</h3>
