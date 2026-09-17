@@ -31,9 +31,17 @@
   width: 100%;
   display: block;
 }
+.cs-hero-desktop-art {
+  flex: 1.1 1 378px;
+  max-width: 448px;
+  filter: drop-shadow(0 24px 20px rgba(15, 23, 42, 0.12));
+}
 @media (max-width: 900px) {
   .cs-hero-row { flex-direction: column-reverse; }
   .cs-hero-phones { max-width: 340px; }
+  .cs-hero-row.cs-hero-row--split-meta > .cs-hero-desktop-art {
+    max-width: min(448px, 100%);
+  }
 }
 
 /* Opt-in hero layout (iTracefresh): intro text + meta are wrapped in
