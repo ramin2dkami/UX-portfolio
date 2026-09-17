@@ -3,6 +3,15 @@ const vantageInterviews = document.querySelector('.cs-interviews');
 const vantageAudit = document.querySelector('.cs-section-v2--audit');
 if (vantageInterviews && vantageAudit) vantageAudit.after(vantageInterviews);
 
+// Lead the combined solution story with the AI-assisted concept, then follow
+// with the core workflow-management, building, and reuse improvements.
+const vantageSolutionBody = document.querySelector('.cs-solution-section .cs-section-body');
+const vantageAiChapter = vantageSolutionBody?.querySelector('.cs-solution-chapter--ai');
+const vantageFirstChapter = vantageSolutionBody?.querySelector('.cs-subsection');
+if (vantageSolutionBody && vantageAiChapter && vantageFirstChapter !== vantageAiChapter) {
+  vantageSolutionBody.insertBefore(vantageAiChapter, vantageFirstChapter);
+}
+
 // Mobile nav toggle
 const navToggle = document.getElementById('navToggle');
 const mobileNav = document.getElementById('mobileNav');
@@ -385,7 +394,7 @@ document.querySelectorAll('.cs-mockup-showcase').forEach((showcase) => {
 
   function startAuto() {
     stopAuto();
-    if (reduceMotion) return;
+    if (reduceMotion || showcase.closest('.cs-solution-section')) return;
     timer = setInterval(() => render((current + 1) % slides.length), AUTO_MS);
   }
 
@@ -467,6 +476,7 @@ if (lightbox) {
   const lightboxImg = lightbox.querySelector('img');
   const lightboxCaption = lightbox.querySelector('.cs-lightbox-caption');
   const closeBtn = lightbox.querySelector('.cs-lightbox-close');
+  const researchPreview = lightbox.querySelector('.cs-lightbox-research');
   let lastFocused = null;
   const boardViewport = lightbox.querySelector('.cs-board-viewport');
   const boardImg = boardViewport?.querySelector('img');
@@ -521,6 +531,34 @@ if (lightbox) {
     closeBtn.focus();
   };
 
+  const openResearchPreview = (trigger) => {
+    if (!researchPreview) return;
+    const card = trigger.closest('.cs-research-card');
+    const content = card?.querySelector('.cs-research-card-content');
+    if (!content) return;
+    const type = trigger.dataset.previewType;
+    if (type !== 'competitive') {
+      const image = content.querySelector('img.cs-image-small');
+      if (!image) return;
+      lightboxImg.src = image.currentSrc || image.src;
+      lightboxImg.alt = image.alt;
+      lightboxCaption.textContent = '';
+      lastFocused = trigger;
+      lightbox.classList.toggle('cs-lightbox--persona', type === 'persona');
+      lightbox.classList.add('cs-lightbox-lg', 'is-open');
+      document.body.style.overflow = 'hidden';
+      closeBtn.focus();
+      return;
+    }
+    researchPreview.replaceChildren();
+    const table = content.querySelector('.cs-table-wrap');
+    if (table) researchPreview.append(table.cloneNode(true));
+    lastFocused = trigger;
+    lightbox.classList.add('cs-lightbox--research', 'is-open');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  };
+
   // Doc mode: opens a tall, independently-scrollable rendering of a source
   // document (e.g. the raw spreadsheet behind an analysis) instead of an
   // image fit to the viewport.
@@ -537,7 +575,10 @@ if (lightbox) {
     lightbox.classList.remove('cs-lightbox--board');
     lightbox.classList.remove('is-open');
     lightbox.classList.remove('cs-lightbox--gallery');
+    lightbox.classList.remove('cs-lightbox--research');
+    lightbox.classList.remove('cs-lightbox--persona');
     lightbox.classList.remove('cs-lightbox--doc');
+    lightbox.classList.remove('cs-lightbox-lg');
     document.body.style.overflow = '';
     if (lastFocused) lastFocused.focus();
   };
@@ -548,6 +589,14 @@ if (lightbox) {
 
   document.querySelectorAll('.cs-benchmark-pile').forEach((pile) => {
     pile.addEventListener('click', () => openGallery(pile));
+  });
+
+  document.querySelectorAll('.cs-research-card-link').forEach((trigger) => {
+    trigger.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      openResearchPreview(trigger);
+    });
   });
 
   document.querySelectorAll('.cs-doc-trigger').forEach((trigger) => {

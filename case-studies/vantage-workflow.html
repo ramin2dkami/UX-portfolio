@@ -41,7 +41,7 @@
         <div class="cs-hero-intro-col">
           <div class="cs-hero-text">
             <span class="cs-label" style="color:#2e90fa">Vantage</span>
-            <h1 class="cs-hero-title-fit">Making complex media workflows easier to understand, build, and reuse</h1>
+            <h1 class="cs-hero-title-fit">Making Complex Media Workflows Easier To Understand, Build, And Reuse</h1>
             <p class="cs-hero-sub">Vantage helps broadcasters and post-production teams transcode, analyze, and deliver media. I redesigned its workflow experience to make hidden actions discoverable, large workflows easier to navigate, and proven configurations reusable while preserving the patterns experienced engineers already relied on.</p>
           </div>
           <div class="cs-meta">
@@ -97,16 +97,11 @@
               <li>Core actions were hidden.</li>
               <li>Configuration relied on layered dialogs.</li>
               <li>Failures offered limited guidance.</li>
+              <li>No dedicated design function.</li>
+              <li>No structured customer-feedback loop.</li>
+              <li>Legacy interfaces shaped around technical specifications.</li>
+              <li>Manual setup required substantial specialist knowledge.</li>
             </ul>
-            <details class="cs-context-expand">
-              <summary><span class="cs-context-read-more">Read more</span><span class="cs-context-show-less">Show less</span></summary>
-              <ul class="cs-context-list">
-                <li>No dedicated design function.</li>
-                <li>No structured customer-feedback loop.</li>
-                <li>Legacy interfaces shaped around technical specifications.</li>
-                <li>Manual setup required substantial specialist knowledge.</li>
-              </ul>
-            </details>
           </article>
           <article class="cs-context-card cs-context-card--business">
             <span class="cs-context-icon"><img class="cs-context-illustration" src="assets/vantage/business-challenge-illustration.png" alt="Illustration of on-premise servers connecting distributed teams while scaling capacity."></span>
@@ -116,16 +111,10 @@
               <li>Fixed server capacity.</li>
               <li>Slower product and workflow updates.</li>
               <li>Increasingly distributed teams.</li>
+              <li>Fixed capacity during busy periods.</li>
+              <li>High cost of adding hardware.</li>
+              <li>Limited support for remote teams and cloud storage.</li>
             </ul>
-            <details class="cs-context-expand">
-              <summary><span class="cs-context-read-more">Read more</span><span class="cs-context-show-less">Show less</span></summary>
-              <ul class="cs-context-list">
-                <li>Fixed capacity during busy periods.</li>
-                <li>High cost of adding hardware.</li>
-                <li>Slower product and workflow updates.</li>
-                <li>Limited support for remote teams and cloud storage.</li>
-              </ul>
-            </details>
           </article>
         </div>
       </div>
@@ -180,23 +169,7 @@
           </div>
         </div>
       </div>
-      <button type="button" class="cs-doc-card cs-doc-trigger" aria-haspopup="dialog" aria-label="Open the full Vantage heuristic evaluation">
-        <span class="cs-doc-card-icon cs-doc-card-icon--audit" aria-hidden="true">
-          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M9 4.5h10l5 5V27.5H9z"></path>
-            <path d="M19 4.5v5h5"></path>
-            <path d="m12.5 15 1.8 1.8 3.2-3.6"></path>
-            <path d="M19.5 15h2"></path>
-            <path d="m12.5 21 1.8 1.8 3.2-3.6"></path>
-            <path d="M19.5 21h2"></path>
-          </svg>
-        </span>
-        <span class="cs-doc-card-body">
-          <span class="cs-doc-card-name">View The Full Heuristic Evaluation</span>
-          <span class="cs-doc-card-hint">Review all findings, severity ratings, and recommendations</span>
-        </span>
-        <svg class="cs-doc-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg>
-      </button>
+      <button type="button" class="cs-audit-text-trigger cs-doc-trigger" aria-haspopup="dialog">View The Full Heuristic Evaluation</button>
     </div>
 
     <div class="cs-section-v2">
@@ -217,8 +190,16 @@
           </div>
         </div>
 
-        <div class="cs-subsection">
-          <h3>Who We Were Designing For</h3>
+        <div class="cs-research-card-grid">
+        <details class="cs-research-card">
+          <summary>
+            <img class="cs-research-card-illustration" src="assets/vantage/research-illustrations/persona-engineer.png" alt="">
+            <span class="cs-research-card-eyebrow">Who The Design Needed To Serve</span>
+            <span class="cs-research-card-title">Broadcast and media workflow engineers</span>
+            <span class="cs-research-card-summary">Technical specialists responsible for keeping media moving. Experienced engineers needed speed and familiarity; engineers learning the tool needed visible guidance.</span>
+            <button type="button" class="cs-research-card-link" data-preview-type="persona">View the supporting persona <span aria-hidden="true">↗</span></button>
+          </summary>
+          <div class="cs-research-card-content">
           <p>Our primary persona is the broadcast and media workflow engineer: highly technical, responsible for keeping live output error-free, and measured on downtime they cannot afford. Their goals were about reducing production time and manual work &mdash; their pain points were time-consuming, error-prone manual workflows and the difficulty of integrating and optimising the tools they already had.</p>
           <div class="cs-image-row cs-persona-row">
             <figure class="cs-image-reveal cs-image-reveal-lg">
@@ -235,10 +216,18 @@
               </button>
             </figure>
           </div>
-        </div>
+          </div>
+        </details>
 
-        <div class="cs-subsection">
-          <h3>What The Journey Mapping Revealed</h3>
+        <details class="cs-research-card">
+          <summary>
+            <img class="cs-research-card-illustration" src="assets/vantage/research-illustrations/journey-build.png" alt="">
+            <span class="cs-research-card-eyebrow">Where The Journey Became Difficult</span>
+            <span class="cs-research-card-title">From requirements to a reliable build</span>
+            <span class="cs-research-card-summary">The journey map concentrated friction around flexible requirements, finding real-world examples, and building with integration risk. These pointed toward guidance, reusable building blocks, and review.</span>
+            <button type="button" class="cs-research-card-link" data-preview-type="journey">View the supporting journey map <span aria-hidden="true">↗</span></button>
+          </summary>
+          <div class="cs-research-card-content">
           <p>Mapping a veteran engineer building a new transcoding workflow &mdash; from becoming aware of the requirement through to reviewing it in production &mdash; put the friction in the middle of the journey rather than at either end.</p>
           <ul>
             <li><strong>Gathering requirements</strong> &mdash; balancing flexibility against specificity when configuring Vantage</li>
@@ -258,10 +247,18 @@
               </span>
             </button>
           </figure>
-        </div>
+          </div>
+        </details>
 
-        <div class="cs-subsection">
-          <h3>What The Competitive Landscape Confirmed</h3>
+        <details class="cs-research-card">
+          <summary>
+            <img class="cs-research-card-illustration" src="assets/vantage/research-illustrations/competitive-analysis.png" alt="">
+            <span class="cs-research-card-eyebrow">What The Competitive Landscape Confirmed</span>
+            <span class="cs-research-card-title">Vantage was strong where it mattered and absent where users start.</span>
+            <span class="cs-research-card-summary">Benchmarking against general-purpose workflow tools showed the gaps clustered around getting started and staying organised: templates, reuse, search, permissions, and community.</span>
+            <button type="button" class="cs-research-card-link" data-preview-type="competitive">View the competitive comparison <span aria-hidden="true">↗</span></button>
+          </summary>
+          <div class="cs-research-card-content">
           <p><strong style="color:var(--cs-accent)">Vantage was strong where it mattered and absent where users start.</strong> Benchmarking it against general-purpose workflow automation tools showed the gaps clustered around getting started and staying organised &mdash; templates, reuse, search, permissions, community &mdash; rather than around processing capability.</p>
           <div class="cs-hscroll">
           <div class="cs-table-wrap">
@@ -416,6 +413,8 @@
             </button>
           </div>
           </div>
+          </div>
+        </details>
         </div>
 
       </div>
@@ -431,7 +430,9 @@
           <div>
             <p><strong class="cs-interview-emphasis">I conducted interviews with 10 engineers who build and manage workflows in legacy Vantage</strong> to understand what made creating, updating, and troubleshooting them difficult. We grouped their pain points and feature requests into themes to identify user needs and guide the redesign.</p>
           </div>
-          <div class="cs-interview-snapshots">
+          <details class="cs-interview-synthesis">
+            <summary>Explore the raw interview synthesis</summary>
+            <div class="cs-interview-snapshots">
               <figure class="cs-image-reveal cs-image-reveal-lg cs-interview-board">
                 <button class="cs-image-reveal-trigger" type="button" aria-label="Expand FigJam new features" data-board-src="assets/vantage/interview-new-features.png" data-board-title="New Features">
                   <span class="cs-interview-image-label" aria-hidden="true">New Features</span>
@@ -446,12 +447,18 @@
                   <span class="cs-image-reveal-overlay"><span class="cs-image-reveal-text">Explore pain points</span></span>
                 </button>
               </figure>
-          </div>
+            </div>
+          </details>
         </div>
         <h3 class="cs-interview-subheading">Key Themes From The Research</h3>
         <div class="cs-interview-grid">
           <article class="cs-interview-card">
-            <span class="cs-interview-index" aria-hidden="true">01</span>
+            <div class="cs-interview-card-top">
+              <span class="cs-interview-card-mark">
+                <span class="cs-interview-index" aria-hidden="true">01</span>
+                <span class="cs-interview-icon" aria-hidden="true"><img src="assets/vantage/research-icons/workflow-structure.svg" alt=""></span>
+              </span>
+            </div>
             <h3>Understand the whole workflow</h3>
             <p>Large, branching workflows made it hard to see what was happening and where to make a change.</p>
             <details>
@@ -465,7 +472,12 @@
             </details>
           </article>
           <article class="cs-interview-card">
-            <span class="cs-interview-index" aria-hidden="true">02</span>
+            <div class="cs-interview-card-top">
+              <span class="cs-interview-card-mark">
+                <span class="cs-interview-index" aria-hidden="true">02</span>
+                <span class="cs-interview-icon" aria-hidden="true"><img src="assets/vantage/research-icons/reuse-work.svg" alt=""></span>
+              </span>
+            </div>
             <h3>Reuse work that already works</h3>
             <p>Teams wanted to adapt proven building blocks instead of rebuilding or copying complex workflows.</p>
             <details>
@@ -479,7 +491,12 @@
             </details>
           </article>
           <article class="cs-interview-card">
-            <span class="cs-interview-index" aria-hidden="true">03</span>
+            <div class="cs-interview-card-top">
+              <span class="cs-interview-card-mark">
+                <span class="cs-interview-index" aria-hidden="true">03</span>
+                <span class="cs-interview-icon" aria-hidden="true"><img src="assets/vantage/research-icons/contextual-errors.svg" alt=""></span>
+              </span>
+            </div>
             <h3>Explain failures in context</h3>
             <p>An error message was often the start of an investigation, rather than a useful explanation.</p>
             <details>
@@ -493,7 +510,12 @@
             </details>
           </article>
           <article class="cs-interview-card">
-            <span class="cs-interview-index" aria-hidden="true">04</span>
+            <div class="cs-interview-card-top">
+              <span class="cs-interview-card-mark">
+                <span class="cs-interview-index" aria-hidden="true">04</span>
+                <span class="cs-interview-icon" aria-hidden="true"><img src="assets/vantage/research-icons/progress-status.svg" alt=""></span>
+              </span>
+            </div>
             <h3>Make progress easier to trust</h3>
             <p>Slow responses and unclear status made it harder to tell whether work was progressing or stuck.</p>
             <details>
@@ -507,7 +529,12 @@
             </details>
           </article>
           <article class="cs-interview-card">
-            <span class="cs-interview-index" aria-hidden="true">05</span>
+            <div class="cs-interview-card-top">
+              <span class="cs-interview-card-mark">
+                <span class="cs-interview-index" aria-hidden="true">05</span>
+                <span class="cs-interview-icon" aria-hidden="true"><img src="assets/vantage/research-icons/safer-changes.svg" alt=""></span>
+              </span>
+            </div>
             <h3>Make everyday changes safer</h3>
             <p>A small edit could interrupt work, while recovery and access controls were limited.</p>
             <details>
@@ -521,7 +548,12 @@
             </details>
           </article>
           <article class="cs-interview-card">
-            <span class="cs-interview-index" aria-hidden="true">06</span>
+            <div class="cs-interview-card-top">
+              <span class="cs-interview-card-mark">
+                <span class="cs-interview-index" aria-hidden="true">06</span>
+                <span class="cs-interview-icon" aria-hidden="true"><img src="assets/vantage/research-icons/assisted-setup.svg" alt=""></span>
+              </span>
+            </div>
             <h3>Reduce manual setup with assistance</h3>
             <p>Participants saw an opportunity to describe a goal and get help configuring the steps.</p>
             <details>
@@ -538,116 +570,32 @@
         <div class="cs-interview-takeaway">
           <span class="cs-interview-eyebrow">The central takeaway</span>
           <h3>Help teams manage complexity with confidence—and use AI to accelerate setup.</h3>
-          <p>The interviews showed that teams spent too much time understanding existing workflows, repeating configuration, tracing failures, and making routine changes safely. That focused the redesign on clearer workflow overviews, reusable templates, contextual errors, and better recovery.</p>
-          <p>We also found a practical opportunity for AI: users could describe the workflow they needed or provide sample media, then review an AI-generated starting point before anything ran. This reduced the burden of configuration while keeping experts in control. Broader needs such as capacity, licensing, security, documentation, and integrations became product and engineering priorities alongside the interface redesign.</p>
+          <p>Users struggled with <strong>complex workflows, repetitive setup, troubleshooting, and making changes safely</strong>, leading us to prioritize clarity, reuse, and easier recovery.</p>
+          <p>I also identified an opportunity for <strong>AI-assisted workflow creation</strong>. Users could describe what they needed or provide sample media, then review an AI-generated starting point before running anything, <strong>reducing setup effort.</strong></p>
+          <p>Research also uncovered broader needs around <strong>capacity, licensing, security, documentation, and integrations.</strong></p>
         </div>
       </div>
     </section>
 
-    <div class="cs-section-v2">
-      <div class="cs-section-header">
-        <span class="cs-section-number">05</span>
-        <h2>Translating Research Into A Redesigned Workflow Designer</h2>
-      </div>
-      <div class="cs-section-body cs-section-body--wide-gap">
-
-        <div class="cs-subsection">
-          <h3><span style="color:var(--cs-accent)">Separating Workflows</span> From The Design Canvas</h3>
-          <div class="cs-ia-layout">
-            <div class="cs-ia-cards">
-              <div class="cs-ia-card">
-                <span class="cs-ia-tag"></span>
-                <p>Dedicated workflow pages surface <strong style="color:var(--cs-accent)">status, ownership, and failures before users open them.</strong></p>
-              </div>
-              <div class="cs-ia-card">
-                <span class="cs-ia-tag"></span>
-                <p>Search and filters help users find the right workflow faster.</p>
-              </div>
-              <div class="cs-ia-card">
-                <span class="cs-ia-tag"></span>
-                <p>Inline failure counts immediately surface workflows that need attention.</p>
-              </div>
-            </div>
-            <img class="cs-image-small" src="assets/vantage/vantage-workflows-list.jpg" alt="The redesigned Workflows landing page: a searchable, filterable table of workflows with status, version, job failure count, monitor state and last editor.">
-          </div>
-        </div>
-
-        <div class="cs-subsection">
-          <h3><span style="color:var(--cs-accent)">Surfacing Every Action</span> Instead Of Hiding It</h3>
-          <div class="cs-ia-layout">
-            <div class="cs-ia-cards">
-              <div class="cs-ia-card">
-                <span class="cs-ia-tag"></span>
-                <p>A searchable, categorised panel <strong style="color:var(--cs-accent)">replaces actions hidden behind right-clicks.</strong></p>
-              </div>
-              <div class="cs-ia-card">
-                <span class="cs-ia-tag"></span>
-                <p>Favourites and recent filters speed access to frequently used actions.</p>
-              </div>
-              <div class="cs-ia-card">
-                <span class="cs-ia-tag"></span>
-                <p>Guided empty states help first-time users start building a workflow.</p>
-              </div>
-            </div>
-            <img class="cs-image-small" src="assets/vantage/vantage-actions-panel.jpg" alt="The Actions panel open beside the design canvas, listing categorised actions with descriptions, a search field and favourite toggles.">
-          </div>
-        </div>
-
-        <div class="cs-subsection">
-          <h3><span style="color:var(--cs-accent)">Making 100-Action Workflows</span> Navigable</h3>
-          <div class="cs-ia-layout">
-            <div class="cs-ia-cards">
-              <div class="cs-ia-card">
-                <span class="cs-ia-tag"></span>
-                <p>A searchable outline makes <strong style="color:var(--cs-accent)">workflows with 100+ actions easy to navigate.</strong></p>
-              </div>
-              <div class="cs-ia-card">
-                <span class="cs-ia-tag"></span>
-                <p>Selecting an action jumps to it and opens its configuration directly.</p>
-              </div>
-              <div class="cs-ia-card">
-                <span class="cs-ia-tag"></span>
-                <p>Inline warnings expose missing settings and errors <strong style="color:var(--cs-accent)">before activation.</strong></p>
-              </div>
-            </div>
-            <img class="cs-image-small" src="assets/vantage/vantage-outline-errors.jpg" alt="The outline panel listing every action in a workflow, with warning icons marking the actions that are in an error state or missing requirements.">
-          </div>
-        </div>
-
-        <div class="cs-subsection">
-          <h3><span style="color:var(--cs-accent)">Turning Finished Workflows</span> Into Reusable Templates</h3>
-          <div class="cs-ia-layout">
-            <div class="cs-ia-cards">
-              <div class="cs-ia-card">
-                <span class="cs-ia-tag"></span>
-                <p>Users can <strong style="color:var(--cs-accent)">save any group of actions as a reusable template.</strong></p>
-              </div>
-              <div class="cs-ia-card">
-                <span class="cs-ia-tag"></span>
-                <p>A dedicated library makes templates easy to find and add to the canvas.</p>
-              </div>
-              <div class="cs-ia-card">
-                <span class="cs-ia-tag"></span>
-                <p>Central management prevents accidental template edits and duplication.</p>
-              </div>
-            </div>
-            <img class="cs-image-small" src="assets/vantage/vantage-template-library.jpg" alt="The Template Library panel open beside a workflow on the design canvas, showing categorised templates with descriptions.">
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="cs-section-v2">
+    <div class="cs-section-v2 cs-solution-section">
       <div class="cs-section-header cs-section-header--wide-gap">
-        <span class="cs-section-number">06</span>
-        <h2>Final Design &amp; Featured System Capabilities</h2>
+        <span class="cs-section-number">05</span>
+        <h2>From Research To A Clearer, More Reusable Workflow System</h2>
       </div>
       <div class="cs-section-body">
+        <p class="cs-solution-intro">I translated the research into four connected parts of the experience. Together, they help engineers find work that needs attention, understand complex workflows, reuse proven configurations, and explore AI-assisted setup without giving up control.</p>
 
         <div class="cs-subsection">
-          <div class="cs-feature-panel-header">
-            <h3>Workflow Management</h3>
+          <div class="cs-solution-chapter-header">
+            <div>
+              <h3>Find And Monitor</h3>
+              <p>Research showed that teams needed a faster way to locate workflows and understand what required attention. I separated workflow management from the canvas so operational context appears before editing begins.</p>
+            </div>
+          </div>
+          <div class="cs-solution-rationale">
+            <div><span>Research signal</span><p>Finding the right workflow and tracing failures consumed time.</p></div>
+            <div><span>Design response</span><p>A dedicated workflow home combines search, filters, status, ownership, and failure counts.</p></div>
+            <div><span>Key features</span><p>Workflow home · Search and filters · Failure alerts · Read-only preview · Tags</p></div>
           </div>
           <div class="cs-hscroll">
           <div class="cs-feature-grid">
@@ -731,9 +679,9 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
               </button>
               <div class="cs-brand-dots" role="tablist" aria-label="Workflow Management screens">
-                <button class="cs-brand-dot is-active" type="button" role="tab" aria-selected="true" aria-label="Show workflows landing page"></button>
-                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show job summary preview"></button>
-                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show create new workflow panel"></button>
+                <button class="cs-brand-dot is-active" type="button" role="tab" aria-selected="true" aria-label="Show workflows landing page" data-label="Workflow home"></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show job summary preview" data-label="Read-only preview"></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show create new workflow panel" data-label="Create workflow"></button>
               </div>
               <button class="cs-brand-arrow cs-brand-arrow-next" type="button" aria-label="Next screen">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg>
@@ -743,8 +691,16 @@
         </div>
 
         <div class="cs-subsection">
-          <div class="cs-feature-panel-header">
-            <h3>Building A Workflow</h3>
+          <div class="cs-solution-chapter-header">
+            <div>
+              <h3>Build And Troubleshoot</h3>
+              <p>The audit and interviews pointed to the same problem: engineers relied on recall while configuration and errors pulled them out of context. The redesigned canvas makes actions discoverable and links the visual workflow to a searchable outline.</p>
+            </div>
+          </div>
+          <div class="cs-solution-rationale">
+            <div><span>Research signal</span><p>Hidden commands, layered dialogs, and unclear failures slowed setup and recovery.</p></div>
+            <div><span>Design response</span><p>Guided starting points, a searchable action library, and a linked outline keep work in context.</p></div>
+            <div><span>Key features</span><p>Guided empty state · Recommendations · Action library · Outline · Pre-activation warnings</p></div>
           </div>
           <div class="cs-hscroll">
           <div class="cs-feature-grid">
@@ -840,12 +796,12 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
               </button>
               <div class="cs-brand-dots" role="tablist" aria-label="Workflow building screens">
-                <button class="cs-brand-dot is-active" type="button" role="tab" aria-selected="true" aria-label="Show guided empty state"></button>
-                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show recommended next actions"></button>
-                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show searchable action library"></button>
-                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show outline panel"></button>
-                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show pre-activation error states"></button>
-                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show rebuilt action configuration"></button>
+                <button class="cs-brand-dot is-active" type="button" role="tab" aria-selected="true" aria-label="Show guided empty state" data-label="Choose a start"></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show recommended next actions" data-label="Next action"></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show searchable action library" data-label="Action library"></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show outline panel" data-label="Outline panel"></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show pre-activation error states" data-label="Error states"></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show rebuilt action configuration" data-label="Action settings"></button>
               </div>
               <button class="cs-brand-arrow cs-brand-arrow-next" type="button" aria-label="Next screen">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg>
@@ -855,8 +811,16 @@
         </div>
 
         <div class="cs-subsection">
-          <div class="cs-feature-panel-header">
-            <h3>Template Creation</h3>
+          <div class="cs-solution-chapter-header">
+            <div>
+              <h3>Save And Reuse</h3>
+              <p>Teams repeatedly rebuilt or copied complex workflows. I designed a complete reuse loop so engineers could capture working action groups, describe them, find them later, and apply them safely.</p>
+            </div>
+          </div>
+          <div class="cs-solution-rationale">
+            <div><span>Research signal</span><p>Repetitive setup increased effort and made proven configurations difficult to share.</p></div>
+            <div><span>Design response</span><p>Reusable action groups connect creation, discovery, application, and central management.</p></div>
+            <div><span>Key features</span><p>Group actions · Names and tags · Template library · Drag to canvas · Central management</p></div>
           </div>
           <div class="cs-hscroll">
           <div class="cs-feature-grid">
@@ -943,12 +907,12 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
               </button>
               <div class="cs-brand-dots" role="tablist" aria-label="Template Creation screens">
-                <button class="cs-brand-dot is-active" type="button" role="tab" aria-selected="true" aria-label="Show grouping actions into a template"></button>
-                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show save template panel"></button>
-                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show template library"></button>
-                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show dragging a template onto the canvas"></button>
-                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show a workflow built from a template"></button>
-                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show template management in settings"></button>
+                <button class="cs-brand-dot is-active" type="button" role="tab" aria-selected="true" aria-label="Show grouping actions into a template" data-label="Select actions"></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show save template panel" data-label="Save template"></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show template library" data-label="Template library"></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show dragging a template onto the canvas" data-label="Drag to canvas"></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show a workflow built from a template" data-label="Applied workflow"></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show template management in settings" data-label="Manage templates"></button>
               </div>
               <button class="cs-brand-arrow cs-brand-arrow-next" type="button" aria-label="Next screen">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg>
@@ -957,9 +921,17 @@
           </div>
         </div>
 
-        <div class="cs-subsection">
-          <div class="cs-feature-panel-header">
-            <h3>AI Generative Features</h3>
+        <div class="cs-subsection cs-solution-chapter--ai">
+          <div class="cs-solution-chapter-header">
+            <div>
+              <h3>AI-Assisted Setup</h3>
+              <p>Interviews suggested that AI could reduce specialist setup effort. I explored a review-first concept where engineers describe a goal, inspect the generated workflow, and decide whether to apply it.</p>
+            </div>
+          </div>
+          <div class="cs-solution-rationale">
+            <div><span>Research signal</span><p>Manual setup demanded substantial domain knowledge and repeated configuration.</p></div>
+            <div><span>Design response</span><p>AI creates a reviewable draft rather than making an invisible or irreversible change.</p></div>
+            <div><span>Key features</span><p>Prompt-based creation · Preview and approval · Workflow enhancement · Generated summaries</p></div>
           </div>
           <div class="cs-hscroll">
           <div class="cs-feature-grid">
@@ -1045,11 +1017,11 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
               </button>
               <div class="cs-brand-dots" role="tablist" aria-label="AI Generative Features screens">
-                <button class="cs-brand-dot is-active" type="button" role="tab" aria-selected="true" aria-label="Show the AI workflow editor prompt"></button>
-                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show the generated workflow preview"></button>
-                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show the empty workflow summary"></button>
-                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show the generated workflow summary"></button>
-                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show a generated single action description"></button>
+                <button class="cs-brand-dot is-active" type="button" role="tab" aria-selected="true" aria-label="Show the AI workflow editor prompt" data-label="Describe goal"></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show the generated workflow preview" data-label="Review proposal"></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show the empty workflow summary" data-label="Request summary"></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show the generated workflow summary" data-label="Review summary"></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show a generated single action description" data-label="Action description"></button>
               </div>
               <button class="cs-brand-arrow cs-brand-arrow-next" type="button" aria-label="Next screen">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg>
@@ -1063,7 +1035,7 @@
 
     <div class="cs-section-v2 cs-roadmap-section">
       <div class="cs-section-header">
-        <span class="cs-section-number">07</span>
+        <span class="cs-section-number">06</span>
         <h2>Where The Product Goes Next</h2>
       </div>
       <div class="cs-section-body">
@@ -1151,15 +1123,11 @@
       </div>
     </div>
     <div class="cs-lightbox-gallery"></div>
+    <div class="cs-lightbox-research" role="document" aria-label="Research preview"></div>
     <div class="cs-lightbox-doc" role="document" aria-label="Vantage heuristic evaluation">
       <div class="cs-doc-sheet">
         <div class="cs-doc-sheet-head">
           <span class="cs-doc-sheet-title">Heuristic Evaluation of Vantage</span>
-          <div class="cs-doc-sheet-meta">
-            <div class="cs-doc-sheet-meta-item"><span>Evaluator</span><span>Ramin Partovi</span></div>
-            <div class="cs-doc-sheet-meta-item"><span>Evaluation date</span><span>October 10, 2022</span></div>
-            <div class="cs-doc-sheet-meta-item"><span>Device / browser / OS</span><span>MacBook Pro / Chrome / macOS Monterey</span></div>
-          </div>
         </div>
         <span class="cs-doc-legend-label">Severity Rating Legend</span>
         <div class="cs-doc-legend-grid">

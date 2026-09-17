@@ -324,6 +324,74 @@
   letter-spacing: -0.02em;
   color: var(--color-black);
 }
+
+/* Combined research-to-solution section for the Vantage case study. */
+.cs-solution-intro {
+  max-width: 900px;
+  margin: 0;
+  color: var(--color-grey-45);
+  font-size: clamp(1.05rem, 1.3vw, 1.25rem);
+  line-height: 1.7;
+}
+.cs-solution-section .cs-section-body {
+  gap: clamp(64px, 8vw, 96px);
+}
+.cs-solution-section .cs-subsection {
+  gap: 24px;
+  padding: 0;
+  border: 0;
+}
+.cs-solution-section .cs-hscroll { display: none; }
+.cs-solution-chapter-header {
+  max-width: 940px;
+}
+.cs-solution-chapter-header h3 {
+  max-width: 780px;
+  margin: 0 0 12px;
+  color: var(--color-black);
+  font-size: clamp(1.55rem, 2.2vw, 2rem);
+  line-height: 1.22;
+  letter-spacing: -0.025em;
+}
+.cs-solution-chapter-header p {
+  max-width: 780px;
+  margin: 0;
+  color: var(--color-grey-45);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+.cs-solution-rationale {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.cs-solution-rationale > div {
+  min-height: 144px;
+  padding: 22px;
+  border: 1px solid color-mix(in srgb, var(--cs-accent, #2e90fa) 18%, white);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.78);
+}
+.cs-solution-rationale span {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--cs-accent, #2e90fa);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+.cs-solution-rationale p {
+  margin: 0;
+  color: #43506a;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+@media (max-width: 760px) {
+  .cs-solution-rationale { grid-template-columns: 1fr; }
+  .cs-solution-rationale > div { min-height: 0; }
+}
 .cs-feature-grid {
   display: flex;
   gap: 24px;
@@ -535,6 +603,33 @@
 .cs-brand-dot:hover { transform: scale(1.2); }
 .cs-brand-dot:focus-visible { outline: 2px solid var(--cs-accent, var(--color-black)); outline-offset: 3px; }
 .cs-brand-dot.is-active { background: var(--cs-accent, var(--color-black)); }
+.cs-solution-section .cs-brand-controls {
+  max-width: calc(100% - 32px);
+}
+.cs-solution-section .cs-brand-dots {
+  max-width: min(680px, calc(100vw - 150px));
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.cs-solution-section .cs-brand-dots::-webkit-scrollbar { display: none; }
+.cs-solution-section .cs-brand-dot {
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  min-height: 28px;
+  padding: 5px 10px;
+  border-width: 1px;
+  border-radius: 999px;
+  color: var(--cs-accent, var(--color-black));
+  font-size: 0.6875rem;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+.cs-solution-section .cs-brand-dot::after { content: attr(data-label); }
+.cs-solution-section .cs-brand-dot:hover { transform: none; background: color-mix(in srgb, var(--cs-accent, #2e90fa) 10%, white); }
+.cs-solution-section .cs-brand-dot.is-active { color: #fff; }
 .cs-brand-arrow {
   display: flex;
   align-items: center;
@@ -653,8 +748,25 @@
 .cs-mockup-showcase .cs-browser-slide {
   transition: opacity 0.3s ease;
 }
+.cs-solution-section .cs-mockup-showcase {
+  padding: 0 0 52px;
+  overflow: visible;
+  border-radius: 0;
+  background: transparent;
+}
+.cs-solution-section .cs-mockup-showcase .cs-brand-blob {
+  display: none;
+}
+.cs-solution-section .cs-mockup-showcase .cs-browser-mockup {
+  width: min(1180px, 100%);
+  max-width: none;
+}
+.cs-solution-section .cs-mockup-showcase .cs-brand-controls {
+  bottom: 0;
+}
 @media (max-width: 640px) {
   .cs-mockup-showcase { padding: 40px 16px; }
+  .cs-solution-section .cs-mockup-showcase { padding: 0 0 48px; }
 }
 
 .cs-image-quad {
@@ -955,12 +1067,20 @@
   box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.5);
 }
 .cs-lightbox-lg .cs-lightbox-content {
-  max-width: min(1280px, 100%);
+  width: 100%;
+  max-width: 100%;
 }
 .cs-lightbox-lg .cs-lightbox-content img {
-  max-height: 90vh;
+  max-width: 100%;
+  max-height: 100vh;
   border-radius: 0;
 }
+.cs-lightbox.cs-lightbox-lg { padding: 0; }
+.cs-lightbox.cs-lightbox--persona .cs-lightbox-content {
+  width: calc(100% - 48px);
+  max-width: 1200px;
+}
+.cs-lightbox.cs-lightbox--persona .cs-lightbox-content img { transform: none; }
 .cs-lightbox-caption {
   color: var(--color-white);
   font-size: 0.875rem;
@@ -1009,6 +1129,40 @@
 }
 .cs-lightbox.cs-lightbox--gallery .cs-lightbox-gallery {
   display: flex;
+}
+.cs-lightbox-research {
+  display: none;
+  width: min(1180px, 100%);
+  max-height: calc(100vh - 80px);
+  overflow: auto;
+  padding: 28px;
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.5);
+}
+.cs-lightbox.cs-lightbox--research .cs-lightbox-content,
+.cs-lightbox.cs-lightbox--research .cs-lightbox-gallery,
+.cs-lightbox.cs-lightbox--research .cs-board-viewer,
+.cs-lightbox.cs-lightbox--research .cs-lightbox-doc {
+  display: none;
+}
+.cs-lightbox.cs-lightbox--research .cs-lightbox-research {
+  display: block;
+}
+.cs-lightbox-research > img {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  max-height: calc(100vh - 136px);
+  object-fit: contain;
+}
+.cs-lightbox-research .cs-table-wrap {
+  max-height: calc(100vh - 136px);
+  overflow: auto;
+}
+@media (max-width: 700px) {
+  .cs-lightbox-research { max-height: calc(100vh - 48px); padding: 16px; }
 }
 .cs-lightbox-close {
   position: absolute;
@@ -1497,28 +1651,23 @@
   outline-offset: 4px;
   border-radius: 3px;
 }
-.cs-section-v2--audit .cs-doc-card {
-  max-width: none;
-  margin: 0 0 32px;
-  padding: 18px;
-  border-color: color-mix(in srgb, var(--cs-accent, var(--color-black)) 18%, white);
-  box-shadow: none;
+.cs-audit-text-trigger {
+  display: inline-flex;
+  margin-top: 28px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--cs-accent, #2e90fa);
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  cursor: pointer;
 }
-.cs-audit-results + .cs-doc-card {
-  margin-top: 32px;
-  margin-bottom: 0;
-}
-.cs-section-v2--audit .cs-doc-card-icon {
-  width: 68px;
-  height: 68px;
-  border-radius: 14px;
-  font-size: 0.875rem;
-}
-.cs-section-v2--audit .cs-doc-card-name { font-size: 1rem; }
-.cs-section-v2--audit .cs-doc-card-hint { font-size: 0.875rem; }
-.cs-section-v2--audit .cs-doc-card-arrow {
-  width: 24px;
-  height: 24px;
+.cs-audit-text-trigger:hover { text-decoration: underline; }
+.cs-audit-text-trigger:focus-visible {
+  outline: 2px solid var(--cs-accent, #2e90fa);
+  outline-offset: 4px;
+  border-radius: 3px;
 }
 .cs-audit-results {
   display: flex;
@@ -1758,7 +1907,7 @@
 .cs-context-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: start;
+  align-items: stretch;
   gap: 20px;
 }
 .cs-context-card {
@@ -2747,6 +2896,44 @@
 .cs-interview-board .cs-image-small { width: 100%; height: auto; max-height: 360px; object-fit: contain; background: #f4f4f4; }
 .cs-interview-board figcaption { margin-top: 12px; font-size: .8125rem; line-height: 1.6; color: var(--color-grey-45); }
 .cs-interview-snapshots { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.cs-interview-synthesis {
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--cs-accent) 22%, white);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.76);
+}
+.cs-interview-synthesis summary {
+  display: flex;
+  align-items: center;
+  min-height: 58px;
+  padding: 14px 22px;
+  color: #1d2939;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+.cs-interview-synthesis summary::-webkit-details-marker { display: none; }
+.cs-interview-synthesis summary::before {
+  content: "";
+  width: 0;
+  height: 0;
+  margin-right: 9px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 7px solid currentColor;
+  transition: transform 0.2s ease;
+}
+.cs-interview-synthesis[open] summary {
+  border-bottom: 1px solid color-mix(in srgb, var(--cs-accent) 14%, white);
+}
+.cs-interview-synthesis[open] summary::before { transform: rotate(90deg); }
+.cs-interview-synthesis .cs-interview-snapshots { padding: 20px; }
+.cs-interview-synthesis summary:focus-visible {
+  outline: 2px solid var(--cs-accent);
+  outline-offset: -3px;
+}
 .cs-interview-snapshots .cs-interview-board { max-width: none; }
 .cs-interview-image-label {
   position: absolute;
@@ -2793,18 +2980,44 @@
   background: white;
   border-radius: 18px;
 }
+.cs-interview-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 18px;
+}
+.cs-interview-card-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 7px 6px 10px;
+  border-radius: 10px;
+  background: #edf6ff;
+}
 .cs-interview-index {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  background: transparent;
   color: #236dbd;
-  background: #edf6ff;
   font-size: .8125rem;
   font-weight: 700;
-  margin-bottom: 18px;
+}
+.cs-interview-icon {
+  display: grid;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  place-items: center;
+}
+.cs-interview-icon img {
+  display: block;
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) saturate(100%) invert(48%) sepia(98%) saturate(2520%) hue-rotate(195deg) brightness(101%) contrast(98%);
 }
 .cs-interviews .cs-interview-card h3 { margin: 0 0 12px; }
 .cs-interview-card details { margin-top: 22px; border-top: 1px solid #e3edf9; }
@@ -2848,6 +3061,107 @@
   outline: 2px solid var(--cs-accent);
   outline-offset: 5px;
   border-radius: 4px;
+}
+
+/* Section 4 research evidence cards */
+.cs-research-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.cs-research-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #d5e7fc;
+  border-radius: 18px;
+  background: #fff;
+}
+.cs-research-card summary {
+  display: flex;
+  flex: 1;
+  min-height: 278px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 28px 24px 24px;
+  list-style: none;
+  cursor: pointer;
+}
+.cs-research-card-illustration {
+  display: block;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 22px;
+  padding: 6px;
+  border-radius: 14px;
+  background: #edf6ff;
+  object-fit: contain;
+}
+.cs-research-card summary::-webkit-details-marker { display: none; }
+.cs-research-card summary:focus-visible {
+  outline: 2px solid var(--cs-accent);
+  outline-offset: -3px;
+}
+.cs-research-card-eyebrow {
+  margin-bottom: 16px;
+  color: var(--cs-accent);
+  font-family: 'Roboto Mono', monospace;
+  font-size: .6875rem;
+  font-weight: 500;
+  letter-spacing: .12em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+.cs-research-card-title {
+  display: block;
+  margin-bottom: 14px;
+  color: var(--color-black);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -.015em;
+  line-height: 1.25;
+}
+.cs-research-card-summary {
+  display: block;
+  color: #53627a;
+  font-size: .9375rem;
+  line-height: 1.6;
+}
+.cs-research-card-link {
+  display: inline-flex;
+  gap: 5px;
+  margin-top: auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #236dbd;
+  font: inherit;
+  font-size: .875rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.cs-research-card-link span { font-size: 1rem; line-height: 1; }
+.cs-research-card summary:hover .cs-research-card-link { text-decoration: underline; }
+.cs-research-card-link:focus-visible {
+  outline: 2px solid var(--cs-accent);
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+.cs-research-card:nth-child(3) .cs-research-card-link { padding-top: 12px; }
+.cs-research-card[open] summary {
+  min-height: 0;
+  border-bottom: 1px solid #e3edf9;
+}
+.cs-research-card-content { display: none; }
+.cs-research-card-content > p:first-child { margin-top: 0; }
+.cs-research-card-content .cs-hscroll { margin-top: 20px; }
+@media (max-width: 1000px) {
+  .cs-research-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .cs-research-card-grid { grid-template-columns: 1fr; }
+  .cs-research-card summary { min-height: 0; }
 }
 @media (max-width: 700px) {
   .cs-interview-grid { grid-template-columns: 1fr; }
