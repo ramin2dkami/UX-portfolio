@@ -53,30 +53,32 @@
               <span>Team</span>
               <span>Product Manager, VP Software Engineer, +5 Developers</span>
             </div>
+            <div class="cs-meta-item cs-meta-item--accent">
+              <span>Responsibilities</span>
+              <span>Heuristic evaluation, user interviews, synthesis, information architecture, interaction design, prototyping, and design handoff.</span>
+            </div>
           </div>
         </div>
         <img class="cs-hero-phones cs-hero-desktop-art" src="assets/vantage/vantage-desktop-mockup.png" alt="The redesigned Vantage workflow designer displayed in a light champagne-silver desktop computer mockup.">
       </div>
 
       <div class="cs-hero-badge-row">
-        <span class="cs-hero-badge">Business And Product Impact</span>
+        <span class="cs-hero-badge">Usability Testing Results</span>
       </div>
-      <div class="cs-hero-stats">
+      <div class="cs-hero-stats cs-hero-stats--testing">
         <div class="cs-hero-stat">
-          <span class="cs-hero-stat-value">44%</span>
-          <span class="cs-hero-stat-label"><strong>faster workflow setup</strong><br>45 min → 25 min median setup time.</span>
+          <div class="cs-hero-stat-heading">
+            <span class="cs-hero-stat-value">44%</span>
+            <strong>faster task completion</strong>
+          </div>
+          <span class="cs-hero-stat-label">Median workflow setup time decreased from 45 to 25 minutes during testing.</span>
         </div>
         <div class="cs-hero-stat">
-          <span class="cs-hero-stat-value">57%</span>
-          <span class="cs-hero-stat-label"><strong>fewer configuration errors</strong><br>Pre-activation errors fell from 28% to 12%.</span>
-        </div>
-        <div class="cs-hero-stat">
-          <span class="cs-hero-stat-value">35%</span>
-          <span class="cs-hero-stat-label"><strong>template adoption</strong><br>1 in 3 new workflows started from reusable templates.</span>
-        </div>
-        <div class="cs-hero-stat">
-          <span class="cs-hero-stat-value">25%</span>
-          <span class="cs-hero-stat-label"><strong>fewer support requests</strong><br>Fewer workflow tickets after the redesign.</span>
+          <div class="cs-hero-stat-heading">
+            <span class="cs-hero-stat-value">57%</span>
+            <strong>fewer configuration errors</strong>
+          </div>
+          <span class="cs-hero-stat-label">The observed error rate decreased from 28% to 12% across the tested tasks.</span>
         </div>
       </div>
     </div>
@@ -1033,58 +1035,77 @@
       </div>
     </div>
 
-    <div class="cs-section-v2 cs-roadmap-section">
+    <div class="cs-section-v2 cs-validation-section" id="validation">
       <div class="cs-section-header">
         <span class="cs-section-number">06</span>
-        <h2>Where The Product Goes Next</h2>
+        <h2>Validating The Redesigned Workflows</h2>
       </div>
-      <div class="cs-section-body">
-        <div class="cs-roadmap-grid">
-          <article class="cs-roadmap-step cs-roadmap-step--first">
-            <div class="cs-roadmap-card">
-              <span class="cs-roadmap-icon" aria-hidden="true"><img src="assets/vantage/icons/icon-user.svg" alt=""></span>
-              <div class="cs-roadmap-content">
-                <span class="cs-roadmap-index" aria-hidden="true">01</span>
-                <span class="cs-roadmap-theme">Research Practice</span>
-                <h3>Validate The Experience</h3>
-                <ul class="cs-roadmap-list">
-                  <li>Continuous usability testing</li>
-                  <li>Actionable error states</li>
-                </ul>
+      <div class="cs-section-body cs-validation-body">
+        <p class="cs-section-intro">I evaluated representative workflow setup and configuration tasks through usability testing. The redesigned experience showed improvements in task efficiency and error prevention.</p>
+        <div class="cs-validation-key-results">
+          <span class="cs-validation-label">Key Results</span>
+          <div class="cs-validation-results" aria-label="Usability testing results">
+            <article class="cs-validation-result">
+              <div class="cs-validation-result-summary">
+                <span class="cs-validation-result-value">44%</span>
+                <h3>Faster Task Completion</h3>
               </div>
-            </div>
-          </article>
+              <div class="cs-validation-comparison" aria-label="Median workflow setup time decreased from 45 to 25 minutes">
+                <span><strong>45 min</strong> Before</span>
+                <span class="cs-validation-arrow" aria-hidden="true">→</span>
+                <span><strong>25 min</strong> Redesigned</span>
+              </div>
+            </article>
+            <article class="cs-validation-result">
+              <div class="cs-validation-result-summary">
+                <span class="cs-validation-result-value">57%</span>
+                <h3>Fewer Configuration Errors</h3>
+              </div>
+              <div class="cs-validation-comparison" aria-label="Observed configuration error rate decreased from 28 to 12 percent">
+                <span><strong>28%</strong> Before</span>
+                <span class="cs-validation-arrow" aria-hidden="true">→</span>
+                <span><strong>12%</strong> Redesigned</span>
+              </div>
+            </article>
+          </div>
+        </div>
+        <aside class="cs-validation-note" aria-label="Supporting material note">
+          <svg class="cs-validation-note-icon" viewBox="0 0 32 36" fill="none" aria-hidden="true">
+            <path d="M6.5 1.5h12l7 7v26h-19z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"></path>
+            <path d="M18.5 1.5v7h7M11 17h10M11 22.5h10M11 28h7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+          <p>The original recordings and research documentation remained with Telestream after my departure. The results presented here reflect the usability-testing findings available to me.</p>
+        </aside>
+      </div>
+    </div>
 
-          <article class="cs-roadmap-step">
-            <div class="cs-roadmap-card">
-              <span class="cs-roadmap-icon" aria-hidden="true"><img src="assets/vantage/icons/icon-layout.svg" alt=""></span>
-              <div class="cs-roadmap-content">
-                <span class="cs-roadmap-index" aria-hidden="true">02</span>
-                <span class="cs-roadmap-theme">System Foundation</span>
-                <h3>Extend The Design System</h3>
-                <ul class="cs-roadmap-list">
-                  <li>Patterns for every action</li>
-                  <li>Centralised settings</li>
-                </ul>
-              </div>
-            </div>
-          </article>
+    <div class="cs-section-v2 cs-conclusion-section">
+      <div class="cs-section-header">
+        <span class="cs-section-number">07</span>
+        <h2>What I Delivered And Learned</h2>
+      </div>
+      <div class="cs-section-body cs-conclusion-body">
+        <p class="cs-conclusion-opening">Vantage required balancing two needs: making complex work easier to understand while preserving the speed and familiarity experienced engineers relied on.</p>
 
-          <article class="cs-roadmap-step cs-roadmap-step--last">
-            <div class="cs-roadmap-card">
-              <span class="cs-roadmap-icon" aria-hidden="true"><img src="assets/vantage/icons/icon-activity.svg" alt=""></span>
-              <div class="cs-roadmap-content">
-                <span class="cs-roadmap-index" aria-hidden="true">03</span>
-                <span class="cs-roadmap-theme">Workflow Operations</span>
-                <h3>Strengthen Operational Confidence</h3>
-                <ul class="cs-roadmap-list">
-                  <li>Version history</li>
-                  <li>Monitoring and spaces</li>
-                </ul>
-              </div>
-            </div>
+        <div class="cs-conclusion-grid">
+          <article class="cs-conclusion-card">
+            <span class="cs-conclusion-label">What I delivered</span>
+            <p>I redesigned the workflow experience across discovery, building, troubleshooting, and reuse. I also explored a review-first approach to AI-assisted setup, allowing engineers to inspect and approve generated work before applying it.</p>
+          </article>
+          <article class="cs-conclusion-card">
+            <span class="cs-conclusion-label">My contribution</span>
+            <p>I audited the existing product, conducted interviews with 10 workflow engineers, synthesized the findings into design priorities, and translated those priorities into interaction concepts and high-fidelity workflows.</p>
+          </article>
+          <article class="cs-conclusion-card">
+            <span class="cs-conclusion-label">What I learned</span>
+            <p>The project reinforced that modernizing an expert tool does not require replacing every familiar pattern. The strongest improvements made hidden actions visible, kept complex work in context, and gave engineers safer ways to review and reuse their work.</p>
           </article>
         </div>
+
+        <aside class="cs-conclusion-next">
+          <span class="cs-conclusion-label">What I would validate next</span>
+          <p>I would continue testing the redesigned workflows in realistic operating conditions, strengthen error recovery and version history, and validate the AI-assisted concepts before implementation.</p>
+        </aside>
       </div>
     </div>
 
