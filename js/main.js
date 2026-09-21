@@ -3,15 +3,6 @@ const vantageInterviews = document.querySelector('.cs-interviews');
 const vantageAudit = document.querySelector('.cs-section-v2--audit');
 if (vantageInterviews && vantageAudit) vantageAudit.after(vantageInterviews);
 
-// Lead the combined solution story with the AI-assisted concept, then follow
-// with the core workflow-management, building, and reuse improvements.
-const vantageSolutionBody = document.querySelector('.cs-solution-section .cs-section-body');
-const vantageAiChapter = vantageSolutionBody?.querySelector('.cs-solution-chapter--ai');
-const vantageFirstChapter = vantageSolutionBody?.querySelector('.cs-subsection');
-if (vantageSolutionBody && vantageAiChapter && vantageFirstChapter !== vantageAiChapter) {
-  vantageSolutionBody.insertBefore(vantageAiChapter, vantageFirstChapter);
-}
-
 // Mobile nav toggle
 const navToggle = document.getElementById('navToggle');
 const mobileNav = document.getElementById('mobileNav');

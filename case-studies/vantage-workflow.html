@@ -80,6 +80,13 @@
           </div>
           <span class="cs-hero-stat-label">The observed error rate decreased from 28% to 12% across the tested tasks.</span>
         </div>
+        <div class="cs-hero-stat">
+          <div class="cs-hero-stat-heading">
+            <span class="cs-hero-stat-value">91</span>
+            <strong>SUS score</strong>
+          </div>
+          <span class="cs-hero-stat-label">System Usability Scale score from the usability evaluation.</span>
+        </div>
       </div>
     </div>
 
@@ -128,6 +135,7 @@
         <h2>What I Was Getting Myself Into</h2>
       </div>
       <p class="cs-audit-lead">With no existing usability research to build on, I audited the core workflows of Vantage, the company’s flagship product. I documented 12 usability issues, including five I rated as major. <span class="cs-audit-emphasis">I treated these findings as initial hypotheses, using them to define the research questions I would investigate with users.</span></p>
+      <span class="cs-audit-label">Key Learnings</span>
       <div class="cs-audit-findings" aria-label="Three consequential audit findings">
         <article class="cs-audit-finding">
           <span class="cs-audit-finding-index">01</span>
@@ -1041,10 +1049,20 @@
         <h2>Validating The Redesigned Workflows</h2>
       </div>
       <div class="cs-section-body cs-validation-body">
-        <p class="cs-section-intro">I evaluated representative workflow setup and configuration tasks through usability testing. The redesigned experience showed improvements in task efficiency and error prevention.</p>
+        <p class="cs-section-intro"><strong>I evaluated representative workflow setup and configuration tasks in UserZoom usability testing with seven participants.</strong> The redesigned experience showed improvements in task efficiency and error prevention.</p>
         <div class="cs-validation-key-results">
+          <aside class="cs-validation-note" aria-label="Supporting material note">
+            <p><span class="cs-validation-note-asterisk">*</span> <em>The original recordings and research documentation remained with Telestream after my departure. The results presented here reflect the usability-testing findings available to me.</em></p>
+          </aside>
           <span class="cs-validation-label">Key Results</span>
           <div class="cs-validation-results" aria-label="Usability testing results">
+            <article class="cs-validation-result">
+              <div class="cs-validation-result-summary">
+                <span class="cs-validation-result-value">7</span>
+                <h3>Participants Interviewed</h3>
+              </div>
+              <p class="cs-validation-result-context">Seven participants were interviewed as part of the UserZoom usability evaluation.</p>
+            </article>
             <article class="cs-validation-result">
               <div class="cs-validation-result-summary">
                 <span class="cs-validation-result-value">44%</span>
@@ -1067,15 +1085,15 @@
                 <span><strong>12%</strong> Redesigned</span>
               </div>
             </article>
+            <article class="cs-validation-result">
+              <div class="cs-validation-result-summary">
+                <span class="cs-validation-result-value">91</span>
+                <h3>System Usability Scale Score</h3>
+              </div>
+              <p class="cs-validation-result-context">The usability evaluation produced a SUS score of 91.</p>
+            </article>
           </div>
         </div>
-        <aside class="cs-validation-note" aria-label="Supporting material note">
-          <svg class="cs-validation-note-icon" viewBox="0 0 32 36" fill="none" aria-hidden="true">
-            <path d="M6.5 1.5h12l7 7v26h-19z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"></path>
-            <path d="M18.5 1.5v7h7M11 17h10M11 22.5h10M11 28h7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-          <p>The original recordings and research documentation remained with Telestream after my departure. The results presented here reflect the usability-testing findings available to me.</p>
-        </aside>
       </div>
     </div>
 
@@ -1085,27 +1103,70 @@
         <h2>What I Delivered And Learned</h2>
       </div>
       <div class="cs-section-body cs-conclusion-body">
-        <p class="cs-conclusion-opening">Vantage required balancing two needs: making complex work easier to understand while preserving the speed and familiarity experienced engineers relied on.</p>
-
-        <div class="cs-conclusion-grid">
-          <article class="cs-conclusion-card">
-            <span class="cs-conclusion-label">What I delivered</span>
-            <p>I redesigned the workflow experience across discovery, building, troubleshooting, and reuse. I also explored a review-first approach to AI-assisted setup, allowing engineers to inspect and approve generated work before applying it.</p>
-          </article>
-          <article class="cs-conclusion-card">
-            <span class="cs-conclusion-label">My contribution</span>
-            <p>I audited the existing product, conducted interviews with 10 workflow engineers, synthesized the findings into design priorities, and translated those priorities into interaction concepts and high-fidelity workflows.</p>
-          </article>
-          <article class="cs-conclusion-card">
-            <span class="cs-conclusion-label">What I learned</span>
-            <p>The project reinforced that modernizing an expert tool does not require replacing every familiar pattern. The strongest improvements made hidden actions visible, kept complex work in context, and gave engineers safer ways to review and reuse their work.</p>
-          </article>
+        <div class="cs-conclusion-balance" aria-label="Balanced modernization: simpler workflows while preserving expert speed">
+          <div class="cs-conclusion-balance-side cs-conclusion-balance-side--left">
+            <strong>Simplicity</strong>
+            <span>Easier to understand <br>and maintain</span>
+          </div>
+          <div class="cs-conclusion-venn" aria-hidden="true">
+            <span class="cs-conclusion-venn-circle cs-conclusion-venn-circle--left"></span>
+            <span class="cs-conclusion-venn-circle cs-conclusion-venn-circle--right"></span>
+            <strong>Balanced<br>modernization</strong>
+          </div>
+          <div class="cs-conclusion-balance-side cs-conclusion-balance-side--right">
+            <strong>Expert speed</strong>
+            <span>Keep the familiarity <br>engineers rely on</span>
+          </div>
         </div>
 
-        <aside class="cs-conclusion-next">
-          <span class="cs-conclusion-label">What I would validate next</span>
-          <p>I would continue testing the redesigned workflows in realistic operating conditions, strengthen error recovery and version history, and validate the AI-assisted concepts before implementation.</p>
-        </aside>
+        <div class="cs-conclusion-grid">
+          <article class="cs-conclusion-item">
+            <h3 class="cs-conclusion-item-heading">
+              <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M8 3h11l5 5v21H8V3Z" stroke="currentColor" stroke-width="2"/><path d="M19 3v6h6M12 15h8M12 20h8M12 25h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Delivered
+            </h3>
+            <ul>
+              <li>Redesigned discovery, building, troubleshooting, and reuse.</li>
+              <li>Explored review-first AI-assisted setup.</li>
+              <li>Designed a way to inspect and approve generated work.</li>
+            </ul>
+          </article>
+          <article class="cs-conclusion-item">
+            <h3 class="cs-conclusion-item-heading">
+              <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="10" r="4" stroke="currentColor" stroke-width="2"/><circle cx="6" cy="12" r="3" stroke="currentColor" stroke-width="2"/><circle cx="26" cy="12" r="3" stroke="currentColor" stroke-width="2"/><path d="M9 27v-3a7 7 0 0 1 14 0v3H9ZM2 27v-5a5 5 0 0 1 5-5M30 27v-5a5 5 0 0 0-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Contributed
+            </h3>
+            <ul>
+              <li>Audited the existing product.</li>
+              <li>Interviewed 10 workflow engineers.</li>
+              <li>Synthesized findings into design priorities.</li>
+              <li>Created interaction concepts and high-fidelity workflows.</li>
+            </ul>
+          </article>
+          <article class="cs-conclusion-item">
+            <h3 class="cs-conclusion-item-heading">
+              <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 3a10 10 0 0 0-6 18c1.4 1 2 2.1 2 4h8c0-1.9.6-3 2-4A10 10 0 0 0 16 3ZM12 28h8M14 31h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Learned
+            </h3>
+            <ul>
+              <li>Modernization does not mean replacing every familiar pattern.</li>
+              <li>Made hidden actions visible.</li>
+              <li>Kept complex work in context.</li>
+              <li>Supported safer review and reuse.</li>
+            </ul>
+          </article>
+          <article class="cs-conclusion-item">
+            <h3 class="cs-conclusion-item-heading">
+              <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M4 27h24M8 23v-5M15 23V12M22 23V6M19 9l3-3 3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Validate next
+            </h3>
+            <ul>
+              <li>Test in realistic operating conditions.</li>
+              <li>Strengthen error recovery and version history.</li>
+              <li>Validate AI-assisted concepts before implementation.</li>
+            </ul>
+          </article>
+        </div>
       </div>
     </div>
 
