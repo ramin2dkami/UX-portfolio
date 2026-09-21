@@ -364,6 +364,29 @@ document.querySelectorAll('.cs-mockup-showcase').forEach((showcase) => {
   const nextBtn = showcase.querySelector('.cs-brand-arrow-next');
   if (!slides.length || !dots.length) return;
 
+  const browserMockup = showcase.querySelector('.cs-browser-mockup');
+  const controls = showcase.querySelector('.cs-brand-controls');
+  const walkthrough = document.createElement('div');
+  walkthrough.className = 'cs-showcase-walkthrough';
+  walkthrough.innerHTML = `
+    <div class="cs-showcase-copy">
+      <div class="cs-showcase-title-row">
+        <h4 class="cs-showcase-title"></h4>
+      </div>
+      <p class="cs-showcase-description"></p>
+    </div>
+  `;
+  const title = walkthrough.querySelector('.cs-showcase-title');
+  const count = document.createElement('span');
+  count.className = 'cs-showcase-count';
+  count.setAttribute('aria-live', 'polite');
+  const description = walkthrough.querySelector('.cs-showcase-description');
+  if (controls) {
+    controls.append(count);
+    walkthrough.append(controls);
+  }
+  if (browserMockup) browserMockup.after(walkthrough);
+
   const AUTO_MS = 3500;
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let current = 0;
@@ -376,6 +399,11 @@ document.querySelectorAll('.cs-mockup-showcase').forEach((showcase) => {
       dot.classList.toggle('is-active', i === index);
       dot.setAttribute('aria-selected', i === index ? 'true' : 'false');
     });
+    const activeDot = dots[index];
+    const label = activeDot?.dataset.label || 'Workflow screen';
+    title.textContent = label.replace(/\b[a-z]/g, (letter) => letter.toUpperCase());
+    count.textContent = `${String(index + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+    description.textContent = activeDot?.dataset.description || slides[index].alt;
   }
 
   function stopAuto() {
@@ -423,6 +451,8 @@ document.querySelectorAll('.cs-mockup-showcase').forEach((showcase) => {
   } else {
     startAuto();
   }
+
+  render(0);
 });
 
 // Horizontal-scroll affordance: prev/next arrow buttons overlaid on a
