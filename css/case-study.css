@@ -150,8 +150,9 @@
 }
 .cs-hero-stat-heading {
   display: flex;
-  align-items: baseline;
-  gap: 14px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
 }
 .cs-hero-stat-heading .cs-hero-stat-value {
   font-size: clamp(2.25rem, 3vw, 3rem);
