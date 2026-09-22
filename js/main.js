@@ -261,6 +261,34 @@ document.querySelectorAll('.cs-scroll-phone-screen').forEach((screen) => {
   }
 });
 
+// Build the below-screen caption and controls used by the case-study walkthroughs.
+function createShowcaseWalkthrough(stage, controls, dots, slides) {
+  if (!stage || !controls) return null;
+  const walkthrough = document.createElement('div');
+  walkthrough.className = 'cs-showcase-walkthrough';
+  walkthrough.innerHTML = `
+    <div class="cs-showcase-copy">
+      <div class="cs-showcase-title-row"><h4 class="cs-showcase-title"></h4></div>
+      <p class="cs-showcase-description"></p>
+    </div>
+  `;
+  const title = walkthrough.querySelector('.cs-showcase-title');
+  const description = walkthrough.querySelector('.cs-showcase-description');
+  const count = document.createElement('span');
+  count.className = 'cs-showcase-count';
+  count.setAttribute('aria-live', 'polite');
+  controls.append(count);
+  walkthrough.append(controls);
+  stage.after(walkthrough);
+  return (index) => {
+    const dot = dots[index];
+    const label = dot?.dataset.label || 'Workflow screen';
+    title.textContent = label.replace(/\b[a-z]/g, (letter) => letter.toUpperCase());
+    count.textContent = `${String(index + 1).padStart(2, '0')} / ${String(dots.length).padStart(2, '0')}`;
+    description.textContent = dot?.dataset.description || slides[index]?.alt || '';
+  };
+}
+
 // Brand Management showcase: a small carousel — three desktop screens plus
 // the mobile screen — that auto-advances but can also be jumped to directly
 // via the dots, so the user isn't stuck waiting on the animation.
@@ -278,6 +306,9 @@ document.querySelectorAll('.cs-brand-showcase').forEach((showcase) => {
   const AUTO_MS = 5000;
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const phoneContent = phoneStage.querySelector('.cs-scroll-phone-content');
+  const updateWalkthrough = showcase.closest('.cs-walkthrough-section')
+    ? createShowcaseWalkthrough(showcase.querySelector('.cs-brand-stage-frame'), showcase.querySelector('.cs-brand-controls'), dots, browserSlides)
+    : null;
   let current = 0;
   let phoneWasActive = false;
 
@@ -293,6 +324,7 @@ document.querySelectorAll('.cs-brand-showcase').forEach((showcase) => {
       dot.classList.toggle('is-active', i === index);
       dot.setAttribute('aria-selected', i === index ? 'true' : 'false');
     });
+    if (updateWalkthrough) updateWalkthrough(index);
 
     // Restart the phone's scroll-pan from the top each time it becomes the
     // active slide, so it never resumes mid-scroll from wherever it happened
@@ -312,7 +344,7 @@ document.querySelectorAll('.cs-brand-showcase').forEach((showcase) => {
 
   function startAuto() {
     stopAuto();
-    if (reduceMotion) return;
+    if (reduceMotion || showcase.closest('.cs-walkthrough-section')) return;
     timer = setInterval(() => render((current + 1) % total), AUTO_MS);
   }
 
@@ -335,6 +367,8 @@ document.querySelectorAll('.cs-brand-showcase').forEach((showcase) => {
       startAuto();
     });
   }
+
+  render(0);
 
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(
@@ -366,26 +400,7 @@ document.querySelectorAll('.cs-mockup-showcase').forEach((showcase) => {
 
   const browserMockup = showcase.querySelector('.cs-browser-mockup');
   const controls = showcase.querySelector('.cs-brand-controls');
-  const walkthrough = document.createElement('div');
-  walkthrough.className = 'cs-showcase-walkthrough';
-  walkthrough.innerHTML = `
-    <div class="cs-showcase-copy">
-      <div class="cs-showcase-title-row">
-        <h4 class="cs-showcase-title"></h4>
-      </div>
-      <p class="cs-showcase-description"></p>
-    </div>
-  `;
-  const title = walkthrough.querySelector('.cs-showcase-title');
-  const count = document.createElement('span');
-  count.className = 'cs-showcase-count';
-  count.setAttribute('aria-live', 'polite');
-  const description = walkthrough.querySelector('.cs-showcase-description');
-  if (controls) {
-    controls.append(count);
-    walkthrough.append(controls);
-  }
-  if (browserMockup) browserMockup.after(walkthrough);
+  const updateWalkthrough = createShowcaseWalkthrough(browserMockup, controls, dots, slides);
 
   const AUTO_MS = 3500;
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -399,11 +414,7 @@ document.querySelectorAll('.cs-mockup-showcase').forEach((showcase) => {
       dot.classList.toggle('is-active', i === index);
       dot.setAttribute('aria-selected', i === index ? 'true' : 'false');
     });
-    const activeDot = dots[index];
-    const label = activeDot?.dataset.label || 'Workflow screen';
-    title.textContent = label.replace(/\b[a-z]/g, (letter) => letter.toUpperCase());
-    count.textContent = `${String(index + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
-    description.textContent = activeDot?.dataset.description || slides[index].alt;
+    if (updateWalkthrough) updateWalkthrough(index);
   }
 
   function stopAuto() {
@@ -413,7 +424,7 @@ document.querySelectorAll('.cs-mockup-showcase').forEach((showcase) => {
 
   function startAuto() {
     stopAuto();
-    if (reduceMotion || showcase.closest('.cs-solution-section')) return;
+    if (reduceMotion || showcase.closest('.cs-solution-section, .cs-walkthrough-section')) return;
     timer = setInterval(() => render((current + 1) % slides.length), AUTO_MS);
   }
 
