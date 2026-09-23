@@ -413,90 +413,108 @@
       </div>
     </div>
 
-    <div class="cs-section-v2">
+    <div class="cs-section-v2 cs-design-decisions-section">
       <div class="cs-section-header">
         <span class="cs-section-number">06</span>
-        <h2>Translating Data &amp; Research Into Proposed Solutions</h2>
+        <h2>Designing One Connected Traceability Experience</h2>
       </div>
-      <div class="cs-section-body cs-section-body--wide-gap">
+      <div class="cs-section-body">
+        <p class="cs-design-decisions-intro">Research showed that iTracefresh did not lack capability; it lacked a connected experience. I focused the redesign on making core labeling faster, bringing related workflows into one product structure, and giving growers clearer tools to manage customer engagement and recall events.</p>
+        <div class="cs-decision-layout">
+          <div class="cs-decision-grid">
+          <article class="cs-decision-card">
+            <div class="cs-decision-card-title"><span class="cs-decision-number">01</span><h3>Unify the product structure</h3></div>
+            <div class="cs-decision-flow-row"><img class="cs-decision-flow-icon" src="assets/itracefresh/icons/section6-disconnected-modules.svg" alt=""><span>Disconnected modules</span></div>
+            <div class="cs-decision-flow-row"><img class="cs-decision-flow-arrow" src="assets/itracefresh/icons/section6-down-arrow.svg" alt=""><span>Unified navigation</span></div>
+            <div class="cs-decision-outcome"><img class="cs-decision-outcome-icon" src="assets/itracefresh/icons/section6-outcome-clarity.svg" alt=""><strong>Easier to find<br>and understand</strong></div>
+          </article>
 
-        <div class="cs-subsection">
-          <h3><span style="color:var(--cs-accent)">Improved</span> Information Architecture</h3>
-          <div class="cs-ia-layout">
-            <div class="cs-ia-cards">
-              <div class="cs-ia-card">
-                <span class="cs-ia-tag"></span>
-                <p>iTracefresh modules are now all accessible within the side navigation.</p>
-              </div>
-              <div class="cs-ia-card">
-                <span class="cs-ia-tag"></span>
-                <p>Improved findability <strong style="color:var(--cs-accent)">for creating labels by 37%.</strong></p>
-              </div>
-            </div>
-            <img class="cs-image-small" src="assets/itracefresh/itracefresh-ia.jpg" alt="iTracefresh's Label module shown nested inside iTradeNetwork's unified OMS Enterprise sidebar navigation.">
+          <article class="cs-decision-card">
+            <div class="cs-decision-card-title"><span class="cs-decision-number">02</span><h3>Make label creation the core workflow</h3></div>
+            <div class="cs-decision-flow-row"><img class="cs-decision-flow-icon" src="assets/itracefresh/icons/section6-document.svg" alt=""><span>Slow and error-prone</span></div>
+            <div class="cs-decision-flow-row"><img class="cs-decision-flow-arrow" src="assets/itracefresh/icons/section6-down-arrow.svg" alt=""><span>Guided wizard</span></div>
+            <div class="cs-decision-outcome"><img class="cs-decision-outcome-icon" src="assets/itracefresh/icons/section6-outcome-efficiency.svg" alt=""><strong>Fewer clicks,<br>clearer path</strong></div>
+          </article>
+
+          <article class="cs-decision-card">
+            <div class="cs-decision-card-title"><span class="cs-decision-number">03</span><h3>Extend value beyond compliance</h3></div>
+            <div class="cs-decision-flow-row"><img class="cs-decision-flow-icon" src="assets/itracefresh/icons/section6-bar-chart.svg" alt=""><span>Needed more value</span></div>
+            <div class="cs-decision-flow-row"><img class="cs-decision-flow-arrow" src="assets/itracefresh/icons/section6-down-arrow.svg" alt=""><span>Brand + recall tools</span></div>
+            <div class="cs-decision-outcome"><img class="cs-decision-outcome-icon" src="assets/itracefresh/icons/section6-outcome-engagement.svg" alt=""><strong>Stronger customer<br>engagement</strong></div>
+            </article>
           </div>
         </div>
 
-        <div class="cs-subsection">
-          <h3><span style="color:var(--cs-accent)">Streamlining The Label Creation</span> In One Flow</h3>
-          <div class="cs-ia-layout">
-            <div class="cs-ia-cards">
-              <div class="cs-ia-card">
-                <span class="cs-ia-tag"></span>
-                <p>Designed a guided wizard to help users quickly progress through the setup.</p>
-              </div>
-              <div class="cs-ia-card">
-                <span class="cs-ia-tag"></span>
-                <p>Step progress bar will be anchored to each step to show progression.</p>
-              </div>
-              <div class="cs-ia-card">
-                <span class="cs-ia-tag"></span>
-                <p>User will automatically progress to next step after filling out required fields in each step. <strong style="color:var(--cs-accent)">Reducing clicks by 58%.</strong></p>
-              </div>
-            </div>
-            <img class="cs-image-small" src="assets/itracefresh/itracefresh-auto-progress.jpg" alt="Annotated wizard screen showing the step progress bar advancing automatically and a scroll indicator for revisiting previous steps.">
+        <section class="cs-platform-map" aria-labelledby="connected-platform-title">
+          <h3 id="connected-platform-title">One connected product</h3>
+          <div class="cs-platform-map-nodes">
+            <article class="cs-platform-map-node cs-platform-map-node--core">
+              <span class="cs-platform-map-icon"><img src="assets/itracefresh/icons/section6-label-management.svg" alt=""></span>
+              <span class="cs-platform-map-copy"><h4>Label Management</h4><span class="cs-platform-map-status">Validated core workflow</span></span>
+            </article>
+            <img class="cs-platform-map-arrow" src="assets/itracefresh/icons/section6-flow-arrow.svg" alt="">
+            <article class="cs-platform-map-node">
+              <span class="cs-platform-map-icon"><img src="assets/itracefresh/icons/section6-brand-management.svg" alt=""></span>
+              <span class="cs-platform-map-copy"><h4>Brand Management</h4><span class="cs-platform-map-status">Customer engagement extension</span></span>
+            </article>
+            <img class="cs-platform-map-arrow" src="assets/itracefresh/icons/section6-flow-arrow.svg" alt="">
+            <article class="cs-platform-map-node">
+              <span class="cs-platform-map-icon"><img src="assets/itracefresh/icons/section6-recall-management.svg" alt=""></span>
+              <span class="cs-platform-map-copy"><h4>Recall Management</h4><span class="cs-platform-map-status">Safety and response extension</span></span>
+            </article>
           </div>
-        </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="cs-section-v2 cs-walkthrough-section">
+      <div class="cs-section-header cs-section-header--wide-gap">
+        <span class="cs-section-number">07</span>
+        <h2>Final End to End Label Solution &amp; Features</h2>
+      </div>
+      <div class="cs-section-body">
 
         <div class="cs-subsection">
-          <h3><span style="color:var(--cs-accent)">Personalizing The Scan Experience</span> For Every Brand</h3>
-          <div class="cs-ia-layout">
-            <div class="cs-ia-cards">
-              <div class="cs-ia-card">
-                <span class="cs-ia-tag"></span>
-                <p>Growers wanted their own branding to carry through past the warehouse, all the way to the moment a customer engages with the product.</p>
-              </div>
-              <div class="cs-ia-card">
-                <span class="cs-ia-tag"></span>
-                <p>Growers can personalize their own branded marketing pages to help customers connect with the brand.</p>
-              </div>
-              <div class="cs-ia-card">
-                <span class="cs-ia-tag"></span>
-                <p>Self-service template configuration for both web and mobile experiences.</p>
-              </div>
-            </div>
-            <img class="cs-image-small" src="assets/itracefresh/itracefresh-brand-template-default.jpg" alt="Brand Template Creation configuration screen in its default state, before a brand is selected, with an empty live preview.">
+          <div class="cs-feature-panel-header">
+            <h3>Label Management</h3>
           </div>
-        </div>
+          <p class="cs-walkthrough-summary">Create and find PTI, hybrid pallet, and SSCC labels in one place. Guided creation, scanning and activation, and trace summary reporting carry the workflow from setup through tracking.</p>
+          <div class="cs-mockup-showcase">
+            <span class="cs-brand-blob cs-brand-blob-1" aria-hidden="true"></span>
+            <span class="cs-brand-blob cs-brand-blob-2" aria-hidden="true"></span>
+            <span class="cs-brand-blob cs-brand-blob-3" aria-hidden="true"></span>
 
-        <div class="cs-subsection">
-          <h3><span style="color:var(--cs-accent)">Preventing Disasters</span> With A Recall Management Event</h3>
-          <div class="cs-ia-layout">
-            <div class="cs-ia-cards">
-              <div class="cs-ia-card">
-                <span class="cs-ia-tag"></span>
-                <p>Growers wanted a solution where they can quickly respond to food-borne illnesses or contaminations by creating a recall event.</p>
+            <div class="cs-browser-mockup">
+              <div class="cs-browser-chrome">
+                <span class="cs-browser-dot" aria-hidden="true"></span>
+                <span class="cs-browser-dot" aria-hidden="true"></span>
+                <span class="cs-browser-dot" aria-hidden="true"></span>
+                <span class="cs-browser-url">app.itracefresh.com</span>
               </div>
-              <div class="cs-ia-card">
-                <span class="cs-ia-tag"></span>
-                <p>Based on feedback, stores and customers will now be notified when growers initiate a recall event.</p>
-              </div>
-              <div class="cs-ia-card">
-                <span class="cs-ia-tag"></span>
-                <p>Growers can manage all recall events in one centralized platform.</p>
+              <div class="cs-browser-screen">
+                <img class="cs-browser-slide is-active" src="assets/itracefresh/itracefresh-label-list.jpg" alt="Label list view showing PTI, hybrid pallet, and SSCC labels with their product description, lot number, and date created.">
+                <img class="cs-browser-slide" src="assets/itracefresh/itracefresh-label-create-pti.jpg" alt="Create PTI Label wizard showing the pack date, product info, tracking info, printing options, and finalize print steps.">
+                <img class="cs-browser-slide" src="assets/itracefresh/itracefresh-label-hybrid-pallet.jpg" alt="Create Hybrid Pallet Label flow with the Add Product panel for entering product, lot, and pallet details.">
+                <img class="cs-browser-slide" src="assets/itracefresh/itracefresh-label-scan-activate.jpg" alt="Activate Item Labels step showing scanned item codes, total scans, and total unique products.">
+                <img class="cs-browser-slide" src="assets/itracefresh/itracefresh-label-trace-summary.jpg" alt="Trace Summary Report showing ship-from and ship-to locations on a map alongside totals for products, sales, and customers.">
               </div>
             </div>
-            <img class="cs-image-small" src="assets/itracefresh/itracefresh-recall-management-event.jpg" alt="Create Recall Event flow for managing a food safety recall from a centralized platform.">
+
+            <div class="cs-brand-controls">
+              <button class="cs-brand-arrow cs-brand-arrow-prev" type="button" aria-label="Previous screen">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+              </button>
+              <div class="cs-brand-dots" role="tablist" aria-label="Label Management screens">
+                <button class="cs-brand-dot is-active" type="button" role="tab" aria-selected="true" aria-label="Show label list screen" data-label="Unified Label List" data-description="Find PTI, hybrid pallet, and SSCC labels in one searchable list, with product, lot, and creation details visible at a glance."></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show create PTI label screen" data-label="Guided PTI Label Creation" data-description="Move through pack date, product and tracking information, printing options, and final print in a guided sequence."></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show create hybrid pallet label screen" data-label="Hybrid Pallet Labeling" data-description="Add products to a pallet label with the details needed for each product and lot."></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show scan and activate screen" data-label="Label Scanning and Activation" data-description="Scan or enter item codes to activate labels while tracking total scans and unique products."></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show trace summary report screen" data-label="Trace Summary Reporting" data-description="Review ship-from and ship-to locations on a map alongside product, sales, and customer totals."></button>
+              </div>
+              <button class="cs-brand-arrow cs-brand-arrow-next" type="button" aria-label="Next screen">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg>
+              </button>
+            </div>
           </div>
         </div>
 
@@ -505,7 +523,7 @@
 
     <div class="cs-section-v2">
       <div class="cs-section-header">
-        <span class="cs-section-number">07</span>
+        <span class="cs-section-number">08</span>
         <h2>Comparing Legacy with The New Solution</h2>
       </div>
       <div class="cs-section-body">
@@ -577,67 +595,13 @@
 
     <div class="cs-section-v2 cs-walkthrough-section">
       <div class="cs-section-header cs-section-header--wide-gap">
-        <span class="cs-section-number">08</span>
-        <h2>Final End to End Label Solution &amp; Features</h2>
-      </div>
-      <div class="cs-section-body">
-
-        <div class="cs-subsection">
-          <div class="cs-feature-panel-header">
-            <h3>Label Management</h3>
-          </div>
-          <p class="cs-walkthrough-summary">Create and find PTI, hybrid pallet, and SSCC labels in one place. Guided creation, scanning and activation, and trace summary reporting carry the workflow from setup through tracking.</p>
-          <div class="cs-mockup-showcase">
-            <span class="cs-brand-blob cs-brand-blob-1" aria-hidden="true"></span>
-            <span class="cs-brand-blob cs-brand-blob-2" aria-hidden="true"></span>
-            <span class="cs-brand-blob cs-brand-blob-3" aria-hidden="true"></span>
-
-            <div class="cs-browser-mockup">
-              <div class="cs-browser-chrome">
-                <span class="cs-browser-dot" aria-hidden="true"></span>
-                <span class="cs-browser-dot" aria-hidden="true"></span>
-                <span class="cs-browser-dot" aria-hidden="true"></span>
-                <span class="cs-browser-url">app.itracefresh.com</span>
-              </div>
-              <div class="cs-browser-screen">
-                <img class="cs-browser-slide is-active" src="assets/itracefresh/itracefresh-label-list.jpg" alt="Label list view showing PTI, hybrid pallet, and SSCC labels with their product description, lot number, and date created.">
-                <img class="cs-browser-slide" src="assets/itracefresh/itracefresh-label-create-pti.jpg" alt="Create PTI Label wizard showing the pack date, product info, tracking info, printing options, and finalize print steps.">
-                <img class="cs-browser-slide" src="assets/itracefresh/itracefresh-label-hybrid-pallet.jpg" alt="Create Hybrid Pallet Label flow with the Add Product panel for entering product, lot, and pallet details.">
-                <img class="cs-browser-slide" src="assets/itracefresh/itracefresh-label-scan-activate.jpg" alt="Activate Item Labels step showing scanned item codes, total scans, and total unique products.">
-                <img class="cs-browser-slide" src="assets/itracefresh/itracefresh-label-trace-summary.jpg" alt="Trace Summary Report showing ship-from and ship-to locations on a map alongside totals for products, sales, and customers.">
-              </div>
-            </div>
-
-            <div class="cs-brand-controls">
-              <button class="cs-brand-arrow cs-brand-arrow-prev" type="button" aria-label="Previous screen">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
-              </button>
-              <div class="cs-brand-dots" role="tablist" aria-label="Label Management screens">
-                <button class="cs-brand-dot is-active" type="button" role="tab" aria-selected="true" aria-label="Show label list screen" data-label="Unified Label List" data-description="Find PTI, hybrid pallet, and SSCC labels in one searchable list, with product, lot, and creation details visible at a glance."></button>
-                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show create PTI label screen" data-label="Guided PTI Label Creation" data-description="Move through pack date, product and tracking information, printing options, and final print in a guided sequence."></button>
-                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show create hybrid pallet label screen" data-label="Hybrid Pallet Labeling" data-description="Add products to a pallet label with the details needed for each product and lot."></button>
-                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show scan and activate screen" data-label="Label Scanning and Activation" data-description="Scan or enter item codes to activate labels while tracking total scans and unique products."></button>
-                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show trace summary report screen" data-label="Trace Summary Reporting" data-description="Review ship-from and ship-to locations on a map alongside product, sales, and customer totals."></button>
-              </div>
-              <button class="cs-brand-arrow cs-brand-arrow-next" type="button" aria-label="Next screen">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg>
-              </button>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="cs-section-v2 cs-walkthrough-section">
-      <div class="cs-section-header cs-section-header--wide-gap">
         <span class="cs-section-number">09</span>
         <h2>From Label Creation to a Connected Traceability Platform</h2>
       </div>
       <div class="cs-section-body">
         <div class="cs-section-intro">
-          <p>The label-creation flow was the first experience I validated through usability testing. Interviews also showed that growers needed the same product and traceability data to support two adjacent jobs: extending their brand experience to consumers and responding quickly when a recall occurred.</p>
-          <p>I used those findings to define two additional product directions that would bring labeling, brand management, and recall response into one connected platform. The usability benchmark on this page applies to label creation only.</p>
+          <p>Label creation was the first workflow validated through usability testing. Research also revealed that growers needed the same product and traceability data for <strong>consumer branding and recall response</strong>.</p>
+          <p>These insights shaped two additional product directions, connecting labeling, brand management, and recalls within one platform. The usability benchmark shown here applies only to label creation.</p>
         </div>
         <div class="cs-subsection">
           <div class="cs-feature-panel-header">
