@@ -654,8 +654,85 @@ main > section {
   transform: scaleY(0.15);
 }
 
+.order-diagram {
+  position: relative;
+  width: 156px;
+  height: 142px;
+  flex-shrink: 0;
+}
+.order-ticket {
+  position: absolute;
+  width: 104px;
+  height: 124px;
+  padding: 20px 16px;
+  border: 1.5px solid rgba(197, 138, 25, 0.34);
+  border-radius: 14px;
+  background: var(--color-white);
+  box-shadow: 0 18px 38px -20px rgba(10, 10, 12, 0.34);
+  opacity: 0;
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.order-ticket--back {
+  left: 0;
+  top: 0;
+  transform: translate(-8px, 8px) rotate(-8deg) scale(0.92);
+}
+.order-ticket--front {
+  right: 0;
+  bottom: 0;
+  transform: translate(8px, 8px) rotate(5deg) scale(0.92);
+}
+.order-ticket span {
+  display: block;
+  height: 5px;
+  margin-bottom: 10px;
+  border-radius: 999px;
+  background: #e8e3d6;
+}
+.order-ticket span:nth-child(2) { width: 72%; }
+.order-ticket span:nth-child(3) { width: 48%; }
+.order-ticket i {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 18px;
+  height: 20px;
+  border-radius: 7px;
+  background: #f7dfaa;
+}
+.order-status-dot {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  width: 18px;
+  height: 18px;
+  border: 4px solid var(--color-white);
+  border-radius: 50%;
+  background: #c58a19;
+  box-shadow: 0 6px 14px rgba(197, 138, 25, 0.35);
+  opacity: 0;
+  transform: scale(0.4);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.order-diagram.is-visible .order-ticket--back {
+  opacity: 1;
+  transform: rotate(-8deg) scale(1);
+}
+.order-diagram.is-visible .order-ticket--front {
+  opacity: 1;
+  transform: rotate(5deg) scale(1);
+  transition-delay: 0.55s;
+}
+.order-diagram.is-visible .order-status-dot {
+  opacity: 1;
+  transform: scale(1);
+  transition-delay: 1.15s;
+}
+.order-diagram.resetting .order-ticket,
+.order-diagram.resetting .order-status-dot { transition: none; }
+
 @media (prefers-reduced-motion: reduce) {
-  .wf-box, .wf-line, .pd-node, .pd-line, .pd-ground, .pulse-bar { transition: none; animation: none; }
+  .wf-box, .wf-line, .pd-node, .pd-line, .pd-ground, .pulse-bar, .order-ticket, .order-status-dot { transition: none; animation: none; }
   .pulse-bars.is-visible .pulse-bar { transform: scaleY(1); }
 }
 .case-label {

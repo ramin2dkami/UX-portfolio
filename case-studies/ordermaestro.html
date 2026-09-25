@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OrderMaestro - Ramin Partovi</title>
+<meta name="description" content="Case study: redesigning OrderMaestro into a mobile-first order and inventory management platform for foodservice teams.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+<link rel="stylesheet" href="../css/case-study.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-pill">
+    <a href="../index.html" class="logo active"><img src="../assets/icons/logo-mark.png" alt="Ramin Partovi" class="logo-mark"></a>
+    <span class="divider" aria-hidden="true"></span>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#resume">Resume</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+    <a href="../index.html#work">Work</a>
+    <a href="../index.html#resume">Resume</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<main class="cs-ordermaestro" style="--cs-accent:#c58a19">
+
+  <section>
+    <div class="cs-hero" style="padding-top:140px">
+      <div class="cs-hero-row cs-hero-row--split-meta">
+        <div class="cs-hero-intro-col">
+          <div class="cs-hero-text">
+            <span class="cs-label" style="color:#a86f06">OrderMaestro</span>
+            <h1>Turning a Desktop Bottleneck Into a Mobile Workflow</h1>
+            <p class="cs-hero-sub">I led the end-to-end redesign of a complex B2B order and inventory management platform, creating a mobile-first experience that helped foodservice teams complete essential work wherever it happened.</p>
+          </div>
+          <div class="cs-meta">
+            <div class="cs-meta-item cs-meta-item--accent">
+              <span>Role</span>
+              <span>UX Designer</span>
+            </div>
+            <div class="cs-meta-item cs-meta-item--accent">
+              <span>Team</span>
+              <span>Product, Engineering, QA, and Customer teams</span>
+            </div>
+            <div class="cs-meta-item cs-meta-item--accent">
+              <span>Responsibilities</span>
+              <span>Research, workflow definition, interaction design, prototyping, usability testing, design-system development, and implementation support</span>
+            </div>
+            <div class="cs-meta-item cs-meta-item--accent">
+              <span>Platform</span>
+              <span>Mobile, tablet, and desktop</span>
+            </div>
+          </div>
+        </div>
+        <img class="cs-hero-phones cs-om-hero-art" src="assets/ordermaestro/ordermaestro-hero.webp" alt="Two OrderMaestro mobile screens showing an order detail and a product list with quantity controls.">
+      </div>
+
+      <div class="cs-hero-badge-row">
+        <span class="cs-hero-badge">Product &amp; business impact</span>
+      </div>
+      <div class="cs-hero-stats cs-hero-stats--testing cs-om-hero-stats">
+        <div class="cs-hero-stat">
+          <div class="cs-hero-stat-heading"><span class="cs-hero-stat-value">75%</span><strong>higher task completion</strong></div>
+          <span class="cs-hero-stat-label">More users completed the evaluated workflows in the redesigned experience.</span>
+        </div>
+        <div class="cs-hero-stat">
+          <div class="cs-hero-stat-heading"><span class="cs-hero-stat-value">80%</span><strong>less time on task</strong></div>
+          <span class="cs-hero-stat-label">The mobile-first workflows substantially reduced the effort required for everyday work.</span>
+        </div>
+        <div class="cs-hero-stat">
+          <div class="cs-hero-stat-heading"><span class="cs-hero-stat-value">25%</span><strong>revenue growth</strong></div>
+          <span class="cs-hero-stat-label">Reported six months after launch during my tenure at iTradeNetwork.</span>
+        </div>
+        <div class="cs-hero-stat">
+          <div class="cs-hero-stat-heading"><span class="cs-hero-stat-value">40%</span><strong>customer acquisition</strong></div>
+          <span class="cs-hero-stat-label">The modernized platform supported stronger market traction.</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="cs-section-v2 cs-om-context" aria-labelledby="om-context-title">
+      <div class="cs-section-header">
+        <span class="cs-section-number">01</span>
+        <h2 id="om-context-title">A Critical Platform With Growth at a Standstill</h2>
+      </div>
+      <div class="cs-section-body cs-section-body--wide-gap">
+        <p class="cs-section-intro">OrderMaestro was iTradeNetwork’s second-largest product, <strong class="cs-om-highlight">supporting approximately 50,000 users and three of the five largest foodservice operators.</strong> But an outdated, desktop-only experience limited adoption, weakened the sales story, and made daily work harder for people who rarely stayed at a desk.</p>
+
+        <section class="cs-om-context-group cs-om-glance" aria-labelledby="om-glance-title">
+          <h3 class="cs-obj-label cs-om-context-label" id="om-glance-title">At a glance</h3>
+          <div class="cs-om-business-grid" aria-label="OrderMaestro business context">
+            <article class="cs-om-critical"><span class="cs-om-status">Critical</span><strong>2</strong><span>new accounts added<br>in three years</span></article>
+            <article class="cs-om-critical"><span class="cs-om-status">Critical</span><strong>−36%</strong><span>revenue decline after<br>losing a major client</span></article>
+          </div>
+        </section>
+
+        <section class="cs-om-subsection" aria-labelledby="om-bottleneck-title">
+          <div class="cs-om-copy">
+            <h3 id="om-bottleneck-title">Essential work was trapped in a desktop workflow.</h3>
+            <p>Sales reps, warehouse teams, and operators needed to manage orders, resolve issues, and update inventory while moving through facilities. But key details were spread across disconnected screens, routine actions took too many steps, and everyday work often required a return to a workstation.</p>
+          </div>
+          <figure class="cs-om-media-card cs-om-media-card--legacy">
+            <button class="cs-image-reveal-trigger" type="button" aria-label="Expand the legacy OrderMaestro inventory interface">
+              <img src="assets/ordermaestro/legacy-inventory.webp" alt="Legacy OrderMaestro inventory valuation screen with dense controls, a narrow filter panel, and a large desktop data table.">
+              <span class="cs-image-reveal-text">The legacy inventory interface prioritized system structure over the user’s task.</span>
+            </button>
+          </figure>
+        </section>
+
+        <section class="cs-om-context-group cs-om-stalled" aria-labelledby="om-stalled-title">
+          <h3 class="cs-obj-label cs-om-context-label" id="om-stalled-title">Why it stalled</h3>
+          <div class="cs-om-diagnosis">
+            <article>
+              <svg class="cs-om-problem-icon" viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="7" width="38" height="27" rx="2"/><path d="M17 41h14M24 34v7"/></svg>
+              <div><h3>Work stopped at the desk</h3><p>People spent roughly 75% of their day moving through facilities, but lost order visibility the moment they stepped away from a workstation.</p><button type="button" class="cs-om-diagnosis-toggle" aria-expanded="false">Read more</button></div>
+            </article>
+            <article>
+              <svg class="cs-om-problem-icon" viewBox="0 0 48 48" aria-hidden="true"><rect x="13" y="4" width="22" height="39" rx="3"/><path d="M22 37h4"/></svg>
+              <div><h3>Mobile existed, but didn’t stick</h3><p>An earlier mobile offering was available, but customers did not adopt it—showing that access alone was not enough.</p><button type="button" class="cs-om-diagnosis-toggle" aria-expanded="false">Read more</button></div>
+            </article>
+            <article>
+              <svg class="cs-om-problem-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 18a26 26 0 0 1 36 0M12 24a17 17 0 0 1 24 0M18 30a9 9 0 0 1 12 0M24 38h.01"/></svg>
+              <div><h3>Lost service meant lost progress</h3><p>Inventory quantities could not be saved without a connection, disrupting the workflow teams relied on most in the field.</p><button type="button" class="cs-om-diagnosis-toggle" aria-expanded="false">Read more</button></div>
+            </article>
+            <article>
+              <svg class="cs-om-problem-icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="21" cy="21" r="13"/><path d="m31 31 11 11"/></svg>
+              <div><h3>Finding the right product took too long</h3><p>Exact-match search and buried order changes slowed product discovery and made important exceptions easy to miss.</p><button type="button" class="cs-om-diagnosis-toggle" aria-expanded="false">Read more</button></div>
+            </article>
+          </div>
+        </section>
+
+      </div>
+    </section>
+
+    <section class="cs-section-v2 cs-om-success-section" aria-labelledby="om-success-title">
+      <div class="cs-section-header">
+        <span class="cs-section-number">02</span>
+        <h2 id="om-success-title">Defining the Goal</h2>
+      </div>
+      <div class="cs-section-body">
+        <p class="cs-section-intro">Free core workflows from the desk while keeping the depth, trust, and dependability people rely on in enterprise tools.</p>
+        <div class="cs-om-success">
+          <article>
+            <svg class="cs-om-success-art" viewBox="0 0 160 96" aria-hidden="true" focusable="false">
+              <circle class="om-art-soft" cx="80" cy="48" r="38"/>
+              <path class="om-art-line om-art-dash" d="M34 58c6-14 14-22 24-26"/>
+              <rect class="om-art-paper" x="60" y="12" width="40" height="72" rx="8"/>
+              <line class="om-art-line" x1="75" y1="19" x2="85" y2="19"/>
+              <rect class="om-art-accent" x="67" y="30" width="8" height="8" rx="2"/>
+              <rect class="om-art-accent" x="67" y="44" width="8" height="8" rx="2"/>
+              <rect class="om-art-muted" x="67" y="58" width="8" height="8" rx="2"/>
+              <polyline class="om-art-check" points="69,34 70.5,35.5 73,32.5"/>
+              <polyline class="om-art-check" points="69,48 70.5,49.5 73,46.5"/>
+              <line class="om-art-line om-art-thin" x1="79" y1="34" x2="93" y2="34"/>
+              <line class="om-art-line om-art-thin" x1="79" y1="48" x2="90" y2="48"/>
+              <line class="om-art-line om-art-thin" x1="79" y1="62" x2="92" y2="62"/>
+              <path class="om-art-coral" d="M118 46c-6.5-7-9.5-11.5-9.5-15.5a9.5 9.5 0 0 1 19 0c0 4-3 8.5-9.5 15.5z"/>
+              <circle class="om-art-white" cx="118" cy="30.5" r="3.2"/>
+              <ellipse class="om-art-muted" cx="118" cy="52" rx="7" ry="2"/>
+            </svg>
+            <h3>Untethered from the desk</h3>
+            <p>Place orders, approve requests, and manage inventory from wherever the work happens.</p>
+          </article>
+          <article>
+            <svg class="cs-om-success-art" viewBox="0 0 160 96" aria-hidden="true" focusable="false">
+              <line class="om-art-line om-art-accent-stroke" x1="18" y1="32" x2="36" y2="32"/>
+              <line class="om-art-line om-art-accent-stroke" x1="12" y1="40" x2="34" y2="40"/>
+              <line class="om-art-line om-art-accent-stroke" x1="20" y1="48" x2="36" y2="48"/>
+              <rect class="om-art-paper" x="42" y="28" width="92" height="24" rx="12"/>
+              <circle class="om-art-line" cx="56" cy="39" r="5"/>
+              <line class="om-art-line" x1="59.5" y1="42.5" x2="63" y2="46"/>
+              <line class="om-art-line om-art-thin" x1="70" y1="40" x2="104" y2="40"/>
+              <rect class="om-art-soft" x="54" y="60" width="68" height="18" rx="6"/>
+              <rect class="om-art-accent" x="60" y="65" width="8" height="8" rx="2"/>
+              <line class="om-art-line om-art-thin" x1="74" y1="69" x2="102" y2="69"/>
+              <circle class="om-art-lime" cx="130" cy="69" r="8"/>
+              <polyline class="om-art-line" points="126.5,69 129,71.5 133.5,66.5"/>
+              <path class="om-art-coral" d="M142 12l-9 13h6l-3 11 10-15h-6z"/>
+            </svg>
+            <h3>Less friction, faster results</h3>
+            <p>Cut the steps it takes to locate products and get daily tasks done.</p>
+          </article>
+          <article>
+            <svg class="cs-om-success-art" viewBox="0 0 160 96" aria-hidden="true" focusable="false">
+              <circle class="om-art-soft" cx="80" cy="48" r="38"/>
+              <line class="om-art-line" x1="40" y1="80" x2="120" y2="80"/>
+              <rect class="om-art-muted" x="50" y="60" width="14" height="20" rx="3"/>
+              <rect class="om-art-soft-strong" x="70" y="48" width="14" height="32" rx="3"/>
+              <rect class="om-art-accent" x="90" y="32" width="14" height="48" rx="3"/>
+              <polyline class="om-art-line om-art-coral-stroke" points="44,56 64,46 80,38 112,18"/>
+              <polyline class="om-art-line om-art-coral-stroke" points="102,17 112,18 108,27"/>
+              <path class="om-art-lime-star" d="M124 44l2 5 5 2-5 2-2 5-2-5-5-2 5-2z"/>
+              <path class="om-art-accent" d="M36 24l1.4 3.6 3.6 1.4-3.6 1.4-1.4 3.6-1.4-3.6-3.6-1.4 3.6-1.4z"/>
+            </svg>
+            <h3>Built to grow the business</h3>
+            <p>Deliver a modern, connected experience that keeps existing customers loyal and attracts new ones.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-section-v2 cs-om-discovery" aria-labelledby="om-discovery-title">
+      <div class="cs-section-header">
+        <span class="cs-section-number">03</span>
+        <h2 id="om-discovery-title">Starting From How People Actually Work</h2>
+      </div>
+      <div class="cs-section-body cs-section-body--wide-gap">
+        <p class="cs-section-intro">I owned design from early discovery all the way into implementation. Through stakeholder interviews, customer feedback, journey and empathy mapping, personas, and a competitive review, it became clear the real opportunity went well beyond fitting a desktop product onto a smaller screen.</p>
+
+        <div class="cs-om-process" aria-label="Design leadership process">
+          <article><span>01</span><h3>Study the context</h3><p>I linked people’s daily routines and physical surroundings to the operational and business problems driving each request.</p></article>
+          <article><span>02</span><h3>Design for critical moments</h3><p>I aimed early concepts at the decisions, exceptions, and inventory tasks that mattered most once users stepped away from a desk.</p></article>
+          <article><span>03</span><h3>Stay aligned to launch</h3><p>I worked with product and engineering through technical constraints, validated designs with customers, and stayed involved through QA.</p></article>
+        </div>
+
+
+        <div class="cs-om-research-gallery">
+          <figure>
+            <button class="cs-image-reveal-trigger" type="button" aria-label="Expand the multi-unit manager journey map">
+              <img src="assets/ordermaestro/journey-map.webp" alt="Multi-unit manager journey map covering order checks, inventory, supply ordering, carts, vendor review, budgets, alerts, and planning.">
+              <span class="cs-image-reveal-text">The journey map tied each step of the operational day to its friction points and the product opportunities behind them.</span>
+            </button>
+            <figcaption><strong>Journey map</strong><span>Traced how multi-unit managers shifted between ordering, inventory, compliance, and resolving exceptions.</span></figcaption>
+          </figure>
+          <figure>
+            <button class="cs-image-reveal-trigger" type="button" aria-label="Expand the OrderMaestro empathy map">
+              <img src="assets/ordermaestro/empathy-map.webp" alt="Empathy map documenting what an OrderMaestro user thinks, feels, hears, sees, does, and says, with pains and objectives.">
+              <span class="cs-image-reveal-text">The empathy map surfaced what users needed most: efficiency, visibility, collaboration, and support they could count on.</span>
+            </button>
+            <figcaption><strong>Empathy map</strong><span>Translated customer feedback and observed behavior into a common picture the whole team could work from.</span></figcaption>
+          </figure>
+          <figure>
+            <button class="cs-image-reveal-trigger" type="button" aria-label="Expand the OrderMaestro personas">
+              <img src="assets/ordermaestro/personas.webp" alt="Two OrderMaestro unit-manager personas describing goals, pain points, responsibilities, and technology preferences.">
+              <span class="cs-image-reveal-text">Personas separated the needs of managers running several units from those responsible for a single location.</span>
+            </button>
+            <figcaption><strong>Personas</strong><span>Grounded platform decisions in specific operational roles rather than a one-size-fits-all enterprise user.</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-section-v2 cs-om-insights" aria-labelledby="om-insights-title">
+      <div class="cs-section-header">
+        <span class="cs-section-number">04</span>
+        <h2 id="om-insights-title">What We Uncovered</h2>
+      </div>
+      <div class="cs-section-body cs-section-body--wide-gap">
+        <p class="cs-section-intro">Going mobile meant designing for a new context, not just a narrower screen. Three findings refocused the redesign on mobility, exceptions, and resilience, while the toughest constraints turned into the principles behind every decision.</p>
+
+        <div class="cs-om-insight-grid" aria-label="Research insights">
+          <article>
+            <svg class="cs-om-success-art" viewBox="0 0 160 96" aria-hidden="true" focusable="false">
+              <path class="om-art-line om-art-dash" d="M38 58c14-22 28-22 42 0s28 22 42 0"/>
+              <rect class="om-art-paper" x="24" y="44" width="28" height="28" rx="7"/>
+              <path class="om-art-line" d="M31 64v-8l7-5 7 5v8"/>
+              <rect class="om-art-accent" x="36" y="59" width="4" height="5" rx="1"/>
+              <rect class="om-art-paper" x="66" y="20" width="28" height="28" rx="7"/>
+              <path class="om-art-soft-strong" d="M72 30l8-4 8 4v10l-8 4-8-4z"/>
+              <path class="om-art-line" d="M72 30l8 4 8-4M80 34v10"/>
+              <rect class="om-art-paper" x="108" y="44" width="28" height="28" rx="7"/>
+              <path class="om-art-accent" d="M113 52h12v10h-12z"/>
+              <path class="om-art-line" d="M125 55h4l3 4v3h-7"/>
+              <circle class="om-art-white om-art-ring" cx="117" cy="63.5" r="2.2"/>
+              <circle class="om-art-white om-art-ring" cx="129" cy="63.5" r="2.2"/>
+              <circle class="om-art-coral" cx="101" cy="67" r="5"/>
+              <circle class="om-art-white" cx="101" cy="67" r="1.8"/>
+            </svg>
+            <span class="cs-om-kicker">Insight</span>
+            <h3>Work happened on the move</h3>
+            <p>People needed quick access while meeting customers, moving through the warehouse, or receiving deliveries.</p>
+          </article>
+          <article>
+            <svg class="cs-om-success-art" viewBox="0 0 160 96" aria-hidden="true" focusable="false">
+              <rect class="om-art-paper" x="40" y="14" width="80" height="68" rx="10"/>
+              <rect class="om-art-muted" x="50" y="24" width="8" height="8" rx="2"/>
+              <line class="om-art-line om-art-thin" x1="64" y1="28" x2="102" y2="28"/>
+              <rect class="om-art-coral-soft" x="46" y="38" width="68" height="18" rx="6"/>
+              <rect class="om-art-coral" x="50" y="43" width="8" height="8" rx="2"/>
+              <line class="om-art-line" x1="64" y1="47" x2="94" y2="47"/>
+              <rect class="om-art-muted" x="50" y="62" width="8" height="8" rx="2"/>
+              <line class="om-art-line om-art-thin" x1="64" y1="66" x2="98" y2="66"/>
+              <circle class="om-art-coral" cx="118" cy="40" r="10"/>
+              <line class="om-art-line om-art-white-stroke" x1="118" y1="35" x2="118" y2="41"/>
+              <line class="om-art-line om-art-white-stroke" x1="118" y1="45" x2="118" y2="45"/>
+            </svg>
+            <span class="cs-om-kicker">Insight</span>
+            <h3>Exceptions drove the work</h3>
+            <p>Teams didn’t need every desktop feature—they needed to know right away when something went wrong.</p>
+          </article>
+          <article>
+            <svg class="cs-om-success-art" viewBox="0 0 160 96" aria-hidden="true" focusable="false">
+              <circle class="om-art-soft" cx="66" cy="48" r="34"/>
+              <path class="om-art-line" d="M44 42a32 32 0 0 1 44 0"/>
+              <path class="om-art-line" d="M51 50a21 21 0 0 1 30 0"/>
+              <path class="om-art-line" d="M58 58a10 10 0 0 1 16 0"/>
+              <circle class="om-art-accent" cx="66" cy="66" r="3"/>
+              <line class="om-art-line om-art-coral-stroke" x1="46" y1="26" x2="86" y2="72"/>
+              <rect class="om-art-paper" x="96" y="38" width="44" height="22" rx="11"/>
+              <circle class="om-art-lime" cx="108" cy="49" r="6"/>
+              <polyline class="om-art-line" points="105.5,49 107.5,51 111,47"/>
+              <line class="om-art-line om-art-thin" x1="118" y1="49" x2="132" y2="49"/>
+            </svg>
+            <span class="cs-om-kicker">Insight</span>
+            <h3>Signal was never guaranteed</h3>
+            <p>Inventory tasks had to keep going in warehouses and back rooms where service came and went.</p>
+          </article>
+        </div>
+
+        <div class="cs-om-constraints">
+          <div class="cs-om-constraints-head">
+            <span class="cs-om-kicker">Design constraints</span>
+            <h3>Our toughest constraints shaped how we designed.</h3>
+          </div>
+          <div class="cs-om-constraint-grid">
+            <article>
+              <svg class="cs-om-constraint-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <rect x="3" y="4" width="13" height="10" rx="2"/>
+                <rect x="8" y="10" width="13" height="10" rx="2"/>
+              </svg>
+              <h4>Evolve without losing people</h4>
+              <p>Update a well-known enterprise workflow without making longtime users start over from scratch.</p>
+            </article>
+            <article>
+              <svg class="cs-om-constraint-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M2.5 9a14 14 0 0 1 19 0M6 12.5a9 9 0 0 1 12 0M9.5 16a4 4 0 0 1 5 0"/>
+                <circle cx="12" cy="19.5" r="0.6"/>
+                <path d="M4 3l16 18"/>
+              </svg>
+              <h4>Plan for spotty connections</h4>
+              <p>Handle connectivity as a normal state of the system and protect work when the signal drops.</p>
+            </article>
+            <article>
+              <svg class="cs-om-constraint-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <rect x="2" y="4" width="14" height="10" rx="1.5"/>
+                <path d="M6 18h6M9 14v4"/>
+                <rect x="16" y="9" width="6" height="11" rx="1.5"/>
+              </svg>
+              <h4>Consistent across every device</h4>
+              <p>Keep iOS, Android, tablet, and desktop feeling unified while honoring each platform’s native patterns.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-section-v2 cs-solution-section cs-om-solution" aria-labelledby="om-solution-title">
+      <div class="cs-section-header">
+        <span class="cs-section-number">05</span>
+        <h2 id="om-solution-title">Rebuilding Around Mobile Work</h2>
+      </div>
+      <div class="cs-section-body">
+        <p class="cs-solution-intro">Rather than a single linear flow or a responsive facelift, I reorganized the product around the jobs people had to get done away from a desk: locating orders, checking status, handling exceptions, and keeping inventory up to date.</p>
+
+        <div class="cs-subsection cs-om-solution-chapter">
+          <div class="cs-solution-chapter-header">
+            <h3>Surface what matters—no digging required.</h3>
+            <p>Order cards made customer, value, and status easy to scan in seconds, and filters mirrored real operational states so a notification led straight to the right next step.</p>
+          </div>
+          <div class="cs-solution-rationale">
+            <div><span>Research signal</span><p>Once teams stepped away from their desks, they lost sight of orders and critical exceptions slipped through.</p></div>
+            <div><span>Design response</span><p>An order view built around tasks put priority details and next steps front and center.</p></div>
+            <div><span>Key features</span><p>Clear status hierarchy · Task-based filtering · High-value information first</p></div>
+          </div>
+          <figure class="cs-mockup-showcase cs-om-device-showcase">
+            <div class="cs-browser-mockup">
+              <div class="cs-om-device-stage cs-om-device-stage--mobile">
+                <img src="assets/ordermaestro/mobile-order-views-cutout.png" alt="Two OrderMaestro mobile screens showing a task-focused home dashboard and an order detail with product quantities.">
+              </div>
+            </div>
+            <figcaption class="cs-showcase-walkthrough cs-om-device-caption">
+              <div class="cs-showcase-copy">
+                <div class="cs-showcase-title-row">
+                  <h4 class="cs-showcase-title">Mobile order visibility</h4>
+                </div>
+                <p class="cs-showcase-description">Urgent tasks, order status, and product details remain in view no matter where users are working.</p>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="cs-subsection cs-om-solution-chapter">
+          <div class="cs-solution-chapter-header">
+            <h3>Inventory that keeps going offline.</h3>
+            <p>Instead of treating a dropped connection as a failure, I designed counts to be stored on the device and synced automatically once service was restored.</p>
+          </div>
+          <div class="cs-solution-rationale">
+            <div><span>Research signal</span><p>Without service, teams couldn’t save inventory counts, which broke a workflow they relied on every day.</p></div>
+            <div><span>Design response</span><p>Counts are kept on the device and synced automatically as soon as the connection comes back.</p></div>
+            <div><span>Key features</span><p>Offline counts · Automatic synchronization · Resilient tablet workflow</p></div>
+          </div>
+          <div class="cs-mockup-showcase cs-om-inventory-showcase" id="om-inventory-showcase">
+            <div class="cs-browser-mockup">
+              <div class="cs-browser-screen">
+                <img class="cs-browser-slide is-active" src="assets/ordermaestro/offline-inventory-tablet-cutout.png" alt="OrderMaestro tablet inventory interface showing locally saved counts synchronizing after the internet connection returns.">
+                <div class="cs-browser-slide cs-om-video-slide">
+                  <a class="cs-om-video-link" href="https://www.youtube.com/watch?v=z6fTb7Efc5g" target="_blank" rel="noopener noreferrer" aria-label="Watch the OrderMaestro tablet inventory flow on YouTube">
+                    <img src="https://i.ytimg.com/vi/z6fTb7Efc5g/maxresdefault.jpg" alt="OrderMaestro tablet inventory flow video preview.">
+                    <span class="cs-om-video-play" aria-hidden="true">▶</span>
+                    <span class="cs-om-video-cta">Watch on YouTube</span>
+                  </a>
+                </div>
+                <div class="cs-browser-slide cs-om-video-slide">
+                  <a class="cs-om-video-link" href="https://www.youtube.com/watch?v=za9smIOXbWE&amp;t=102s" target="_blank" rel="noopener noreferrer" aria-label="Watch the OrderMaestro product overview on YouTube from 1 minute 42 seconds">
+                    <img src="https://i.ytimg.com/vi/za9smIOXbWE/maxresdefault.jpg" alt="OrderMaestro product overview video preview.">
+                    <span class="cs-om-video-play" aria-hidden="true">▶</span>
+                    <span class="cs-om-video-cta">Watch on YouTube</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="cs-brand-controls">
+              <button class="cs-brand-arrow cs-brand-arrow-prev" type="button" aria-label="Previous inventory screen">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+              </button>
+              <div class="cs-brand-dots" role="tablist" aria-label="OrderMaestro inventory walkthrough">
+                <button class="cs-brand-dot is-active" type="button" role="tab" aria-selected="true" aria-label="Show resilient inventory design" data-label="Resilient inventory" data-description="Counts stay accessible without a connection and sync on their own once service is back."></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show tablet inventory flow video" data-label="Tablet inventory flow" data-description="Watch inventory work continue uninterrupted as the connection comes and goes."></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show product overview video" data-label="Product overview" data-description="A look at OrderMaestro from both the operator and distributor side."></button>
+              </div>
+              <button class="cs-brand-arrow cs-brand-arrow-next" type="button" aria-label="Next inventory screen">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-subsection cs-om-solution-chapter">
+          <div class="cs-solution-chapter-header">
+            <h3>Four features aimed at the biggest pain points.</h3>
+            <p>On top of the core flows, I concentrated on the points where finding products, tracking changes, and linking to physical work used to fall apart.</p>
+          </div>
+          <div class="cs-solution-rationale">
+            <div><span>Research signal</span><p>Search that required exact matches and order updates hidden deep in the product made items hard to find and exceptions easy to overlook.</p></div>
+            <div><span>Design response</span><p>Search, notifications, barcode scanning, and offline sync put the right action in front of users exactly when they needed it.</p></div>
+            <div><span>Key features</span><p>Elastic search · Actionable notifications · Barcode scanning · Offline sync</p></div>
+          </div>
+          <div class="cs-mockup-showcase cs-om-feature-showcase" id="om-feature-showcase">
+            <div class="cs-browser-mockup">
+              <div class="cs-browser-screen">
+                <img class="cs-browser-slide is-active" src="assets/ordermaestro/elastic-search.webp" alt="Mobile elastic-search results for apple products with text, voice, and barcode inputs.">
+                <img class="cs-browser-slide" src="assets/ordermaestro/notifications.webp" alt="Mobile notifications showing an order approval and an inventory reminder with direct actions.">
+                <img class="cs-browser-slide" src="assets/ordermaestro/barcode-scanning.webp" alt="Mobile camera interface scanning a product barcode.">
+                <img class="cs-browser-slide" src="assets/ordermaestro/offline-sync.webp" alt="Mobile inventory interface showing saved data synchronizing when the internet connection returns.">
+              </div>
+            </div>
+            <div class="cs-brand-controls">
+              <button class="cs-brand-arrow cs-brand-arrow-prev" type="button" aria-label="Previous feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+              </button>
+              <div class="cs-brand-dots" role="tablist" aria-label="OrderMaestro mobile features">
+                <button class="cs-brand-dot is-active" type="button" role="tab" aria-selected="true" aria-label="Show elastic search" data-label="Elastic search" data-description="Fuzzy matching let users locate products across order guides without recalling the exact catalog wording."></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show actionable notifications" data-label="Actionable notifications" data-description="Substitutions, stock problems, announcements, and order updates reached users even when they weren’t at a desk."></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show barcode scanning" data-label="Barcode scanning" data-description="Scanning with the camera matched a product in hand to the right catalog item and added it straight to the cart."></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show offline synchronization" data-label="Offline synchronization" data-description="Counts were saved even without service and synced on their own once the connection was restored."></button>
+              </div>
+              <button class="cs-brand-arrow cs-brand-arrow-next" type="button" aria-label="Next feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-subsection cs-om-solution-chapter">
+          <div class="cs-solution-chapter-header">
+            <h3>A single system for every place work happens.</h3>
+            <p>The redesign combined streamlined mobile interactions with refreshed desktop workflows for browsing the catalog and handling more involved purchases.</p>
+          </div>
+          <div class="cs-solution-rationale">
+            <div><span>Research signal</span><p>Teams wanted their work to go wherever they went, while still having the depth that complex purchasing demands.</p></div>
+            <div><span>Design response</span><p>Lightweight mobile interactions were complemented by updated desktop workflows for tasks better suited to a workstation.</p></div>
+            <div><span>Key features</span><p>Product discovery · Order review · Shared information across devices</p></div>
+          </div>
+          <div class="cs-mockup-showcase cs-om-desktop-showcase-carousel" id="om-desktop-showcase">
+            <div class="cs-browser-mockup">
+              <div class="cs-browser-screen">
+                <img class="cs-browser-slide is-active" src="assets/ordermaestro/product-catalog-hd-clean.png" alt="Redesigned OrderMaestro desktop product catalog with category navigation and scannable product cards.">
+                <img class="cs-browser-slide" src="assets/ordermaestro/shopping-cart-hd.png" alt="Redesigned OrderMaestro desktop shopping cart with quantities, order information, and submission controls.">
+              </div>
+            </div>
+            <div class="cs-brand-controls">
+              <button class="cs-brand-arrow cs-brand-arrow-prev" type="button" aria-label="Previous desktop workflow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+              </button>
+              <div class="cs-brand-dots" role="tablist" aria-label="OrderMaestro desktop workflows">
+                <button class="cs-brand-dot is-active" type="button" role="tab" aria-selected="true" aria-label="Show product discovery" data-label="Product discovery" data-description="A refreshed catalog makes it easier to browse by category, compare products, and put orders together."></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show order review" data-label="Order review" data-description="A streamlined checkout gathers quantities, delivery details, and submission controls in one place."></button>
+              </div>
+              <button class="cs-brand-arrow cs-brand-arrow-next" type="button" aria-label="Next desktop workflow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-section-v2 cs-om-impact" aria-labelledby="om-impact-title">
+      <div class="cs-section-header">
+        <span class="cs-section-number">06</span>
+        <h2 id="om-impact-title">Mobility That Moved The Numbers</h2>
+      </div>
+      <div class="cs-section-body">
+        <p class="cs-section-intro">By matching OrderMaestro to the actual rhythm of foodservice operations, the redesign let users get critical work done faster and helped drive wider product growth.</p>
+        <p class="cs-om-impact-note"><span aria-hidden="true">*</span>Product and business results reported for the OrderMaestro redesign while I was at iTradeNetwork.</p>
+        <div class="cs-om-before-after-cards" aria-label="Before and after comparison">
+          <article class="cs-om-before-card">
+            <img class="cs-om-comparison-illustration" src="assets/ordermaestro/work-tied-to-desktop-illustration.png" alt="Illustration of a desktop computer tethered to a fixed location.">
+            <span>Before</span>
+            <h3>Work stayed at the desk.</h3>
+            <ul>
+              <li>Step off the floor to get tasks done</li>
+              <li>Need precise product details to find anything</li>
+              <li>Lose work whenever the connection cut out</li>
+              <li>Lose track of orders when away from a screen</li>
+            </ul>
+          </article>
+          <article class="cs-om-after-card">
+            <img class="cs-om-comparison-illustration" src="assets/ordermaestro/work-moves-with-user-illustration.png" alt="Illustration of work moving from a desktop screen to a mobile device.">
+            <span>After</span>
+            <h3>Work went wherever users did.</h3>
+            <ul>
+              <li>Handle key tasks right from the floor</li>
+              <li>Locate products fast and with confidence</li>
+              <li>Keep working as the connection comes and goes</li>
+              <li>Stay up to date from anywhere</li>
+            </ul>
+          </article>
+        </div>
+        <div class="cs-om-impact-card" aria-label="OrderMaestro outcomes">
+          <div class="cs-om-impact-card-item"><strong>75%</strong><span>higher task completion</span></div>
+          <div class="cs-om-impact-card-item"><strong>80%</strong><span>less time on task</span></div>
+          <div class="cs-om-impact-card-item"><strong>25%</strong><span>revenue growth</span></div>
+          <div class="cs-om-impact-card-item"><strong>40%</strong><span>customer acquisition</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-section-v2 cs-om-learning" aria-labelledby="om-learning-title">
+      <div class="cs-section-header">
+        <span class="cs-section-number">07</span>
+        <h2 id="om-learning-title">Key Takeaway</h2>
+      </div>
+      <div class="cs-section-body">
+        <div class="cs-om-learning-card">
+          <span class="cs-om-kicker">The pivotal lesson</span>
+          <h3>When the way people work changes, responsive layouts alone won’t cut it.</h3>
+          <p>The most important call was choosing not to shrink the desktop product down. Instead, I pinpointed where being mobile changed what users actually needed and designed around those moments, while keeping the depth and reliability enterprise users expect.</p>
+        </div>
+      </div>
+    </section>
+
+  </section>
+
+  <section class="cs-footer-nav">
+    <span class="eyebrow">Next up</span>
+    <div class="cs-footer-nav-links">
+      <a href="vantage-workflow.html" class="btn btn-dark">
+        Read: Vantage Workflow
+        <img src="../assets/icons/arrow-dark-2.svg" alt="" class="icon">
+      </a>
+      <a href="../index.html#contact" class="link-arrow">
+        Get in touch
+        <img src="../assets/icons/arrow-dark.svg" alt="" class="icon">
+      </a>
+    </div>
+  </section>
+
+  <div class="cs-lightbox" role="dialog" aria-modal="true" aria-label="Expanded image">
+    <button class="cs-lightbox-close" type="button" aria-label="Close expanded image">&times;</button>
+    <div class="cs-lightbox-content">
+      <img src="" alt="">
+      <p class="cs-lightbox-caption"></p>
+    </div>
+  </div>
+
+</main>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

@@ -142,6 +142,7 @@ function setupBuildAnimation(diagramSelector) {
 setupBuildAnimation('.workflow-diagram');
 setupBuildAnimation('.plant-diagram');
 setupBuildAnimation('.pulse-bars');
+setupBuildAnimation('.order-diagram');
 
 // "What I was up against" staircase: draws the connecting line between the
 // numbered nodes and fades in each step in sequence, once, on scroll into view.
@@ -690,6 +691,17 @@ document.querySelectorAll('.cs-feature-toggle').forEach((toggle) => {
     const expanded = card.classList.toggle('is-expanded');
     toggle.setAttribute('aria-expanded', String(expanded));
     toggle.textContent = expanded ? 'Show less' : 'Read more';
+  });
+});
+
+// OrderMaestro diagnosis cards: hover/focus reveals the detail; click pins it open.
+document.querySelectorAll('.cs-om-diagnosis-toggle').forEach((toggle) => {
+  const card = toggle.closest('article');
+  toggle.addEventListener('click', () => {
+    const expanded = card.classList.toggle('is-expanded');
+    toggle.setAttribute('aria-expanded', String(expanded));
+    toggle.textContent = expanded ? 'Show less' : 'Read more';
+    if (!expanded) toggle.blur();
   });
 });
 
