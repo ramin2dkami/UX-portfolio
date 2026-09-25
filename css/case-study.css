@@ -5278,10 +5278,22 @@
   font-weight: 700;
 }
 .cs-om-learning-card {
-  max-width: 960px;
+  display: grid;
+  grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: clamp(32px, 5vw, 72px);
   padding: clamp(36px, 6vw, 72px);
   border-radius: 28px;
   background: linear-gradient(135deg, #fff7e7 0%, #f5f1e8 100%);
+}
+.cs-om-learning-art.cs-om-success-art {
+  height: auto;
+  aspect-ratio: 4 / 3;
+  margin-bottom: 0;
+  padding: 16px;
+  border-radius: 20px;
+  background: var(--color-white);
+  box-shadow: 0 20px 44px -34px rgba(10, 10, 12, 0.28);
 }
 .cs-om-learning-card h3 { max-width: 780px; }
 .cs-om-learning-card p { max-width: 760px; }
@@ -5302,6 +5314,8 @@
   .cs-om-device-stage--mobile img,
   .cs-om-device-stage--tablet img { width: 100%; }
   .cs-om-before-after-cards { grid-template-columns: 1fr; }
+  .cs-om-learning-card { grid-template-columns: 1fr; }
+  .cs-om-learning-art.cs-om-success-art { max-width: 360px; }
   .cs-om-business-grid,
   .cs-om-impact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .cs-om-impact-card { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; padding: 28px 24px; }
