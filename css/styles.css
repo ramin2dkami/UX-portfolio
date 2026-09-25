@@ -784,6 +784,53 @@ main > section {
 }
 .case-study .link-arrow { padding-top: 8px; }
 
+.case-study--future {
+  cursor: default;
+}
+.case-study--future:hover {
+  background: var(--color-grey-95);
+  transform: none;
+  box-shadow: none;
+}
+.case-study--future .case-study-status {
+  color: var(--color-grey-56);
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+.future-diagram {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+}
+.future-orbit {
+  position: relative;
+  width: 104px;
+  height: 104px;
+  border: 1px dashed rgba(124, 58, 237, 0.45);
+  border-radius: 50%;
+  transform: rotate(-18deg);
+}
+.future-orbit-core {
+  position: absolute;
+  inset: 28px;
+  border: 1.5px solid rgba(124, 58, 237, 0.6);
+  border-radius: 50%;
+  background: rgba(196, 181, 253, 0.28);
+}
+.future-orbit-dot {
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border: 3px solid var(--color-grey-95);
+  border-radius: 50%;
+  background: #7c3aed;
+}
+
 /* ---------- Resume ---------- */
 .resume { padding: 96px 24px 0; }
 .resume-grid {
