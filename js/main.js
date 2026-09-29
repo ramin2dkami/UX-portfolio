@@ -262,7 +262,7 @@ document.querySelectorAll('.cs-scroll-phone-screen').forEach((screen) => {
   }
 });
 
-// Build the below-screen caption and controls used by the case-study walkthroughs.
+// Build the caption and controls used by the case-study walkthroughs.
 function createShowcaseWalkthrough(stage, controls, dots, slides) {
   if (!stage || !controls) return null;
   const walkthrough = document.createElement('div');
