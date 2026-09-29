@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>pulse - Ramin Partovi</title>
-<meta name="description" content="Case study: cutting appointment no-shows by redesigning a single reminder at pulse.">
+<title>Pulse - Ramin Partovi</title>
+<meta name="description" content="Case study: designing Telestream Pulse, an on-premise web application that brings real-time IP video, PTP, and alarm monitoring off the hardware rack and into the browser.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -33,123 +33,924 @@
   </nav>
 </header>
 
-<main>
+<main class="cs-pulse" style="--cs-accent:#ff1af2">
 
   <section>
-    <a href="../index.html#work" class="cs-back">
-      <img src="../assets/icons/arrow-dark.svg" alt="" class="icon">
-      Back to work
-    </a>
+    <div class="cs-hero" style="padding-top:140px">
+      <div class="cs-hero-row cs-hero-row--split-meta">
+        <div class="cs-hero-intro-col">
+          <div class="cs-hero-text">
+            <span class="cs-label" style="color:#ff1af2">Pulse</span>
+            <h1 class="cs-hero-title-fit">Taking Real-Time Broadcast Monitoring Off The Rack</h1>
+            <p class="cs-hero-sub">Pulse brings Telestream’s IP video, timing, and alarm monitoring into a single web application. I led the design of an experience that lets engineers see and configure their hardware from any computer, while everything stays on the customer’s own secure network.</p>
+          </div>
+          <div class="cs-meta">
+            <div class="cs-meta-item cs-meta-item--accent">
+              <span>Role</span>
+              <span>Lead Product Designer</span>
+            </div>
+            <div class="cs-meta-item cs-meta-item--accent">
+              <span>Responsibilities</span>
+              <span>Product audit, customer interviews, personas, information architecture, interaction design, high-fidelity design, usability testing, and design handoff.</span>
+            </div>
+          </div>
+        </div>
+        <figure class="cs-hero-phones cs-hero-desktop-art cs-pulse-hero-art">
+          <span class="cs-pulse-hero-screen">
+            <img src="assets/pulse/pulse-dashboard-group-tiles-02.jpg" alt="The Pulse dashboard showing a grid of live video, waveform, and vector scope tiles, with color-coded tile groups.">
+          </span>
+        </figure>
+      </div>
 
-    <div class="cs-hero">
-      <span class="cs-label" style="color:#ffd166">pulse</span>
-      <h1>Cutting no-shows by rewriting one reminder</h1>
-      <p class="cs-hero-sub">Eleven percent of appointments went unfilled. The fix wasn't a louder notification; it was understanding why patients were saying yes to a reminder and still not showing up.</p>
-
-      <div class="cs-meta">
-        <div class="cs-meta-item">
-          <span>Role</span>
-          <span>Product Designer</span>
+      <div class="cs-hero-badge-row">
+        <span class="cs-hero-badge">Usability Testing Results</span>
+      </div>
+      <div class="cs-hero-stats cs-hero-stats--testing cs-pulse-hero-stats">
+        <div class="cs-hero-stat">
+          <div class="cs-hero-stat-heading">
+            <span class="cs-hero-stat-value">91</span>
+            <strong>average SUS score</strong>
+          </div>
+          <span class="cs-hero-stat-label">Average System Usability Scale score across usability tests of each feature area.</span>
         </div>
-        <div class="cs-meta-item">
-          <span>Timeline</span>
-          <span>5 weeks</span>
+        <div class="cs-hero-stat">
+          <div class="cs-hero-stat-heading">
+            <span class="cs-hero-stat-value">86%</span>
+            <strong>average actual completion rate</strong>
+          </div>
+          <span class="cs-hero-stat-label">Share of tasks participants actually completed across usability tests of each feature area.</span>
         </div>
-        <div class="cs-meta-item">
-          <span>Team</span>
-          <span>1 designer, 2 engineers, 1 PM</span>
+        <div class="cs-hero-stat">
+          <div class="cs-hero-stat-heading">
+            <span class="cs-hero-stat-value">2m 27s</span>
+            <strong>average time on task</strong>
+          </div>
+          <span class="cs-hero-stat-label">How long participants took to complete each task across usability tests of each feature area.</span>
         </div>
-        <div class="cs-meta-item">
-          <span>Tools</span>
-          <span>Figma, Maze, Amplitude</span>
+        <div class="cs-hero-stat">
+          <div class="cs-hero-stat-heading">
+            <span class="cs-hero-stat-value">4.2</span>
+            <strong>average difficulty rating</strong>
+          </div>
+          <span class="cs-hero-stat-label">How difficult participants rated each task across usability tests of each feature area.</span>
         </div>
       </div>
     </div>
 
-    <div class="cs-section">
-      <span class="cs-section-label">Overview</span>
+    <div class="cs-section-v2">
+      <div class="cs-section-header">
+        <span class="cs-section-number">01</span>
+        <h2>Every Answer Lived At The Rack</h2>
+      </div>
       <div class="cs-section-body">
-        <h2>A metric everyone tracked and no one owned</h2>
-        <p>No-show rate showed up in every leadership deck, but it belonged to no single team: scheduling blamed reminders, reminders blamed patients, and the product itself hadn't changed the appointment reminder flow in over two years. I was asked to take a fresh look at a feature that seemed too simple to be the problem.</p>
-      </div>
-    </div>
-
-    <div class="cs-section">
-      <span class="cs-section-label">The problem</span>
-      <div class="cs-section-body">
-        <h2>Confirmation wasn't the same as commitment</h2>
-        <p>The existing reminder asked patients to confirm their appointment, and most did: confirmation rates were above 90%. But confirming a text message and actually restructuring your afternoon around a doctor's visit turned out to be two very different acts of commitment, and the product treated them as the same signal.</p>
-        <ul>
-          <li><strong>The reminder arrived too early to matter.</strong> A single message 48 hours out gave patients no reason to act on it in the moment.</li>
-          <li><strong>Confirming felt costless.</strong> Tapping "yes" took less effort than actually canceling, so patients defaulted to confirming even when unsure.</li>
-          <li><strong>Rescheduling was buried.</strong> The path to changing an appointment was harder to find than the path to silently not showing up.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="cs-section">
-      <span class="cs-section-label">Research &amp; discovery</span>
-      <div class="cs-section-body">
-        <h2>Talking to the patients who confirmed and still didn't come</h2>
-        <ul>
-          <li>Pulled six months of no-show data and cross-referenced it against confirmation timestamps to find the pattern: most no-shows had confirmed, most had confirmed early.</li>
-          <li>Recruited and interviewed 22 patients who'd no-showed in the past quarter, focused on what changed between confirming and the appointment day.</li>
-          <li>Ran a lightweight diary study with 10 patients across a full reminder-to-appointment cycle to capture real-time friction, not recalled friction.</li>
-          <li>Mapped the emotional register of each touchpoint: where the flow felt transactional versus where it felt like it was actually about their health.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="cs-section">
-      <span class="cs-section-label">Approach</span>
-      <div class="cs-section-body">
-        <h2>Make the reminder do less confirming, more deciding</h2>
-        <ul>
-          <li><strong>Moved from one reminder to a short sequence:</strong> an early heads-up, a day-of nudge, and a two-hour window check-in, each asking a different question instead of repeating the same one.</li>
-          <li><strong>Replaced the binary confirm with a real choice</strong>: keep it, move it, or cancel it, surfaced with equal visual weight so rescheduling wasn't the hidden option.</li>
-          <li><strong>Tested copy tone directly against no-show rate</strong>, not just click-through, since the two didn't move together in early experiments.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="cs-section">
-      <span class="cs-section-label">The solution</span>
-      <div class="cs-section-body">
-        <h2>What shipped</h2>
-        <p>A three-message reminder sequence with a one-tap reschedule path built into every message, rolled out gradually across clinics with an A/B test held against the original single-reminder flow to isolate the actual effect of the redesign from seasonal variation.</p>
-      </div>
-    </div>
-
-    <div class="cs-metrics-section">
-      <div class="cs-metrics-head">
-        <span class="cs-section-label">Impact</span>
-        <h2>What changed after launch</h2>
-      </div>
-      <div class="cs-metrics-grid">
-        <div class="cs-metric">
-          <span class="cs-metric-value">11% → 6.2%</span>
-          <span class="cs-metric-label">no-show rate across test clinics</span>
-        </div>
-        <div class="cs-metric">
-          <span class="cs-metric-value">3.1×</span>
-          <span class="cs-metric-label">increase in self-service reschedules vs. cancellations</span>
-        </div>
-        <div class="cs-metric">
-          <span class="cs-metric-value">22</span>
-          <span class="cs-metric-label">patient interviews behind the redesign</span>
-        </div>
-        <div class="cs-metric">
-          <span class="cs-metric-value">5 wks</span>
-          <span class="cs-metric-label">from research kickoff to A/B test launch</span>
+        <p class="cs-section-intro">Telestream’s IP monitoring lived in two places: Inspect 2110, a browser-based probe interface, and PRISM, a waveform monitor whose interface ran on the hardware itself. To check a signal or change a configuration, engineers often had to be standing at the device. Pulse set out to bring these capabilities into one web application that connects to the customer’s hardware and runs entirely on their own servers and network, with no internet connection, so sensitive media and data never leave the facility.</p>
+        <div class="cs-context-grid">
+          <article class="cs-context-card cs-context-card--design">
+            <span class="cs-context-icon"><img class="cs-context-illustration" src="assets/vantage/design-challenge-illustration.png" alt="Illustration of hidden information being revealed with a magnifying glass."></span>
+            <span class="cs-context-eyebrow">Design Problem</span>
+            <h3>Critical signal data was trapped behind the hardware</h3>
+            <ul class="cs-context-keypoints">
+              <li>Viewing or configuring a device meant going to the device.</li>
+              <li>Monitoring was split across Inspect 2110 and PRISM.</li>
+              <li>Dense tables gave every metric the same visual weight.</li>
+              <li>Alarms signaled a problem without the context to act on it.</li>
+              <li>Interfaces were organized around specifications, not tasks.</li>
+            </ul>
+          </article>
+          <article class="cs-context-card cs-context-card--business">
+            <span class="cs-context-icon"><img class="cs-context-illustration" src="assets/vantage/business-challenge-illustration.png" alt="Illustration of on-premise servers connecting distributed teams."></span>
+            <span class="cs-context-eyebrow">Business Problem</span>
+            <h3>Customers needed remote visibility without exposing their network</h3>
+            <ul class="cs-context-keypoints">
+              <li>Engineers work across control rooms, equipment rooms, and sites.</li>
+              <li>Security policies keep media networks isolated from the internet.</li>
+              <li>Two products meant two learning curves and two roadmaps.</li>
+              <li>Facilities moving to ST 2110 needed a modern IP monitoring toolset.</li>
+              <li>Hardware-bound interfaces limited how far a single unit could scale.</li>
+            </ul>
+          </article>
         </div>
       </div>
     </div>
 
-    <div class="cs-section">
-      <span class="cs-section-label">Reflection</span>
+    <div class="cs-section-v2 cs-section-v2--audit">
+      <div class="cs-section-header">
+        <span class="cs-section-number">02</span>
+        <h2>Two Powerful Tools, Built Around The Hardware</h2>
+      </div>
+      <p class="cs-audit-lead">Before talking to customers, I reviewed the Inspect 2110 and PRISM interfaces that Pulse would replace. Both were powerful, but they were built around the device rather than the person using it. <span class="cs-audit-emphasis">I treated what I found as hypotheses to test in customer interviews.</span></p>
+      <span class="cs-audit-label">Key Learnings</span>
+      <div class="cs-audit-findings" aria-label="Three findings from the legacy product review">
+        <article class="cs-audit-finding">
+          <span class="cs-audit-finding-index">01</span>
+          <div>
+            <h3>The data lived at the device</h3>
+            <p>PRISM’s touchscreen interface meant that diagnosing an issue often started with walking to the rack.</p>
+            <button type="button" class="cs-audit-finding-toggle" aria-expanded="false">Read more</button>
+          </div>
+        </article>
+        <article class="cs-audit-finding">
+          <span class="cs-audit-finding-index">02</span>
+          <div>
+            <h3>Everything carried equal weight</h3>
+            <p>Uniform tables of packet counts and stream parameters made the one value that mattered look like every other.</p>
+            <button type="button" class="cs-audit-finding-toggle" aria-expanded="false">Read more</button>
+          </div>
+        </article>
+        <article class="cs-audit-finding">
+          <span class="cs-audit-finding-index">03</span>
+          <div>
+            <h3>Alarms stopped at “something is wrong”</h3>
+            <p>A red Critical banner flagged a problem, but not which stream, when it started, or what to check next.</p>
+            <button type="button" class="cs-audit-finding-toggle" aria-expanded="false">Read more</button>
+          </div>
+        </article>
+      </div>
+      <div class="cs-pulse-legacy-grid">
+        <figure class="cs-image-reveal cs-image-reveal-lg">
+          <button class="cs-image-reveal-trigger" type="button" aria-label="Expand image: legacy Inspect 2110 stream view">
+            <img src="assets/pulse/pulse-legacy-inspect.jpg" loading="lazy" alt="Legacy Inspect 2110 web interface showing essence streams, dense RTP metric tables, an SDP comparison table, and a red Critical alarm banner.">
+            <span class="cs-image-reveal-text">Inspect 2110: dense, uniform tables</span>
+          </button>
+        </figure>
+        <figure class="cs-image-reveal cs-image-reveal-lg">
+          <button class="cs-image-reveal-trigger" type="button" aria-label="Expand image: legacy PRISM hardware">
+            <img src="assets/pulse/pulse-legacy-prism-hardware.jpg" loading="lazy" alt="PRISM rack-mounted hardware with its built-in displays showing waveforms, video, and IP status.">
+            <span class="cs-image-reveal-text">PRISM: monitoring on the hardware itself</span>
+          </button>
+        </figure>
+        <figure class="cs-image-reveal cs-image-reveal-lg">
+          <button class="cs-image-reveal-trigger" type="button" aria-label="Expand image: legacy PRISM IP status view">
+            <img src="assets/pulse/pulse-legacy-prism-ip.jpg" loading="lazy" alt="PRISM touchscreen IP status and video session view, with port totals, stream tables, and a bottom toolbar.">
+            <span class="cs-image-reveal-text">PRISM: IP status on the touchscreen</span>
+          </button>
+        </figure>
+        <figure class="cs-image-reveal cs-image-reveal-lg">
+          <button class="cs-image-reveal-trigger" type="button" aria-label="Expand image: legacy PRISM waveform view">
+            <img src="assets/pulse/pulse-legacy-prism-waveform.jpg" loading="lazy" alt="PRISM waveform display showing an RGB parade with gain, position, and cursor readouts.">
+            <span class="cs-image-reveal-text">PRISM: a single full-screen scope</span>
+          </button>
+        </figure>
+      </div>
+    </div>
+
+    <section class="cs-section-v2 cs-pulse-listen" id="interview-findings" aria-labelledby="interview-heading">
+      <div class="cs-section-header">
+        <span class="cs-section-number">03</span>
+        <h2 id="interview-heading">Listening To The People On Call</h2>
+      </div>
       <div class="cs-section-body">
-        <div class="cs-reflection">
-          <p>The three-message sequence worked, but I'd want more data on whether the third message (the two-hour check-in) was pulling its weight versus just adding noise: the A/B test wasn't structured to isolate individual messages within the sequence, only the sequence as a whole against the original.</p>
+        <div class="cs-pulse-listen-intro">
+          <div class="cs-pulse-listen-stat">
+            <span>7</span>
+            <p>customer<br>interviews</p>
+          </div>
+          <div class="cs-pulse-listen-copy">
+            <p>I asked customers how they monitor live IP signals today, where they lose time during an incident, and what they would need to trust a browser-based tool with on-air monitoring. The same needs kept surfacing across very different roles, and each one became a design opportunity that shaped a part of Pulse.</p>
+            <ul class="cs-pulse-role-chips" aria-label="Roles interviewed">
+              <li>Broadcast engineers</li>
+              <li>IT &amp; IP network specialists</li>
+              <li>Video shaders</li>
+            </ul>
+          </div>
+        </div>
+        <h3 class="cs-pulse-subheading">What Kept Coming Up</h3>
+        <ol class="cs-pulse-needs">
+          <li class="cs-pulse-need">
+            <span class="cs-pulse-need-index">01</span>
+            <div class="cs-pulse-need-heard">
+              <span class="cs-pulse-need-label">What we heard</span>
+              <h4>See every device from one place</h4>
+              <p>Engineers pieced together a signal’s health from the rack, Inspect, and separate tools that didn’t integrate.</p>
+            </div>
+            <span class="cs-pulse-need-arrow" aria-hidden="true">→</span>
+            <div class="cs-pulse-need-response">
+              <span class="cs-pulse-need-label">Design opportunity</span>
+              <p>A configurable dashboard of live video, audio, waveform, and vector tiles, sourced from any connected device.</p>
+            </div>
+          </li>
+          <li class="cs-pulse-need">
+            <span class="cs-pulse-need-index">02</span>
+            <div class="cs-pulse-need-heard">
+              <span class="cs-pulse-need-label">What we heard</span>
+              <h4>Separate critical alarms from noise</h4>
+              <p>Too many alerts looked urgent, so engineers lost time during an incident working out which ones really were.</p>
+            </div>
+            <span class="cs-pulse-need-arrow" aria-hidden="true">→</span>
+            <div class="cs-pulse-need-response">
+              <span class="cs-pulse-need-label">Design opportunity</span>
+              <p>A severity-first alarm summary with counts, filters, acknowledgment, and grouped occurrences, shown beside the data it relates to.</p>
+            </div>
+          </li>
+          <li class="cs-pulse-need">
+            <span class="cs-pulse-need-index">03</span>
+            <div class="cs-pulse-need-heard">
+              <span class="cs-pulse-need-label">What we heard</span>
+              <h4>Bridge IT and broadcast data</h4>
+              <p>Network specialists lacked media context in their IT tools, while broadcast engineers lacked network context.</p>
+            </div>
+            <span class="cs-pulse-need-arrow" aria-hidden="true">→</span>
+            <div class="cs-pulse-need-response">
+              <span class="cs-pulse-need-label">Design opportunity</span>
+              <p>An input view that pairs video, audio, and ANC vitals with IP sessions, SFP details, and timing on the same page.</p>
+            </div>
+          </li>
+          <li class="cs-pulse-need">
+            <span class="cs-pulse-need-index">04</span>
+            <div class="cs-pulse-need-heard">
+              <span class="cs-pulse-need-label">What we heard</span>
+              <h4>Diagnose timing issues over time</h4>
+              <p>Multicast and PTP problems came and went, and were hard to understand from a single snapshot of values.</p>
+            </div>
+            <span class="cs-pulse-need-arrow" aria-hidden="true">→</span>
+            <div class="cs-pulse-need-response">
+              <span class="cs-pulse-need-label">Design opportunity</span>
+              <p>Per-port timelines, a live and historical time range, and a clear record of when each value last changed.</p>
+            </div>
+          </li>
+          <li class="cs-pulse-need">
+            <span class="cs-pulse-need-index">05</span>
+            <div class="cs-pulse-need-heard">
+              <span class="cs-pulse-need-label">What we heard</span>
+              <h4>Share context during incidents</h4>
+              <p>Findings lived in people’s heads, and incomplete documentation meant the next person started the investigation over.</p>
+            </div>
+            <span class="cs-pulse-need-arrow" aria-hidden="true">→</span>
+            <div class="cs-pulse-need-response">
+              <span class="cs-pulse-need-label">Design opportunity</span>
+              <p>Comments pinned to a moment on a graph, plus CSV and image export for reports and handoffs.</p>
+            </div>
+          </li>
+          <li class="cs-pulse-need">
+            <span class="cs-pulse-need-index">06</span>
+            <div class="cs-pulse-need-heard">
+              <span class="cs-pulse-need-label">What we heard</span>
+              <h4>Stay inside the secure network</h4>
+              <p>Protecting sensitive media and data was non-negotiable, so remote access couldn’t mean sending anything to the cloud.</p>
+            </div>
+            <span class="cs-pulse-need-arrow" aria-hidden="true">→</span>
+            <div class="cs-pulse-need-response">
+              <span class="cs-pulse-need-label">Design opportunity</span>
+              <p>A browser-based experience deployed on the customer’s own servers, with no internet dependency.</p>
+            </div>
+          </li>
+        </ol>
+        <div class="cs-pulse-takeaway">
+          <span class="cs-pulse-takeaway-eyebrow">The takeaway</span>
+          <h3>Give engineers the whole picture from any desk, without leaving their secure network.</h3>
+          <p>Engineers didn’t want less data. They wanted to <strong>see every signal in one place, know which problems mattered, and understand them quickly</strong>, on both the broadcast and network side.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="cs-section-v2">
+      <div class="cs-section-header">
+        <span class="cs-section-number">04</span>
+        <h2>The Engineers Behind Every Broadcast</h2>
+      </div>
+      <div class="cs-section-body cs-section-body--wide-gap">
+
+        <div class="cs-subsection">
+          <h3>Personas</h3>
+          <p>I synthesized the interviews into three personas that anchored design decisions across the product: two primary personas who share responsibility for the signal and the network that carries it, and a secondary persona focused on how the picture looks on air.</p>
+        </div>
+
+        <div class="cs-research-card-grid">
+        <details class="cs-research-card">
+          <summary>
+            <img class="cs-research-card-illustration cs-pulse-avatar" src="assets/pulse/pulse-avatar-broadcast-engineer.jpg" alt="">
+            <span class="cs-research-card-eyebrow">Primary Persona</span>
+            <span class="cs-research-card-title">Broadcast and media workflow engineers</span>
+            <span class="cs-research-card-summary">Responsible for error-free live output and measured on downtime. They needed to resolve problems quickly, without being tied to a single piece of equipment.</span>
+            <button type="button" class="cs-research-card-link" data-preview-type="persona">View the persona <span aria-hidden="true">↗</span></button>
+          </summary>
+          <div class="cs-research-card-content">
+          <p>Drake keeps live broadcasts running. His goals center on minimizing downtime and glitches during live events. His pain points were frequent equipment issues during broadcasts, time-consuming manual workflows, and difficulty integrating the many tools he already relied on.</p>
+          <div class="cs-image-row cs-persona-row">
+            <figure class="cs-image-reveal cs-image-reveal-lg">
+              <button class="cs-image-reveal-trigger" type="button" aria-label="Expand image: broadcast engineer persona">
+                <img class="cs-image-small" src="assets/pulse/pulse-persona-broadcast-engineer.jpg" alt="Primary persona card for Drake Smith, a Broadcast and Media Workflow Engineer, showing demographics, goals, needs, pain points, and responsibilities.">
+                <span class="cs-image-reveal-overlay">
+                  <svg class="cs-image-reveal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M9 3H3v6"></path>
+                    <path d="M15 3h6v6"></path>
+                    <path d="M3 15v6h6"></path>
+                    <path d="M21 15v6h-6"></path>
+                  </svg>
+                </span>
+              </button>
+            </figure>
+          </div>
+          </div>
+        </details>
+
+        <details class="cs-research-card">
+          <summary>
+            <img class="cs-research-card-illustration cs-pulse-avatar" src="assets/pulse/pulse-avatar-ip-specialist.jpg" alt="">
+            <span class="cs-research-card-eyebrow">Primary Persona</span>
+            <span class="cs-research-card-title">IT and IP network specialists</span>
+            <span class="cs-research-card-summary">Responsible for the network that carries the media. They needed packet loss, latency, multicast, and PTP data in one place, alongside the broadcast context their IT tools could not show.</span>
+            <button type="button" class="cs-research-card-link" data-preview-type="persona">View the persona <span aria-hidden="true">↗</span></button>
+          </summary>
+          <div class="cs-research-card-content">
+          <p>Edna keeps the facility network healthy under pressure. Her pain points were fragmented tools that did not integrate, alerts that were not actually critical, limited visibility into media-specific traffic, and hard-to-diagnose multicast and timing issues.</p>
+          <div class="cs-image-row cs-persona-row">
+            <figure class="cs-image-reveal cs-image-reveal-lg">
+              <button class="cs-image-reveal-trigger" type="button" aria-label="Expand image: IT and IP specialist persona">
+                <img class="cs-image-small" src="assets/pulse/pulse-persona-ip-specialist.jpg" alt="Primary persona card for Edna Williams, an IT and IP Specialist, showing biography, goals, needs, pain points, and responsibilities.">
+                <span class="cs-image-reveal-overlay">
+                  <svg class="cs-image-reveal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M9 3H3v6"></path>
+                    <path d="M15 3h6v6"></path>
+                    <path d="M3 15v6h6"></path>
+                    <path d="M21 15v6h-6"></path>
+                  </svg>
+                </span>
+              </button>
+            </figure>
+          </div>
+          </div>
+        </details>
+
+        <details class="cs-research-card">
+          <summary>
+            <img class="cs-research-card-illustration cs-pulse-avatar" src="assets/pulse/pulse-avatar-colorist.jpg" alt="">
+            <span class="cs-research-card-eyebrow">Secondary Persona</span>
+            <span class="cs-research-card-title">Video shaders and colorists</span>
+            <span class="cs-research-card-summary">Responsible for how every frame looks on air. They relied on waveform and vector scopes and needed advanced HDR analysis without a complicated interface.</span>
+            <button type="button" class="cs-research-card-link" data-preview-type="persona">View the persona <span aria-hidden="true">↗</span></button>
+          </summary>
+          <div class="cs-research-card-content">
+          <p>Daniel paints and balances cameras during live events and grades content afterward. His needs centered on real-time waveform and vector tools, and his pain points were unintuitive HDR tooling and balancing creative decisions against technical standards.</p>
+          <div class="cs-image-row cs-persona-row">
+            <figure class="cs-image-reveal cs-image-reveal-lg">
+              <button class="cs-image-reveal-trigger" type="button" aria-label="Expand image: video shader persona">
+                <img class="cs-image-small" src="assets/pulse/pulse-persona-colorist.jpg" alt="Secondary persona card for Daniel Gray, a Video Shader and Colorist, showing biography, responsibilities, goals, needs, and pain points.">
+                <span class="cs-image-reveal-overlay">
+                  <svg class="cs-image-reveal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M9 3H3v6"></path>
+                    <path d="M15 3h6v6"></path>
+                    <path d="M3 15v6h6"></path>
+                    <path d="M21 15v6h-6"></path>
+                  </svg>
+                </span>
+              </button>
+            </figure>
+          </div>
+          </div>
+        </details>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="cs-section-v2 cs-solution-section">
+      <div class="cs-section-header cs-section-header--wide-gap">
+        <span class="cs-section-number">05</span>
+        <h2>Bringing The Rack Into The Browser</h2>
+      </div>
+      <div class="cs-section-body">
+        <p class="cs-solution-intro">I translated the research into four connected areas of the product, all built on a shared navigation and design language. Together, they let engineers build the view they need, dig into any input or timing source, and move from an alarm to its cause without leaving the browser.</p>
+
+        <div class="cs-subsection">
+          <div class="cs-solution-chapter-header">
+            <div>
+              <h3>Configurable Dashboards</h3>
+              <p>PRISM showed one scope at a time on the hardware’s own screen. The Pulse dashboard turns that into a grid of live tiles that engineers arrange, configure, and group for the way their facility works.</p>
+            </div>
+          </div>
+          <div class="cs-solution-rationale">
+            <div><span>Research signal</span><p>Engineers needed to watch many sources and scopes at once, from anywhere.</p></div>
+            <div><span>Design response</span><p>A grid-based dashboard of video and scope tiles, configured in a side panel and saved per team.</p></div>
+            <div><span>Key features</span><p>Grid layouts · Scope tiles · Tile presets · Color-coded groups · Saved dashboards</p></div>
+          </div>
+          <div class="cs-hscroll">
+          <div class="cs-feature-grid">
+            <div class="cs-feature-card">
+              <div class="cs-feature-card-top">
+                <span class="cs-feature-icon"><img src="assets/vantage/icons/icon-layout.svg" alt=""></span>
+                <span class="cs-feature-number">01</span>
+              </div>
+              <h4 class="cs-feature-title">Grid-Based Layouts</h4>
+              <button type="button" class="cs-feature-toggle" aria-expanded="false">Read more</button>
+              <p class="cs-feature-detail">Start from an empty state or insert a grid, then add tiles by right-clicking or using Add Tile.</p>
+            </div>
+            <div class="cs-feature-card">
+              <div class="cs-feature-card-top">
+                <span class="cs-feature-icon"><img src="assets/vantage/icons/icon-activity.svg" alt=""></span>
+                <span class="cs-feature-number">02</span>
+              </div>
+              <h4 class="cs-feature-title">Video And Scope Tiles</h4>
+              <button type="button" class="cs-feature-toggle" aria-expanded="false">Read more</button>
+              <p class="cs-feature-detail">Picture, waveform, lightning, and stop display tiles bring PRISM’s scopes into the browser, side by side.</p>
+            </div>
+            <div class="cs-feature-card">
+              <div class="cs-feature-card-top">
+                <span class="cs-feature-icon"><img src="assets/vantage/icons/icon-sliders.svg" alt=""></span>
+                <span class="cs-feature-number">03</span>
+              </div>
+              <h4 class="cs-feature-title">In-Context Tile Settings</h4>
+              <button type="button" class="cs-feature-toggle" aria-expanded="false">Read more</button>
+              <p class="cs-feature-detail">A side panel organizes input, settings, display, and statistics into tabs, with presets that can be saved and reused.</p>
+            </div>
+            <div class="cs-feature-card">
+              <div class="cs-feature-card-top">
+                <span class="cs-feature-icon"><img src="assets/vantage/icons/icon-tag.svg" alt=""></span>
+                <span class="cs-feature-number">04</span>
+              </div>
+              <h4 class="cs-feature-title">Color-Coded Tile Groups</h4>
+              <button type="button" class="cs-feature-toggle" aria-expanded="false">Read more</button>
+              <p class="cs-feature-detail">Select several tiles to assign a group color and a shared source, so related views change together.</p>
+            </div>
+            <div class="cs-feature-card">
+              <div class="cs-feature-card-top">
+                <span class="cs-feature-icon"><img src="assets/vantage/icons/icon-users.svg" alt=""></span>
+                <span class="cs-feature-number">05</span>
+              </div>
+              <h4 class="cs-feature-title">Saved And Shared Dashboards</h4>
+              <button type="button" class="cs-feature-toggle" aria-expanded="false">Read more</button>
+              <p class="cs-feature-detail">Save, favorite, share, and import dashboards so each team keeps the views that match its role.</p>
+            </div>
+          </div>
+          <div class="cs-hscroll-controls">
+            <button type="button" class="cs-hscroll-arrow cs-hscroll-arrow-prev" aria-label="Scroll cards left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+            </button>
+            <button type="button" class="cs-hscroll-arrow cs-hscroll-arrow-next" aria-label="Scroll cards right">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg>
+            </button>
+          </div>
+          </div>
+
+          <div class="cs-mockup-showcase cs-mockup-showcase-controls-top">
+            <span class="cs-brand-blob cs-brand-blob-1" aria-hidden="true"></span>
+            <span class="cs-brand-blob cs-brand-blob-2" aria-hidden="true"></span>
+            <span class="cs-brand-blob cs-brand-blob-3" aria-hidden="true"></span>
+
+            <div class="cs-browser-mockup">
+              <div class="cs-browser-chrome">
+                <span class="cs-browser-dot" aria-hidden="true"></span>
+                <span class="cs-browser-dot" aria-hidden="true"></span>
+                <span class="cs-browser-dot" aria-hidden="true"></span>
+                <span class="cs-browser-url">pulse.local</span>
+              </div>
+              <div class="cs-browser-screen">
+                <img class="cs-browser-slide is-active" src="assets/pulse/pulse-dashboard-empty.jpg" alt="Empty dashboard state with an illustration and an Add Tile button.">
+                <img class="cs-browser-slide" src="assets/pulse/pulse-dashboard-group-tiles-04.jpg" alt="More Options menu open on an empty dashboard, inserting a three-by-three grid.">
+                <img class="cs-browser-slide" src="assets/pulse/pulse-dashboard-configure-tile.jpg" alt="A picture tile with the configuration panel open to choose an interface, source, and tile label.">
+                <img class="cs-browser-slide" src="assets/pulse/pulse-dashboard-waveform-config.jpg" alt="Waveform tile settings panel with trace appearance, display style, sweep, display mode, filter, and graticule options.">
+                <img class="cs-browser-slide" src="assets/pulse/pulse-dashboard-lighting-config.jpg" alt="Lightning scope tile with display settings for trace, graticule, and tile transparency.">
+                <img class="cs-browser-slide" src="assets/pulse/pulse-dashboard-stop-display-config.jpg" alt="Stop display tile with its settings panel for trace, display style, reference, and gain.">
+                <img class="cs-browser-slide" src="assets/pulse/pulse-dashboard-group-tiles-01.jpg" alt="Several dashboard tiles selected, with a bottom bar to assign a group color and a shared source.">
+                <img class="cs-browser-slide" src="assets/pulse/pulse-dashboard-group-tiles-03.jpg" alt="Tile context menu with options to configure, duplicate, edit the group, and resize the tile.">
+                <img class="cs-browser-slide" src="assets/pulse/pulse-dashboard-group-tiles-02.jpg" alt="A full dashboard grid with pink and purple tile groups outlining related sources.">
+                <img class="cs-browser-slide" src="assets/pulse/pulse-dashboard-group-tiles-05.jpg" alt="Manage Dashboards panel listing saved dashboards with favorites and descriptions.">
+              </div>
+            </div>
+
+            <div class="cs-brand-controls">
+              <button class="cs-brand-arrow cs-brand-arrow-prev" type="button" aria-label="Previous screen">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+              </button>
+              <div class="cs-brand-dots" role="tablist" aria-label="Dashboard screens">
+                <button class="cs-brand-dot is-active" type="button" role="tab" aria-selected="true" aria-label="Show empty dashboard" data-label="Empty state" data-description="A friendly starting point that explains how to add the first tile."></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show insert grid" data-label="Insert a grid" data-description="Engineers can lay out a grid up front instead of placing tiles one at a time."></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show configure tile" data-label="Configure a tile" data-description="Each tile picks its interface and source in a side panel, so the grid stays visible while you work."></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show waveform settings" data-label="Waveform settings" data-description="Scope settings from the hardware, organized into Input, Settings, Display, and Statistics tabs with reusable presets."></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show lightning settings" data-label="Lightning display" data-description="Display controls for trace and graticule intensity use sliders with exact values beside them."></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show stop display settings" data-label="Stop display" data-description="HDR-focused stop display settings support the shading and color workflows of the secondary persona."></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show tile selection" data-label="Group tiles" data-description="Selecting multiple tiles reveals a bar to assign a group color and a shared source in one step."></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show tile menu" data-label="Edit a group" data-description="A tile's menu handles grouping, duplication, and quick resizing to quarter, half, or full screen."></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show grouped dashboard" data-label="Grouped dashboard" data-description="Group colors make it easy to see which tiles belong to the same source at a glance."></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show manage dashboards" data-label="Manage dashboards" data-description="Teams save, favorite, and describe dashboards so the right view is one click away."></button>
+              </div>
+              <button class="cs-brand-arrow cs-brand-arrow-next" type="button" aria-label="Next screen">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-subsection">
+          <div class="cs-solution-chapter-header">
+            <div>
+              <h3>Input Monitor</h3>
+              <p>Inspect 2110 presented each stream as long tables of equally weighted metrics. The Input Monitor starts with a status-first overview of every input, then opens into tabs that pair signal vitals with the network details behind them.</p>
+            </div>
+          </div>
+          <div class="cs-solution-rationale">
+            <div><span>Research signal</span><p>Broadcast and IP specialists each saw only half of the picture.</p></div>
+            <div><span>Design response</span><p>Input cards that show health at a glance, and a detail view that connects signal, network, and alarms.</p></div>
+            <div><span>Key features</span><p>Status cards · Guided setup · Vitals · IP sessions · In-context alarms</p></div>
+          </div>
+          <div class="cs-hscroll">
+          <div class="cs-feature-grid">
+            <div class="cs-feature-card">
+              <div class="cs-feature-card-top">
+                <span class="cs-feature-icon"><img src="assets/vantage/icons/icon-layout.svg" alt=""></span>
+                <span class="cs-feature-number">01</span>
+              </div>
+              <h4 class="cs-feature-title">Status-First Input Cards</h4>
+              <button type="button" class="cs-feature-toggle" aria-expanded="false">Read more</button>
+              <p class="cs-feature-detail">Each input shows a preview, its format, color-coded status, and alarm icons, plus clear states such as Disabled or Waiting for NMOS.</p>
+            </div>
+            <div class="cs-feature-card">
+              <div class="cs-feature-card-top">
+                <span class="cs-feature-icon"><img src="assets/vantage/icons/icon-cursor.svg" alt=""></span>
+                <span class="cs-feature-number">02</span>
+              </div>
+              <h4 class="cs-feature-title">Guided Input Creation</h4>
+              <button type="button" class="cs-feature-toggle" aria-expanded="false">Read more</button>
+              <p class="cs-feature-detail">One form covers the resource, standard, alarm profiles, and 2110 streams, with live previews of both paths as you configure.</p>
+            </div>
+            <div class="cs-feature-card">
+              <div class="cs-feature-card-top">
+                <span class="cs-feature-icon"><img src="assets/vantage/icons/icon-activity.svg" alt=""></span>
+                <span class="cs-feature-number">03</span>
+              </div>
+              <h4 class="cs-feature-title">Vitals At A Glance</h4>
+              <button type="button" class="cs-feature-toggle" aria-expanded="false">Read more</button>
+              <p class="cs-feature-detail">Signal type, redundancy, and video, audio, and ANC details are summarized first, and mismatches link straight to the stream that caused them.</p>
+            </div>
+            <div class="cs-feature-card">
+              <div class="cs-feature-card-top">
+                <span class="cs-feature-icon"><img src="assets/vantage/icons/icon-dataflow.svg" alt=""></span>
+                <span class="cs-feature-number">04</span>
+              </div>
+              <h4 class="cs-feature-title">Network Detail Alongside Signal</h4>
+              <button type="button" class="cs-feature-toggle" aria-expanded="false">Read more</button>
+              <p class="cs-feature-detail">IP sessions show SFP vendor details, link speed, and optical power for each network, as data, graphs, or both.</p>
+            </div>
+            <div class="cs-feature-card">
+              <div class="cs-feature-card-top">
+                <span class="cs-feature-icon"><img src="assets/vantage/icons/icon-shield.svg" alt=""></span>
+                <span class="cs-feature-number">05</span>
+              </div>
+              <h4 class="cs-feature-title">Alarms In Context</h4>
+              <button type="button" class="cs-feature-toggle" aria-expanded="false">Read more</button>
+              <p class="cs-feature-detail">An alarm panel sits beside the input, so engineers can acknowledge issues without losing their place in the data.</p>
+            </div>
+          </div>
+          <div class="cs-hscroll-controls">
+            <button type="button" class="cs-hscroll-arrow cs-hscroll-arrow-prev" aria-label="Scroll cards left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+            </button>
+            <button type="button" class="cs-hscroll-arrow cs-hscroll-arrow-next" aria-label="Scroll cards right">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg>
+            </button>
+          </div>
+          </div>
+
+          <div class="cs-mockup-showcase cs-mockup-showcase-controls-top">
+            <span class="cs-brand-blob cs-brand-blob-1" aria-hidden="true"></span>
+            <span class="cs-brand-blob cs-brand-blob-2" aria-hidden="true"></span>
+            <span class="cs-brand-blob cs-brand-blob-3" aria-hidden="true"></span>
+
+            <div class="cs-browser-mockup">
+              <div class="cs-browser-chrome">
+                <span class="cs-browser-dot" aria-hidden="true"></span>
+                <span class="cs-browser-dot" aria-hidden="true"></span>
+                <span class="cs-browser-dot" aria-hidden="true"></span>
+                <span class="cs-browser-url">pulse.local</span>
+              </div>
+              <div class="cs-browser-screen">
+                <img class="cs-browser-slide is-active" src="assets/pulse/pulse-input-configured.jpg" alt="Input Monitoring landing page with seven input cards showing previews, color-coded status borders, and alarm icons.">
+                <img class="cs-browser-slide" src="assets/pulse/pulse-inputs-landing-empty.jpg" alt="Input Monitoring empty state prompting the user to create an input.">
+                <img class="cs-browser-slide" src="assets/pulse/pulse-input-create.jpg" alt="Create Input form with preview paths, general configuration fields, alarm profiles, and stream tabs.">
+                <img class="cs-browser-slide" src="assets/pulse/pulse-input-vitals.jpg" alt="Input vitals tab showing signal type, redundancy status, bandwidth, and an SDP mismatch warning, with an alarm summary panel.">
+                <img class="cs-browser-slide" src="assets/pulse/pulse-input-ip-sessions.jpg" alt="IP Sessions tab showing SFP vendor information, link speed, and optical power levels for two networks.">
+              </div>
+            </div>
+
+            <div class="cs-brand-controls">
+              <button class="cs-brand-arrow cs-brand-arrow-prev" type="button" aria-label="Previous screen">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+              </button>
+              <div class="cs-brand-dots" role="tablist" aria-label="Input Monitor screens">
+                <button class="cs-brand-dot is-active" type="button" role="tab" aria-selected="true" aria-label="Show input overview" data-label="Input overview" data-description="Every input at a glance, with status borders and alarm icons that show where to look first."></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show empty state" data-label="Empty state" data-description="A clear first step when no inputs have been configured yet."></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show create input" data-label="Create input" data-description="A single form for the resource, standard, alarm profiles, and streams, with live previews of both paths."></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show vitals" data-label="Vitals" data-description="The most important signal facts come first, and mismatches link directly to the stream that caused them."></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show IP sessions" data-label="IP sessions" data-description="Network hardware details and optical power levels sit alongside the signal they carry."></button>
+              </div>
+              <button class="cs-brand-arrow cs-brand-arrow-next" type="button" aria-label="Next screen">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-subsection">
+          <div class="cs-solution-chapter-header">
+            <div>
+              <h3>PTP Monitor</h3>
+              <p>Timing problems are often intermittent, so a single snapshot rarely explains them. The PTP Monitor shows lock status and alarm distribution up front, then lets engineers trace each port’s behavior over time.</p>
+            </div>
+          </div>
+          <div class="cs-solution-rationale">
+            <div><span>Research signal</span><p>Multicast and timing issues were among the hardest to diagnose.</p></div>
+            <div><span>Design response</span><p>Status cards for each PTP resource and time-based graphs that show exactly when and where things changed.</p></div>
+            <div><span>Key features</span><p>Monitor cards · Alarm setup · Port timelines · Live and history · Collapsible graphs</p></div>
+          </div>
+          <div class="cs-hscroll">
+          <div class="cs-feature-grid">
+            <div class="cs-feature-card">
+              <div class="cs-feature-card-top">
+                <span class="cs-feature-icon"><img src="assets/vantage/icons/icon-layout.svg" alt=""></span>
+                <span class="cs-feature-number">01</span>
+              </div>
+              <h4 class="cs-feature-title">PTP Monitor Cards</h4>
+              <button type="button" class="cs-feature-toggle" aria-expanded="false">Read more</button>
+              <p class="cs-feature-detail">Each resource shows its domain, lock status (Locked, Unlocked, or Drifting), and a bar of active alarms by severity.</p>
+            </div>
+            <div class="cs-feature-card">
+              <div class="cs-feature-card-top">
+                <span class="cs-feature-icon"><img src="assets/vantage/icons/icon-sliders.svg" alt=""></span>
+                <span class="cs-feature-number">02</span>
+              </div>
+              <h4 class="cs-feature-title">Alarm Setup At Creation</h4>
+              <button type="button" class="cs-feature-toggle" aria-expanded="false">Read more</button>
+              <p class="cs-feature-detail">Engineers choose which PTP alarms to track, and set their duration and severity, while creating the monitor.</p>
+            </div>
+            <div class="cs-feature-card">
+              <div class="cs-feature-card-top">
+                <span class="cs-feature-icon"><img src="assets/vantage/icons/icon-bar-chart.svg" alt=""></span>
+                <span class="cs-feature-number">03</span>
+              </div>
+              <h4 class="cs-feature-title">Port-By-Port Timelines</h4>
+              <button type="button" class="cs-feature-toggle" aria-expanded="false">Read more</button>
+              <p class="cs-feature-detail">State bars show when a port moved from Follower to Listening or Faulty, with hover details for each change.</p>
+            </div>
+            <div class="cs-feature-card">
+              <div class="cs-feature-card-top">
+                <span class="cs-feature-icon"><img src="assets/vantage/icons/icon-trending-up.svg" alt=""></span>
+                <span class="cs-feature-number">04</span>
+              </div>
+              <h4 class="cs-feature-title">Live And Historical Views</h4>
+              <button type="button" class="cs-feature-toggle" aria-expanded="false">Read more</button>
+              <p class="cs-feature-detail">A date picker and interval control let engineers look back at an incident, then return to live data with Go Live.</p>
+            </div>
+            <div class="cs-feature-card">
+              <div class="cs-feature-card-top">
+                <span class="cs-feature-icon"><img src="assets/vantage/icons/icon-cursor.svg" alt=""></span>
+                <span class="cs-feature-number">05</span>
+              </div>
+              <h4 class="cs-feature-title">Collapsible Graphs</h4>
+              <button type="button" class="cs-feature-toggle" aria-expanded="false">Read more</button>
+              <p class="cs-feature-detail">Every metric shows its current value and last change, and its graph expands only when it is needed.</p>
+            </div>
+          </div>
+          <div class="cs-hscroll-controls">
+            <button type="button" class="cs-hscroll-arrow cs-hscroll-arrow-prev" aria-label="Scroll cards left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+            </button>
+            <button type="button" class="cs-hscroll-arrow cs-hscroll-arrow-next" aria-label="Scroll cards right">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg>
+            </button>
+          </div>
+          </div>
+
+          <div class="cs-mockup-showcase cs-mockup-showcase-controls-top">
+            <span class="cs-brand-blob cs-brand-blob-1" aria-hidden="true"></span>
+            <span class="cs-brand-blob cs-brand-blob-2" aria-hidden="true"></span>
+            <span class="cs-brand-blob cs-brand-blob-3" aria-hidden="true"></span>
+
+            <div class="cs-browser-mockup">
+              <div class="cs-browser-chrome">
+                <span class="cs-browser-dot" aria-hidden="true"></span>
+                <span class="cs-browser-dot" aria-hidden="true"></span>
+                <span class="cs-browser-dot" aria-hidden="true"></span>
+                <span class="cs-browser-url">pulse.local</span>
+              </div>
+              <div class="cs-browser-screen">
+                <img class="cs-browser-slide is-active" src="assets/pulse/pulse-ptp-landing.jpg" alt="PTP Monitor landing page with three resource cards showing PTP domain, lock status, and active alarm distribution.">
+                <img class="cs-browser-slide" src="assets/pulse/pulse-ptp-create.jpg" alt="Create New PTP panel with a list of PTP alarms that can be toggled on and configured.">
+                <img class="cs-browser-slide" src="assets/pulse/pulse-ptp-summary.jpg" alt="PTP resource summary with per-port status, a client status timeline, offset from leader graph, and an alarm summary panel.">
+                <img class="cs-browser-slide" src="assets/pulse/pulse-ptp-summary-collapsed.jpg" alt="PTP resource summary with graphs collapsed, showing each metric's current value and last change.">
+              </div>
+            </div>
+
+            <div class="cs-brand-controls">
+              <button class="cs-brand-arrow cs-brand-arrow-prev" type="button" aria-label="Previous screen">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+              </button>
+              <div class="cs-brand-dots" role="tablist" aria-label="PTP Monitor screens">
+                <button class="cs-brand-dot is-active" type="button" role="tab" aria-selected="true" aria-label="Show PTP overview" data-label="PTP overview" data-description="Lock status and alarm distribution for every timing resource, visible at a glance."></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show create PTP monitor" data-label="Create monitor" data-description="Alarm thresholds are configured as part of setup, so monitoring is meaningful from the start."></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show PTP summary" data-label="Summary details" data-description="Per-port timelines and graphs show exactly when a port changed state, with alarms beside them."></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show collapsed summary" data-label="Collapsed view" data-description="With graphs collapsed, the current value and last change of every metric fit on one screen."></button>
+              </div>
+              <button class="cs-brand-arrow cs-brand-arrow-next" type="button" aria-label="Next screen">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-subsection">
+          <div class="cs-solution-chapter-header">
+            <div>
+              <h3>Alarms, Events, And Collaboration</h3>
+              <p>In the legacy tools, an alarm was a red banner. In Pulse, every alarm is a record that can be filtered, investigated, acknowledged, and discussed, with the event log and graph comments preserving what the team learned.</p>
+            </div>
+          </div>
+          <div class="cs-solution-rationale">
+            <div><span>Research signal</span><p>Alarm noise and lost context slowed resolution and handoffs.</p></div>
+            <div><span>Design response</span><p>A severity-first alarm summary, a searchable event log, and comments attached directly to graphs.</p></div>
+            <div><span>Key features</span><p>Severity tabs · Alarm details · Drill-down · Event log · Graph comments</p></div>
+          </div>
+          <div class="cs-hscroll">
+          <div class="cs-feature-grid">
+            <div class="cs-feature-card">
+              <div class="cs-feature-card-top">
+                <span class="cs-feature-icon"><img src="assets/vantage/icons/icon-activity.svg" alt=""></span>
+                <span class="cs-feature-number">01</span>
+              </div>
+              <h4 class="cs-feature-title">Severity-First Summary</h4>
+              <button type="button" class="cs-feature-toggle" aria-expanded="false">Read more</button>
+              <p class="cs-feature-detail">Tabs with counts for Critical, Warning, and Informational alarms help engineers focus on what matters first.</p>
+            </div>
+            <div class="cs-feature-card">
+              <div class="cs-feature-card-top">
+                <span class="cs-feature-icon"><img src="assets/vantage/icons/icon-layout.svg" alt=""></span>
+                <span class="cs-feature-number">02</span>
+              </div>
+              <h4 class="cs-feature-title">Alarm Details Panel</h4>
+              <button type="button" class="cs-feature-toggle" aria-expanded="false">Read more</button>
+              <p class="cs-feature-detail">Selecting an alarm shows its source, device, duration, occurrences, and a video thumbnail without leaving the table.</p>
+            </div>
+            <div class="cs-feature-card">
+              <div class="cs-feature-card-top">
+                <span class="cs-feature-icon"><img src="assets/vantage/icons/icon-cursor.svg" alt=""></span>
+                <span class="cs-feature-number">03</span>
+              </div>
+              <h4 class="cs-feature-title">Drill-Down And Acknowledge</h4>
+              <button type="button" class="cs-feature-toggle" aria-expanded="false">Read more</button>
+              <p class="cs-feature-detail">Engineers can view every occurrence of an issue, then acknowledge one alarm or many in bulk.</p>
+            </div>
+            <div class="cs-feature-card">
+              <div class="cs-feature-card-top">
+                <span class="cs-feature-icon"><img src="assets/vantage/icons/icon-tag.svg" alt=""></span>
+                <span class="cs-feature-number">04</span>
+              </div>
+              <h4 class="cs-feature-title">Searchable Event Log</h4>
+              <button type="button" class="cs-feature-toggle" aria-expanded="false">Read more</button>
+              <p class="cs-feature-detail">Every event is timestamped, filterable by date range, and exportable, with timecode and device details for each entry.</p>
+            </div>
+            <div class="cs-feature-card">
+              <div class="cs-feature-card-top">
+                <span class="cs-feature-icon"><img src="assets/vantage/icons/icon-users.svg" alt=""></span>
+                <span class="cs-feature-number">05</span>
+              </div>
+              <h4 class="cs-feature-title">Comments On Graphs</h4>
+              <button type="button" class="cs-feature-toggle" aria-expanded="false">Read more</button>
+              <p class="cs-feature-detail">Engineers pin comments to a moment on a graph, so the next person sees what happened and what was already checked.</p>
+            </div>
+          </div>
+          <div class="cs-hscroll-controls">
+            <button type="button" class="cs-hscroll-arrow cs-hscroll-arrow-prev" aria-label="Scroll cards left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+            </button>
+            <button type="button" class="cs-hscroll-arrow cs-hscroll-arrow-next" aria-label="Scroll cards right">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg>
+            </button>
+          </div>
+          </div>
+
+          <div class="cs-mockup-showcase cs-mockup-showcase-controls-top">
+            <span class="cs-brand-blob cs-brand-blob-1" aria-hidden="true"></span>
+            <span class="cs-brand-blob cs-brand-blob-2" aria-hidden="true"></span>
+            <span class="cs-brand-blob cs-brand-blob-3" aria-hidden="true"></span>
+
+            <div class="cs-browser-mockup">
+              <div class="cs-browser-chrome">
+                <span class="cs-browser-dot" aria-hidden="true"></span>
+                <span class="cs-browser-dot" aria-hidden="true"></span>
+                <span class="cs-browser-dot" aria-hidden="true"></span>
+                <span class="cs-browser-url">pulse.local</span>
+              </div>
+              <div class="cs-browser-screen">
+                <img class="cs-browser-slide is-active" src="assets/pulse/pulse-alarm-table.jpg" alt="Alarm Summary table with severity tabs and counts, and a row menu to view details, acknowledge, or view occurrences.">
+                <img class="cs-browser-slide" src="assets/pulse/pulse-alarm-details.jpg" alt="Alarm Summary with one alarm selected and the Alarm Details panel open, showing severity, status, source, device, and occurrences.">
+                <img class="cs-browser-slide" src="assets/pulse/pulse-alarm-drilldown.jpg" alt="Drill-down view listing every occurrence of one issue, with a menu to view details or acknowledge.">
+                <img class="cs-browser-slide" src="assets/pulse/pulse-event-log.jpg" alt="Event Log table with severity icons, event types, and sources, and an Event Details panel with a thumbnail.">
+                <img class="cs-browser-slide" src="assets/pulse/pulse-comment-01.jpg" alt="A PTP graph with a comment being added to a specific point on the timeline.">
+                <img class="cs-browser-slide" src="assets/pulse/pulse-comment-02.jpg" alt="A saved comment on a PTP graph showing the author, timestamp, and note.">
+                <img class="cs-browser-slide" src="assets/pulse/pulse-comment-03.jpg" alt="A PTP graph showing comment markers placed on the timeline.">
+              </div>
+            </div>
+
+            <div class="cs-brand-controls">
+              <button class="cs-brand-arrow cs-brand-arrow-prev" type="button" aria-label="Previous screen">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+              </button>
+              <div class="cs-brand-dots" role="tablist" aria-label="Alarms and collaboration screens">
+                <button class="cs-brand-dot is-active" type="button" role="tab" aria-selected="true" aria-label="Show alarm summary" data-label="Alarm summary" data-description="Severity tabs with counts, and row actions to view details, acknowledge, or see every occurrence."></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show alarm details" data-label="Alarm details" data-description="A details panel shows the full context of an alarm while keeping the table in view."></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show alarm drill-down" data-label="Drill-down" data-description="Every occurrence of an issue in one place, ready to export or acknowledge."></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show event log" data-label="Event log" data-description="A searchable, exportable history of every event, with timecode and a thumbnail of what was on air."></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show add comment" data-label="Add a comment" data-description="Engineers pin a note to the exact moment on a graph where something happened."></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show saved comment" data-label="Saved comment" data-description="Comments show the author and timestamp, so the next person has the context they need."></button>
+                <button class="cs-brand-dot" type="button" role="tab" aria-selected="false" aria-label="Show comment markers" data-label="Comment markers" data-description="Markers on the timeline show where the team has already left notes."></button>
+              </div>
+              <button class="cs-brand-arrow cs-brand-arrow-next" type="button" aria-label="Next screen">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="cs-section-v2 cs-validation-section cs-pulse-validation" id="validation">
+      <div class="cs-section-header">
+        <span class="cs-section-number">06</span>
+        <h2>Putting Pulse In Front Of Engineers</h2>
+      </div>
+      <div class="cs-section-body cs-validation-body">
+        <p class="cs-section-intro">Each feature area went through its own round of unmoderated usability testing in UserZoom, built on the same template: a small group of participants, a set of realistic tasks, and three measures. I linked a clickable prototype into each UserZoom study, and participants worked through the tasks on their own while UserZoom recorded their screen, voice, and click paths. After each task, UserZoom asked participants whether they had completed it, which gave me <strong>perceived completion</strong>. I then reviewed the recordings and click paths to score <strong>actual completion</strong>. Each study ended with a System Usability Scale survey, also delivered in UserZoom. The gap between perceived and actual completion was the most useful signal, because it showed where engineers felt confident but were quietly going wrong.</p>
+        <div class="cs-validation-key-results">
+          <aside class="cs-validation-note" aria-label="Supporting material note">
+            <p><span class="cs-validation-note-asterisk">*</span> <em>The original recordings and research documentation remained with Telestream after my departure, before post-launch data could be collected. The results presented here reflect the findings available to me.</em></p>
+          </aside>
+          <span class="cs-validation-label">Across All Feature Tests</span>
+          <div class="cs-validation-results" aria-label="Usability testing results across all feature areas">
+            <article class="cs-validation-result">
+              <div class="cs-validation-result-summary">
+                <span class="cs-validation-result-value">91</span>
+                <h3>Average SUS Score</h3>
+              </div>
+              <p class="cs-validation-result-context">The average System Usability Scale score across the usability tests of each feature area.</p>
+            </article>
+            <article class="cs-validation-result">
+              <div class="cs-validation-result-summary">
+                <span class="cs-validation-result-value">86%</span>
+                <h3>Average Actual Completion Rate</h3>
+              </div>
+              <p class="cs-validation-result-context">The share of tasks participants actually completed, averaged across the usability tests of each feature area.</p>
+            </article>
+            <article class="cs-validation-result">
+              <div class="cs-validation-result-summary">
+                <span class="cs-validation-result-value">2m 27s</span>
+                <h3>Average Time On Task</h3>
+              </div>
+              <p class="cs-validation-result-context">How long participants took to complete each task, averaged across the usability tests of each feature area.</p>
+            </article>
+            <article class="cs-validation-result">
+              <div class="cs-validation-result-summary">
+                <span class="cs-validation-result-value">4.2</span>
+                <h3>Average Difficulty Rating</h3>
+              </div>
+              <p class="cs-validation-result-context">How difficult participants rated each task, averaged across the usability tests of each feature area.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section-v2 cs-pulse-reflect">
+      <div class="cs-section-header">
+        <span class="cs-section-number">07</span>
+        <h2>What Pulse Taught Me</h2>
+      </div>
+      <div class="cs-section-body">
+        <div class="cs-pulse-lessons">
+          <article>
+            <span class="cs-pulse-lesson-index">01</span>
+            <h3>Hierarchy beats more screens</h3>
+            <p>Status colors, severity counts, and “last changed” timestamps did more to speed up scanning than adding new views ever would have.</p>
+          </article>
+          <article>
+            <span class="cs-pulse-lesson-index">02</span>
+            <h3>Connect the two expert views</h3>
+            <p>Broadcast and IP specialists look at the same incident from different sides. Putting signal and network data on one page gave them a shared picture.</p>
+          </article>
+          <article>
+            <span class="cs-pulse-lesson-index">03</span>
+            <h3>Watch the perception gap</h3>
+            <p>Participants felt successful more often than they were. Measuring actual completion alongside SUS caught problems a satisfaction score alone would have hidden.</p>
+          </article>
+        </div>
+
+        <div class="cs-pulse-reflect-split">
+          <div class="cs-pulse-reflect-col">
+            <span class="cs-pulse-reflect-label">What I delivered</span>
+            <ul>
+              <li>End-to-end design for Dashboards, Input Monitor, PTP Monitor, and Alarms, all of which shipped.</li>
+              <li>A secure, on-premise web experience that replaced hardware-only monitoring.</li>
+              <li>A shared navigation and design language across the product.</li>
+              <li>Customer interviews, three personas, and usability testing for every feature area.</li>
+            </ul>
+          </div>
+          <div class="cs-pulse-reflect-col cs-pulse-reflect-col--next">
+            <span class="cs-pulse-reflect-label">What I’d measure next</span>
+            <ul>
+              <li>Time from alarm to root cause.</li>
+              <li>How often engineers still need to visit the rack.</li>
+              <li>Dashboard adoption and reuse across teams.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -160,7 +961,7 @@
     <span class="eyebrow">Next up</span>
     <div class="cs-footer-nav-links">
       <a href="itracefresh.html" class="btn btn-dark">
-        Read: The workflow standing between iTracefresh and its price tag
+        Read: All In One Traceability Solution
         <img src="../assets/icons/arrow-dark-2.svg" alt="" class="icon">
       </a>
       <a href="../index.html#contact" class="link-arrow">
@@ -169,6 +970,15 @@
       </a>
     </div>
   </section>
+
+  <div class="cs-lightbox" role="dialog" aria-modal="true" aria-label="Expanded image">
+    <button class="cs-lightbox-close" type="button" aria-label="Close expanded image">&times;</button>
+    <div class="cs-lightbox-content">
+      <img src="" alt="">
+      <p class="cs-lightbox-caption"></p>
+    </div>
+    <div class="cs-lightbox-research" role="document" aria-label="Research preview"></div>
+  </div>
 
 </main>
 
