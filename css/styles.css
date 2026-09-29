@@ -836,21 +836,15 @@ main > section {
 .resume-grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  grid-template-areas: "timeline intro" "timeline tags";
+  grid-template-areas: "timeline intro";
   gap: 72px;
 }
 .timeline-card { grid-area: timeline; }
 .resume-intro { grid-area: intro; }
-.resume-tags { grid-area: tags; }
 .resume-intro {
   display: flex;
   flex-direction: column;
   gap: 16px;
-}
-.resume-tags {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
 }
 .resume-photo {
   width: 240px;
@@ -867,26 +861,6 @@ main > section {
   color: var(--color-grey-45);
 }
 .resume-intro .btn-dark { margin-top: 4px; align-self: flex-start; }
-
-.tag-group {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding-top: 16px;
-}
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.tags span {
-  background: var(--color-grey-95);
-  color: var(--color-black);
-  font-size: 0.8125rem;
-  letter-spacing: -0.01em;
-  padding: 8px 16px;
-  border-radius: var(--radius-pill);
-}
 
 .timeline-card {
   background: var(--color-grey-95);
@@ -1033,7 +1007,7 @@ main > section {
 @media (max-width: 980px) {
   .resume-grid {
     grid-template-columns: 1fr;
-    grid-template-areas: "intro" "timeline" "tags";
+    grid-template-areas: "intro" "timeline";
     gap: 48px;
   }
   .contact-decor { display: none; }
