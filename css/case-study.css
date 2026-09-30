@@ -5500,34 +5500,58 @@
 }
 
 /* Pulse case study */
+/* Hero: the Vantage desktop mockup with its screen cut out (frame PNG on top).
+   Behind it, a static screen (nav, header, alarm panel) plus the main column,
+   which auto-scrolls through the Input Monitoring panels below the fold.
+   Screen box and scroll column positions are percentages of the mockup
+   (1263x1015, screen at 41,39 1182x739) and screen (1440x900, column at
+   240,56 840x844); the scroll strip is 840x3158. */
 .cs-pulse-hero-art {
   position: relative;
-  margin: 0 0 28px;
-  filter: none;
+  margin: 0;
 }
-.cs-pulse-hero-screen {
-  display: block;
-  overflow: hidden;
-  border: 8px solid #1b1f2a;
-  border-radius: 14px;
-  background: #1b1f2a;
-  box-shadow: 0 30px 50px -28px rgba(15, 23, 42, 0.55);
-}
-.cs-pulse-hero-screen img {
+.cs-pulse-hero-frame {
+  position: relative;
   display: block;
   width: 100%;
   height: auto;
 }
-.cs-pulse-hero-art::after {
-  content: "";
+.cs-pulse-hero-screen {
   position: absolute;
-  left: 50%;
-  bottom: -14px;
-  width: 34%;
-  height: 14px;
-  transform: translateX(-50%);
-  border-radius: 0 0 10px 10px;
-  background: linear-gradient(#2a2f3c, #1b1f2a);
+  left: 3.246%;
+  top: 3.842%;
+  width: 93.587%;
+  height: 72.808%;
+  overflow: hidden;
+  background: #1b2136;
+}
+.cs-pulse-hero-static {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.cs-pulse-hero-scroll {
+  position: absolute;
+  left: 16.667%;
+  top: 6.222%;
+  width: 58.333%;
+  height: 93.778%;
+  overflow: hidden;
+}
+.cs-pulse-hero-scroll img {
+  display: block;
+  width: 100%;
+  height: auto;
+  animation: cs-pulse-hero-scroll 22s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+/* 844 / 3158 of the strip is visible, so the end stop is -(1 - 0.2673). */
+@keyframes cs-pulse-hero-scroll {
+  0%, 10% { transform: translateY(0); }
+  45%, 55% { transform: translateY(-73.27%); }
+  90%, 100% { transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cs-pulse-hero-scroll img { animation: none; }
 }
 .cs-research-card-illustration.cs-pulse-avatar {
   padding: 0;
@@ -5545,6 +5569,7 @@
 @media (max-width: 640px) {
   .cs-pulse-hero-stats { grid-template-columns: 1fr; }
 }
+.cs-pulse .cs-context-card--business { border-color: color-mix(in srgb, var(--context-accent) 24%, white); }
 .cs-pulse .cs-research-card-summary { margin-bottom: 16px; }
 .cs-pulse .cs-research-card-link { color: var(--cs-accent); }
 .cs-pulse .cs-research-card:nth-child(3) .cs-research-card-link { padding-top: 0; }
