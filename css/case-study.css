@@ -5542,7 +5542,7 @@
   display: block;
   width: 100%;
   height: auto;
-  animation: cs-pulse-hero-scroll 22s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  animation: cs-pulse-hero-scroll 15s cubic-bezier(0.45, 0, 0.55, 1) infinite;
 }
 /* 844 / 3158 of the strip is visible, so the end stop is -(1 - 0.2673). */
 @keyframes cs-pulse-hero-scroll {
