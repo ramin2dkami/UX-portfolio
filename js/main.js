@@ -143,6 +143,7 @@ setupBuildAnimation('.workflow-diagram');
 setupBuildAnimation('.plant-diagram');
 setupBuildAnimation('.pulse-bars');
 setupBuildAnimation('.order-diagram');
+setupBuildAnimation('.daywell-diagram');
 
 // "What I was up against" staircase: draws the connecting line between the
 // numbered nodes and fades in each step in sequence, once, on scroll into view.

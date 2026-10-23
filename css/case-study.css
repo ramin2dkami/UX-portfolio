@@ -5918,3 +5918,33 @@
   background: none;
 }
 .cs-section-v2 .cs-section-body .cs-pulse-need h4 { color: var(--color-black); }
+
+/* ---------- Daywell hero art ---------- */
+.cs-dw-art {
+  position: relative;
+  flex: 1 1 440px;
+  max-width: 480px;
+  width: 100%;
+  aspect-ratio: 480 / 540;
+}
+.cs-dw-phone {
+  position: absolute;
+  aspect-ratio: 780 / 1688;
+  padding: 1%;
+  border-radius: 15% / 7%;
+  background: #111;
+  box-shadow: 0 30px 40px -18px rgba(20, 30, 15, 0.4);
+}
+.cs-dw-phone img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 13% / 6%;
+  object-fit: cover;
+}
+.cs-dw-phone--main { width: 42%; left: 29%; top: 3%; z-index: 3; }
+.cs-dw-phone--left { width: 35%; left: 2%; top: 16%; z-index: 1; transform: rotate(-8deg); }
+.cs-dw-phone--right { width: 35%; right: 2%; top: 18%; z-index: 2; transform: rotate(8deg); }
+@media (max-width: 900px) {
+  .cs-dw-art { max-width: 340px; margin: 0 auto; }
+}
