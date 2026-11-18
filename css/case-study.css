@@ -896,6 +896,15 @@
   .cs-showcase-walkthrough {
     padding: 20px;
   }
+  .cs-solution-section .cs-mockup-showcase-controls-top .cs-brand-controls {
+    display: grid;
+    grid-template-columns: auto minmax(0, auto) auto auto;
+    max-width: 100%;
+  }
+  .cs-mockup-showcase-controls-top .cs-brand-dots {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
   .cs-showcase-title-row { gap: 12px; }
   .cs-showcase-title { font-size: 1.125rem; }
 }
