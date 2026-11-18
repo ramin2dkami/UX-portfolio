@@ -40,6 +40,8 @@
   .cs-hero-row { flex-direction: column-reverse; }
   .cs-hero-phones { max-width: 340px; }
   .cs-hero-row.cs-hero-row--split-meta > .cs-hero-desktop-art {
+    flex: none;
+    height: auto;
     max-width: min(448px, 100%);
   }
 }
@@ -4346,16 +4348,18 @@
 }
 
 .cs-footer-nav {
-  padding: 64px 0 96px;
+  padding: 64px var(--shell-padding) 96px;
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 .cs-footer-nav-links {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   gap: 16px;
 }
+.cs-footer-nav-links .link-arrow { align-self: center; }
 
 @media (max-width: 860px) {
   .cs-section { grid-template-columns: 1fr; gap: 16px; }
