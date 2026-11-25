@@ -3,6 +3,25 @@ const vantageInterviews = document.querySelector('.cs-interviews');
 const vantageAudit = document.querySelector('.cs-section-v2--audit');
 if (vantageInterviews && vantageAudit) vantageAudit.after(vantageInterviews);
 
+// The review URL exposes alternate loops in the actual homepage layout.
+const studioArt = document.querySelector('.studio-art');
+if (studioArt) {
+  const playback = studioArt.querySelector('.studio-playback');
+  playback.hidden = false;
+  playback.addEventListener('click', () => {
+    const paused = studioArt.classList.toggle('is-paused');
+    playback.textContent = paused ? 'Resume animation' : 'Pause animation';
+  });
+
+  if (new URLSearchParams(location.search).has('motion-review')) {
+    const picker = studioArt.querySelector('.studio-picker');
+    picker.hidden = false;
+    picker.querySelector('select').addEventListener('change', (event) => {
+      studioArt.dataset.motion = event.target.value;
+    });
+  }
+}
+
 // Mobile nav toggle
 const navToggle = document.getElementById('navToggle');
 const mobileNav = document.getElementById('mobileNav');

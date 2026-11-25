@@ -47,8 +47,60 @@
           <a class="studio-resume-link" href="#resume">View resume</a>
         </div>
       </div>
-      <div class="studio-art">
-        <img src="assets/images/designer-at-work.webp" alt="Illustration of a designer fitting a pink panel into a blue interface, framed by a checkerboard, waves, and an eye." width="1100" height="1100" fetchpriority="high">
+      <div class="studio-art" data-motion="wink lights">
+        <svg class="studio-poster" viewBox="0 0 550 550" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="studio-art-title">
+          <title id="studio-art-title">Illustration of a designer fitting a pink panel into a blue interface, framed by a checkerboard, waves, and an eye.</title>
+          <defs>
+            <image id="studio-print" href="assets/images/designer-at-work.webp" width="550" height="550"/>
+            <clipPath id="studio-eye"><rect x="6" y="13" width="97" height="84"/></clipPath>
+            <clipPath id="studio-spark"><rect x="458" y="6" width="86" height="97"/></clipPath>
+            <clipPath id="studio-click"><path d="M473 308L493 282L509 294L488 320Z M487 315L520 306L524 327L487 332Z M484 329L513 338L503 357L480 343Z"/></clipPath>
+            <clipPath id="studio-wave-tile"><rect x="217" y="2" width="235" height="106"/></clipPath>
+            <clipPath id="studio-check-tile"><rect x="111" y="2" width="103" height="106"/></clipPath>
+            <pattern id="studio-checkers" width="54" height="54" patternUnits="userSpaceOnUse" x="109" y="0">
+              <rect width="54" height="54" fill="#faf5ee"/>
+              <path d="M27 0h27v27H27zM0 27h27v27H0z"/>
+            </pattern>
+          </defs>
+          <use href="#studio-print"/>
+          <g class="studio-motion">
+            <rect x="6" y="13" width="97" height="84" fill="#faf5ee"/>
+            <g class="studio-eye"><use href="#studio-print" clip-path="url(#studio-eye)"/></g>
+            <rect x="458" y="6" width="86" height="97" fill="#fec407"/>
+            <g class="studio-spark"><use href="#studio-print" clip-path="url(#studio-spark)"/></g>
+            <g clip-path="url(#studio-click)">
+              <rect x="473" y="282" width="51" height="75" fill="#4b95fc"/>
+              <use class="studio-click" href="#studio-print"/>
+            </g>
+          </g>
+          <g class="studio-wave-tile" clip-path="url(#studio-wave-tile)">
+            <rect x="217" width="235" height="110" fill="#479efa"/>
+            <g class="studio-waves" fill="none" stroke="#101010" stroke-width="2.5">
+              <path id="studio-wave-line" d="M164 29q13 39 26 0q25 39 50 0q25 39 50 0q25 39 50 0q25 39 50 0q25 39 50 0q25 39 50 0q25 39 50 0"/>
+              <use href="#studio-wave-line" y="41"/>
+            </g>
+          </g>
+          <g class="studio-check-tile" clip-path="url(#studio-check-tile)">
+            <rect class="studio-checkers" x="55" y="-54" width="214" height="216" fill="url(#studio-checkers)"/>
+          </g>
+          <g class="studio-lamps" fill="#fff9e9">
+            <circle class="studio-lamp" cx="435" cy="217" r="6.8"/>
+            <circle class="studio-lamp" cx="461" cy="213" r="6.8"/>
+            <circle class="studio-lamp" cx="488" cy="210" r="6.8"/>
+          </g>
+        </svg>
+        <div class="studio-controls">
+          <label class="studio-picker" hidden>Animation
+            <select>
+              <option value="wink lights">Wink, sparkle &amp; window lights</option>
+              <option value="wink">Wink &amp; sparkle</option>
+              <option value="waves">Rolling waves</option>
+              <option value="checks">Checkerboard shuffle</option>
+              <option value="lights">Window lights</option>
+            </select>
+          </label>
+          <button class="studio-playback" type="button" hidden>Pause animation</button>
+        </div>
       </div>
     </div>
   </section>

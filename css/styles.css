@@ -516,17 +516,95 @@ main > section {
   text-decoration: underline;
   text-underline-offset: 4px;
 }
-.studio-art { overflow: hidden; }
-.studio-art img {
+.studio-art { position: relative; overflow: hidden; }
+.studio-poster {
+  display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
   /* Hide the artwork’s thin outer frame at the rounded card edges. */
   transform: scale(1.02);
 }
+.studio-motion, .studio-wave-tile, .studio-check-tile, .studio-lamps { display: none; }
+.studio-controls {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+}
+.studio-controls button, .studio-picker {
+  padding: 7px 11px;
+  border: 1px solid #181818;
+  border-radius: 5px;
+  background: #faf5ee;
+  color: #181818;
+  font-weight: 500;
+  font-family: inherit;
+  font-size: 14px;
+}
+.studio-picker select { font: inherit; }
+.studio-controls button { cursor: pointer; }
+@media (prefers-reduced-motion: no-preference) {
+  [data-motion~="wink"] .studio-motion,
+  [data-motion="waves"] .studio-wave-tile,
+  [data-motion="checks"] .studio-check-tile,
+  [data-motion~="lights"] .studio-lamps { display: inline; }
+  .studio-eye {
+    transform-origin: 55px 56px;
+    animation: studio-blink 4s ease-in-out infinite;
+  }
+  .studio-spark {
+    transform-origin: 501px 54px;
+    animation: studio-twinkle 4s ease-in-out infinite;
+  }
+  .studio-click {
+    transform-origin: 478px 322px;
+    animation: studio-click 4s ease-in-out infinite;
+  }
+  .studio-waves { animation: studio-roll 2.7s linear infinite; }
+  .studio-checkers { animation: studio-shuffle 3.6s ease-in-out infinite; }
+  .studio-lamp { animation: studio-light var(--lamp-duration, 2.4s) ease-in-out var(--lamp-start, 0s) infinite both; }
+  .studio-lamp:nth-child(2) { animation-delay: calc(var(--lamp-start, 0s) + .24s); }
+  .studio-lamp:nth-child(3) { animation-delay: calc(var(--lamp-start, 0s) + .48s); }
+  [data-motion~="wink"] .studio-lamps {
+    --lamp-duration: 4s;
+    --lamp-start: 1.4s;
+  }
+  .studio-art.is-paused .studio-poster * { animation-play-state: paused; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .studio-controls { display: none; }
+}
+@keyframes studio-blink {
+  0%, 14%, 100% { transform: scaleY(1); }
+  8% { transform: scaleY(.08); }
+}
+@keyframes studio-twinkle {
+  0%, 13%, 42%, 100% { transform: none; }
+  25% { transform: scale(.56) rotate(-24deg); }
+  35% { transform: scale(1.03) rotate(5deg); }
+}
+@keyframes studio-click {
+  0%, 23%, 60%, 100% { opacity: 1; }
+  38%, 43% { opacity: 0; }
+}
+@keyframes studio-roll { to { transform: translateX(-50px); } }
+@keyframes studio-shuffle {
+  0%, 12% { transform: translate(0, 0); }
+  40%, 55% { transform: translate(27px, 0); }
+  85%, 100% { transform: translate(27px, 27px); }
+}
+@keyframes studio-light {
+  0%, 42%, 100% { opacity: 0; }
+  18% { opacity: .95; }
+}
 @media (max-width: 780px) {
   .studio-panel { grid-template-columns: 1fr; }
-  .studio-art img { height: auto; }
+  .studio-poster { height: auto; }
 }
 @media (max-width: 640px) {
   .studio-hero { padding-inline: 16px; }
