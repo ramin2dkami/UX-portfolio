@@ -1123,7 +1123,11 @@ main > section {
 }
 .resume-portrait { border-right: 2px solid #181719; }
 .resume-history-art { object-position: right center; }
-.resume-card .timeline-card > .btn { align-self: flex-start; }
+.resume-downloads {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
 .resume-card .timeline-card { border-radius: 0; }
 .resume-card .timeline-item ul { max-width: 88ch; }
 .resume-grid {
