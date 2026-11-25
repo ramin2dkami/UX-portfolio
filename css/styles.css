@@ -816,15 +816,6 @@ main > section {
 }
 .order-ticket span:nth-child(2) { width: 72%; }
 .order-ticket span:nth-child(3) { width: 48%; }
-.order-ticket i {
-  position: absolute;
-  left: 16px;
-  right: 16px;
-  bottom: 18px;
-  height: 20px;
-  border-radius: 7px;
-  background: #f7dfaa;
-}
 .order-status-dot {
   position: absolute;
   right: 10px;
@@ -917,15 +908,18 @@ main > section {
 .daywell-diagram.is-visible .dw-bloom { transition-delay: 1.2s; transition-duration: 1.1s; }
 .daywell-diagram.resetting .dw-part { transition: none; }
 
-/* Poster outlines frame each project’s original colors. */
+/* One-pixel outlines use more contrast on small shapes than on frames. */
 .work-grid {
-  --art-ink: #181719;
+  --workflow-outline: #18599b;
+  --plant-outline: #0d5f57;
+  --order-outline: #805813;
   --art-paper: #fff8ed;
 }
-.wf-line, .pd-line, .pd-ground { stroke: var(--art-ink); stroke-width: 2.5; }
+.wf-line { stroke: var(--workflow-outline); stroke-width: 2.5; }
+.pd-line, .pd-ground { stroke: var(--plant-outline); stroke-width: 2.5; }
 .wf-box {
-  background: var(--art-paper) url("../assets/icons/workflow-poster-tiles.svg") 0 center / 500% 100% no-repeat;
-  border: 2px solid var(--art-ink);
+  background: var(--art-paper) url("../assets/icons/workflow-poster-tiles.svg?v=isolated-wave") 0 center / 500% 100% no-repeat;
+  border: 1px solid #25356b;
   border-radius: 8px;
   box-shadow: none;
 }
@@ -934,26 +928,34 @@ main > section {
 .wf-node-d { background-position-x: 75%; }
 .wf-node-e { background-position-x: 100%; }
 
-.dw-part { stroke: var(--art-ink); stroke-width: 8; stroke-linejoin: round; }
 
-.pd-node { border: 2px solid var(--art-ink); box-shadow: none; }
+.dw-part {
+  stroke: #53604b;
+  stroke-width: 1px;
+  vector-effect: non-scaling-stroke;
+  stroke-linejoin: round;
+}
+.dw-bloom { stroke: #987443; }
+.dw-bud { stroke: #a45d6c; }
+
+.pd-node { border: 1px solid #3f6964; box-shadow: none; }
 .pd-seed { background: #1b998b; }
 .pd-leaf { background: #1b998b; width: 24px; height: 24px; }
 .pd-node-d, .pd-node-e { background: #89cbc3; }
-.pd-leaf::after { background: var(--art-ink); height: 68%; top: 16%; }
+.pd-leaf::after { background: var(--plant-outline); height: 68%; top: 16%; }
 
 .pulse-bars {
   align-self: center;
   padding: 10px 8px 7px;
   height: 82px;
   gap: 3px;
-  border: 2px solid var(--art-ink);
+  border: 1px solid #ba96b8;
   border-radius: 9px;
   background: #ffe5fd;
 }
 .pulse-bar {
   position: relative;
-  border: 1.5px solid var(--art-ink);
+  border: 1px solid #813577;
   border-radius: 6px 6px 2px 2px;
   background: #ff1af2;
 }
@@ -962,40 +964,35 @@ main > section {
 .pulse-bar:nth-child(4n) { height: 34px; }
 
 .order-ticket {
-  border: 2px solid var(--art-ink);
+  border: 1px solid #a78c64;
   border-radius: 9px;
   background: var(--art-paper);
   box-shadow: none;
   overflow: hidden;
 }
-.order-ticket--back { background: #f7dfaa; }
+.order-ticket--back { background: #f7dfaa; border-color: #9e845e; }
 .order-ticket::before {
   content: "";
   display: block;
   height: 16px;
   margin: -20px -16px 13px;
   background: #c58a19;
-  border-bottom: 2px solid var(--art-ink);
+  border-bottom: 1px solid #9a7840;
 }
 .order-ticket--back::before { background: #f7dfaa; }
-.order-ticket span { background: var(--art-ink); height: 3px; }
-.order-ticket i {
-  border: 1.5px solid var(--art-ink);
-  border-radius: 3px;
-  background: repeating-linear-gradient(90deg, var(--art-ink) 0 2px, var(--art-paper) 2px 5px, var(--art-ink) 5px 6px, var(--art-paper) 6px 9px);
-}
+.order-ticket span { background: var(--order-outline); height: 3px; }
 .order-status-dot {
   width: 24px; height: 24px;
   background: #c58a19;
-  border: 2px solid var(--art-ink);
+  border: 1px solid #825b27;
   box-shadow: none;
 }
 .order-status-dot::after {
   content: "";
   position: absolute;
-  top: 5px; left: 4px;
+  top: 6px; left: 5px;
   width: 10px; height: 5px;
-  border: solid var(--art-ink);
+  border: solid var(--order-outline);
   border-width: 0 0 2px 2px;
   transform: rotate(-45deg);
 }
@@ -1223,30 +1220,11 @@ main > section {
   background: var(--color-grey-95);
   border-radius: var(--radius-lg);
   padding: 40px;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  gap: clamp(20px, 4vw, 40px);
 }
 .contact-content {
-  flex: 1;
-  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 16px;
-  position: relative;
-  z-index: 2;
-}
-.contact-illustration {
-  flex: 0 0 auto;
-  width: clamp(170px, 26vw, 300px);
-  height: auto;
-  border-radius: var(--radius-sm);
-}
-@media (max-width: 780px) {
-  .contact-inner { flex-direction: column; align-items: stretch; }
-  .contact-illustration { width: min(100%, 240px); }
 }
 .contact-sub {
   font-size: 1.0625rem;
@@ -1353,6 +1331,6 @@ main > section {
   .work, .resume, .contact { padding-left: 16px; padding-right: 16px; }
   .case-study, .timeline-card { padding: 28px; }
   .contact-inner { padding: 28px; border-radius: 24px; }
-  .contact-email { font-size: 1.75rem; }
+  .contact-email { font-size: clamp(1.125rem, 6.3vw, 1.75rem); }
   .footer-inner { padding: 0; flex-direction: column; align-items: flex-start; }
 }
