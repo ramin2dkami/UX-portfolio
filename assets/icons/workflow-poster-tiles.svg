@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40">
+  <g stroke="#181719" stroke-width="1.8" stroke-linejoin="round">
+    <!-- An eye, a signal, a playhead, a checkerboard and a sparkle. -->
+    <path fill="#9acaff" d="M0 0h40v40H0z"/>
+    <path fill="#fff8ed" d="M4 20q16-22 32 0-16 22-32 0Z"/>
+    <circle cx="20" cy="20" r="6.5" fill="#2e90fa"/><circle cx="20" cy="20" r="2.5" fill="#181719"/>
+    <path fill="#2e90fa" d="M40 0h40v40H40z"/>
+    <path fill="none" d="M39 16q5 10 10 0 5 10 10 0 5 10 10 0 5 10 12 0m-42 9q5 10 10 0 5 10 10 0 5 10 10 0 5 10 12 0"/>
+    <path fill="#72b3fa" d="M80 0h40v40H80z"/><path fill="#fff8ed" d="m94 10 16 10-16 10Z"/>
+    <path fill="#fff8ed" d="M120 0h40v40h-40z"/>
+    <path fill="#181719" stroke="none" d="M120 0h10v10h-10zm20 0h10v10h-10zm-10 10h10v10h-10zm20 0h10v10h-10zm-30 10h10v10h-10zm20 0h10v10h-10zm-10 10h10v10h-10zm20 0h10v10h-10z"/>
+    <path fill="#2e90fa" d="M160 0h40v40h-40z"/><path fill="#fff8ed" d="M180 3q2 14 16 17-14 3-16 17-2-14-16-17 14-3 16-17Z"/>
+  </g>
+</svg>

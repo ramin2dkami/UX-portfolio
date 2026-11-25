@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=mobile-badges">
+<link rel="stylesheet" href="css/styles.css?v=studio-poster">
 </head>
 <body>
 
@@ -34,41 +34,21 @@
 
 <main id="top">
 
-  <section class="hero" aria-labelledby="hero-name">
-    <div class="hero-inner">
-      <div class="hero-copy">
-        <h1 id="hero-name" class="hero-name--paper">Ramin Partovi</h1>
-        <p class="hero-role">Senior Product Designer</p>
-        <p class="hero-sub">Simplifying the complicated</p>
-        <p class="hero-intro">I’m a Senior Product Designer specializing in B2B SaaS and mobile experiences. I turn complex workflows, technical systems, and business challenges into intuitive products that work for real people. I use AI alongside my design process to explore ideas faster, uncover new possibilities, and spend more time solving the problems that matter.</p>
-        <div class="hero-actions">
-          <a href="#work" class="btn btn-orange">View Work</a>
-          <a href="#resume" class="btn btn-outline">View resume</a>
+  <section class="studio-hero" aria-labelledby="hero-name">
+    <div class="studio-panel">
+      <div class="studio-copy">
+        <header class="studio-heading">
+          <h1 id="hero-name">Ramin Partovi</h1>
+          <p>Senior Product Designer</p>
+        </header>
+        <p class="studio-intro">I’m a Senior Product Designer specializing in B2B SaaS and mobile experiences. I turn complex workflows, technical systems, and business challenges into intuitive products that work for real people. I use AI alongside my design process to explore ideas faster, uncover new possibilities, and spend more time solving the problems that matter.</p>
+        <div class="studio-actions">
+          <a class="btn btn-dark" href="#work">View Work</a>
+          <a class="studio-resume-link" href="#resume">View resume</a>
         </div>
       </div>
-
-      <div class="hero-visual">
-        <div class="hero-image">
-          <img src="assets/images/golden-gate.png" alt="Golden Gate Bridge illustration" loading="eager">
-          <svg class="bird bird-1" viewBox="0 0 24 12" aria-hidden="true">
-            <path d="M1,8 Q6,1 12,7 Q18,1 23,8" fill="none" stroke="#0A0A0C" stroke-width="1.4" stroke-linecap="round"/>
-          </svg>
-          <svg class="bird bird-2" viewBox="0 0 24 12" aria-hidden="true">
-            <path d="M1,8 Q6,1 12,7 Q18,1 23,8" fill="none" stroke="#0A0A0C" stroke-width="1.4" stroke-linecap="round"/>
-          </svg>
-          <svg class="bird bird-3" viewBox="0 0 24 12" aria-hidden="true">
-            <path d="M1,8 Q6,1 12,7 Q18,1 23,8" fill="none" stroke="#0A0A0C" stroke-width="1.4" stroke-linecap="round"/>
-          </svg>
-          <svg class="bird bird-4" viewBox="0 0 24 12" aria-hidden="true">
-            <path d="M1,8 Q6,1 12,7 Q18,1 23,8" fill="none" stroke="#0A0A0C" stroke-width="1.4" stroke-linecap="round"/>
-          </svg>
-          <svg class="bird bird-5" viewBox="0 0 24 12" aria-hidden="true">
-            <path d="M1,8 Q6,1 12,7 Q18,1 23,8" fill="none" stroke="#0A0A0C" stroke-width="1.4" stroke-linecap="round"/>
-          </svg>
-          <svg class="bird bird-6" viewBox="0 0 24 12" aria-hidden="true">
-            <path d="M1,8 Q6,1 12,7 Q18,1 23,8" fill="none" stroke="#0A0A0C" stroke-width="1.4" stroke-linecap="round"/>
-          </svg>
-        </div>
+      <div class="studio-art">
+        <img src="assets/images/designer-at-work.webp" alt="Illustration of a designer fitting a pink panel into a blue interface, framed by a checkerboard, waves, and an eye." width="1100" height="1100" fetchpriority="high">
       </div>
     </div>
   </section>
@@ -229,12 +209,17 @@
     </div>
   </section>
 
-  <section id="resume" class="resume">
+  <section id="resume" class="resume" aria-labelledby="resume-title">
     <div class="section-head">
-      <h2>My Resume</h2>
+      <h2 id="resume-title">My Resume</h2>
     </div>
-
-    <div class="resume-grid">
+    <div class="resume-card">
+      <header class="resume-card-header">
+        <div class="resume-scene">
+          <img class="resume-portrait" src="assets/images/resume-portrait.webp" alt="Ramin Partovi" width="820" height="820" loading="lazy">
+          <img class="resume-history-art" src="assets/images/work-history.webp" alt="Fresh produce software and broadcast monitoring illustrated side by side." width="1500" height="495" loading="lazy">
+        </div>
+      </header>
       <div class="timeline-card">
         <div class="timeline-item">
           <div class="timeline-row">
@@ -294,18 +279,11 @@
           </div>
           <p class="role-org">San Francisco State University</p>
         </div>
-      </div>
-
-      <div class="resume-intro">
-        <img src="assets/images/profilepic.jpeg" alt="Ramin Partovi" class="resume-photo">
-        <p>Senior product designer leading complex enterprise products from customer research through launch. Experienced in modernizing legacy workflows, building design systems, and using usability evidence to guide product decisions across B2B software and broadcast tools.</p>
-
         <a href="assets/Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-dark">
           View full resume
           <img src="assets/icons/arrow-dark-2.svg" alt="" class="icon">
         </a>
       </div>
-
     </div>
   </section>
 
@@ -330,6 +308,7 @@
           <a href="https://dribbble.com/Ramin2DKami" target="_blank" rel="noopener noreferrer">Dribbble</a>
         </div>
       </div>
+      <img class="contact-illustration" src="assets/images/contact-illustration.webp" alt="" width="640" height="640" loading="lazy">
     </div>
   </section>
 
