@@ -536,7 +536,7 @@ main > section {
   justify-content: flex-end;
   gap: 6px;
 }
-.studio-controls button, .studio-picker {
+.studio-picker {
   padding: 7px 11px;
   border: 1px solid #181818;
   border-radius: 5px;
@@ -547,7 +547,6 @@ main > section {
   font-size: 14px;
 }
 .studio-picker select { font: inherit; }
-.studio-controls button { cursor: pointer; }
 @media (prefers-reduced-motion: no-preference) {
   [data-motion~="wink"] .studio-motion,
   [data-motion="waves"] .studio-wave-tile,
@@ -574,7 +573,6 @@ main > section {
     --lamp-duration: 4s;
     --lamp-start: 1.4s;
   }
-  .studio-art.is-paused .studio-poster * { animation-play-state: paused; }
 }
 @media (prefers-reduced-motion: reduce) {
   .studio-controls { display: none; }
